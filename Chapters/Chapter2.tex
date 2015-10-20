@@ -1,19 +1,26 @@
 % Chapter 1
 
 \chapter{Introduction} % Write in your own chapter title
-\label{Chapter1}
-\lhead{Chapter 1. \emph{Introduction}} % Write in your own chapter title to set the page header
+\label{Chapter2}
+\lhead{Chapter 2. \emph{Background and Related Work}}
 
 
-\section{Overview}
+\section{Basics of Artificial Neural Networks}
 
-Computer is one of the most significant inventions in history. It provides huge power in data processing field, like scientific computation. Also, computer system can aid human being in daily life, for example driverless vehicles. However, human brain still has compelling advantage in some fields, like identifying our keys in our pocket by feel. The complex processes of taking in raw data and taking action based on the pattern are regarded as pattern recognition. Pattern recognition has been important for people daily life for a long period and human brain has developed an advanced neural and cognitive system for such tasks.
+Artificial neurons were introduced as information processing devices more than fifty years ago\citep{mcculloch1943logical}. Following the early work, perceptrons were deployed in layers to do pattern recognition job. A lot of resource was invested in researching capability of learning perceptrons theoretically and experimentally. As shown in Figure 2.1, a neuron computes a weighted summation of its n inputs and then thresholds the result to give a binary output y. We can treat n input as an vector with n elements, and represent the vector as either class A(for output +1) or class B(for output -1).
 
-Weather classification is one of the most important pattern recognition tasks which relates our work and lives. There are several major kinds of weather conditions, like sunny, cloudy, rainy. And people can classify them easily through eyes. However, it is not a easy job for machines, especially in computer vision literacy. 
+\graphicspath{ {./Figures/} }
+\begin{figure}
+\begin{center}
+%\fbox{\rule{0pt}{2in} \rule{0.9\linewidth}{0pt}}
+   \includegraphics[width=0.8\linewidth]{Figure2-1.png}
 
-In this thesis, I describe an approach to this problem of weather classification based upon the new big trend in machine learning, and more precisely, deep learning. It differs with feature detectors method that extracts features manually and training a model to do classification.  
+\end{center}
+   \caption{Diagram of a neuron}
+\label{fig:long}
+\label{fig:onecol}
+\end{figure}
 
-Compared to shadow learning which includes decision trees, SVM and naive bayes, deep learning passes input data through several non-linearities functions to generate features and does classification based on the features. It generates a mapping and finds a optimist solution.
 
 \section{Statistical Pattern Recognization}
 
