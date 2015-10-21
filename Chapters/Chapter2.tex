@@ -8,7 +8,6 @@
 \section{Basics of Artificial Neural Networks}
 
 Artificial neurons were introduced as information processing devices more than fifty years ago\citep{mcculloch1943logical}. Following the early work, perceptrons were deployed in layers to do pattern recognition job. A lot of resource was invested in researching capability of learning perceptrons theoretically and experimentally. As shown in Figure 2.1, a neuron computes a weighted summation of its n inputs and then thresholds the result to give a binary output y. We can treat n input as an vector with n elements, and represent the vector as either class A(for output +1) or class B(for output -1).
-
 \graphicspath{ {./Figures/} }
 \begin{figure}
 \begin{center}
@@ -16,11 +15,15 @@ Artificial neurons were introduced as information processing devices more than f
    \includegraphics[width=0.8\linewidth]{Figure2-1.png}
 
 \end{center}
-   \caption{Diagram of a neuron}
+   \caption{Diagram of a perceptron}
 \label{fig:long}
 \label{fig:onecol}
 \end{figure}
 
+Thus we can get:
+\begin{equation}
+y(x) = w^{T}x + w_{0}
+\end{equation}
 
 \section{Statistical Pattern Recognization}
 

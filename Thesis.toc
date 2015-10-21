@@ -15,10 +15,10 @@
 \contentsline {section}{\numberline {1.4}Weather Classification}{2}{section.21}
 \contentsline {chapter}{\numberline {2}Introduction}{4}{chapter.22}
 \contentsline {section}{\numberline {2.1}Basics of Artificial Neural Networks}{4}{section.23}
-\contentsline {section}{\numberline {2.2}Statistical Pattern Recognization}{5}{section.25}
-\contentsline {section}{\numberline {2.3}Artificial Neural Networks}{5}{section.26}
-\contentsline {section}{\numberline {2.4}Weather Classification}{5}{section.27}
+\contentsline {section}{\numberline {2.2}Statistical Pattern Recognization}{5}{section.26}
+\contentsline {section}{\numberline {2.3}Artificial Neural Networks}{5}{section.27}
+\contentsline {section}{\numberline {2.4}Weather Classification}{5}{section.28}
 \vspace {2em}
-\contentsline {chapter}{\numberline {A}Appendix Title Here}{7}{appendix.28}
+\contentsline {chapter}{\numberline {A}Appendix Title Here}{7}{appendix.29}
 \vspace {2em}
-\contentsline {chapter}{Bibliography}{8}{dummy.29}
+\contentsline {chapter}{Bibliography}{8}{dummy.30}
