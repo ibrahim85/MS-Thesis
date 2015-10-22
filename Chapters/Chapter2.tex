@@ -21,10 +21,22 @@ Artificial neurons were introduced as information processing devices more than f
 \end{figure}
 
 Each output is updated according to the equation:
-\begin{equation}
+\begin{equation}\label{eq:BasicEq}
 y_{i} = g(h_{i}) = g\left(\sum_{j}w_{ij}x_{j}\right)
 \end{equation}
-where $y_{i}$ is the $i$th output, $h_{i}$ is the net input into node $i$, The weight $w_{ij}$ connects the $i$th output and the $j$th input, and $x_{j}$ is the $j$th input. The function $g(h)$ is the activation function and 
+where $y_{i}$ is the $i$th output, $h_{i}$ is the net input into node $i$, The weight $w_{ij}$ connects the $i$th output and the $j$th input, and $x_{j}$ is the $j$th input. The function $g(h)$ is the activation function and usually makes up the form
+\begin{equation}\label{eq:FullEq}
+g(h) = sign(h) = 
+  \begin{cases}
+    -1       & \quad h < 0 \\
+    1  & \quad h \geq 0\\
+  \end{cases}
+\end{equation}
+We can also represent \ref{eq:FullEq} in vector notation, as in 
+\begin{equation}\label{eq:UsedEq}
+y = g(h) = g(\bf w \cdot x)
+\end{equation}
+where \textbf{w} and \textbf{x} can be regarded as $dx1$ dimensional column vectors, and $d$ is the number of input data.
 
 \section{Statistical Pattern Recognization}
 
