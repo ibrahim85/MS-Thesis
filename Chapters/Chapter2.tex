@@ -1,4 +1,4 @@
-% Chapter 1
+% Chapter 2
 
 \chapter{Introduction} % Write in your own chapter title
 \label{Chapter2}
@@ -7,7 +7,7 @@
 
 \section{Basics of Artificial Neural Networks}
 
-Artificial neurons were introduced as information processing devices more than fifty years ago\citep{mcculloch1943logical}. Following the early work, perceptrons were deployed in layers to do pattern recognition job. A lot of resource was invested in researching capability of learning perceptrons theoretically and experimentally. As shown in Figure 2.1, a neuron computes a weighted summation of its n inputs and then thresholds the result to give a binary output y. We can treat n input as an vector with n elements, and represent the vector as either class A(for output +1) or class B(for output -1).
+Artificial neurons were introduced as information processing devices more than fifty years ago\citep{mcculloch1943logical}. Following the early work, perceptrons were deployed in layers to do pattern recognition job. A lot of resource was invested in researching capability of learning perceptrons theoretically and experimentally. As shown in Figure 2.1, a perceptron computes a weighted summation of its n inputs and then thresholds the result to give a binary output y. We can treat n input as an vector with n elements, and represent the vector as either class A(for output +1) or class B(for output -1).
 \graphicspath{ {./Figures/} }
 \begin{figure}
 \begin{center}
@@ -20,10 +20,11 @@ Artificial neurons were introduced as information processing devices more than f
 \label{fig:onecol}
 \end{figure}
 
-Thus we can get:
+Each output is updated according to the equation:
 \begin{equation}
-y(x) = w^{T}x + w_{0}
+y_{i} = g(h_{i}) = g\left(\sum_{j}w_{ij}x_{j}\right)
 \end{equation}
+where $y_{i}$ is the $i$th output, $h_{i}$ is the net input into node $i$, The weight $w_{ij}$ connects the $i$th output and the $j$th input, and $x_{j}$ is the $j$th input. The function $g(h)$ is the activation function and 
 
 \section{Statistical Pattern Recognization}
 
