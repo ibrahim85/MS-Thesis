@@ -5,7 +5,7 @@
 \lhead{Chapter 2. \emph{Background and Related Work}}
 
 
-\section{Basics of Artificial Neural Networks}
+\section{Single-Layer Networks}
 
 Artificial neurons were introduced as information processing devices more than fifty years ago\citep{mcculloch1943logical}. Following the early work, perceptrons were deployed in layers to do pattern recognition job. A lot of resource was invested in researching capability of learning perceptrons theoretically and experimentally. As shown in Figure 2.1, a perceptron computes a weighted summation of its n inputs and then thresholds the result to give a binary output y. We can treat n input as an vector with n elements, and represent the vector as either class A(for output +1) or class B(for output -1).
 \graphicspath{ {./Figures/} }
@@ -36,7 +36,21 @@ We can also represent \ref{eq:FullEq} in vector notation, as in
 \begin{equation}\label{eq:UsedEq}
 y = g(h) = g(\bf w \cdot x)
 \end{equation}
-where \textbf{w} and \textbf{x} can be regarded as $dx1$ dimensional column vectors, and $d$ is the number of input data.
+where \textbf{w} and \textbf{x} can be regarded as $nx1$ dimensional column vectors, and $n$ is the number of input data.
+The term $w \cdot x$ in \ref{eq:UsedEq} constructs a $(n-1)$-dimension hyperplane which passes the origin. The hyperplane can be shifted by adding an parameter to \ref{eq:BasicEq}, for example
+\begin{equation}\label{eq:WithBias}
+y = g(h) = g(\bf w \cdot x + b)
+\end{equation}
+We can have the same effect by putting a constant value $1$ and increase the size of $x$ and $w$ by one. The extra weight $w$ with fixed value 1 is called \textit{bias weight}; it is adaptive like other weights and provides flexibility to hyperplane. Then we get:
+\begin{equation}\label{eq:finalEq}
+y = g(h) = g(\sum_{i=0}^{n}w_{i}x_{i})
+\end{equation}
+The aim of learning is to find a set of weights $w_{i}$ so that:
+\begin{align*}
+y = g(\sum_{i=0}^{n}w_{i}x_{i}) = 1  & \quad x \in Class A\\
+y = g(\sum_{i=0}^{n}w_{i}x_{i}) = 0  & \quad x \in Class B
+\end{align*}
+
 
 \section{Statistical Pattern Recognization}
 
