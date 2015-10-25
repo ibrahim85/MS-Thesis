@@ -15,7 +15,7 @@
 \contentsline {section}{\numberline {1.4}Weather Classification}{2}{section.21}
 \contentsline {chapter}{\numberline {2}Introduction}{4}{chapter.22}
 \contentsline {section}{\numberline {2.1}Single-Layer Networks}{4}{section.23}
-\contentsline {section}{\numberline {2.2}Statistical Pattern Recognization}{5}{section.30}
+\contentsline {section}{\numberline {2.2}Multi-Layer Networks}{5}{section.30}
 \contentsline {section}{\numberline {2.3}Artificial Neural Networks}{6}{section.31}
 \contentsline {section}{\numberline {2.4}Weather Classification}{6}{section.32}
 \vspace {2em}
