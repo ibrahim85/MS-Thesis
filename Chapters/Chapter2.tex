@@ -10,23 +10,19 @@
 Artificial neurons were introduced as information processing devices more than fifty years ago\citep{mcculloch1943logical}. Following the early work, perceptrons were deployed in layers to do pattern recognition job. A lot of resource was invested in researching capability of learning perceptrons theoretically and experimentally. As shown in Figure 2.1, a perceptron computes a weighted summation of its n inputs and then thresholds the result to give a binary output y. We can treat n input as an vector with n elements, and represent the vector as either class A(for output +1) or class B(for output -1).
 \graphicspath{ {./Figures/} }
 \begin{figure}
-\begin{center}
-%\fbox{\rule{0pt}{2in} \rule{0.9\linewidth}{0pt}}
-   \includegraphics[width=0.8\linewidth]{Figure2-1.png}
-
-\end{center}
-   \caption{Diagram of a perceptron}
-\label{fig:long}
-\label{fig:onecol}
+\centering
+\includegraphics[width=0.8\textwidth]{Figure2-1.png}
+\caption{\label{fig:perceptron}Diagram of a perceptron.}
 \end{figure}
+
 
 Each output is updated according to the equation:
 \begin{equation}\label{eq:BasicEq}
-y_{i} = g(h_{i}) = g\left(\sum_{j}w_{ij}x_{j}\right)
+y_{i} = f(h_{i}) = f\left(\sum_{j}w_{ij}x_{j}\right)
 \end{equation}
-where $y_{i}$ is the $i$th output, $h_{i}$ is the net input into node $i$, The weight $w_{ij}$ connects the $i$th output and the $j$th input, and $x_{j}$ is the $j$th input. The function $g(h)$ is the activation function and usually makes up the form
+where $y_{i}$ is the $i$th output, $h_{i}$ is the net input into node $i$, The weight $w_{ij}$ connects the $i$th output and the $j$th input, and $x_{j}$ is the $j$th input. The function $f(h)$ is the activation function and usually makes up the form
 \begin{equation}\label{eq:FullEq}
-g(h) = sign(h) = 
+f(h) = sign(h) = 
   \begin{cases}
     -1       & \quad h < 0 \\
     1  & \quad h \geq 0\\
@@ -34,21 +30,21 @@ g(h) = sign(h) =
 \end{equation}
 We can also represent \ref{eq:FullEq} in vector notation, as in 
 \begin{equation}\label{eq:UsedEq}
-y = g(h) = g(\bf w \cdot x)
+y = f(h) = f(\bf w \cdot x)
 \end{equation}
 where \textbf{w} and \textbf{x} can be regarded as $nx1$ dimensional column vectors, and $n$ is the number of input data.
 The term $w \cdot x$ in \ref{eq:UsedEq} constructs a $(n-1)$-dimension hyperplane which passes the origin. The hyperplane can be shifted by adding an parameter to \ref{eq:BasicEq}, for example
 \begin{equation}\label{eq:WithBias}
-y = g(h) = g(\bf w \cdot x + b)
+y = f(h) = f(\bf w \cdot x + b)
 \end{equation}
 We can have the same effect by putting a constant value $1$ and increase the size of $x$ and $w$ by one. The extra weight $w$ with fixed value 1 is called \textit{bias weight}; it is adaptive like other weights and provides flexibility to hyperplane. Then we get:
 \begin{equation}\label{eq:finalEq}
-y = g(h) = g(\sum_{i=0}^{n}w_{i}x_{i})
+y = f(h) = f(\sum_{i=0}^{n}w_{i}x_{i})
 \end{equation}
 The aim of learning is to find a set of weights $w_{i}$ so that:
 \begin{align*}
-y = g(\sum_{i=0}^{n}w_{i}x_{i}) = 1  & \quad x \in Class A\\
-y = g(\sum_{i=0}^{n}w_{i}x_{i}) = 0  & \quad x \in Class B
+y = f(\sum_{i=0}^{n}w_{i}x_{i}) = 1  & \quad x \in Class A\\
+y = f(\sum_{i=0}^{n}w_{i}x_{i}) = 0  & \quad x \in Class B
 \end{align*}
 
 
@@ -56,7 +52,18 @@ y = g(\sum_{i=0}^{n}w_{i}x_{i}) = 0  & \quad x \in Class B
 
 Single-layer networks have some important limitation in terms of the representing range of functions. We are seeking to learn the nonlinearity as the linear discriminant.To improve the representation capability, we can stack layers networks. This is the approach of multilayer neural networks. Multilayer neural networks implement linear discriminants via mapping input data to a nonlinear space. They can use fairly simple algorithms to learn form of the nonlinearity from training data.
 
-Because networks have differentiable activation functions, backpropagation can be implemented to find the derivatives of an error function related to the weights and biases in the network.
+In the thesis, we limit multi-layer networks in subset of feedforward networks. As feedforward networks can provide a general mechanism for representing nonlinear functional mapping between a set of input data and a set of labels. The \ref{fig:ffnet} is a feedforward network having two layers of adaptive weights.
+\begin{figure}
+\centering
+\includegraphics[width=0.8\textwidth]{Figure2-2.png}
+\caption{\label{fig:ffnet}Diagram of a feedford neural networks.}
+\end{figure}
+In the example, the middle column perceptrons act as hidden units. The network has $n$ inputs, $4$ hidden units and $m$ output units. The network diagram represents the function in the form
+\begin{equation}\label{eq:ffEq}
+y_{m} = f\Big(\sum_{j=0}^{m}w_{j4}^{(2)}f\big(\sum_{i=0}^{n}w_{4i}^{(1)}x_{i}\big)\Big)
+\end{equation}
+
+Because networks have differentiable activation functions, backpropagation can be applied to find the derivatives of an error function related to the weights and biases in the network. 
 
 \section{Artificial Neural Networks}
 

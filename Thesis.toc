@@ -16,9 +16,9 @@
 \contentsline {chapter}{\numberline {2}Introduction}{4}{chapter.22}
 \contentsline {section}{\numberline {2.1}Single-Layer Networks}{4}{section.23}
 \contentsline {section}{\numberline {2.2}Multi-Layer Networks}{5}{section.30}
-\contentsline {section}{\numberline {2.3}Artificial Neural Networks}{6}{section.31}
-\contentsline {section}{\numberline {2.4}Weather Classification}{6}{section.32}
+\contentsline {section}{\numberline {2.3}Artificial Neural Networks}{6}{section.33}
+\contentsline {section}{\numberline {2.4}Weather Classification}{7}{section.34}
 \vspace {2em}
-\contentsline {chapter}{\numberline {A}Appendix Title Here}{7}{appendix.33}
+\contentsline {chapter}{\numberline {A}Appendix Title Here}{8}{appendix.35}
 \vspace {2em}
-\contentsline {chapter}{Bibliography}{8}{dummy.34}
+\contentsline {chapter}{Bibliography}{9}{dummy.36}
