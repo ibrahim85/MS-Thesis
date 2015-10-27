@@ -60,18 +60,30 @@ In the thesis, we limit multi-layer networks in subset of feedforward networks. 
 \end{figure}
 In the example, the middle column perceptrons act as hidden units. The network has $n$ inputs, $4$ hidden units and $m$ output units. The network diagram represents the function in the form
 \begin{equation}\label{eq:ffEq}
-y_{m} = f\Big(\sum_{j=0}^{m}w_{j4}^{(2)}f\big(\sum_{i=0}^{n}w_{4i}^{(1)}x_{i}\big)\Big)
+y_{m} = \hat{f}\Big(\sum_{j=0}^{m}w_{j4}^{(2)}f\big(\sum_{i=0}^{n}w_{4i}^{(1)}x_{i}\big)\Big)
+\end{equation}
+In the \ref{eq:ffEq}, outer activation function could be different with the inner one.
+
+There are some choices for activation functions, sigmoid and tanh are related and can provide high capability with continuous input data. Logistic activation function sigmoid can be represented as 
+\begin{equation}\label{eq:sigmoid}
+f(x) = \frac{1}{1+e^{-x}}
+\end{equation}
+Its outputs lies in range $(0,1)$. We can do a linear transformation $hat{x}=x/2$ on input data and a linear transformation $hat{y}=2y-1$ on the output. Then we can get an equivalent activation function tanh which can be represented as
+\begin{equation}\label{eq:tanh}
+f(x) = tanh(x) = \frac{e^{x}-e^{-x}}{e^{x}+e^{-x}}
 \end{equation}
 
-Because networks have differentiable activation functions, backpropagation can be applied to find the derivatives of an error function related to the weights and biases in the network. 
+The three layer neural network is capable of approximating any function with enough hidden units which means the networks with two layers of weights and sigmoid nonlinearities can provide any accuracy in classification problems. 
 
-\section{Artificial Neural Networks}
 
-Artificial neural networks(ANNs) were proposed in the mid-20th century. The term is inspired by the structure of neural networks in the brain. It is one of the most successful statistical learning models used to approximate functions. Learning with ANNs yields an effective learning paradigm and has achieved cutting-edge performance in computer vision. 
+\section{Backpropagation}
+Multi-layer neural networks can represent mapping from input data to output classes. How to learn a suitable mapping from training dataset? And there is no explicit mapping between output and hidden units. This will be resolved by backpropagation algorithm.
 
-The single-layer perceptron  has shown great success for a simple model. For increasing complex models and applications, multi-layer perceptron has exhibited the power of features learning. With hardware developing At the same time, the demanding of more efficient optimizing and model evoluation methods is needed for BIG DATA. 
+Because networks have differentiable activation functions, the activation of output units can be propagated to hidden units with regard to weights and bias. If we have an error function, we can evaluate derivatives of the error and update the weights to minimize the error function via some optimization methods. This algorithm is called backpropagation.
 
-Recent development in ANNs approaches have giantly advanced the performance of state-of-the-art visual recognition systems. With implementing deep convolutional neural networks, it achieves top accuracy in ImageNet Challenge. The model has been used in related fields and succeeds in competition.
+backpropagation can be applied to find the derivatives of an error function related to the weights and biases in the network. 
+
+
 
 \section{Weather Classification}
 
