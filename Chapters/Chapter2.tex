@@ -77,38 +77,33 @@ The three layer neural network is capable of approximating any function with eno
 
 
 \section{Backpropagation}
-Multi-layer neural networks can represent mapping from input data to output classes. How to learn a suitable mapping from training dataset? And there is no explicit mapping between output and hidden units. This will be resolved by backpropagation training protocol.
+
+Multi-layer neural networks can represent mapping from input data to output classes. How to learn a suitable mapping from training dataset? And there is no explicit mapping between output and hidden units. This will be resolved by a popular learning algorithm-backpropagation.
 
 Because networks have differentiable activation functions, the activation of output units can be propagated to hidden units with regard to weights and bias. If we have an error function, we can evaluate derivatives of the error and update the weights to minimize the error function via some optimization methods.
 
-Backpropagation can be applied to find the derivatives of an error function related to the weights and biases in the network via two stages. First, the derivatives of the error functions, for instance sum-of-squares and Jacobian, with respect to the weights must be evaluated. Second, a variety of optimization schemes can be implemented to compute the adjustment of weights based on derivatives. After putting data forward propagation through the network, we can get the output result. It updates weight changes based on grandient descent. The update equation can be represented as
+Backpropagation can be applied to find the derivatives of an error function related to the weights and biases in the network via two stages. First, the derivatives of the error functions, for instance sum-of-squares and Jacobian, with respect to the weights must be evaluated. Second, a variety of optimization schemes can be implemented to compute the adjustment of weights based on derivatives. After putting data forward propagation through the network, we can get the output result. It updates weight changes based on grandient descent. Suppose the network has $i$ inputs, $h$ hidden units and $k$ outputs. The update equation can be represented as 
 \begin{equation}\label{eq:UpdateWeights}
-w(m+1) = w(m) + \Delta w(m)
+w(j+1) = w(j) + \Delta w(j)
 \end{equation}
-where $\Delta w(m)$ defined as 
+where $\Delta w(j)$ defined as 
 \begin{equation}\label{eq:DeltaWeights}
-\Delta w(m) = -\eta \frac{\partial E}{\partial w}
+\Delta w(j) = -\eta \frac{\partial E}{\partial w}
 \end{equation}
 
-
-We can express error function as
-\begin{equation}\label{eq:errorfunc}
-E^{n} = E^{n}(y_{1},...,y_{c})
+For the hidden to output layer weights
+\begin{equation}\label{eq:h2oBP}
+\Delta w(jk) = -\eta \frac{\partial E}{\partial w_{jk}} = -\eta \delta_{k}y_{j}
 \end{equation}
+where $$\delta_{k} = \frac{\partial E}{\partial a_{k}} = (y_{k} - t_{k})y_{k}(1 - y_{k})$$
 
-Then, the derivative of $E^{n}$ with respect to some weights $w_{ji}$ can be calculated and apply chain rule for partial derivatives
-\begin{equation}\label{eq:chainrule}
-\frac{\partial E^{n}}{\partial w_{ji}} = \frac{\partial E^{n}}{\partial a_{j}} \frac{\partial a_{j}}{\partial w_{ji}} = \delta_{j} \frac{\partial a_{j}}{\partial w_{ji}}
+For the hidden layer weights
+\begin{equation}\label{eq:hiddenBP}
+\Delta w(ij) = -\eta \frac{\partial E}{\partial w_{ij}} = -\eta \delta_{j}y_{i}
 \end{equation}
-where $a_{j}$ is the summed inputs to unit $j$ and $\delta_{j}$ is the learning rate. The 
-\begin{equation}\label{eq:sensitive}
-\delta_{j} = \frac{\partial E^{n}}{\partial a_{ji}}
-\end{equation}
+where $$\delta_{j} = \frac{\partial E}{\partial a_{j}} = \displaystyle\sum_{k} \delta_{k}w_{jk}y_{j}(1 - y_{j})$$
 
-
-
-
-
+The $\delta_{j}$ of a hidden unit is based on the $\delta_{k}$s of output units to which it links. To minimise the error function$E$ with gradient descent, it needs the propagation of errors backwards.
 
 \section{Weather Classification}
 

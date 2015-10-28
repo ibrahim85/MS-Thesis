@@ -17,8 +17,8 @@
 \contentsline {section}{\numberline {2.1}Single-Layer Networks}{4}{section.23}
 \contentsline {section}{\numberline {2.2}Multi-Layer Networks}{5}{section.30}
 \contentsline {section}{\numberline {2.3}Backpropagation}{7}{section.35}
-\contentsline {section}{\numberline {2.4}Weather Classification}{8}{section.41}
+\contentsline {section}{\numberline {2.4}Weather Classification}{8}{section.40}
 \vspace {2em}
-\contentsline {chapter}{\numberline {A}Appendix Title Here}{9}{appendix.42}
+\contentsline {chapter}{\numberline {A}Appendix Title Here}{9}{appendix.41}
 \vspace {2em}
-\contentsline {chapter}{Bibliography}{10}{dummy.43}
+\contentsline {chapter}{Bibliography}{10}{dummy.42}
