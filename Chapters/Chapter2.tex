@@ -77,11 +77,36 @@ The three layer neural network is capable of approximating any function with eno
 
 
 \section{Backpropagation}
-Multi-layer neural networks can represent mapping from input data to output classes. How to learn a suitable mapping from training dataset? And there is no explicit mapping between output and hidden units. This will be resolved by backpropagation algorithm.
+Multi-layer neural networks can represent mapping from input data to output classes. How to learn a suitable mapping from training dataset? And there is no explicit mapping between output and hidden units. This will be resolved by backpropagation training protocol.
 
-Because networks have differentiable activation functions, the activation of output units can be propagated to hidden units with regard to weights and bias. If we have an error function, we can evaluate derivatives of the error and update the weights to minimize the error function via some optimization methods. This algorithm is called backpropagation.
+Because networks have differentiable activation functions, the activation of output units can be propagated to hidden units with regard to weights and bias. If we have an error function, we can evaluate derivatives of the error and update the weights to minimize the error function via some optimization methods.
 
-backpropagation can be applied to find the derivatives of an error function related to the weights and biases in the network. 
+Backpropagation can be applied to find the derivatives of an error function related to the weights and biases in the network via two stages. First, the derivatives of the error functions, for instance sum-of-squares and Jacobian, with respect to the weights must be evaluated. Second, a variety of optimization schemes can be implemented to compute the adjustment of weights based on derivatives. After putting data forward propagation through the network, we can get the output result. It updates weight changes based on grandient descent. The update equation can be represented as
+\begin{equation}\label{eq:UpdateWeights}
+w(m+1) = w(m) + \Delta w(m)
+\end{equation}
+where $\Delta w(m)$ defined as 
+\begin{equation}\label{eq:DeltaWeights}
+\Delta w(m) = -\eta \frac{\partial E}{\partial w}
+\end{equation}
+
+
+We can express error function as
+\begin{equation}\label{eq:errorfunc}
+E^{n} = E^{n}(y_{1},...,y_{c})
+\end{equation}
+
+Then, the derivative of $E^{n}$ with respect to some weights $w_{ji}$ can be calculated and apply chain rule for partial derivatives
+\begin{equation}\label{eq:chainrule}
+\frac{\partial E^{n}}{\partial w_{ji}} = \frac{\partial E^{n}}{\partial a_{j}} \frac{\partial a_{j}}{\partial w_{ji}} = \delta_{j} \frac{\partial a_{j}}{\partial w_{ji}}
+\end{equation}
+where $a_{j}$ is the summed inputs to unit $j$ and $\delta_{j}$ is the learning rate. The 
+\begin{equation}\label{eq:sensitive}
+\delta_{j} = \frac{\partial E^{n}}{\partial a_{ji}}
+\end{equation}
+
+
+
 
 
 
