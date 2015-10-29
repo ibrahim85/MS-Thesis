@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/W32TeX) (preloaded format=pdflatex 2015.3.12)  28 OCT 2015 21:04
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/W32TeX) (preloaded format=pdflatex 2015.3.12)  30 OCT 2015 05:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -691,7 +691,7 @@ Chapter 2.
 Package natbib Warning: Citation `mcculloch1943logical' on page 4 undefined on 
 input line 10.
 
-<./Figures/Figure2-1.png, id=189, 602.25pt x 286.06876pt>
+<./Figures/Figure2-1.png, id=194, 602.25pt x 286.06876pt>
 File: ./Figures/Figure2-1.png Graphic file (type png)
 
 <use ./Figures/Figure2-1.png>
@@ -700,7 +700,7 @@ Package pdftex.def Info: ./Figures/Figure2-1.png used on input line 14.
  [4
 
  <./Figures/Figure2-1.png>]
-<./Figures/Figure2-2.png, id=203, 32.37291pt x 21.30795pt>
+<./Figures/Figure2-2.png, id=208, 32.37291pt x 21.30795pt>
 File: ./Figures/Figure2-2.png Graphic file (type png)
 
 <use ./Figures/Figure2-2.png>
@@ -732,17 +732,17 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 200.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 200.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 200.
 Package rerunfilecheck Info: File `Thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 5559A651DD8D2CCDD4688FDDA5A06C39;2830.
+(rerunfilecheck)             Checksum: F5AB86590F8F5040905A1C8683F88310;3029.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 200.
  ) 
 Here is how much of TeX's memory you used:
- 12987 strings out of 493117
- 182595 string characters out of 6138984
- 256537 words of memory out of 5000000
- 16192 multiletter control sequences out of 15000+600000
+ 12993 strings out of 493117
+ 182665 string characters out of 6138984
+ 256647 words of memory out of 5000000
+ 16195 multiletter control sequences out of 15000+600000
  13929 words of font info for 51 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 49i,12n,45p,731b,394s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 49i,12n,45p,791b,394s stack positions out of 5000i,500n,10000p,200000b,80000s
 <c:/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/tex
 live/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2014
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><c:/texlive/2014/texmf-d
@@ -758,10 +758,10 @@ s/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2014/texmf-dist/fonts/type1/pu
 blic/amsfonts/cm/cmti10.pfb><c:/texlive/2014/texmf-dist/fonts/type1/public/amsf
 onts/cm/cmti12.pfb><c:/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/symb
 ols/msam7.pfb>
-Output written on Thesis.pdf (21 pages, 356013 bytes).
+Output written on Thesis.pdf (21 pages, 358135 bytes).
 PDF statistics:
- 315 PDF objects out of 1000 (max. 8388607)
- 270 compressed objects within 3 object streams
- 69 named destinations out of 1000 (max. 500000)
- 163 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 322 PDF objects out of 1000 (max. 8388607)
+ 277 compressed objects within 3 object streams
+ 72 named destinations out of 1000 (max. 500000)
+ 171 words of extra memory for PDF output out of 10000 (max. 10000000)
 
