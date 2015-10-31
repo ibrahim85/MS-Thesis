@@ -53,11 +53,13 @@ y = f(\sum_{i=0}^{n}w_{i}x_{i}) = 0  & \quad x \in Class B
 Single-layer networks have some important limitation in terms of the representing range of functions. We are seeking to learn the nonlinearity as the linear discriminant.To improve the representation capability, we can stack layers networks. This is the approach of multilayer neural networks. Multilayer neural networks implement linear discriminants via mapping input data to a nonlinear space. They can use fairly simple algorithms to learn form of the nonlinearity from training data.
 
 In the thesis, we limit multi-layer networks in subset of feedforward networks. As feedforward networks can provide a general mechanism for representing nonlinear functional mapping between a set of input data and a set of labels. The \ref{fig:ffnet} is a feedforward network having two layers of adaptive weights.
-\begin{figure}
+
+\begin{figure}[!htb]
 \centering
 \includegraphics[width=0.8\textwidth]{Figure2-2.png}
 \caption{\label{fig:ffnet}Diagram of a feedford neural networks.}
 \end{figure}
+
 In the example, the middle column perceptrons act as hidden units. The network has $n$ inputs, $4$ hidden units and $m$ output units. The network diagram represents the function in the form
 \begin{equation}\label{eq:ffEq}
 y_{m} = \hat{f}\Big(\sum_{j=0}^{m}w_{j4}^{(2)}f\big(\sum_{i=0}^{n}w_{4i}^{(1)}x_{i}\big)\Big)
@@ -122,3 +124,24 @@ Stochastic gradient descent is a subtype of gradient descent. It only considers 
 w = w - \eta  \Delta L(w) = w - \eta \sum_{i=1}^{n} \Delta L_{i}(w)
 \end{equation}
 where $\eta$ is the learning rate and $L_{i}(w)$ is the value of the loss function at the $i^{th}$ sample. Although stochastic gradient descent does not guarantee convergence, it is fast.
+
+\section{Convolutional Neural Networks}
+
+Convolutional Neural Networks\citep{lecun1998gradient} are widely applied in image data and they achieved top rank in image classification competetion\citep{krizhevsky2012imagenet}. Convolutional neural networks have three types of layers, convolutional layer, pooling layer and fully connected layer. At the output of the network, a softmax layer is used to do classification job.  Convolutional layer is used to detect invariants in locat receptive fields. Pooling layer is downsampling feature maps. Fully connected layer makes the output of each unit an activation of dot product of all inputs.
+
+\graphicspath{ {./Figures/} }
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.8\textwidth]{lenet.png}
+\caption{\label{fig:perceptron}Diagram of LeNet.}
+\end{figure}
+
+\section{Spatial Pyramid Match}
+
+Spatial pyramid match\citep{lazebnik2006beyond} is used to classify high-level semantic attributes, based on low-level features. The method subdivides a image in several different levels of resolution and counts features falling in each spatial bin. It extends bags of features and derives spatial information from images.
+\graphicspath{ {./Figures/} }
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.8\textwidth]{spm.jpg}
+\caption{\label{fig:perceptron}Diagram of Spatial Pyramid Match.}
+\end{figure}

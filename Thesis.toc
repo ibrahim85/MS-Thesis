@@ -19,7 +19,9 @@
 \contentsline {section}{\numberline {2.3}Backpropagation}{7}{section.35}
 \contentsline {section}{\numberline {2.4}Training protocols}{8}{section.40}
 \contentsline {section}{\numberline {2.5}Stochastic Gradient Descent}{8}{section.41}
+\contentsline {section}{\numberline {2.6}Convolutional Neural Networks}{8}{section.44}
+\contentsline {section}{\numberline {2.7}Spatial Pyramid Match}{9}{section.46}
 \vspace {2em}
-\contentsline {chapter}{\numberline {A}Appendix Title Here}{9}{appendix.44}
+\contentsline {chapter}{\numberline {A}Appendix Title Here}{10}{appendix.48}
 \vspace {2em}
-\contentsline {chapter}{Bibliography}{10}{dummy.45}
+\contentsline {chapter}{Bibliography}{11}{dummy.49}

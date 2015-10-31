@@ -1,25 +1,35 @@
-\begin{thebibliography}{1}\itemsep=-1pt
+\begin{thebibliography}{4}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
 
-\bibitem{Reference3}
-A.~S. Arnold, J.~S. Wilson, and M.~G. Boshier.
-\newblock A simple extended-cavity diode laser.
-\newblock {\em Review of Scientific Instruments}, 69(3):1236--1239, March 1998.
+\bibitem[McCulloch and Pitts(1943)]{mcculloch1943logical}
+Warren~S McCulloch and Walter Pitts.
+\newblock A logical calculus of the ideas immanent in nervous activity.
+\newblock \emph{The bulletin of mathematical biophysics}, 5\penalty0
+  (4):\penalty0 115--133, 1943.
 
-\bibitem{Reference1}
-C.~J. Hawthorn, K.~P. Weber, and R.~E. Scholten.
-\newblock Littrow configuration tunable external cavity diode laser with fixed
-  direction output beam.
-\newblock {\em Review of Scientific Instruments}, 72(12):4477--4479, December
-  2001.
+\bibitem[LeCun et~al.(1998)LeCun, Bottou, Bengio, and
+  Haffner]{lecun1998gradient}
+Yann LeCun, L{\'e}on Bottou, Yoshua Bengio, and Patrick Haffner.
+\newblock Gradient-based learning applied to document recognition.
+\newblock \emph{Proceedings of the IEEE}, 86\penalty0 (11):\penalty0
+  2278--2324, 1998.
 
-\bibitem{Reference2}
-C.~E. Wieman and L.~Hollberg.
-\newblock Using diode lasers for atomic physics.
-\newblock {\em Review of Scientific Instruments}, 62(1):1--20, January 1991.
+\bibitem[Krizhevsky et~al.(2012)Krizhevsky, Sutskever, and
+  Hinton]{krizhevsky2012imagenet}
+Alex Krizhevsky, Ilya Sutskever, and Geoffrey~E Hinton.
+\newblock Imagenet classification with deep convolutional neural networks.
+\newblock In \emph{Advances in neural information processing systems}, pages
+  1097--1105, 2012.
 
-\bibitem{ZeilerF13}
-M.~D. Zeiler and R.~Fergus.
-\newblock Visualizing and understanding convolutional networks.
-\newblock {\em CoRR}, abs/1311.2901, 2013.
+\bibitem[Lazebnik et~al.(2006)Lazebnik, Schmid, and Ponce]{lazebnik2006beyond}
+Svetlana Lazebnik, Cordelia Schmid, and Jean Ponce.
+\newblock Beyond bags of features: Spatial pyramid matching for recognizing
+  natural scene categories.
+\newblock \emph{IEEE Conference on Computer Vision and Pattern Recognition
+  (CVPR)}, 2006.
 
 \end{thebibliography}
