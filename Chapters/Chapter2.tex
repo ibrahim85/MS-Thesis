@@ -145,3 +145,19 @@ Spatial pyramid match\citep{lazebnik2006beyond} is used to classify high-level s
 \includegraphics[width=0.8\textwidth]{spm.jpg}
 \caption{\label{fig:perceptron}Diagram of Spatial Pyramid Match.}
 \end{figure}
+
+\section{Transfer Learning}
+
+In machine learning literature, transfer learning\citep{pan2010survey} focuses on storing knowledge from one domain and applying it to a related problem. It has two benefits. One is saving time to build a model from scratch up. Another is saving effort to collect training data.
+
+A domain with two components, a feature space and a marginal probability distribution, can be represented
+\begin{equation}\label{eq:TransLearning}
+D = \{ \chi, P(X) \}
+\end{equation}
+where $\chi$ is feature space and $P(X)$ is the marginal probability distribution. 
+\graphicspath{ {./Figures/} }
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.8\textwidth]{MLvsTL.png}
+\caption{\label{fig:perceptron}Diagram of Transfer Learning.}
+\end{figure}

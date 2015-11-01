@@ -21,7 +21,8 @@
 \contentsline {section}{\numberline {2.5}Stochastic Gradient Descent}{8}{section.41}
 \contentsline {section}{\numberline {2.6}Convolutional Neural Networks}{8}{section.44}
 \contentsline {section}{\numberline {2.7}Spatial Pyramid Match}{9}{section.46}
+\contentsline {section}{\numberline {2.8}Transfer Learning}{9}{section.48}
 \vspace {2em}
-\contentsline {chapter}{\numberline {A}Appendix Title Here}{10}{appendix.48}
+\contentsline {chapter}{\numberline {A}Appendix Title Here}{11}{appendix.51}
 \vspace {2em}
-\contentsline {chapter}{Bibliography}{11}{dummy.49}
+\contentsline {chapter}{Bibliography}{12}{dummy.52}
