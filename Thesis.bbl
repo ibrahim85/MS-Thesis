@@ -1,4 +1,4 @@
-\begin{thebibliography}{5}
+\begin{thebibliography}{7}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -37,5 +37,20 @@ Sinno~Jialin Pan and Qiang Yang.
 \newblock A survey on transfer learning.
 \newblock \emph{Knowledge and Data Engineering, IEEE Transactions on},
   22\penalty0 (10):\penalty0 1345--1359, 2010.
+
+\bibitem[Russell et~al.(2008)Russell, Torralba, Murphy, and
+  Freeman]{russell2008labelme}
+Bryan~C Russell, Antonio Torralba, Kevin~P Murphy, and William~T Freeman.
+\newblock Labelme: a database and web-based tool for image annotation.
+\newblock \emph{International journal of computer vision}, 77\penalty0
+  (1-3):\penalty0 157--173, 2008.
+
+\bibitem[Xiao et~al.(2010)Xiao, Hays, Ehinger, Oliva, Torralba,
+  et~al.]{xiao2010sun}
+Jianxiong Xiao, James Hays, Krista Ehinger, Aude Oliva, Antonio Torralba,
+  et~al.
+\newblock Sun database: Large-scale scene recognition from abbey to zoo.
+\newblock In \emph{Computer vision and pattern recognition (CVPR), 2010 IEEE
+  conference on}, pages 3485--3492. IEEE, 2010.
 
 \end{thebibliography}

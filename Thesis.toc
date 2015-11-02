@@ -26,6 +26,6 @@
 \contentsline {section}{\numberline {3.1}Dataset}{11}{section.52}
 \contentsline {section}{\numberline {3.2}Convolutional Neural Networks Architecture}{12}{section.55}
 \vspace {2em}
-\contentsline {chapter}{\numberline {A}Appendix Title Here}{13}{appendix.56}
+\contentsline {chapter}{\numberline {A}Appendix Title Here}{14}{appendix.57}
 \vspace {2em}
-\contentsline {chapter}{Bibliography}{14}{dummy.57}
+\contentsline {chapter}{Bibliography}{15}{dummy.58}
