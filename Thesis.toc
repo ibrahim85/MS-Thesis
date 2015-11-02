@@ -2,11 +2,11 @@
 \vspace {1em}
 \contentsline {chapter}{Acknowledgements}{iii}{dummy.2}
 \vspace {1em}
-\contentsline {chapter}{List of Figures}{v}{dummy.4}
-\contentsline {chapter}{List of Tables}{vi}{dummy.6}
-\contentsline {chapter}{Abbreviations}{vii}{dummy.8}
-\contentsline {chapter}{Physical Constants}{viii}{dummy.11}
-\contentsline {chapter}{Symbols}{ix}{dummy.14}
+\contentsline {chapter}{List of Figures}{vi}{dummy.4}
+\contentsline {chapter}{List of Tables}{vii}{dummy.6}
+\contentsline {chapter}{Abbreviations}{viii}{dummy.8}
+\contentsline {chapter}{Physical Constants}{ix}{dummy.11}
+\contentsline {chapter}{Symbols}{x}{dummy.14}
 \vspace {2em}
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.17}
 \contentsline {section}{\numberline {1.1}Overview}{1}{section.18}
@@ -22,7 +22,10 @@
 \contentsline {section}{\numberline {2.6}Convolutional Neural Networks}{8}{section.44}
 \contentsline {section}{\numberline {2.7}Spatial Pyramid Match}{9}{section.46}
 \contentsline {section}{\numberline {2.8}Transfer Learning}{9}{section.48}
+\contentsline {chapter}{\numberline {3}Methodology}{11}{chapter.51}
+\contentsline {section}{\numberline {3.1}Dataset}{11}{section.52}
+\contentsline {section}{\numberline {3.2}Convolutional Neural Networks Architecture}{12}{section.55}
 \vspace {2em}
-\contentsline {chapter}{\numberline {A}Appendix Title Here}{11}{appendix.51}
+\contentsline {chapter}{\numberline {A}Appendix Title Here}{13}{appendix.56}
 \vspace {2em}
-\contentsline {chapter}{Bibliography}{12}{dummy.52}
+\contentsline {chapter}{Bibliography}{14}{dummy.57}

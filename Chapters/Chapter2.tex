@@ -9,7 +9,7 @@
 
 Artificial neurons were introduced as information processing devices more than fifty years ago\citep{mcculloch1943logical}. Following the early work, perceptrons were deployed in layers to do pattern recognition job. A lot of resource was invested in researching capability of learning perceptrons theoretically and experimentally. As shown in Figure 2.1, a perceptron computes a weighted summation of its n inputs and then thresholds the result to give a binary output y. We can treat n input as an vector with n elements, and represent the vector as either class A(for output +1) or class B(for output -1).
 \graphicspath{ {./Figures/} }
-\begin{figure}
+\begin{figure}[!htb]
 \centering
 \includegraphics[width=0.8\textwidth]{Figure2-1.png}
 \caption{\label{fig:perceptron}Diagram of a perceptron.}
@@ -76,7 +76,6 @@ f(x) = tanh(x) = \frac{e^{x}-e^{-x}}{e^{x}+e^{-x}}
 \end{equation}
 
 The three layer neural network is capable of approximating any function with enough hidden units which means the networks with two layers of weights and sigmoid nonlinearities can provide any accuracy in classification problems. 
-
 
 \section{Backpropagation}
 
