@@ -44,10 +44,26 @@ The network is very deep and the early layers are split over on two GPUs. It is 
 
 The network replaces each neuron's outputs nonlinearity function $f$ from $f(x) = tanh(x)$ or $f(x) = (1 + e^{-x})^(-1)$ to Rectified Linear Units(RELUs)\citep{nair2010rectified} which can accelerate learning speed several times faster than $tanh$ function. 
 
-In the network, there are three types of layers and they play different roles in the model. The input data dimension is $224x224x3$ which means the raw pixel value stored in a width 224, height 224 and with three color channels R,G,B matrix. In the first convolutional layer, there are 98 kernel of size $11x11$ with stride size 4 and outputs are 96 neurons. A max pooling layer with kernel $3x3$ and stride size 2 downsamples the spatial dimensions to $112x112x96$. The second convolutional layer filters output of previous pooling layer with kernel size $5x5$ with stride size 1.
+In the network, there are three types of layers and they play different roles in the model. The input data dimension is $224x224x3$ which means the raw pixel value stored in a width 224, height 224 and with three color channels R,G,B matrix. In the first convolutional layer, there are 98 kernel of size $11x11x3$ with stride size 4 and outputs are 96 neurons. A max pooling layer downsamples the spatial dimensions. The second convolutional layer filters output of previous pooling layer with kernel size $5x5x48$. The third convolutiona layer owns 384 kernels of $3x3x256$ and receives outputs of the second convolutional layer. The fourth convolutional layer has 384 kernels of size $3x3x192$ and the last convolutional layer has 256 kernels of size $3x3x192$. Each fully connected layers have 4096 units. At the end of network, there is a softmax layer with 1000 outputs.
 
+\section{Data Argument}
 
+The model has about 60 million neurons, and it is essential to avoid overfitting. One of methods is to do data argument. Dataset is artificially enlarged via image transformations and horizontal reflections. For each $256x256$ image, the network extracts five $224x224$ patches from four corners and center and reflects them horizontally. Hence, there are 10 patches for 1 image in total. 
 
+\section{Spatial Pyramid Pooling}
+
+To improve the capability of generalization, a spatial pyramid pooling layer is deployed behind the fifth convolutional layer. A set of bin sizes are set to discern different size local information from output of the fifth convolutional layer.  A sliding window pooling  is implemented on the feature maps after the fifth convolutional layer. Assuming dimension of feature map is $axa$ and bin size is $n$, each window size is $\lceil a/n \rceil$ and stride size is $\lfloor a/n \rfloor$ where $\lceil \rceil$ and $\lfloor \rfloor$ denote ceiling and flooring operations. For $l$ level pyramid, there are $l$ spatial pyramid pooling layers, The the $l$ layers will be concatenated into a fully connected layer. The bin sizes are 1, 2, 3 and 6.
+
+\begin{figure}[!htb]
+    \centering
+	\includegraphics[width=0.8\textwidth]{sppnet.jpg}
+    \caption{Diagram of Spatial Pyramid Pooling layer}%
+    \label{fig:sppnet}%
+\end{figure}
+
+With implementing spatial pyramid pooling layers in convolutional neural networks, all contribution of different scales are considered. 
+
+\section{Learning Rates}
 
 
 
