@@ -30,22 +30,6 @@ For weather dataset, it contains 10,000 images for two categories evenly, cloudy
 
 The two datasets are different. ImageNet dataset is for object classification and weather dataset is for scenes classification. Because the two datasets consists of different resolution images, we have to resize them to a fixed resolution of $256x256$ for constant dimension input for neural networks. To train the model with ImageNet images, we resize shorter side of images to length 256 and then cropped out a $256x256$ image from center.
 
-
-\section{Convolutional Neural Networks Architecture}
-
-Due to the significant performance of AlexNet \citep{krizhevsky2012imagenet} deep convolutional neural networks, we train a model based on it. The architecture of the network has seven hidden adaptive layers-five convolutional and two fully connected layers.
-\begin{figure}[!htb]
-    \centering
-	\includegraphics[width=0.8\textwidth]{AlexNet.png}
-    \caption{Architecture of AlexNet}%
-    \label{fig:ImageNetArch}%
-\end{figure}
-The network is very deep and the early layers are split over on two GPUs. It is able to give $62.5\%$ accuracy rates with one prediction and $83\%$ accuracy rates with five predictions.
-
-The network replaces each neuron's outputs nonlinearity function $f$ from $f(x) = tanh(x)$ or $f(x) = (1 + e^{-x})^(-1)$ to Rectified Linear Units(RELUs)\citep{nair2010rectified} which can accelerate learning speed several times faster than $tanh$ function. 
-
-In the network, there are three types of layers and they play different roles in the model. The input data dimension is $224x224x3$ which means the raw pixel value stored in a width 224, height 224 and with three color channels R,G,B matrix. In the first convolutional layer, there are 98 kernel of size $11x11x3$ with stride size 4 and outputs are 96 neurons. A max pooling layer downsamples the spatial dimensions. The second convolutional layer filters output of previous pooling layer with kernel size $5x5x48$. The third convolutiona layer owns 384 kernels of $3x3x256$ and receives outputs of the second convolutional layer. The fourth convolutional layer has 384 kernels of size $3x3x192$ and the last convolutional layer has 256 kernels of size $3x3x192$. Each fully connected layers have 4096 units. At the end of network, there is a softmax layer with 1000 outputs.
-
 \section{Data Argument}
 
 The model has about 60 million neurons, and it is essential to avoid overfitting. One of methods is to do data argument. Dataset is artificially enlarged via image transformations and horizontal reflections. For each $256x256$ image, the network extracts five $224x224$ patches from four corners and center and reflects them horizontally. Hence, there are 10 patches for 1 image in total. 
@@ -61,9 +45,50 @@ To improve the capability of generalization, a spatial pyramid pooling layer is 
     \label{fig:sppnet}%
 \end{figure}
 
-With implementing spatial pyramid pooling layers in convolutional neural networks, all contribution of different scales are considered. 
+With implementing spatial pyramid pooling layers in convolutional neural networks, all contribution of different scales are considered.
+
+\section{Convolutional Neural Networks Architecture}
+
+Due to the significant performance of AlexNet \citep{krizhevsky2012imagenet} deep convolutional neural networks, we train a model based on it. The architecture of the network has seven hidden adaptive layers-five convolutional and two fully connected layers.
+\begin{figure}[!htb]
+    \centering
+	\includegraphics[width=0.8\textwidth]{AlexNet.png}
+    \caption{Architecture of AlexNet}%
+    \label{fig:ImageNetArch}%
+\end{figure}
+The network is very deep and the early layers are split over on two GPUs. It is able to give $62.5\%$ accuracy rates with one prediction and $83\%$ accuracy rates with five predictions.
+
+The network replaces each neuron's outputs nonlinearity function $f$ from $f(x) = tanh(x)$ or $f(x) = (1 + e^{-x})^(-1)$ to Rectified Linear Units(RELUs)\citep{nair2010rectified} which can accelerate learning speed several times faster than $tanh$ function. 
+
+In the network, there are three types of layers and they play different roles in the model. The input data dimension is $224x224x3$ which means the raw pixel value stored in a width 224, height 224 and with three color channels R,G,B matrix. In the first convolutional layer, there are 98 kernel of size $11x11x3$ with stride size 4 and outputs are 96 neurons. A max pooling layer downsamples the spatial dimensions. The second convolutional layer filters output of previous pooling layer with kernel size $5x5x48$. The third convolutiona layer owns 384 kernels of $3x3x256$ and receives outputs of the second convolutional layer. The fourth convolutional layer has 384 kernels of size $3x3x192$ and the last convolutional layer has 256 kernels of size $3x3x192$. Each fully connected layers have 4096 units. At the end of network, there is a softmax layer with 1000 outputs.
+\begin{table}[h]
+\begin{center}
+    \begin{tabular}{ | c | p{8cm} | }
+    \hline
+    Layer Name & Layer Description \\ \hline
+    Input & 224 x 224 RGB image \\ \hline
+    $Conv_{1}$ & 11 × 11 conv 96 ReLU units, stride 4 \\ \hline
+    $Pool_{1}$ & 3 x 3 max pooling, stride 2 \\ \hline
+    $Conv_{2}$ & 5 × 5 conv, 256 ReLU units, stride 1 \\ \hline
+    $Pool_{2}$ & 3 x 3 max pooling, stride 2 \\ \hline
+    $Conv_{3}$ & 3 × 3 conv, 384 ReLU units, stride 1 \\ \hline
+    $Conv_{4}$ & 3 × 3 conv, 384 ReLU units, stride 1 \\ \hline
+    $Conv_{5}$ & 3 × 3 conv, 256 ReLU units, stride 1 \\ \hline
+    $Pool_{5}$ & 3 x 3 max pooling, stride 2 \\ \hline
+    $SPM$ & bin size 1,2,3,6 \\ \hline
+    $fc_{6}$ & fully connect, ReLU 4096 units\\ \hline
+    $fc_{7}$ & fully connect, ReLU 4096 units\\ \hline
+    $fc_{8}$ & fully connect, ReLU 1000 units\\ \hline
+    $softmax$ & 1000 way softmax\\ \hline
+    \end{tabular}
+    \caption{Parameters of model}
+    \label{fig:parameters}
+\end{center}
+\end{table}
+
 
 \section{Learning Rates}
+
 
 
 
