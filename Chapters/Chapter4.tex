@@ -1,0 +1,26 @@
+% Chapter 4
+
+\chapter{Experiment} % Write in your own chapter title
+\label{Chapter4}
+\lhead{Chapter 4. \emph{Experiment}}
+
+\section{Training Neural Network}
+
+In experiment, a subset of ImageNet dataset, which contains 1.2 million labelled high-resolution images depicting 1000 object categories for training and 50,000 validation images, is used as training dataset. ImageNet contains of multi-scale and some grey images which are converted to a constant input dimensionality. Then images are resized to $256x256$. And for grey images, they are combined it triple to minic a RGB image. Model is trained on the raw RGB values of pixels. Activation function is chosen  Rectified Linear Units(ReLUs), which allows for faster and effective training of deep neural networks.
+
+\begin{equation}\label{eq:ReLU}
+f(x) = max(0, x)
+\end{equation}
+
+The network model \ref{eq:NetPara} is trained with stochastic gradient descent with a batch size of 128, and momentum of 0.9. The weights are initialized from a $0$ mean Gaussian distribution with standard deviation 0.01 in each layer. The neuron biases, in the $Conv_{2}$, $Conv_{4}$, $Conv_{5}$ and fully connected layers, are initialized with the constant 1, while biases in other layers are initialized with constant 0.
+
+The learning rates are set equally for all layers. It was initialized at 0.01 and decreases with stepdown policy which means that it would drop by a factor of 10 after 100000 iteration. In total, the learning rate drops 3 times and accuracy stops after 370K iterations. 
+
+The training was regularised by dropout and weight decay. Dropout regularisation is implemented in the first two fully-connected layers and dropout ratio is set to 0.5. The neurons which are dropped out output zero and do not participate in backpropagation. Therefore, the neural network samples a different architecture each time. It greatly decreases complex co-adaptations of neurons because a neuron cannot depend on the existence of distinct other neurons. For weight decay $\epsilon$, it is set to 0.0005 which means , after each weight update, the new weight is shrunk according to 
+\begin{equation}\label{eq:ffEq}
+w^{new} = w^{old}(1 - \epsilon)
+\end{equation}
+
+\section{Fine-tuning Model}
+
+As mentioned previously, the CNN network is pre-trained with aim of classifying objects in images. However, the target task is to classify weather scene and  The pre-trained model contains more than 60 million parameters which are too high for training target model from scratch up because the target dataset has only 10000 images in total. With the excellent accuracy achieved from previous works about transfer learning, it is a good approach to fine-tune previous model. The previous model does job to classify 1000 categories and the target model does for two class classification.  

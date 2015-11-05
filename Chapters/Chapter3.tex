@@ -1,4 +1,4 @@
-% Chapter 2
+% Chapter 3
 
 \chapter{Methodology} % Write in your own chapter title
 \label{Chapter3}
@@ -75,19 +75,17 @@ In the network, there are three types of layers and they play different roles in
     $Conv_{4}$ & 3 × 3 conv, 384 ReLU units, stride 1 \\ \hline
     $Conv_{5}$ & 3 × 3 conv, 256 ReLU units, stride 1 \\ \hline
     $Pool_{5}$ & 3 x 3 max pooling, stride 2 \\ \hline
-    $SPM$ & bin size 1,2,3,6 \\ \hline
+    $SPP$ & bin size 1,2,3,6 \\ \hline
     $fc_{6}$ & fully connect, ReLU 4096 units\\ \hline
     $fc_{7}$ & fully connect, ReLU 4096 units\\ \hline
     $fc_{8}$ & fully connect, ReLU 1000 units\\ \hline
     $softmax$ & 1000 way softmax\\ \hline
     \end{tabular}
     \caption{Parameters of model}
-    \label{fig:parameters}
+    \label{fig:NetPara}
 \end{center}
 \end{table}
 
-
-\section{Learning Rates}
 
 
 

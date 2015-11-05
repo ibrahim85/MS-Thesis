@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.8.5)  4 NOV 2015 16:50
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.8.5)  5 NOV 2015 17:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -508,6 +508,9 @@ LaTeX Warning: Label `fig:perceptron' multiply defined.
 
 LaTeX Warning: Label `fig:perceptron' multiply defined.
 
+
+LaTeX Warning: Label `eq:ffEq' multiply defined.
+
 )
 \openout1 = `Thesis.aux'.
 
@@ -697,7 +700,7 @@ Chapter 2.
 ------------------------------------------------------------------------------
  2 Introduction
 ------------------------------------------------------------------------------
-<./Figures/Figure2-1.png, id=260, 602.25pt x 286.06876pt>
+<./Figures/Figure2-1.png, id=265, 602.25pt x 286.06876pt>
 File: ./Figures/Figure2-1.png Graphic file (type png)
 
 <use ./Figures/Figure2-1.png>
@@ -706,28 +709,28 @@ Package pdftex.def Info: ./Figures/Figure2-1.png used on input line 14.
  [4
 
  <./Figures/Figure2-1.png>] [5]
-<./Figures/Figure2-2.png, id=283, 32.37291pt x 21.30795pt>
+<./Figures/Figure2-2.png, id=288, 32.37291pt x 21.30795pt>
 File: ./Figures/Figure2-2.png Graphic file (type png)
 
 <use ./Figures/Figure2-2.png>
 Package pdftex.def Info: ./Figures/Figure2-2.png used on input line 59.
 (pdftex.def)             Requested size: 333.97972pt x 220.02406pt.
  [6 <./Figures/Figure2-2.png>] [7] [8]
-<./Figures/lenet.png, id=312, 544.1931pt x 127.1952pt>
+<./Figures/lenet.png, id=318, 544.1931pt x 127.1952pt>
 File: ./Figures/lenet.png Graphic file (type png)
 
 <use ./Figures/lenet.png>
 Package pdftex.def Info: ./Figures/lenet.png used on input line 134.
 (pdftex.def)             Requested size: 333.97972pt x 78.06058pt.
 
-<./Figures/spm.jpg, id=315, 1014.79124pt x 608.2725pt>
+<./Figures/spm.jpg, id=321, 1014.79124pt x 608.2725pt>
 File: ./Figures/spm.jpg Graphic file (type jpg)
  <use ./Figures/spm.jpg>
 Package pdftex.def Info: ./Figures/spm.jpg used on input line 144.
 (pdftex.def)             Requested size: 333.97972pt x 200.18294pt.
 
 [9 <./Figures/lenet.png> <./Figures/spm.jpg>]
-<./Figures/MLvsTL.png, id=324, 526.96875pt x 384.43625pt>
+<./Figures/MLvsTL.png, id=330, 526.96875pt x 384.43625pt>
 File: ./Figures/MLvsTL.png Graphic file (type png)
 
 <use ./Figures/MLvsTL.png>
@@ -738,7 +741,7 @@ Chapter 3.
 ------------------------------------------------------------------------------
  3 Methodology
 ------------------------------------------------------------------------------
-<./Figures/ILSVRC2012_val_00000001.JPEG, id=331, 256.96pt x 256.96pt>
+<./Figures/ILSVRC2012_val_00000001.JPEG, id=337, 256.96pt x 256.96pt>
 File: ./Figures/ILSVRC2012_val_00000001.JPEG Graphic file (type jpg)
 
 <use ./Figures/ILSVRC2012_val_00000001.JPEG>
@@ -746,7 +749,7 @@ Package pdftex.def Info: ./Figures/ILSVRC2012_val_00000001.JPEG used on input l
 ine 13.
 (pdftex.def)             Requested size: 166.98668pt x 166.99065pt.
 
-<./Figures/ILSVRC2012_val_00000002.JPEG, id=332, 256.96pt x 256.96pt>
+<./Figures/ILSVRC2012_val_00000002.JPEG, id=338, 256.96pt x 256.96pt>
 File: ./Figures/ILSVRC2012_val_00000002.JPEG Graphic file (type jpg)
 
 <use ./Figures/ILSVRC2012_val_00000002.JPEG>
@@ -754,14 +757,14 @@ Package pdftex.def Info: ./Figures/ILSVRC2012_val_00000002.JPEG used on input l
 ine 15.
 (pdftex.def)             Requested size: 166.98668pt x 166.99065pt.
 
-<./Figures/cloudy_0001.png, id=335, 256.96pt x 256.96pt>
+<./Figures/cloudy_0001.png, id=341, 256.96pt x 256.96pt>
 File: ./Figures/cloudy_0001.png Graphic file (type png)
 
 <use ./Figures/cloudy_0001.png>
 Package pdftex.def Info: ./Figures/cloudy_0001.png used on input line 24.
 (pdftex.def)             Requested size: 166.98668pt x 166.99065pt.
 
-<./Figures/sunny_0003.png, id=336, 256.96pt x 256.96pt>
+<./Figures/sunny_0003.png, id=342, 256.96pt x 256.96pt>
 File: ./Figures/sunny_0003.png Graphic file (type png)
 
 <use ./Figures/sunny_0003.png>
@@ -771,14 +774,14 @@ Package pdftex.def Info: ./Figures/sunny_0003.png used on input line 26.
 
  <./Figures/ILSVRC2012_val_00000001.JPEG> <./Figures/ILSVRC2012_val_00000002.JP
 EG>]
-<./Figures/sppnet.jpg, id=343, 642.4pt x 481.8pt>
+<./Figures/sppnet.jpg, id=349, 642.4pt x 481.8pt>
 File: ./Figures/sppnet.jpg Graphic file (type jpg)
  <use ./Figures/sppnet.jpg>
 Package pdftex.def Info: ./Figures/sppnet.jpg used on input line 43.
 (pdftex.def)             Requested size: 333.97972pt x 250.49332pt.
 
 [12 <./Figures/cloudy_0001.png (PNG copy)> <./Figures/sunny_0003.png (PNG copy)
->] <./Figures/AlexNet.png, id=349, 728.7225pt x 232.87pt>
+>] <./Figures/AlexNet.png, id=355, 728.7225pt x 232.87pt>
 File: ./Figures/AlexNet.png Graphic file (type png)
 
 <use ./Figures/AlexNet.png>
@@ -801,12 +804,22 @@ Missing character: There is no — in font cmr10!
 Missing character: There is no Ã in font cmr10!
 Missing character: There is no — in font cmr10!
 )
-(./Appendices/AppendixA.tex [14]
+(./Chapters/Chapter4.tex [14]
+Chapter 4.
+------------------------------------------------------------------------------
+ 4 Experiment
+------------------------------------------------------------------------------
+
+LaTeX Warning: Reference `eq:NetPara' on page 15 undefined on input line 15.
+
+[15
+
+]) (./Appendices/AppendixA.tex [16]
 Appendix A.
 ------------------------------------------------------------------------------
  A Appendix Title Here
 ------------------------------------------------------------------------------
-) [15
+) [17
 
 ]
 ------------------------------------------------------------------------------
@@ -817,7 +830,7 @@ Appendix A.
 Package natbib Warning: There were undefined citations.
 
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 200.
-[16
+[18
 
 
 ]
@@ -825,8 +838,17 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 200.
  (./Thesis.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 200.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 200.
-Package rerunfilecheck Info: File `Thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 46F62CEA11DC35604A2F47D1F93861D1;4632.
+
+
+Package rerunfilecheck Warning: File `Thesis.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `Thesis.out':
+(rerunfilecheck)             Before: FE23EBA687BA3CFC91671DA7F74C218B;4788
+(rerunfilecheck)             After:  BCE6D82B1DBDC82406B2C2EF2E656118;4954.
+
+LaTeX Warning: There were undefined references.
 
 
 LaTeX Warning: There were multiply-defined labels.
@@ -834,32 +856,38 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 200.
  ) 
 Here is how much of TeX's memory you used:
- 13099 strings out of 494985
- 185323 string characters out of 6180357
- 253734 words of memory out of 5000000
- 16013 multiletter control sequences out of 15000+600000
+ 13114 strings out of 494985
+ 185492 string characters out of 6180357
+ 253824 words of memory out of 5000000
+ 16017 multiletter control sequences out of 15000+600000
  13929 words of font info for 51 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 49i,12n,45p,950b,411s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/tex
-live/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
-msl12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.
-pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></u
-sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/tex
-live/texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb>
-Output written on Thesis.pdf (28 pages, 953766 bytes).
+ 49i,12n,45p,950b,432s stack positions out of 5000i,500n,10000p,200000b,80000s
+pdfTeX warning (dest): name{dummy.66} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{appendix.65} has been referenced but does not exist
+, replaced by a fixed one
+
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cms
+l12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pf
+b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb>
+Output written on Thesis.pdf (30 pages, 958039 bytes).
 PDF statistics:
- 443 PDF objects out of 1000 (max. 8388607)
- 379 compressed objects within 4 object streams
- 100 named destinations out of 1000 (max. 500000)
- 288 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 462 PDF objects out of 1000 (max. 8388607)
+ 396 compressed objects within 4 object streams
+ 108 named destinations out of 1000 (max. 500000)
+ 296 words of extra memory for PDF output out of 10000 (max. 10000000)
 
