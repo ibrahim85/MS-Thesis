@@ -23,4 +23,8 @@ w^{new} = w^{old}(1 - \epsilon)
 
 \section{Fine-tuning Model}
 
-As mentioned previously, the CNN network is pre-trained with aim of classifying objects in images. However, the target task is to classify weather scene and  The pre-trained model contains more than 60 million parameters which are too high for training target model from scratch up because the target dataset has only 10000 images in total. With the excellent accuracy achieved from previous works about transfer learning, it is a good approach to fine-tune previous model. The previous model does job to classify 1000 categories and the target model does for two class classification.  
+As mentioned previously, the CNN network is pre-trained with aim of classifying objects in images. However, the target task is to classify weather scene and the pre-trained model contains more than 60 million parameters which are too high for training target model from scratch up, because the target dataset has only 10000 images in total. With the excellent accuracy achieved from previous works about transfer learning, it is a good approach to fine-tune previous model. The previous model does a job to classify 1000 categories and the target model does for two class classification. 
+
+Fine-tuning transfers weights of each layers in previous model to new one except the last fully connected layer. The last layer is taken over by a new one which contains the same amount of neurons as class number in the dataset, say two, and is initialized with random weights. One advantage of fine-tune is that it highly reduces the probability of overfitting  while training with small dataset. The other advantage is the existing weights are close to optimal values and the gradient descent algorithm can converge quickly.
+
+In the problem, we want to classify sunny and cloudy images.
