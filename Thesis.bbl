@@ -1,4 +1,4 @@
-\begin{thebibliography}{7}
+\begin{thebibliography}{10}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -52,5 +52,24 @@ Jianxiong Xiao, James Hays, Krista Ehinger, Aude Oliva, Antonio Torralba,
 \newblock Sun database: Large-scale scene recognition from abbey to zoo.
 \newblock In \emph{Computer vision and pattern recognition (CVPR), 2010 IEEE
   conference on}, pages 3485--3492. IEEE, 2010.
+
+\bibitem[Nair and Hinton(2010)]{nair2010rectified}
+Vinod Nair and Geoffrey~E Hinton.
+\newblock Rectified linear units improve restricted boltzmann machines.
+\newblock In \emph{Proceedings of the 27th International Conference on Machine
+  Learning (ICML-10)}, pages 807--814, 2010.
+
+\bibitem[Jia et~al.(2014)Jia, Shelhamer, Donahue, Karayev, Long, Girshick,
+  Guadarrama, and Darrell]{jia2014caffe}
+Yangqing Jia, Evan Shelhamer, Jeff Donahue, Sergey Karayev, Jonathan Long, Ross
+  Girshick, Sergio Guadarrama, and Trevor Darrell.
+\newblock Caffe: Convolutional architecture for fast feature embedding.
+\newblock \emph{arXiv preprint arXiv:1408.5093}, 2014.
+
+\bibitem[Zeiler and Fergus(2013)]{ZeilerF13}
+Matthew~D. Zeiler and Rob Fergus.
+\newblock Visualizing and understanding convolutional networks.
+\newblock \emph{CoRR}, abs/1311.2901, 2013.
+\newblock URL \url{http://arxiv.org/abs/1311.2901}.
 
 \end{thebibliography}

@@ -4,9 +4,11 @@
 \label{Chapter4}
 \lhead{Chapter 4. \emph{Experiment}}
 
+We set up experiment environment on a desktop which has hardware i7 CPU, 8G RAM and a GeForce GTX 770 and software operation system Ubuntu Linux 14.04. We train models in Caffe\citep{jia2014caffe} which is a open source framework and develop spatial pyramid pooling layer in the architecture.
+
 \section{Training Neural Network}
 
-We trained model with the 1000-category ImageNet2012 on deep learning framework CaffeNet~\cite{jia2014caffe} on a GeForce GTX 770. We use the network architecture of fast(smaller) model~\cite{ZeilerF13} which achieved an excellent result in 2013 ImageNet Competition. 
+We trained model with the 1000-category ImageNet2012 on deep learning framework CaffeNet~\cite{jia2014caffe} on a  We use the base network architecture of fast(smaller) model~\cite{ZeilerF13} which achieved an excellent result in 2013 ImageNet Competition. We implement SPP with CUDA C language and deploy them before the first fully-connected layer.
 
 In experiment, a subset of ImageNet dataset, which contains 1.2 million labelled high-resolution images depicting 1000 object categories for training and 50,000 validation images, is used as training dataset. ImageNet contains of multi-scale and some grey images which are converted to a constant input dimensionality. Then images are resized to $256x256$. And for grey images, they are combined it triple to minic a RGB image. Model is trained on the raw RGB values of pixels. Activation function is chosen  Rectified Linear Units(ReLUs), which allows for faster and effective training of deep neural networks.
 
@@ -29,10 +31,30 @@ As mentioned previously, the CNN network is pre-trained with aim of classifying 
 
 Fine-tuning transfers weights of each layers in previous model to new one except the last fully connected layer. The last layer is taken over by a new one which contains the same amount of neurons as class number in the dataset, say two, and is initialized with random weights. One advantage of fine-tune is that it highly reduces the probability of overfitting  while training with small dataset. The other advantage is the existing weights are close to optimal values and the gradient descent algorithm can converge quickly.
 
-In the problem, we want to classify sunny and cloudy images, then the last layer of the previous architecture, $fc8$, is taken place by a layer with two neurons, one for sunny and one for cloudy. The model, trained using ILSVRC2012 dataset, is used to initialize most weights in the neural network for the fine-tuning experiment. At the same time, $1000$ images are used to evaluate model. The model is fine-tuned in 100 epochs which means that total training images are fed into CNN 100 times. The initial base learning rate is 0.001 and the rate is divided by 10 every 10 epochs. Because the weights in $fc8$ are randomly initialized which means they are not close to final optimization value, the learning rate of $fc8$ is 10 times of the base learning rate in order to converge faster.
+In the problem, we want to classify sunny and cloudy images, then the last layer of the previous architecture, $fc8$, is taken place by a layer with two neurons, one for sunny and one for cloudy. The model, trained using ILSVRC2012 dataset, is used to initialize most weights in the neural network for the fine-tuning experiment. At the same time, $1000$ images are used to evaluate model. The model is fine-tuned in $10000$ iterations which means that total training images are fed into CNN $\frac{128x10000}{9000}=142$ times. The initial base learning rate is 0.001 and the rate is divided by 10 every 10 epochs. Because the weights in $fc8$ are randomly initialized which means they are not close to final optimization value, the learning rate of $fc8$ is 10 times of the base learning rate in order to converge faster.
 
 To minimise risk of overfitting, data augmentation is introduced in to experiment. Different version of patches are generated from each image via simple transformations, for example flipping and cropping. Some practical methods have been implemented and increase accuracy \citep{krizhevsky2012imagenet}. We do this job by increasing the spatial generalization capability of the model  by cropping 5 different patches from four corners and center of images, and flipping them. Totally, we generate 10 different images with the same label.
 
+\section{Companion Experimental}
+
+To compare the performance of fine-tuned model, we do some a experiment with other method. We use a pre-trained model with AlexNet architecture and extract features from fc7. Then we apply SVM on the features and learn a classifier to do weather classification.
+
 \section{Experimental Result}
 
-The results in table shows that supervised pre-training model have excellent generalization capability. After 1 epoch, the accuracy rate exceeds $90%$. 
+The results in table\ref{ExpRes} shows that supervised pre-training model have excellent generalization capability. 
+
+\begin{table}[h]
+\begin{center}
+    \begin{tabular}{| c | c | c | c | c |}
+    \hline
+    Methods & CNN+SVM & SPP+SVM & Finetune on CNN & Finetune on SPP  \\ \hline
+    Accuracy & $84.8\%$ & $82.1\%$ & $93.1\%$ & $93.98\%$ \\ \hline
+    \end{tabular}
+    \caption{CNN means with original trained model, SPP means model deployed with spatial pyramid pooling layer}
+    \label{ExpRes}
+\end{center}
+\end{table}
+
+The fine-tuning process is very quick, and accuracy rate convergences to over $90\%$. 
+After 12 epoch, the accuracy rate exceeds $90\%$. And loss value decreases significantly in 200 interations which shows that the pre-trained model is close to optimized solution. 
+
