@@ -56,5 +56,15 @@ The results in table\ref{ExpRes} shows that supervised pre-training model have e
 \end{table}
 
 The fine-tuning process is very quick, and accuracy rate convergences to over $90\%$. 
-After 12 epoch, the accuracy rate exceeds $90\%$. And loss value decreases significantly in 200 interations which shows that the pre-trained model is close to optimized solution. 
+After 12 epoch, the accuracy rate exceeds $90\%$. 
+\graphicspath{ {./Figures/} }
+\begin{figure}[!htb]
+    \centering
+	\includegraphics[width=0.8\textwidth]{FinetuneAccuracy.png}
+    \caption{Finetune Process}%
+    \label{fig:finetuneprocess}%
+\end{figure}
 
+No single image dataset can totally capture variation in natural images, so even ImageNet is biased in some fields. Then pre-training may be make the CNN to overfit and then damage model generalization capability. To learning the process of ImageNet pre-training, we look into the effect of pre-training period on generalization performance with and without fine-tuning. In figure \ref{fig:finetuneprocess}, we can find that longer pre-training improves performance.
+
+To have a more detailed information of fine-tuning process, we can have a closer look at training loss. 
