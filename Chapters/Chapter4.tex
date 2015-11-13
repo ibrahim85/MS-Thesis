@@ -67,4 +67,14 @@ After 12 epoch, the accuracy rate exceeds $90\%$.
 
 No single image dataset can totally capture variation in natural images, so even ImageNet is biased in some fields. Then pre-training may be make the CNN to overfit and then damage model generalization capability. To learning the process of ImageNet pre-training, we look into the effect of pre-training period on generalization performance with and without fine-tuning. In figure \ref{fig:finetuneprocess}, we can find that longer pre-training improves performance.
 
-To have a more detailed information of fine-tuning process, we can have a closer look at training loss. 
+To have a more detailed information of fine-tuning process, we can have a closer look at training loss. We plot the curve of first 200 iterations and loss value.
+
+\begin{figure}[!htb]
+    \centering
+	\includegraphics[width=0.4\textwidth]{finetuneCNNProcess.png}
+	\includegraphics[width=0.4\textwidth]{finetuneSPPProcess.png}
+    \caption{Finetune Process}%
+    \label{fig:FTvsSC}%
+\end{figure}
+
+From figure \ref{fig:FTvsSC}, we can find that the fine-tuning procedure produces a more smooth loss function curve and ceases with a better loss. In the left figure, the loss value of fine tune procedure is higher than no fine tune process at the beginning, then it shrinks sharply and keeps lower. In the other figure, we can find that starting loss value are both less than in the left figure. And the loss values of fine tune are less than no fine tune process. We can conclude that generally fine tune is a effective approach to reduce loss value and fine tune on SPP model can achieve a better result than CNN model.

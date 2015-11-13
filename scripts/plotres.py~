@@ -1,8 +1,5 @@
 import numpy as np 
 import matplotlib.pyplot as plt
-from pylab import *
-%matplotlib inline
-
 ite =10000
 x = np.linspace(0, ite, 11)
 orig_accuracy = np.asarray([0.464,0.911,0.91,0.913,0.931,0.925,0.919,0.922,0.923,0.924,0.923])
