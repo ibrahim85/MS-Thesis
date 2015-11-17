@@ -87,3 +87,27 @@ The outputs of each layers have been treated as visual descriptors \citep{razavi
 
 In fully-connected layer, units can be represented as d dimensional vectors, and no further manipulation is needed. The layer takes all outputs of previous layer ,for example CONV, POOL, NORM,whose feature maps are multidimensional, and flats the feature maps into d dimensional vectors. The outputs of fully connected layer are feed into a classifier. Two types of linear classifiers are used. They are linear Support Vector Machine and Softmax.
 
+We can have a look for the feature maps after each convolutional layers.
+
+\graphicspath{ {./Figures/DifferentLayers/} }
+\begin{figure}[ht]
+    \centering
+    \begin{subfigure}[b]{width=0.4}
+    \centering\includegraphics[width=4cm]{cloudy1.png}
+    \caption{\label{fig:cloudy}}
+    \end{subfigure}%
+    \begin{subfigure}[b]{width=0.4}
+    \centering\includegraphics[width=4cm]{cloudy1_conv1_fm.png}
+    \caption{\label{fig:cloudy_conv1}}
+    \end{subfigure}%
+
+
+    \caption{A cloudy image }%
+    \includegraphics[width=0.15\textwidth]{cloudy1_conv1_fm.png}
+    \includegraphics[width=0.15\textwidth]{cloudy1_conv2_fm.png}
+    \includegraphics[width=0.15\textwidth]{cloudy1_conv3_fm.png}
+    \includegraphics[width=0.15\textwidth]{cloudy1_conv4_fm.png}
+    \includegraphics[width=0.15\textwidth]{cloudy1_conv5_fm.png}
+    \caption{This is a raw cloudy image and }%
+    \label{fig:finetuneprocess}%
+\end{figure}
