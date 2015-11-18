@@ -13,10 +13,18 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Finetune Process\relax }}{18}{figure.caption.69}
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Finetune Process\relax }}{18}{figure.caption.70}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces \relax }}{20}{figure.caption.72}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces \relax }}{20}{figure.caption.72}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces A cloudy image \relax }}{20}{figure.caption.72}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces This is a raw cloudy image and \relax }}{20}{figure.caption.72}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {b}}}{20}{figure.caption.72}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {b}}}{20}{figure.caption.72}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces A cloudy image and outputs of convolutional layers\relax }}{19}{figure.caption.72}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {raw image}}}{19}{figure.caption.72}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {conv1 output}}}{19}{figure.caption.72}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {conv2 output}}}{19}{figure.caption.72}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {conv3 output}}}{19}{figure.caption.72}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {conv4 output}}}{19}{figure.caption.72}
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {conv5 output}}}{19}{figure.caption.72}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces A sunny image and outputs of convolutional layers\relax }}{20}{figure.caption.79}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {raw image}}}{20}{figure.caption.79}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {conv1 output}}}{20}{figure.caption.79}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {conv2 output}}}{20}{figure.caption.79}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {conv3 output}}}{20}{figure.caption.79}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {conv4 output}}}{20}{figure.caption.79}
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {conv5 output}}}{20}{figure.caption.79}
 \addvspace {10\p@ }

@@ -87,27 +87,100 @@ The outputs of each layers have been treated as visual descriptors \citep{razavi
 
 In fully-connected layer, units can be represented as d dimensional vectors, and no further manipulation is needed. The layer takes all outputs of previous layer ,for example CONV, POOL, NORM,whose feature maps are multidimensional, and flats the feature maps into d dimensional vectors. The outputs of fully connected layer are feed into a classifier. Two types of linear classifiers are used. They are linear Support Vector Machine and Softmax.
 
-We can have a look for the feature maps after each convolutional layers.
+We have a look for the feature maps of each convolutional layers a cloudy image.
 
 \graphicspath{ {./Figures/DifferentLayers/} }
-\begin{figure}[ht]
+
+\begin{figure}[!htb]
     \centering
-    \begin{subfigure}[b]{width=0.4}
-    \centering\includegraphics[width=4cm]{cloudy1.png}
-    \caption{\label{fig:cloudy}}
-    \end{subfigure}%
-    \begin{subfigure}[b]{width=0.4}
-    \centering\includegraphics[width=4cm]{cloudy1_conv1_fm.png}
-    \caption{\label{fig:cloudy_conv1}}
-    \end{subfigure}%
+    \subfigure[raw image]{
+		\begin{minipage}{0.3\textwidth}
+		   		\includegraphics[width=1\textwidth]{cloudy1}
+		   		\label{fig:cloudy}
+		\end{minipage}
+    	} 
+    \subfigure[conv1 output]{
+		\begin{minipage}{0.3\textwidth}
+		   		\includegraphics[width=1\textwidth]{cloudy1_conv1_fm}
+		   		\label{fig:cloudy_conv1}
+		\end{minipage}
+    	} 
+    \subfigure[conv2 output]{
+		\begin{minipage}{0.3\textwidth}
+		   		\includegraphics[width=1\textwidth]{cloudy1_conv2_fm}
+		   		\label{fig:cloudy_conv2}
+		\end{minipage}
+    	} 
+    \subfigure[conv3 output]{
+		\begin{minipage}{0.3\textwidth}
+		   		\includegraphics[width=1\textwidth]{cloudy1_conv3_fm}
+		   		\label{fig:cloudy_conv3}
+		\end{minipage}
+    	} 
+    \subfigure[conv4 output]{
+		\begin{minipage}{0.3\textwidth}
+		   		\includegraphics[width=1\textwidth]{cloudy1_conv4_fm}
+		   		\label{fig:cloudy_conv4}
+		\end{minipage}
+    	} 
+    \subfigure[conv5 output]{
+		\begin{minipage}{0.3\textwidth}
+		   		\includegraphics[width=1\textwidth]{cloudy1_conv5_fm}
+		   		\label{fig:cloudy_conv5}
+		\end{minipage}
+    	} 
 
+    \caption{A cloudy image and outputs of convolutional layers}%
 
-    \caption{A cloudy image }%
-    \includegraphics[width=0.15\textwidth]{cloudy1_conv1_fm.png}
-    \includegraphics[width=0.15\textwidth]{cloudy1_conv2_fm.png}
-    \includegraphics[width=0.15\textwidth]{cloudy1_conv3_fm.png}
-    \includegraphics[width=0.15\textwidth]{cloudy1_conv4_fm.png}
-    \includegraphics[width=0.15\textwidth]{cloudy1_conv5_fm.png}
-    \caption{This is a raw cloudy image and }%
-    \label{fig:finetuneprocess}%
+    \label{fig:cloudy_finetuneprocess}%
 \end{figure}
+
+In Figure \ref{fig:cloudy_finetuneprocess}, a cloudy image is fed into CNN and b-d are outputs of different convolutional layers. For the sake of image size, there are only parts of filters are plotted in images b-d.
+
+Compared to the previous cloudy image, we can have a look for similar outputs of a sunny image.
+
+\begin{figure}[!htb]
+    \centering
+    \subfigure[raw image]{
+		\begin{minipage}{0.3\textwidth}
+		   		\includegraphics[width=1\textwidth]{sunny2}
+		   		\label{fig:sunny}
+		\end{minipage}
+    	} 
+    \subfigure[conv1 output]{
+		\begin{minipage}{0.3\textwidth}
+		   		\includegraphics[width=1\textwidth]{sunny2_conv1_fm}
+		   		\label{fig:sunny_conv1}
+		\end{minipage}
+    	} 
+    \subfigure[conv2 output]{
+		\begin{minipage}{0.3\textwidth}
+		   		\includegraphics[width=1\textwidth]{sunny2_conv2_fm}
+		   		\label{fig:sunny_conv2}
+		\end{minipage}
+    	} 
+    \subfigure[conv3 output]{
+		\begin{minipage}{0.3\textwidth}
+		   		\includegraphics[width=1\textwidth]{sunny2_conv3_fm}
+		   		\label{fig:sunny_conv3}
+		\end{minipage}
+    	} 
+    \subfigure[conv4 output]{
+		\begin{minipage}{0.3\textwidth}
+		   		\includegraphics[width=1\textwidth]{sunny2_conv4_fm}
+		   		\label{fig:sunny_conv4}
+		\end{minipage}
+    	} 
+    \subfigure[conv5 output]{
+		\begin{minipage}{0.3\textwidth}
+		   		\includegraphics[width=1\textwidth]{sunny2_conv5_fm}
+		   		\label{fig:sunny_conv5}
+		\end{minipage}
+    	} 
+
+    \caption{A sunny image and outputs of convolutional layers}%
+
+    \label{fig:sunny_finetuneprocess}%
+\end{figure}
+
+The convolutional layers outputs the same number filters as Figure \ref{fig:cloudy_finetuneprocess}.
