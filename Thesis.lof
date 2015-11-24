@@ -27,4 +27,6 @@
 \contentsline {subfigure}{\numberline {(d)}{\ignorespaces {conv3 output}}}{20}{figure.caption.79}
 \contentsline {subfigure}{\numberline {(e)}{\ignorespaces {conv4 output}}}{20}{figure.caption.79}
 \contentsline {subfigure}{\numberline {(f)}{\ignorespaces {conv5 output}}}{20}{figure.caption.79}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Visiualization of feature maps outputs between original CNN model and CNN-SPP model. The upper images are from original model and the lower images are from fine tuned model\relax }}{21}{figure.caption.87}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Histogram distribution of vectors from FC7. Left one is from CNN model and right one is from finetuned model\relax }}{21}{figure.caption.88}
 \addvspace {10\p@ }

@@ -183,4 +183,45 @@ Compared to the previous cloudy image, we can have a look for similar outputs of
     \label{fig:sunny_finetuneprocess}%
 \end{figure}
 
-The convolutional layers outputs the same number filters as Figure \ref{fig:cloudy_finetuneprocess}.
+The convolutional layers output the same number filters as Figure \ref{fig:cloudy_finetuneprocess}. Neural activations in fully connected layers can act as d-dimensional vectors, where d is the number of neurons. Not like the earlier layers, for instance CONV and POOLING whose feature maps are multimensional. In figure \ref{fig:ImageNetArch}, we can get that the feature maps of CONV1 are $96x55x55$ dimension and the feature maps of CONV5 are $256x13x13$ dimension. The feature maps of CONV5 are downsampled by POOL5 and flatten into d-dimensional vectors and used as features for classifier. We can use two types of classifiers. One is linear support vector machine and the other is SoftMax.
+
+\section{Transfer Learning}
+
+Because we do not have sufficient size of dataset, comparing to ImangNet, we use a pretrained model based on ImageNet dataset and then use the CNN either as a fixed feature extractor or an initialization for our task. After fine tuning, weights have been updated for fitting new functions. Accordingly, the feature maps have some difference.
+
+\begin{figure*}[!htb]
+\begin{center}
+
+\begin{tabular}{|c|c|c|c|c|c|} \hline\hline
+Image & Conv1 & Conv2 & Conv3 & Conv4 & Conv5  \\ \hline
+\includegraphics[scale=0.1]{sunny2.png} &
+\includegraphics[scale=0.1]{sunny2_caffe_conv1_fm.png} &
+\includegraphics[scale=0.1]{sunny2_caffe_conv2_fm.png} &
+\includegraphics[scale=0.1]{sunny2_caffe_conv3_fm.png} &
+\includegraphics[scale=0.1]{sunny2_caffe_conv4_fm.png} &
+\includegraphics[scale=0.1]{sunny2_caffe_conv5_fm.png}\\ \hline\hline
+
+Image & Conv1 & Conv2 & Conv3 & Conv4 & Conv5  \\ \hline
+\includegraphics[scale=0.1]{sunny2.png} &
+\includegraphics[scale=0.1]{sunny2_conv1_fm.png} &
+\includegraphics[scale=0.1]{sunny2_conv2_fm.png} &
+\includegraphics[scale=0.1]{sunny2_conv3_fm.png} &
+\includegraphics[scale=0.1]{sunny2_conv4_fm.png} &
+\includegraphics[scale=0.1]{sunny2_conv5_fm.png}\\ \hline\hline
+\end{tabular}
+
+\end{center}
+	\caption{Visiualization of feature maps outputs between original CNN model and CNN-SPP model. The upper images are from original model and the lower images are from fine tuned model}
+	\label{fig:diff_featuremap}%
+\end{figure*}
+
+\begin{figure}[!htb]
+    \centering
+	\includegraphics[width=0.4\textwidth]{sunny2_hist_caffe_fc7.png}
+	\includegraphics[width=0.4\textwidth]{sunny2_hist_spp_fc7.png}
+    \caption{Histogram distribution of vectors from FC7. Left one is from CNN model and right one is from finetuned model}%
+    \label{fig:fc7_hist_output}%
+\end{figure}
+
+From the feature maps and histogram distribution maps, We can find that the outputs are slightly different.
+

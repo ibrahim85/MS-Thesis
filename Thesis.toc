@@ -33,7 +33,8 @@
 \contentsline {section}{\numberline {4.3}Companion Experimental}{17}{section.66}
 \contentsline {section}{\numberline {4.4}Experimental Result}{17}{section.67}
 \contentsline {section}{\numberline {4.5}Architecture Analysis}{19}{section.71}
+\contentsline {section}{\numberline {4.6}Transfer Learning}{21}{section.86}
 \vspace {2em}
-\contentsline {chapter}{\numberline {A}Appendix Title Here}{21}{appendix.86}
+\contentsline {chapter}{\numberline {A}Appendix Title Here}{22}{appendix.89}
 \vspace {2em}
-\contentsline {chapter}{Bibliography}{22}{dummy.87}
+\contentsline {chapter}{Bibliography}{23}{dummy.90}
