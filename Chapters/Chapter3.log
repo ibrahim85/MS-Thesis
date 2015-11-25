@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.8.5)  24 NOV 2015 09:42
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.8.5)  25 NOV 2015 16:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -4927,11 +4927,6 @@ Missing character: There is no d in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no l in font nullfont!
 
-Overfull \hbox (227.62204pt too wide) in paragraph at lines 66--86
- [] 
- []
-
-
 ! LaTeX Error: \begin{document} ended by \end{table}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
@@ -4954,9 +4949,9 @@ or  <return>  to continue without it.
 Here is how much of TeX's memory you used:
  14 strings out of 494985
  218 string characters out of 6180357
- 52094 words of memory out of 5000000
+ 51094 words of memory out of 5000000
  3330 multiletter control sequences out of 15000+600000
  3986 words of font info for 15 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 18i,8n,12p,890b,169s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 18i,6n,12p,890b,140s stack positions out of 5000i,500n,10000p,200000b,80000s
 !  ==> Fatal error occurred, no output PDF file produced!
