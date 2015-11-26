@@ -1,32 +1,33 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Diagram of a perceptron.\relax }}{4}{figure.caption.24}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Diagram of a feedford neural networks.\relax }}{6}{figure.caption.31}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Diagram of LeNet.\relax }}{9}{figure.caption.45}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Diagram of Spatial Pyramid Match.\relax }}{9}{figure.caption.47}
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Diagram of Transfer Learning.\relax }}{10}{figure.caption.50}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Diagram of a perceptron.\relax }}{5}{figure.caption.24}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Diagram of a feedford neural networks.\relax }}{7}{figure.caption.31}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Diagram of LeNet.\relax }}{10}{figure.caption.45}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Diagram of Spatial Pyramid Match.\relax }}{10}{figure.caption.47}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Diagram of Transfer Learning.\relax }}{11}{figure.caption.50}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces 2 Figures from ImageNet\relax }}{11}{figure.caption.53}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces 2 Figures from Weather Dataset\relax }}{12}{figure.caption.54}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Diagram of Spatial Pyramid Pooling layer\relax }}{13}{figure.caption.57}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Architecture of AlexNet\relax }}{13}{figure.caption.59}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces 2 Figures from ImageNet\relax }}{12}{figure.caption.53}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces 2 Figures from Weather Dataset\relax }}{13}{figure.caption.54}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Diagram of Spatial Pyramid Pooling layer\relax }}{14}{figure.caption.57}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Architecture of AlexNet\relax }}{14}{figure.caption.59}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Finetune Process\relax }}{18}{figure.caption.69}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Finetune Process\relax }}{18}{figure.caption.70}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces A cloudy image and outputs of convolutional layers\relax }}{19}{figure.caption.72}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {raw image}}}{19}{figure.caption.72}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {conv1 output}}}{19}{figure.caption.72}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {conv2 output}}}{19}{figure.caption.72}
-\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {conv3 output}}}{19}{figure.caption.72}
-\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {conv4 output}}}{19}{figure.caption.72}
-\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {conv5 output}}}{19}{figure.caption.72}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces A sunny image and outputs of convolutional layers\relax }}{20}{figure.caption.79}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {raw image}}}{20}{figure.caption.79}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {conv1 output}}}{20}{figure.caption.79}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {conv2 output}}}{20}{figure.caption.79}
-\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {conv3 output}}}{20}{figure.caption.79}
-\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {conv4 output}}}{20}{figure.caption.79}
-\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {conv5 output}}}{20}{figure.caption.79}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Visiualization of feature maps outputs between original CNN model and CNN-SPP model. The upper images are from original model and the lower images are from fine tuned model\relax }}{21}{figure.caption.87}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Histogram distribution of vectors from FC7. Left one is from CNN model and right one is from finetuned model\relax }}{21}{figure.caption.88}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Finetune Process\relax }}{19}{figure.caption.69}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Finetune Process\relax }}{19}{figure.caption.70}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces A cloudy image and outputs of convolutional layers\relax }}{20}{figure.caption.72}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {raw image}}}{20}{figure.caption.72}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {conv1 output}}}{20}{figure.caption.72}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {conv2 output}}}{20}{figure.caption.72}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {conv3 output}}}{20}{figure.caption.72}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {conv4 output}}}{20}{figure.caption.72}
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {conv5 output}}}{20}{figure.caption.72}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces A sunny image and outputs of convolutional layers\relax }}{21}{figure.caption.79}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {raw image}}}{21}{figure.caption.79}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {conv1 output}}}{21}{figure.caption.79}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {conv2 output}}}{21}{figure.caption.79}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {conv3 output}}}{21}{figure.caption.79}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {conv4 output}}}{21}{figure.caption.79}
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {conv5 output}}}{21}{figure.caption.79}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Visiualization of feature maps outputs between original CNN model and CNN-SPP model. The upper images are from original model and the lower images are from fine tuned model\relax }}{22}{figure.caption.87}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Histogram distribution of vectors from FC7. Left one is from CNN model and right one is from finetuned model\relax }}{22}{figure.caption.88}
+\addvspace {10\p@ }
 \addvspace {10\p@ }

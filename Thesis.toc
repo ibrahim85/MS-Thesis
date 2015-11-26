@@ -8,33 +8,38 @@
 \contentsline {chapter}{Physical Constants}{ix}{dummy.11}
 \contentsline {chapter}{Symbols}{x}{dummy.14}
 \vspace {2em}
-\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.17}
-\contentsline {section}{\numberline {1.1}Overview}{1}{section.18}
-\contentsline {section}{\numberline {1.2}Statistical Pattern Recognization}{2}{section.19}
-\contentsline {section}{\numberline {1.3}Artificial Neural Networks}{2}{section.20}
-\contentsline {section}{\numberline {1.4}Weather Classification}{2}{section.21}
-\contentsline {chapter}{\numberline {2}Background}{4}{chapter.22}
-\contentsline {section}{\numberline {2.1}Single-Layer Networks}{4}{section.23}
-\contentsline {section}{\numberline {2.2}Multi-Layer Networks}{5}{section.30}
-\contentsline {section}{\numberline {2.3}Backpropagation}{7}{section.35}
-\contentsline {section}{\numberline {2.4}Training protocols}{8}{section.40}
-\contentsline {section}{\numberline {2.5}Stochastic Gradient Descent}{8}{section.41}
-\contentsline {section}{\numberline {2.6}Convolutional Neural Networks}{8}{section.44}
-\contentsline {section}{\numberline {2.7}Spatial Pyramid Match}{9}{section.46}
-\contentsline {section}{\numberline {2.8}Transfer Learning}{9}{section.48}
-\contentsline {chapter}{\numberline {3}Methodology}{11}{chapter.51}
-\contentsline {section}{\numberline {3.1}Dataset}{11}{section.52}
-\contentsline {section}{\numberline {3.2}Data Argument}{12}{section.55}
-\contentsline {section}{\numberline {3.3}Spatial Pyramid Pooling}{12}{section.56}
-\contentsline {section}{\numberline {3.4}Convolutional Neural Networks Architecture}{13}{section.58}
-\contentsline {chapter}{\numberline {4}Experiment}{15}{chapter.61}
-\contentsline {section}{\numberline {4.1}Training Neural Network}{15}{section.62}
-\contentsline {section}{\numberline {4.2}Fine-tuning Model}{16}{section.65}
-\contentsline {section}{\numberline {4.3}Companion Experimental}{17}{section.66}
-\contentsline {section}{\numberline {4.4}Experimental Result}{17}{section.67}
-\contentsline {section}{\numberline {4.5}Architecture Analysis}{19}{section.71}
-\contentsline {section}{\numberline {4.6}Transfer Learning}{21}{section.86}
+\contentsline {chapter}{\numberline {1}Introduction}{2}{chapter.17}
+\contentsline {section}{\numberline {1.1}Overview}{2}{section.18}
+\contentsline {section}{\numberline {1.2}Statistical Pattern Recognization}{3}{section.19}
+\contentsline {section}{\numberline {1.3}Artificial Neural Networks}{3}{section.20}
+\contentsline {section}{\numberline {1.4}Weather Classification}{3}{section.21}
+\contentsline {chapter}{\numberline {2}Background}{5}{chapter.22}
+\contentsline {section}{\numberline {2.1}Single-Layer Networks}{5}{section.23}
+\contentsline {section}{\numberline {2.2}Multi-Layer Networks}{6}{section.30}
+\contentsline {section}{\numberline {2.3}Backpropagation}{8}{section.35}
+\contentsline {section}{\numberline {2.4}Training protocols}{9}{section.40}
+\contentsline {section}{\numberline {2.5}Stochastic Gradient Descent}{9}{section.41}
+\contentsline {section}{\numberline {2.6}Convolutional Neural Networks}{9}{section.44}
+\contentsline {section}{\numberline {2.7}Spatial Pyramid Match}{10}{section.46}
+\contentsline {section}{\numberline {2.8}Transfer Learning}{10}{section.48}
+\contentsline {chapter}{\numberline {3}Methodology}{12}{chapter.51}
+\contentsline {section}{\numberline {3.1}Dataset}{12}{section.52}
+\contentsline {section}{\numberline {3.2}Data Argument}{13}{section.55}
+\contentsline {section}{\numberline {3.3}Spatial Pyramid Pooling}{13}{section.56}
+\contentsline {section}{\numberline {3.4}Convolutional Neural Networks Architecture}{14}{section.58}
+\contentsline {chapter}{\numberline {4}Experiment}{16}{chapter.61}
+\contentsline {section}{\numberline {4.1}Training Neural Network}{16}{section.62}
+\contentsline {section}{\numberline {4.2}Fine-tuning Model}{17}{section.65}
+\contentsline {section}{\numberline {4.3}Companion Experimental}{18}{section.66}
+\contentsline {section}{\numberline {4.4}Experimental Result}{18}{section.67}
+\contentsline {section}{\numberline {4.5}Architecture Analysis}{20}{section.71}
+\contentsline {section}{\numberline {4.6}Transfer Learning}{22}{section.86}
+\contentsline {chapter}{\numberline {5}Introduction}{23}{chapter.89}
+\contentsline {section}{\numberline {5.1}Overview}{23}{section.90}
+\contentsline {section}{\numberline {5.2}Statistical Pattern Recognization}{23}{section.91}
+\contentsline {section}{\numberline {5.3}Artificial Neural Networks}{23}{section.92}
+\contentsline {section}{\numberline {5.4}Weather Classification}{23}{section.93}
 \vspace {2em}
-\contentsline {chapter}{\numberline {A}Appendix Title Here}{22}{appendix.89}
+\contentsline {chapter}{\numberline {A}Appendix Title Here}{24}{appendix.94}
 \vspace {2em}
-\contentsline {chapter}{Bibliography}{23}{dummy.90}
+\contentsline {chapter}{Bibliography}{25}{dummy.95}
