@@ -1,51 +1,46 @@
-This is BibTeX, Version 0.99d (TeX Live 2014/W32TeX)
+This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: Thesis.aux
 The style file: unsrtnat.bst
 Database file #1: Bibliography.bib
-Repeated entry---line 615 of file Bibliography.bib
- : @article{jia2014caffe
- :                      ,
-I'm skipping whatever remains of this entry
-You've used 10 entries,
+You've used 14 entries,
             2481 wiz_defined-function locations,
-            617 strings with 6452 characters,
-and the built_in function-call counts, 4545 in all, are:
-= -- 387
-> -- 246
-< -- 7
-+ -- 92
-- -- 72
-* -- 350
-:= -- 702
-add.period$ -- 32
-call.type$ -- 10
-change.case$ -- 20
-chr.to.int$ -- 10
-cite$ -- 10
-duplicate$ -- 227
-empty$ -- 400
-format.name$ -- 90
-if$ -- 981
+            639 strings with 7203 characters,
+and the built_in function-call counts, 6373 in all, are:
+= -- 555
+> -- 330
+< -- 11
++ -- 124
+- -- 96
+* -- 478
+:= -- 971
+add.period$ -- 46
+call.type$ -- 14
+change.case$ -- 28
+chr.to.int$ -- 14
+cite$ -- 14
+duplicate$ -- 327
+empty$ -- 568
+format.name$ -- 122
+if$ -- 1393
 int.to.chr$ -- 1
-int.to.str$ -- 11
-missing$ -- 10
-newline$ -- 59
-num.names$ -- 30
-pop$ -- 88
+int.to.str$ -- 15
+missing$ -- 14
+newline$ -- 79
+num.names$ -- 42
+pop$ -- 128
 preamble$ -- 1
-purify$ -- 10
+purify$ -- 14
 quote$ -- 0
-skip$ -- 153
+skip$ -- 219
 stack$ -- 0
-substring$ -- 244
-swap$ -- 54
-text.length$ -- 3
+substring$ -- 341
+swap$ -- 81
+text.length$ -- 5
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 70
+type$ -- 98
 warning$ -- 0
-while$ -- 37
+while$ -- 53
 width$ -- 0
-write$ -- 138
-(There was 1 error message)
+write$ -- 191

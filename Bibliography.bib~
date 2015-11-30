@@ -361,3 +361,51 @@ pages={951-958},
   pages={807--814},
   year={2010}
 }
+
+@article{CC01a,
+ author = {Chang, Chih-Chung and Lin, Chih-Jen},
+ title = {{LIBSVM}: A library for support vector machines},
+ journal = {ACM Transactions on Intelligent Systems and Technology},
+ volume = {2},
+ issue = {3},
+ year = {2011},
+ pages = {27:1--27:27},
+ note =	 {Software available at \url{http://www.csie.ntu.edu.tw/~cjlin/libsvm}}
+}
+
+@inproceedings{razavian2014cnn,
+  title={CNN features off-the-shelf: an astounding baseline for recognition},
+  author={Razavian, Ali S and Azizpour, Hossein and Sullivan, Josephine and Carlsson, Stefan},
+  booktitle={Computer Vision and Pattern Recognition Workshops (CVPRW), 2014 IEEE Conference on},
+  pages={512--519},
+  year={2014},
+  organization={IEEE}
+}
+
+@article{read2011classifier,
+  title={Classifier chains for multi-label classification},
+  author={Read, Jesse and Pfahringer, Bernhard and Holmes, Geoff and Frank, Eibe},
+  journal={Machine learning},
+  volume={85},
+  number={3},
+  pages={333--359},
+  year={2011},
+  publisher={Springer}
+}
+
+@article{tsoumakas2006multi,
+  title={Multi-label classification: An overview},
+  author={Tsoumakas, Grigorios and Katakis, Ioannis},
+  journal={Dept. of Informatics, Aristotle University of Thessaloniki, Greece},
+  year={2006}
+}
+
+@incollection{tsoumakas2007random,
+  title={Random k-labelsets: An ensemble method for multilabel classification},
+  author={Tsoumakas, Grigorios and Vlahavas, Ioannis},
+  booktitle={Machine learning: ECML 2007},
+  pages={406--417},
+  year={2007},
+  publisher={Springer}
+}
+
