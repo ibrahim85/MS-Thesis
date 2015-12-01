@@ -7,17 +7,19 @@
 
 \section{Overview}
 
-In machine learning literature, multi-label classification is a variant of the classification problem in which each example has several labels. In general, the task of multi-label learning is to find a model that can maps inputs \textbf{x} to binary vector \textbf{y}. While it is different with multi-class classfication in terms of the later one scalars outputs in classification problem.
+In machine learning literature, multi-label classification is a variant of the classification problem in which each instance has several labels. In general, the task of multi-label learning is to find a model that can maps inputs \textbf{x} to binary vector \textbf{y}. While it is different with multi-class classfication in terms of the later one scalars outputs in classification problem.
 
 In general, there exists two main approaches of tackling the multi-label classification problem. One transfers a multi-label problem into a set of binary classification problems which can be handled by a set of binary classifiers. The other one applies algorithms to complete multi-label classification. 
 
-Several problem tranformation methods can be applied to multi-label classification. A baseline method, named the binary relevance method\citep{read2011classifier}, trains one binary classifier for each label independently. Depending on the results of the classifiers, the combined model predicts all labels for an unseen sample. The method divides the problem into multiple binary works which has something in common with the one-vs-all method for multi-class classification.
+Several problem transformation methods can be applied to multi-label classification. A baseline method, named the binary relevance method\citep{read2011classifier}, trains one binary classifier for each label independently. Depending on the results of the classifiers, the combined model predicts all labels for an unseen sample. The method divides the problem into multiple binary works which has something in common with the one-vs-all method for multi-class classification. Problem transformation benefits from scalability and flexibility because single-label classifier can be implemented to job. Support Vector Machine, Naive Bayes, $k$ Nearest Neighbor have been used in the method\citep{read2011classifier}.
 
-There are some other transformation methods, for example label powerset transformation. The method builds up one binary classifier for each label combination verified in the training dataset\citep{tsoumakas2006multi}. The random $k$-labelsets algorithm\citep{tsoumakas2007random} utilizes multiple label powerset classifier which is trained on a random sub dataset of the labels. A voting scheme is used to predict unseen samples via a ensemble method.
+There are some other transformation methods, for instance label powerset transformation. The method builds up one binary classifier for each label combination verified in the training dataset\citep{tsoumakas2006multi}. The random $k$-labelsets algorithm\citep{tsoumakas2007random} utilizes multiple label powerset classifier which is trained on a random sub dataset of the labels. A voting scheme is used to predict unseen samples via a ensemble method.
 
-\section{Statistical Pattern Recognization}
+Multilayer neural network can be trained to learn a model from multi-label examples. We will generate a 3 labels dataset and use a 2 layer network to do classification.
 
+\section{Loss Function}
 
+To adapt a neural network handling single-label instances to multi-label instances, we need to design a specific loss function instead of squared error loss function to track the characteristics of multi-label learning and some revision of stochastic gradient descent.
 
 \section{Artificial Neural Networks}
 
