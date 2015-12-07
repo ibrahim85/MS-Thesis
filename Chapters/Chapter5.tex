@@ -36,7 +36,7 @@ $X_{1}$ & $X_{2}$ &  $X_{3}$ & $X_{4}$ & $X_{5}$ & $Y_{1}$ & $Y_{2}$ & $Y_{3}$ &
 \hline
 \end{tabular}
 \caption{Multilabel $Y_{1},...,Y_{L} \in 2^L$}
-\ref{tab:MultilableTable}
+\ref{tab:MultilabelTable}
 \end{table}
 
 In general, there exists two main approaches of tackling the multi-label classification problem. One transfers a multi-label problem into a set of binary classification problems which can be handled by a set of binary classifiers. The other one applies algorithms to complete multi-label classification. 
@@ -46,6 +46,9 @@ Several problem transformation methods can be applied to multi-label classificat
 There are some other transformation methods, for instance label powerset transformation. The method builds up one binary classifier for each label combination verified in the training dataset\citep{tsoumakas2006multi}. The random $k$-labelsets algorithm\citep{tsoumakas2007random} utilizes multiple label powerset classifier which is trained on a random sub dataset of the labels. A voting scheme is used to predict unseen samples via a ensemble method.
 
 Multilayer neural network can be trained to learn a model from multi-label examples. We will generate a 3 labels dataset and use a 2 layer network to do classification.
+
+\section{Multi-Label Learning}
+Let $X = R^d$ represent the domain of dataset and let $Y = {1,2,..,L}$ be the finite set of labels. Given that we have a set of training dataset $T = {(x_{1},Y_{1}),(x_{2},Y_{2}),...,(x_{l},Y_{l})} (x_{i} \in X, Y_{i} \subset Y)$ which are extracted from an unknown distribution $D$. Our target of task is to learn a multi-label classifier $h: X \to 2^y $ via optimizing specific evaluation metric. However, instead of learning a multi-label classifier, we will learn a function $f$ while $f(X) \to R^d$. Supposing that a high performance classifier can output a closer subset for labels in $Y_{i}$ than those missing or exceeding in $Y_{i}$, which means $f(x_{i}, y_{1}) > f(x_{i}, y_{2})$ if $y_{1} \in Y{i}$ and $y_{2} \notin Y{i}$.
 
 \section{Loss Function}
 
