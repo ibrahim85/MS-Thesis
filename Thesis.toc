@@ -36,10 +36,10 @@
 \contentsline {section}{\numberline {4.6}Transfer Learning}{22}{section.86}
 \contentsline {chapter}{\numberline {5}Introduction}{23}{chapter.89}
 \contentsline {section}{\numberline {5.1}Overview}{23}{section.90}
-\contentsline {section}{\numberline {5.2}Loss Function}{24}{section.92}
-\contentsline {section}{\numberline {5.3}Artificial Neural Networks}{25}{section.93}
-\contentsline {section}{\numberline {5.4}Weather Classification}{25}{section.94}
+\contentsline {section}{\numberline {5.2}Loss Function}{24}{section.93}
+\contentsline {section}{\numberline {5.3}Artificial Neural Networks}{25}{section.94}
+\contentsline {section}{\numberline {5.4}Weather Classification}{25}{section.95}
 \vspace {2em}
-\contentsline {chapter}{\numberline {A}Appendix Title Here}{26}{appendix.95}
+\contentsline {chapter}{\numberline {A}Appendix Title Here}{26}{appendix.96}
 \vspace {2em}
-\contentsline {chapter}{Bibliography}{27}{dummy.96}
+\contentsline {chapter}{Bibliography}{27}{dummy.97}

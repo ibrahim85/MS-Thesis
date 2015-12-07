@@ -5,4 +5,5 @@
 \addvspace {10\p@ }
 \contentsline {table}{\numberline {4.1}{\ignorespaces CNN means with original trained model, SPP means model deployed with spatial pyramid pooling layer\relax }}{18}{table.caption.68}
 \addvspace {10\p@ }
+\contentsline {table}{\numberline {5.1}{\ignorespaces Multilabel $Y_{1},...,Y_{L} \in 2^L$\relax }}{24}{table.caption.92}
 \addvspace {10\p@ }
