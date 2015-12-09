@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.8.5)  8 DEC 2015 17:12
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.8.5)  9 DEC 2015 16:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1066,23 +1066,23 @@ ne 39.
 
 [23
 
- <./Figures/beach.jpg>] [24]) (./Appendices/AppendixA.tex [25]
+ <./Figures/beach.jpg>] [24] [25]) (./Appendices/AppendixA.tex [26]
 Appendix A.
 ------------------------------------------------------------------------------
  A Appendix Title Here
 ------------------------------------------------------------------------------
-) [26
+) [27
 
 ]
 ------------------------------------------------------------------------------
  Bibliography
 ------------------------------------------------------------------------------
-(./Thesis.bbl [27
+(./Thesis.bbl [28
 
 
 ])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 199.
- [28]
+ [29]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 199.
  (./Thesis.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 199.
@@ -1099,8 +1099,8 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 199.
  ) 
 Here is how much of TeX's memory you used:
- 13358 strings out of 494985
- 192437 string characters out of 6180357
+ 13359 strings out of 494985
+ 192444 string characters out of 6180357
  258199 words of memory out of 5000000
  16184 multiletter control sequences out of 15000+600000
  16377 words of font info for 61 fonts, out of 8000000 for 9000
@@ -1125,10 +1125,10 @@ dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/f
 onts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
 ublic/amsfonts/symbols/msam7.pfb>
-Output written on Thesis.pdf (40 pages, 2179473 bytes).
+Output written on Thesis.pdf (41 pages, 2180640 bytes).
 PDF statistics:
- 689 PDF objects out of 1000 (max. 8388607)
- 563 compressed objects within 6 object streams
- 154 named destinations out of 1000 (max. 500000)
+ 693 PDF objects out of 1000 (max. 8388607)
+ 566 compressed objects within 6 object streams
+ 155 named destinations out of 1000 (max. 500000)
  499 words of extra memory for PDF output out of 10000 (max. 10000000)
 
