@@ -305,13 +305,6 @@ pages={951-958},
   organization={IEEE}
 }
 
-@article{jia2014caffe,
-  Author = {Jia, Yangqing and Shelhamer, Evan and Donahue, Jeff and Karayev, Sergey and Long, Jonathan and Girshick, Ross and Guadarrama, Sergio and Darrell, Trevor},
-  Journal = {arXiv preprint arXiv:1408.5093},
-  Title = {Caffe: Convolutional Architecture for Fast Feature Embedding},
-  Year = {2014}
-}
-
 @article{rosenblatt1958perceptron,
   title={The perceptron: a probabilistic model for information storage and organization in the brain.},
   author={Rosenblatt, Frank},
@@ -407,5 +400,23 @@ pages={951-958},
   pages={406--417},
   year={2007},
   publisher={Springer}
+}
+
+@incollection{tsoumakas2007random,
+  title={Random k-labelsets: An ensemble method for multilabel classification},
+  author={Tsoumakas, Grigorios and Vlahavas, Ioannis},
+  booktitle={Machine learning: ECML 2007},
+  pages={406--417},
+  year={2007},
+  publisher={Springer}
+}
+
+@inproceedings{ghamrawi2005collective,
+  title={Collective multi-label classification},
+  author={Ghamrawi, Nadia and McCallum, Andrew},
+  booktitle={Proceedings of the 14th ACM international conference on Information and knowledge management},
+  pages={195--200},
+  year={2005},
+  organization={ACM}
 }
 

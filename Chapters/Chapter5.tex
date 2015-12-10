@@ -60,6 +60,68 @@ The second order strategy considers pairwise relations between labels, for examp
 
 The high order strategy investigates more than $2$ order correlations among labels which can be the influences on each label or addressing connections among sub space of output labels. It is obvious that high order strategy has the strongest model capabilities than previous two strategies on the cost of complexity and intensive computation.
 
+\section{Evaluation Metrics}
+
+In supervised learning settings, different metrics, like accuracy and area under the ROC curve, are used to evaluate the generalization performance of learning system. In multi-label learning, evaluating performance is more complicated  than single-label problems with the increasing number of labels simultaneously. Therefore, two main types of evaluation methods are implemented in multi-label learning, say example-based metrics\citep{ghamrawi2005collective} and label-metrics\citep{tsoumakas2007random}.
+
+The two types of metrics evaluate the outputs of classifier from different perspective. Given that $S = {(x_{i}, Y_{i})}$ is the test instance and $h(\cdot)$ is the learned multi-label classifier. Example-based metrics achieve all class labels of each test example, and then compute the mean value of test set to evaluate generalization performance. Compared to considering all class labels simultaneously, label-based metrics evaluate performance by treating each class label separately and computing macro/micro-averaged value of all class labels.
+
+In a supervised classification problem, there have a ground truth output and a predicted output of test instance. So the results of each test instance can be be assigned to one of the four categories:
+\begin{itemize}
+\item True Positive (TP) - label is positive and prediction is also positive
+\item True Negative (TN) - label is negative and prediction is also negative
+\item False Positive (FP) - label is negative but prediction is positive
+\item False Negative (FN) - label is positive but prediction is negative
+\end{itemize}
+
+Here we define a set $D$ of $N$ instances and $Y_{i}$ to be a family of ground truth label sets and $P_{i} = h(x_{i})$ to be a family of predicted label set. The set of all unique labels is
+\begin{equation}\label{eq:UniLabel}
+L = \bigcup_{i=0}^{N-1} L_{i}
+\end{equation}
+While the definition of indicator function $I_{A}$ on a set $A$ is presented as
+\begin{equation}\label{eq:IndicatorFunc}
+I_{A}(x) =
+  \begin{cases}
+    1       & \quad \text{if } x \in A\\
+    0  & \quad \text{otherwise}\\
+  \end{cases}
+\end{equation}
+
+\subsection{Evaluation Metrics}
+
+\textbf{Hamming Loss} evaluates performance via counting the number of misclassification labels. The smaller value of hamming loss, the better performance.
+\begin{equation}\label{eq:HammingLoss}
+\frac{1}{N \cdot \left|L\right|} \sum_{i=0}^{N - 1} \left|L_i\right| + \left|P_i\right| - 2\left|L_i
+          \cap P_i\right|
+\end{equation}
+
+\textbf{Subset Accuracy} evaluates the fraction of correctly predicted instance while the predicted label set is identical to the ground truth label set. It is equivalent to traditional accuracy metric.
+\begin{equation}\label{eq:SubsetAcu}
+\frac{1}{N} \sum_{i=0}^{N-1} I_{\{L_i\}}(P_i)
+\end{equation}
+
+\textbf{Precision} is defined as
+\begin{equation}\label{eq:Precision}
+\frac{1}{N} \sum_{i=0}^{N-1} \frac{\left|L_i \cap P_i\right|}{\left|P_i\right|}
+\end{equation}
+
+\textbf{Recall} is defined as
+\begin{equation}\label{eq:Recall}
+\frac{1}{N} \sum_{i=0}^{N-1} \frac{\left|L_i \cap P_i\right|}{\left|L_i\right|}
+\end{equation}
+
+\textbf{Accuracy} is defined as
+\begin{equation}\label{eq:Accuracy}
+\frac{1}{N} \sum_{i=0}^{N - 1} \frac{\left|L_i \cap P_i \right|}
+        {\left|L_i\right| + \left|P_i\right| - \left|L_i \cap P_i \right|}
+\end{equation}
+
+\textbf{F1 Measure} is an integrated version combined by harmonic mean of \textbf{Precision} and \textbf{Recall}. 
+\begin{equation}\label{eq:Accuracy}
+\frac{1}{N} \sum_{i=0}^{N-1} 2 \frac{\left|P_i \cap L_i\right|}{\left|P_i\right| \cdot \left|L_i\right|}
+\end{equation}
+
+
 \section{Loss Function}
 
 To adapt a neural network handling single-label instances to multi-label instances, we need to design a specific loss function instead of squared error loss function to track the characteristics of multi-label learning and some revision of stochastic gradient descent. 
