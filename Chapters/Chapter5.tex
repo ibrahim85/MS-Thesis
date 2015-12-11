@@ -87,7 +87,7 @@ I_{A}(x) =
   \end{cases}
 \end{equation}
 
-\subsection{Evaluation Metrics}
+\subsection{Example-based Metrics}
 
 \textbf{Hamming Loss} evaluates performance via counting the number of misclassification labels. The smaller value of hamming loss, the better performance.
 \begin{equation}\label{eq:HammingLoss}
@@ -121,6 +121,53 @@ I_{A}(x) =
 \frac{1}{N} \sum_{i=0}^{N-1} 2 \frac{\left|P_i \cap L_i\right|}{\left|P_i\right| \cdot \left|L_i\right|}
 \end{equation}
 
+\subsection{Label-based Metrics}
+
+\textbf{Macro Precision} (precision averaged across all labels) is defined as
+\begin{equation}\label{eq:MacroPrecision}
+PPV(\ell)=\frac{TP}{TP + FP}=
+          \frac{\sum_{i=0}^{N-1} I_{P_i}(\ell) \cdot I_{L_i}(\ell)}
+          {\sum_{i=0}^{N-1} I_{P_i}(\ell)}
+\end{equation}
+
+\textbf{Macro Recall} (recall averaged across all labels) is defined as
+\begin{equation}\label{eq:MacroRecall}
+TPR(\ell)=\frac{TP}{P}=
+          \frac{\sum_{i=0}^{N-1} I_{P_i}(\ell) \cdot I_{L_i}(\ell)}
+          {\sum_{i=0}^{N-1} I_{L_i}(\ell)}
+\end{equation}
+
+\textbf{F1 Measure by label} is the harmonic mean between \textbf{Precision} and \textbf{Recall}. 
+\begin{equation}\label{eq:LabelAccuracy}
+F1(\ell) = 2
+                            \cdot \left(\frac{PPV(\ell) \cdot TPR(\ell)}
+                            {PPV(\ell) + TPR(\ell)}\right)
+\end{equation}
+
+\textbf{Micro Precision} (precision averaged over all the example/label pairs) is defined as
+\begin{equation}\label{eq:MicroPrecision}
+\frac{TP}{TP + FP}=\frac{\sum_{i=0}^{N-1} \left|P_i \cap L_i\right|}
+          {\sum_{i=0}^{N-1} \left|P_i \cap L_i\right| + \sum_{i=0}^{N-1} \left|P_i - L_i\right|}
+\end{equation}
+
+\textbf{Micro Recall} (recall averaged over all the example/label pairs) is defined as
+\begin{equation}\label{eq:MicroRecall}
+\frac{TP}{TP + FN}=\frac{\sum_{i=0}^{N-1} \left|P_i \cap L_i\right|}
+        {\sum_{i=0}^{N-1} \left|P_i \cap L_i\right| + \sum_{i=0}^{N-1} \left|L_i - P_i\right|}
+\end{equation}
+
+\textbf{Micro F1 Measure by label} is the harmonic mean between \textbf{Micro Precision} and \textbf{Micro Recall}. 
+\begin{equation}\label{eq:LabelMicroAccuracy}
+2 \cdot \frac{TP}{2 \cdot TP + FP + FN}=2 \cdot \frac{\sum_{i=0}^{N-1} \left|P_i \cap L_i\right|}{2 \cdot
+        \sum_{i=0}^{N-1} \left|P_i \cap L_i\right| + \sum_{i=0}^{N-1} \left|L_i - P_i\right| + \sum_{i=0}^{N-1}
+        \left|P_i - L_i\right|}
+\end{equation}
+
+For the label-based metrics, the larger the metrics value means the higher generalization performance.
+
+With the previous metrics, there are diverse methods to evaluate model generalization performance. In most multi-label training, learning algorithms optimize one of the metrics. To make evaluation fair and precise, the learning algorithms should be tested on different metrics to evaluate performance to avoid bias.
+
+Most multi-label metrics are non-convex and discrete, most algorithms turn to optimize alternative multi-label metrics. Recent some researcher study the consistency of multi-label learning\citep{gao2013consistency}, for example, figuring if the loss of classifier converges to the Bayes loss while increasing training set size.
 
 \section{Loss Function}
 

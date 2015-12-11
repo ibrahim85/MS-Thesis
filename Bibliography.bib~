@@ -402,15 +402,6 @@ pages={951-958},
   publisher={Springer}
 }
 
-@incollection{tsoumakas2007random,
-  title={Random k-labelsets: An ensemble method for multilabel classification},
-  author={Tsoumakas, Grigorios and Vlahavas, Ioannis},
-  booktitle={Machine learning: ECML 2007},
-  pages={406--417},
-  year={2007},
-  publisher={Springer}
-}
-
 @inproceedings{ghamrawi2005collective,
   title={Collective multi-label classification},
   author={Ghamrawi, Nadia and McCallum, Andrew},
