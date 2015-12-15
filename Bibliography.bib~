@@ -411,3 +411,25 @@ pages={951-958},
   organization={ACM}
 }
 
+@article{gao2013consistency,
+  title={On the consistency of multi-label learning},
+  author={Gao, Wei and Zhou, Zhi-Hua},
+  journal={Artificial Intelligence},
+  volume={199},
+  pages={22--44},
+  year={2013},
+  publisher={Elsevier}
+}
+
+@article{read2011classifier,
+  title={Classifier chains for multi-label classification},
+  author={Read, Jesse and Pfahringer, Bernhard and Holmes, Geoff and Frank, Eibe},
+  journal={Machine learning},
+  volume={85},
+  number={3},
+  pages={333--359},
+  year={2011},
+  publisher={Springer}
+}
+
+

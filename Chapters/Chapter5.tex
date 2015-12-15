@@ -167,18 +167,40 @@ For the label-based metrics, the larger the metrics value means the higher gener
 
 With the previous metrics, there are diverse methods to evaluate model generalization performance. In most multi-label training, learning algorithms optimize one of the metrics. To make evaluation fair and precise, the learning algorithms should be tested on different metrics to evaluate performance to avoid bias.
 
-Most multi-label metrics are non-convex and discrete, most algorithms turn to optimize alternative multi-label metrics. Recent some researcher study the consistency of multi-label learning\citep{gao2013consistency}, for example, figuring if the loss of classifier converges to the Bayes loss while increasing training set size.
-
-\section{Loss Function}
-
-To adapt a neural network handling single-label instances to multi-label instances, we need to design a specific loss function instead of squared error loss function to track the characteristics of multi-label learning and some revision of stochastic gradient descent. 
-
-\section{Artificial Neural Networks}
+Most multi-label metrics are non-convex and discrete, most algorithms turn to optimize alternative multi-label metrics. Recently, some researcher study the consistency of multi-label learning\citep{gao2013consistency}. For example, it is ad hot to figure out if the loss of classifier converges to the Bayes loss while increasing training set size.
 
 
+\section{Learning Algorithms}
 
-\section{Weather Classification}
+Algorithms play key role in the literature of machine learning, so there is no exception in multi-label learning. The capability of representation is an important criterion to evaluate the performance of a algorithm. Otherwise, there are some related criteria to be consider. Firstly, broad spectrum is considered. If the algorithm can cover an range of algorithmic design strategies with unique characteristics. Secondly, it is reasonable to evaluate the impact which the algorithm poses on the multi-label learning settings. Last, the algorithm complexity is a critical factor if the algorithm can be used in practice.
+
+\subsection{Problem Transformation Methods}
+
+\subsubsection{Binary Relevance}
+
+Binary Relevance is a elementary algorithm which decomposes multi-label learning problem into a set of independent binary classification problems in which each problem harmonizes a label of the $q$ labels in the set $L = {y_{1}, y_{2},...,y_{q}}$. The approach initially transforms multi-label dataset into $q$ binary datasets $D_{y_{i}} (i = 1,2,...,q)$, where each $D_{Y_{I}}$ includes all samples of the multi-label dataset and has a single binary label to instruct if the dataset has or has no attribute to relevant label. For example, if a sample has a positive value means that the sample owns the correlation label, otherwise, it does not own it. After transforming dataset, a set of $q$ binary classifiers, say $H_{i}(E) (i = 1,2,...,q)$, has been built up using the respective training dataset $D_{y_{i}}$. 
+
+\begin{equation}\label{eq:BinaryRelevance}
+H = \{C_{y_{i}}(x, y_{i}) \to y'_{i} \in \{0,1\}| y \in L, i = 1,2,...,q\}
+\end{equation}
+
+To classify a new multi-label sample, Binary Relevance outputs the collection of labels which are predicted with positive value by the independent binary classifiers.
+
+Binary Relevance combines computational efficiency and simple implementation. With a constant number of samples, the algorithm scales with size $q$ of label set $L$. Supposing that each classifier has complexity $O(C)$, Binary Relevance has complexity $qxO(C)$. With limit number of $q$, Binary Relevance can be regarded as a simple and effective method.
+
+One of the disadvantages of Binary Relevance is the limitation of label relationship information. Given that all labels are independent, Binary Relevance discards the information among labels.
+
+\subsubsection{Classifier Chains}
+
+To improve the performance of Binary Relevance, classifier chains has been introduced in multi-label classification literature\citep{read2011classifier}. The algorithm transform multi-label learning problems into a chain of binary classifiers based on label dependence.
+
+For a set of $q$ labels $L$, Classifier Chains model learns $q$ classifiers as Binary Relevance does. However, it links all classifiers through feature space. Given that there are a set of samples $D(x,y_{i}) (i = 1,2,...,q)$ where $y_{i}$ is a subset of labels $L$ and $x$ is domain of dataset. We transform the dataset into $q$ datasets in which the $j$-th sample is based on datasets and previous labels
+
+\begin{equation}\label{eq:ClassifierChains}
+H = \{C_{y_{i}}(x, y_{1},y_{2},...,y_{i-1}) \to y'_{i} \in \{0,1\}| y \in L, i = 1,2,...,q\}
+\end{equation}
+
+Thus it forms a train of binary classifier $C_{1},C_{2},...,C_{q}$. Each classifier $C_{i}$ learns and predicts the binary association of label $y_{i}$ based on the dataset $x$ and all prior binary relevance predictions $y_{j}, j = 1,2,...,i-1$. The learning process starts from $C_{1}$ and follows the china step by step. Therefore, $C_{1}$ determines $p(y_{1}|x)$ and each classifier, say $C_{2},...,C_{q}$, determines $p(y_{i}|x_{i},y_{1},...,y_{i-1})$.
 
 
-
-
+\subsection{Algorithm Adaptation Methods}
