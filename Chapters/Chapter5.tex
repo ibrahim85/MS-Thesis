@@ -186,7 +186,7 @@ H = \{C_{y_{i}}(x, y_{i}) \to y'_{i} \in \{0,1\}| y \in L, i = 1,2,...,q\}
 
 To classify a new multi-label sample, Binary Relevance outputs the collection of labels which are predicted with positive value by the independent binary classifiers.
 
-Binary Relevance combines computational efficiency and simple implementation. With a constant number of samples, the algorithm scales with size $q$ of label set $L$. Supposing that each classifier has complexity $O(C)$, Binary Relevance has complexity $qxO(C)$. With limit number of $q$, Binary Relevance can be regarded as a simple and effective method.
+Binary Relevance combines computational efficiency and simple implementation. With a constant number of samples, the algorithm scales with size $q$ of label set $L$. Supposing that each classifier has complexity $f(|X|,|D|)$, Binary Relevance has complexity $O(qxf(|X|,|D|))$. With limit number of $q$, Binary Relevance can be regarded as a simple and effective method.
 
 One of the disadvantages of Binary Relevance is the limitation of label relationship information. Given that all labels are independent, Binary Relevance discards the information among labels.
 
@@ -202,5 +202,16 @@ H = \{C_{y_{i}}(x, y_{1},y_{2},...,y_{i-1}) \to y'_{i} \in \{0,1\}| y \in L, i =
 
 Thus it forms a train of binary classifier $C_{1},C_{2},...,C_{q}$. Each classifier $C_{i}$ learns and predicts the binary association of label $y_{i}$ based on the dataset $x$ and all prior binary relevance predictions $y_{j}, j = 1,2,...,i-1$. The learning process starts from $C_{1}$ and follows the china step by step. Therefore, $C_{1}$ determines $p(y_{1}|x)$ and each classifier, say $C_{2},...,C_{q}$, determines $p(y_{i}|x_{i},y_{1},...,y_{i-1})$.
 
+The Classifier Chains method propagates label information through classifiers, and post classifier takes into account previous predictions. This can overcome issues of ignorant label correlation in some degree. At the same time, the method keep benefits of Binary Relevance including computation efficiency and memory efficiency. The computational complexity of Classifier Chains can be close to Binary Relevance depending on the size of labels and complexity of elemental classifiers $C_{i}$. As stated in previous, the complexity of Binary Relevance is $O(qxf(|X|,|D|))$ where $f(|X|,|D|))$ is the complexity of elemental classifier. With extra computation introduced by previous labels, the complexity of Classifier Chains is $O(qxf(|X|+q,|D|))$, while the complexity will be worse in case $q \gg |X|$.
 
 \subsection{Algorithm Adaptation Methods}
+
+\subsubsection{Multi-label k-Nearest Neighbor(ML-kNN)}
+
+The algorithm adapts k-nearest neighbor techniques to propose multi-label data and utilize maximum a posteriori (MAP) to make prediction through reasoning embodied labelling information among neighbour \citep{zhang2007ml}.
+
+Given dataset $X$ and its label set $Y$, $y$ represents output vector for $x$ where $i$-th element $y(i)$ is positive if $i \in Y$, otherwise it is negative. Suppose that $N(x)$ is the set of neighbour of $x$ in training set, thus we can compute a membership counting vector
+\begin{equation}\label{eq:KNNCounting}
+C_{x}(i) = \sum_{a \in N(x)} y_{a}(i), i \in Y
+\end{equation}
+
