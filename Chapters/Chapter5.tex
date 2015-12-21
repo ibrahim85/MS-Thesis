@@ -253,3 +253,5 @@ Yielding to Gaussian distribution, parameters can be found in a convex log-poste
 \begin{equation}\label{eq:CMLLabel}
 y_{x} = \operatorname*{arg\,max}_{y} p(y|x)
 \end{equation}
+
+It is notable that the exact inference is only suitable for small label space via arg max, because it needs to reduce the search space of arg max significantly via pruning strategies. CML is a second-order approach which considers correlations between every label pair constrains in $k_{2}$. 
