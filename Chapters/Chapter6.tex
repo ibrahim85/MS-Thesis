@@ -4,9 +4,13 @@
 \label{Chapter6}
 \lhead{Chapter 6. \emph{Approach of Multi-label}}
 
-\section{Dataset}
+\section{Artificial Dataset}
 
-To demonstrate the approach, the dataset, named color detector, is created artificially. To each image, there are potential three labels for it. Red, green and blue have label $0$, $1$ and $2$ respectively.
+To demonstrate the approach, the dataset, named color detector, is created artificially. To each image, it has three labels for representing colour, $red$, $yellow$ and $blue$. If an image is red hue, it has a label for $red$ and label values of $yellow$ and $blue$ are negative. The representation of colour combination follows colour wheels. If an image has a hue close to $green$, it has positive labels for $yellow$ and $blue$, and negative label for $red$, and so on.
+
+
+
+
 
 
 
