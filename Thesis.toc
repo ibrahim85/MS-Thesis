@@ -48,8 +48,9 @@
 \contentsline {subsubsection}{\numberline {5.4.2.1}Multi-label k-Nearest Neighbor(ML-kNN)}{30}{subsubsection.118}
 \contentsline {subsubsection}{\numberline {5.4.2.2}Collective Multi-label Classifier(CML)}{31}{subsubsection.122}
 \contentsline {chapter}{\numberline {6}Multi-lable Classification Methodology}{33}{chapter.126}
-\contentsline {section}{\numberline {6.1}Dataset}{33}{section.127}
+\contentsline {section}{\numberline {6.1}Artificial Dataset}{33}{section.127}
+\contentsline {subsection}{\numberline {6.1.1}Colour Generation}{34}{subsection.129}
 \vspace {2em}
-\contentsline {chapter}{\numberline {A}Appendix Title Here}{34}{appendix.128}
+\contentsline {chapter}{\numberline {A}Appendix Title Here}{35}{appendix.135}
 \vspace {2em}
-\contentsline {chapter}{Bibliography}{35}{dummy.129}
+\contentsline {chapter}{Bibliography}{36}{dummy.136}

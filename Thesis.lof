@@ -32,4 +32,9 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {5.1}{\ignorespaces Example Image\relax }}{23}{figure.caption.91}
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Colour Wheel Diagram\relax }}{33}{figure.caption.128}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Multi-label Samples. Left image is a blue one, middle one is green plus blue and right one is green.\relax }}{34}{figure.caption.131}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {L:-1 -1 1}}}{34}{figure.caption.131}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {L:-1 1 1}}}{34}{figure.caption.131}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {L:-1 1 -1}}}{34}{figure.caption.131}
 \addvspace {10\p@ }
