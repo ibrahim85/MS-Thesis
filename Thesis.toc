@@ -50,7 +50,8 @@
 \contentsline {chapter}{\numberline {6}Multi-lable Classification Methodology}{33}{chapter.126}
 \contentsline {section}{\numberline {6.1}Artificial Dataset}{33}{section.127}
 \contentsline {subsection}{\numberline {6.1.1}Colour Generation}{34}{subsection.129}
+\contentsline {section}{\numberline {6.2}Artificial Neural Networks}{34}{section.135}
 \vspace {2em}
-\contentsline {chapter}{\numberline {A}Appendix Title Here}{35}{appendix.135}
+\contentsline {chapter}{\numberline {A}Appendix Title Here}{36}{appendix.136}
 \vspace {2em}
-\contentsline {chapter}{Bibliography}{36}{dummy.136}
+\contentsline {chapter}{Bibliography}{37}{dummy.137}
