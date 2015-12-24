@@ -41,12 +41,18 @@ Artificial Neural networks are a good way to learn a nonlinear function which ca
 
 To adapt classical neural networks, which handle simple-label classification, to classify multi-label samples, we need to modify two factors. One is to design a new error function which is fitting the characteristics of multi-label samples instead of single-label ones. The other is to find a moderate metric according to new designed error function.
 
+\subsection{Network Topology}
 
+Define $\mathcal{X} = \mathbb{R}^{d}$ as the sample space and $\mathcal{Y} = {1,2,...,Q}$ as the set of output labels. Training dataset is composed of $m$ multi-label samples, such as ${(x_{1}, Y_{1}),((x_{2}, Y_{2}),...,((x_{m}, Y_{m})}$, while each sample $x_{i} \in \mathcal{X}$ is represented as a $d$-dimensional feature vector and a set of $q$ labels associate with the sample. A neural network can be constructed as figure\ref{fig:MultiLabelNet} to learn a model from training samples.
 
+\graphicspath{ {./Figures/} }
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.8\textwidth]{MultiLabelNet.jpeg}
+\caption{\label{fig:MultiLabelNet}Network Topology For Multi-lable classification}
+\end{figure}
 
-
-
-
+The network has $d$ input neurons which corresponds to a $d$-dimensional feature vector, while last $Q$ neurons represent a combination of output labels. There is a hidden layer in \ref{fig:MultiLabelNet} which owns $n$ hidden neurons. Input layer is fully connected with hidden layer and the same connecting method between hidden layer and output layer. So there are $d x n$ weights $(W_{ih}, 1 \leq i \leq d, 1 \leq h \leq n)$ between input layer and hidden layer and $n x q$ weights $(W_{ho}, 1 \leq h \leq n , 1 \leq o \leq q)$ between hidden layer and output layer. The bias parameters are represented as $I_{0}$ and  $H_{0}$.
 
 
 
