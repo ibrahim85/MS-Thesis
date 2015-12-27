@@ -41,7 +41,7 @@ Artificial Neural networks are a good way to learn a nonlinear function which ca
 
 To adapt classical neural networks, which handle simple-label classification, to classify multi-label samples, we need to modify two factors. One is to design a new error function which is fitting the characteristics of multi-label samples instead of single-label ones. The other is to find a moderate metric according to new designed error function.
 
-\subsection{Network Topology}
+\subsection{Network Architecture}
 
 Define $\mathcal{X} = \mathbb{R}^{d}$ as the sample space and $\mathcal{Y} = {1,2,...,Q}$ as the set of output labels. Training dataset is composed of $m$ multi-label samples, such as ${(x_{1}, Y_{1}),((x_{2}, Y_{2}),...,((x_{m}, Y_{m})}$, while each sample $x_{i} \in \mathcal{X}$ is represented as a $d$-dimensional feature vector and a set of $q$ labels associate with the sample. A neural network can be constructed as figure\ref{fig:MultiLabelNet} to learn a model from training samples.
 
@@ -66,10 +66,21 @@ where $c_{j}^i = c_{j}(x_{i})$ is predicted $j$-th label by model on sample $x_{
 
 Various learning algorithms can be used to achieve a model based on training dataset. Backpropagation(BP) algorithm is deployed to learn from errors. However, original BP algorithm could be improper in multi-label learning because the error function\ref{eq:MultiLableSamError} neglects the correlations among labels of a sample. In original BP algorithm, the error function\ref{eq:MultiLableSamError} limits on individual label discrimination, such that a specific label $j \in mathcal{Y}$ belongs to sample $x_{i}$ or not. It should be taken into consider that labels in $Y_{i}$ is more important than those outside of $Y_{i}$. A new global error function is defined as:
 \begin{equation}\label{eq:MultiLableGlobalError}
-E = \sum_{i=1}^m E_{i} = \sum_{i=1}^m \frac{1}{|Y_{i}||\hat{Y}_{i}|} \sum_{(k,l) \in Y_{i} \times \hat{Y_{i}}} exp(c_{l}^i-c_{k}^i)
+E = \sum_{i=1}^m E_{i} = \sum_{i=1}^m \frac{1}{|Y_{i}||\hat{Y}_{i}|} \sum_{(k,l) \in Y_{i} \times \hat{Y_{i}}} exp(-(c_{k}^i-c_{l}^i))
 \end{equation}
-In error function\ref{eq:MultiLableGlobalError}, $i$-th errors on the $i$-th multi-label training sample $(x_{i},Y_{i})$ have been accumulated. $\hat{Y}_{i}$ is complementary set of $Y_{i}$ in $\mathcal{Y}$ and $|\cdot|$ computes the cardinality of a set.
+In error function\ref{eq:MultiLableGlobalError}, $i$-th errors on the $i$-th multi-label training sample $(x_{i},Y_{i})$ have been accumulated. $\hat{Y}_{i}$ is complementary set of $Y_{i}$ in $\mathcal{Y}$ and $|\cdot|$ computes the cardinality of a set. 
+Specifically, $c_{k}^i-c_{l}^i$ represents the difference between the output labels of network on a label which belongs to sample $x_{i}$ and a label which does not belong to the same sample. The error function\ref{eq:MultiLableGlobalError} shows that bigger difference leads to better performance. Additionally, the negation of the difference is put into the exponential function to sharply penalize the $i$-th term if $c_{k}^i$ is much smaller than $c_{l}^i$. The sum of $i$-th error term accumulates difference between outputs of any pair of labels of which one belongs to the sample and the other does not belong to it. The sum is normalized by the numbers of all pairs, $|Y_{i}||\hat{Y}_{i}|^2$. Then, the correlations between pair labels are computed. In the other words, labels in $Y_{i}$ should get larger output value than labels in $\hat{Y}_{i}$.
 
+As previous statements, error function\ref{eq:MultiLableGlobalError} calculates the difference between output labels of which some belong to a sample and others do not belong to it. The task of learning is minimizing error function\ref{eq:MultiLableGlobalError} via enlarging output values of labels belonging to the training samples and diminishing output values of labels not belonging to it. If training dataset can cover the distribution of whole sample space, neural network model can learn it through minimizing error function by feeding training dataset.
+
+\subsection{Training and Testing}
+
+Following previous process, gradient descent is used to minimize the global error function with backpropagation. 
+
+To train a sample $(x_{i}, Y_{i})$,in while $x_{i}$ is input data and $Y_{i}$ is associated label, the predicted output labels computed by neural network for is
+\begin{equation}\label{eq:MultiLableActivation}
+E
+\end{equation}
 
 
 
