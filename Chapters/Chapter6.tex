@@ -69,7 +69,7 @@ Various learning algorithms can be used to achieve a model based on training dat
 E = \sum_{i=1}^m E_{i} = \sum_{i=1}^m \frac{1}{|Y_{i}||\hat{Y}_{i}|} \sum_{(k,l) \in Y_{i} \times \hat{Y_{i}}} exp(-(c_{k}^i-c_{l}^i))
 \end{equation}
 In error function\ref{eq:MultiLableGlobalError}, $i$-th errors on the $i$-th multi-label training sample $(x_{i},Y_{i})$ have been accumulated. $\hat{Y}_{i}$ is complementary set of $Y_{i}$ in $\mathcal{Y}$ and $|\cdot|$ computes the cardinality of a set. 
-Specifically, $c_{k}^i-c_{l}^i$ represents the difference between the output labels of network on a label which belongs to sample $x_{i}$ and a label which does not belong to the same sample. The error function\ref{eq:MultiLableGlobalError} shows that bigger difference leads to better performance. Additionally, the negation of the difference is put into the exponential function to sharply penalize the $i$-th term if $c_{k}^i$ is much smaller than $c_{l}^i$. The sum of $i$-th error term accumulates difference between outputs of any pair of labels of which one belongs to the sample and the other does not belong to it. The sum is normalized by the numbers of all pairs, $|Y_{i}||\hat{Y}_{i}|^2$. Then, the correlations between pair labels are computed. In the other words, labels in $Y_{i}$ should get larger output value than labels in $\hat{Y}_{i}$.
+Specifically, $c_{k}^i-c_{l}^i$ represents the difference between the output labels of network on a label which belongs to sample $x_{i}$ and a label which does not belong to the same sample. The error function\ref{eq:MultiLableGlobalError} shows that bigger difference leads to better performance. Additionally, the negation of the difference is put into the exponential function to sharply penalize the $i$-th term if $c_{k}^i$ is much smaller than $c_{l}^i$. The sum of $i$-th error term accumulates difference between outputs of any pair of labels of which one belongs to the sample and the other does not belong to it. The sum is normalized by the numbers of all pairs, $|Y_{i}||\hat{Y}_{i}|$. Then, the correlations between pair labels are computed. In the other words, labels in $Y_{i}$ should get larger output value than labels in $\hat{Y}_{i}$.
 
 As previous statements, error function\ref{eq:MultiLableGlobalError} calculates the difference between output labels of which some belong to a sample and others do not belong to it. The task of learning is minimizing error function\ref{eq:MultiLableGlobalError} via enlarging output values of labels belonging to the training samples and diminishing output values of labels not belonging to it. If training dataset can cover the distribution of whole sample space, neural network model can learn it through minimizing error function by feeding training dataset.
 
@@ -78,12 +78,69 @@ As previous statements, error function\ref{eq:MultiLableGlobalError} calculates 
 Following previous process, gradient descent is used to minimize the global error function with backpropagation. 
 
 To train a sample $(x_{i}, Y_{i})$,in while $x_{i}$ is input data and $Y_{i}$ is associated label, the predicted output labels computed by neural network for is
-\begin{equation}\label{eq:MultiLableActivation}
-E
+\begin{equation}\label{eq:MultiLabelActivation}
+c_{k} = f(netc_{k} + \theta_{k})
 \end{equation}
+where $\theta_{k}$ is the bias units of $k$ layer, $f()$ is the activation function of the output neurons which is a $tanh$ function\ref{eq:tanh} in this project. $netc_{k}$ is the input data of the layer:
+\begin{equation}\label{eq:MultiLabel}
+netc_{k} = \sum_{s=1}^M b_{s}w_{sk}
+\end{equation}
+where $w_{sk}$ is the weights connecting layer $s$ and $k$, while $M$ is the number of neurons in the hidden layer.
 
+As $tanh$ function is differentiable, the general error of the $k$-th output neuron can be defined as:
+\begin{equation}\label{eq:MultiLableErrorDif}
+d_{k} = -\frac{\partial E}{\partial netc_{k}}
+\end{equation}
+combining with \ref{eq:MultiLabelActivation}, we can get
+\begin{equation}\label{eq:MultiLableChainRule}
+d_{k} = -\frac{\partial E_{i}}{\partial c_{j}} \frac{\partial c_{j}}{\partial netc_{k}} = - \frac{\partial E_{i}}{\partial c_{j}} f'(netc_{k} + \theta_{k})
+\end{equation}
+With considering global error function \ref{eq:MultiLableGlobalError}
+\begin{equation}\label{eq:MultiLablePartialC}
+\frac{\partial E_{i}}{\partial c_{j}}= 
+\begin{cases}
+    -\frac{1}{|Y_{i}||\hat{Y}_{i}|} \sum_{l \in \hat{Y}_{i}} exp(-(c_{j} - c_{l}))       & \quad \text{if } j \in Y_{i}\\
+    \frac{1}{|Y_{i}||\hat{Y}_{i}|} \sum_{k \in Y_{i}} exp(-(c_{k} - c_{j}))       & \quad \text{if } j \in \hat{Y}_{i}\\
+  \end{cases}
+\end{equation}
+with derivation of $tanh$, and substituting it with \ref{eq:MultiLableChainRule} and \ref{eq:MultiLablePartialC} we can get
+\begin{equation}\label{eq:MultiLableGenErr}
+d_{k}= 
+\begin{cases}
+    \big(-\frac{1}{|Y_{i}||\hat{Y}_{i}|} \sum_{l \in \hat{Y}_{i}} exp(-(c_{j} - c_{l}))\big)(1+c_{j})(1-c_{j})       & \quad \text{if } j \in Y_{i}\\
+    \big(\frac{1}{|Y_{i}||\hat{Y}_{i}|} \sum_{k \in Y_{i}} exp(-(c_{k} - c_{j}))\big)(1+c_{j})(1-c_{j})       & \quad \text{if } j \in \hat{Y}_{i}\\
+  \end{cases}
+\end{equation}
+According to previous method, we can define the general error of the $s$-th hidden neuron as:
+\begin{equation}\label{eq:MultiLableGenErrS}
+e_{s} = - \frac{\partial E_{i}}{\partial netb_{s}}
+\end{equation}
+with $b_{s} = f(netb_{s} + \lambda_{s})$ and chain rule,
+\begin{equation}\label{eq:MultiLablePartialE}
+e_{s} = - \frac{\partial E_{i}}{\partial b_{s}} \frac{\partial b_{s}}{\partial netb_{s}} = - \big( \sum_{j=1}^Q \frac{\partial E_{i}}{\partial netc_{j}} \frac{\partial netc_{j}}{\partial b_{s}}\big)f'(netb_{s} + \lambda_{s})
+\end{equation}
+For $d_{j} = - \frac{\partial E_{i}}{\partial netc_{j}}$ and $netc_{j} = \sum_{s=1}^M b_{s}w_{sj}$, then 
+\begin{equation}\label{eq:MultiLableGenErrEs}
+e_{s} = \big( \sum_{j=1}^Q d_{j} \times \frac{\partial (\sum_{s=1}^M b_{s}w_{sj})}{\partial b_{s}}\big) f'(netb_{s} + \lambda_{s}) = \big( \sum_{j=1}^Q d_{j}w_{sj}\big) f'(netb_{s} + \lambda_{s})
+\end{equation}
+As function $f()$ is $tanh$, we get
+\begin{equation}\label{eq:MultiLableGenErrEsFin}
+e_{s} = \big( \sum_{j=1}^Q d_{j}w_{sj}\big) (1+b_{s})(1-b_{s})
+\end{equation}
+Stochastic gradient descent(SGD) method is used to approximate function.
+\begin{equation}\label{eq:MultiLableUpdateWeights}
+\Delta w_{sj} = -\alpha \frac{\partial E_{i}}{\partial w_{sj}} = \alpha \frac{\partial E_{i}}{\partial netc_{j}} \frac{\partial netc_{j}}{\partial w_{sj}} = \alpha d_{j}b_{s}
+\end{equation}
+\begin{equation}\label{eq:MultiLableUpdateHidWeights}
+\Delta v_{hs} = -\alpha \frac{\partial E_{i}}{\partial v_{hs}} = \alpha \frac{\partial E_{i}}{\partial netb_{s}} \frac{\partial netb_{s}}{\partial v_{hs}} = \alpha e_{s}a_{h}
+\end{equation}
+while bias are updated according to
+\begin{equation}\label{eq:MultiLableUpdateBias}
+\Delta \theta_{j} = \alpha d_{j} \text{ } \Delta \lambda_{s} = \alpha e_{s}
+\end{equation}
+in previous Equations, $\alpha$ is learning rate in the range of $[0.0 \text{ } 1.0]$.
 
-
+Based on previous process, a learning method has been set up with backpropagation. More ever, a batch of training samples are fed into neural network in each epoch. After all training samples $((x, Y)$ fed into network, weights and bias are updated through equations\ref{eq:MultiLableUpdateWeights} and \ref{eq:MultiLableUpdateBias}.
 
 
 
