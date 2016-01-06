@@ -73,6 +73,21 @@ Specifically, $c_{k}^i-c_{l}^i$ represents the difference between the output lab
 
 As previous statements, error function\ref{eq:MultiLableGlobalError} calculates the difference between output labels of which some belong to a sample and others do not belong to it. The task of learning is minimizing error function\ref{eq:MultiLableGlobalError} via enlarging output values of labels belonging to the training samples and diminishing output values of labels not belonging to it. If training dataset can cover the distribution of whole sample space, neural network model can learn it through minimizing error function by feeding training dataset.
 
+\subsection{Error Function}
+
+The basic goal of regression problems is to figure out the conditional distribution of the output labels, given the input samples. It is common to use a sum-of-squares error function.
+
+The basic goal of classification problems is to figure out the posterior probabilities of class types, given the input samples. Except for sum-of-squares error function, there are some more approximate error functions which can be considered.
+
+The central goal in training neural network is to model the hidden generator of the samples instead of memorizing the training samples. Therefore, the best prediction of an input sample can be found if the network can present a new value for the sample. Because the general and complete characterization of the generator of the dataset is the probability density $p(x,t)$. It is available to decompose a joint probability density into the product of the conditional density of the labels, the input data and the density of input data,
+\begin{equation}\label{eq:JointProbDensity}
+p(x,t) = p(t|x)p(x)
+\end{equation}
+where $p(t|x)$ represents the probability density of $t$ if $x$ is a distinct label and $p(x)$ represents the density of $x$
+\begin{equation}\label{eq:ProbDensityX}
+p(x) = \int p(t,x)dt
+\end{equation}
+
 \subsection{Training and Testing}
 
 Following previous process, gradient descent is used to minimize the global error function with backpropagation. 

@@ -52,8 +52,9 @@
 \contentsline {subsection}{\numberline {6.1.1}Colour Generation}{34}{subsection.129}
 \contentsline {section}{\numberline {6.2}Artificial Neural Networks}{34}{section.135}
 \contentsline {subsection}{\numberline {6.2.1}Network Architecture}{35}{subsection.136}
-\contentsline {subsection}{\numberline {6.2.2}Training and Testing}{37}{subsection.141}
+\contentsline {subsection}{\numberline {6.2.2}Error Function}{37}{subsection.141}
+\contentsline {subsection}{\numberline {6.2.3}Training and Testing}{37}{subsection.144}
 \vspace {2em}
-\contentsline {chapter}{\numberline {A}Appendix Title Here}{40}{appendix.156}
+\contentsline {chapter}{\numberline {A}Appendix Title Here}{41}{appendix.159}
 \vspace {2em}
-\contentsline {chapter}{Bibliography}{41}{dummy.157}
+\contentsline {chapter}{Bibliography}{42}{dummy.160}
