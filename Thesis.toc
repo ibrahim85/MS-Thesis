@@ -53,8 +53,8 @@
 \contentsline {section}{\numberline {6.2}Artificial Neural Networks}{34}{section.135}
 \contentsline {subsection}{\numberline {6.2.1}Network Architecture}{35}{subsection.136}
 \contentsline {subsection}{\numberline {6.2.2}Error Function}{37}{subsection.141}
-\contentsline {subsection}{\numberline {6.2.3}Training and Testing}{37}{subsection.144}
+\contentsline {subsection}{\numberline {6.2.3}Training and Testing}{38}{subsection.147}
 \vspace {2em}
-\contentsline {chapter}{\numberline {A}Appendix Title Here}{41}{appendix.159}
+\contentsline {chapter}{\numberline {A}Appendix Title Here}{41}{appendix.162}
 \vspace {2em}
-\contentsline {chapter}{Bibliography}{42}{dummy.160}
+\contentsline {chapter}{Bibliography}{42}{dummy.163}

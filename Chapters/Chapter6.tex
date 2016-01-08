@@ -88,6 +88,20 @@ where $p(t|x)$ represents the probability density of $t$ if $x$ is a distinct la
 p(x) = \int p(t,x)dt
 \end{equation}
 
+Most error functions can be obtained from the idea of maximum likelihood. For training dataset, 
+\begin{equation}\label{eq:LikelihoodLoss}
+L = \coprod_{\substack{n}}  p(t^n|x^n)p(x^n)
+\end{equation}
+where each sample is picked out randomly from the same  distribution and their probabilities can be multiplied. The error function can be represented by minimizing the negative logarithm of the likelihood since the negative logarithm is a monotonic function.
+\begin{equation}\label{eq:LikelihoodErrorFunc}
+E = -ln L = -\sum_{\substack{n}} ln p(t^n|x^n) - \sum_{\substack{n}}lnp(x^n)
+\end{equation}
+where $E$ is notated as error function. The task of feed-forward neural network is to model the conditional probability density $p(t|x)$. And the second term is independent with the parameters in neural networks.  We can simplify \ref{eq:LikelihoodErrorFunc} to
+\begin{equation}\label{eq:SimLikelihoodErrorFunc}
+E = -ln L = -\sum_{\substack{n}} ln p(t^n|x^n) + C
+\end{equation}
+It is worth noting that error functions are dependent on different assumptions of the forms of the conditional distribution $p(t|x)$. In this classification task, $t$ represents labels which act as class members or the prediction of the probabilities of class members.
+
 \subsection{Training and Testing}
 
 Following previous process, gradient descent is used to minimize the global error function with backpropagation. 
