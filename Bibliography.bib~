@@ -432,5 +432,23 @@ pages={951-958},
   publisher={Elsevier}
 }
 
+@article{barron1993universal,
+  title={Universal approximation bounds for superpositions of a sigmoidal function},
+  author={Barron, Andrew R},
+  journal={Information Theory, IEEE Transactions on},
+  volume={39},
+  number={3},
+  pages={930--945},
+  year={1993},
+  publisher={IEEE}
+}
+
+@inproceedings{elisseeff2001kernel,
+  title={A kernel method for multi-labelled classification},
+  author={Elisseeff, Andr{\'e} and Weston, Jason},
+  booktitle={Advances in neural information processing systems},
+  pages={681--687},
+  year={2001}
+}
 
 

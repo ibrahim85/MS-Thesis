@@ -1,4 +1,4 @@
-\begin{thebibliography}{19}
+\begin{thebibliography}{20}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -120,6 +120,11 @@ Andrew~R Barron.
   function.
 \newblock \emph{Information Theory, IEEE Transactions on}, 39\penalty0
   (3):\penalty0 930--945, 1993.
+
+\bibitem[Bermejo and Cabestany(2001)]{bermejo2001oriented}
+Sergio Bermejo and Joan Cabestany.
+\newblock Oriented principal component analysis for large margin classifiers.
+\newblock \emph{Neural Networks}, 14\penalty0 (10):\penalty0 1447--1461, 2001.
 
 \bibitem[Elisseeff and Weston(2001)]{elisseeff2001kernel}
 Andr{\'e} Elisseeff and Jason Weston.

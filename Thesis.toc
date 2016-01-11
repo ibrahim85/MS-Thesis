@@ -53,8 +53,9 @@
 \contentsline {section}{\numberline {6.2}Artificial Neural Networks}{34}{section.135}
 \contentsline {subsection}{\numberline {6.2.1}Network Architecture}{35}{subsection.136}
 \contentsline {subsection}{\numberline {6.2.2}Error Function}{37}{subsection.141}
-\contentsline {subsection}{\numberline {6.2.3}Training and Testing}{38}{subsection.147}
+\contentsline {subsection}{\numberline {6.2.3}Cross Entropy}{38}{subsection.147}
+\contentsline {subsection}{\numberline {6.2.4}Training and Testing}{38}{subsection.149}
 \vspace {2em}
-\contentsline {chapter}{\numberline {A}Appendix Title Here}{41}{appendix.162}
+\contentsline {chapter}{\numberline {A}Appendix Title Here}{42}{appendix.164}
 \vspace {2em}
-\contentsline {chapter}{Bibliography}{42}{dummy.163}
+\contentsline {chapter}{Bibliography}{43}{dummy.165}

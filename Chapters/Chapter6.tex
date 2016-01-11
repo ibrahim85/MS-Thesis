@@ -102,6 +102,21 @@ E = -ln L = -\sum_{\substack{n}} ln p(t^n|x^n) + C
 \end{equation}
 It is worth noting that error functions are dependent on different assumptions of the forms of the conditional distribution $p(t|x)$. In this classification task, $t$ represents labels which act as class members or the prediction of the probabilities of class members.
 
+\subsection{Cross Entropy}
+
+The Mean Square Error is a common risk metric comparable to the predicted value of the squared error loss. It is simple to implementation and non-negative. However, it has the disadvantage of heavily weighting outliers\citep{bermejo2001oriented}.
+
+Given that there are two discrete distributions $p(x)$ and $q(x)$ over the same variable $x$. The relative entropy, relating to cross entropy, is a method to measure the distance between the distributions:
+\begin{equation}\label{eq:RelativeEngtropy}
+D_{pq}(p(x), q(x)) = \sum_{\substack{x}}q(x)ln\frac{q(x)}{p(x)}
+\end{equation}
+where the relative entropy is not a true metric because \ref{eq:RelativeEngtropy} could not be symmetric in the interchange $p \leftrightarrow q$ and probably not satisfy the triangle inequality.
+
+Cross entropy loss, also called logistic regression loss, is an alternative method of estimating probability distributions. The measure is commonly used in neural networks. It can be used to evaluate the posterior probabilities of class membership.
+
+
+
+
 \subsection{Training and Testing}
 
 Following previous process, gradient descent is used to minimize the global error function with backpropagation. 
