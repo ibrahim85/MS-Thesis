@@ -114,6 +114,18 @@ where the relative entropy is not a true metric because \ref{eq:RelativeEngtropy
 
 Cross entropy loss, also called logistic regression loss, is an alternative method of estimating probability distributions. The measure is commonly used in neural networks. It can be used to evaluate the posterior probabilities of class membership.
 
+Given that training a neuron which has several input data, $x_{1}, x_{2},...,$ with weights $w_{1}, w_{2},...,$ and a bias, $b$, the output, for example two classes, can be represented as the weighted sum of the input data.
+\begin{equation}\label{eq:EquationNN}
+a = f(x) = \sum_{i}w_{i}x_{i} + b
+\end{equation}
+Then the cross entropy cost function is
+\begin{equation}\label{eq:TwoClassCrossEntropyCostFunc}
+C = -\frac{1}{n} \sum_x \left[y \ln a + (1-y ) \ln (1-a) \right]
+\end{equation}
+where $n$ is the number of training data,$a$ is the prediction result and $y$ is actual result.
+
+The cross entropy can act as a cost function because of two properties. The first one is that $C$ is non-negative, because the items of logarithms are in the range $[0,1]$ and there is a minus sign at the beginning of the sum. The second one, if the prediction output is close to the actual value for all training data, the loss value, $C$, will be close to $0$. Given that $y = 0$ and prediction value $a \approx 0$, the first item in \ref{eq:TwoClassCrossEntropyCostFunc} is $0$ while the second item is $-\ln(1-a) \approx 0$. The similar situation occurs for situation, $y = 1$ and $a \approx 1$. Therefore, the value of cost function will be small given that prediction value is close to the actual value.
+
 
 
 

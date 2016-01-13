@@ -54,8 +54,8 @@
 \contentsline {subsection}{\numberline {6.2.1}Network Architecture}{35}{subsection.136}
 \contentsline {subsection}{\numberline {6.2.2}Error Function}{37}{subsection.141}
 \contentsline {subsection}{\numberline {6.2.3}Cross Entropy}{38}{subsection.147}
-\contentsline {subsection}{\numberline {6.2.4}Training and Testing}{38}{subsection.149}
+\contentsline {subsection}{\numberline {6.2.4}Training and Testing}{39}{subsection.151}
 \vspace {2em}
-\contentsline {chapter}{\numberline {A}Appendix Title Here}{42}{appendix.164}
+\contentsline {chapter}{\numberline {A}Appendix Title Here}{42}{appendix.166}
 \vspace {2em}
-\contentsline {chapter}{Bibliography}{43}{dummy.165}
+\contentsline {chapter}{Bibliography}{43}{dummy.167}
