@@ -126,9 +126,23 @@ where $n$ is the number of training data,$a$ is the prediction result and $y$ is
 
 The cross entropy can act as a cost function because of two properties. The first one is that $C$ is non-negative, because the items of logarithms are in the range $[0,1]$ and there is a minus sign at the beginning of the sum. The second one, if the prediction output is close to the actual value for all training data, the loss value, $C$, will be close to $0$. Given that $y = 0$ and prediction value $a \approx 0$, the first item in \ref{eq:TwoClassCrossEntropyCostFunc} is $0$ while the second item is $-\ln(1-a) \approx 0$. The similar situation occurs for situation, $y = 1$ and $a \approx 1$. Therefore, the value of cost function will be small given that prediction value is close to the actual value.
 
-
-
-
+In total, the cross entropy tends to $0$ when the neuron acts better at predicting the output $y$ for total training inputs $x$. They are basic properties for a cost function. Although the quadratic cost function satisfy the properties, the cross entropy has the advantage on avoiding the issue of learning curve slowing down. To illustrate the advantage, the partial derivative of the cross entropy cost function can be computed with the respect to the weights. Applying the chain rule twice on \ref{eq:TwoClassCrossEntropyCostFunc}
+\begin{eqnarray}\label{eq:DerCrossEntropyCostFunc}
+  \frac{\partial C}{\partial w_j} & = & -\frac{1}{n} \sum_x \left(
+    \frac{y }{f(x)} -\frac{(1-y)}{1-f(x)} \right)
+  \frac{\partial f}{\partial w_j} \\
+ & = & -\frac{1}{n} \sum_x \left( 
+    \frac{y}{f(x)}-\frac{(1-y)}{1-f(x)} \right)f'(x) x_j.
+\end{eqnarray}
+where the second equation can be represented as
+\begin{equation}\label{eq:SecondDerCrossEntropyCostFunc}
+  \frac{\partial C}{\partial w_j} = \frac{1}{n}  \sum_x \frac{f'(x) x_j}{f(x) (1-f(x))} (f(z)-y)
+\end{equation}
+Because the defination of the sigmoid function is $f(x) =1/(1+e^{-x})$ and the derivative of sigmoid function is $f'(x) =f(x)(1-f(x))$. Then the items $f'(x)$ and $f(x) =1/(1+e^{-x})$ cancel in the equation and it becomes
+\begin{equation}\label{eq:SimDerCrossEntropyCostFunc}
+ \frac{\partial C}{\partial w_j} =  \frac{1}{n} \sum_x x_j(f(x)-y)
+\end{equation}
+The equation shows that rate of learning weights is controlled by $f(x) - y$. The larger the error, the faster the neuron learns. This can result in quick learning speed. 
 \subsection{Training and Testing}
 
 Following previous process, gradient descent is used to minimize the global error function with backpropagation. 
