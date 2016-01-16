@@ -142,7 +142,14 @@ Because the defination of the sigmoid function is $f(x) =1/(1+e^{-x})$ and the d
 \begin{equation}\label{eq:SimDerCrossEntropyCostFunc}
  \frac{\partial C}{\partial w_j} =  \frac{1}{n} \sum_x x_j(f(x)-y)
 \end{equation}
-The equation shows that rate of learning weights is controlled by $f(x) - y$. The larger the error, the faster the neuron learns. This can result in quick learning speed. 
+The equation shows that rate of learning weights is controlled by $f(x) - y$. The larger the error, the faster the neuron learns. In particular, the property avoids the learning slowdown because the derivative item $f'(x)$ gets canceled out in the quadratic cost.
+
+In the similar way, the bias can be computed by the partial derivative.
+\begin{equation}\label{eq:BiasCrossEntropyCostFunc}
+\frac{\partial C}{\partial b} = \frac{1}{n} \sum_x (f(x)-y)
+\end{equation}
+
+
 \subsection{Training and Testing}
 
 Following previous process, gradient descent is used to minimize the global error function with backpropagation. 

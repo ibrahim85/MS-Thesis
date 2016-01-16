@@ -106,6 +106,19 @@ where $$\delta_{j} = \frac{\partial E}{\partial a_{j}} = \displaystyle\sum_{k} \
 
 The $\delta_{j}$ of a hidden unit is based on the $\delta_{k}$s of output units to which it links. To minimise the error function$E$ with gradient descent, it needs the propagation of errors backwards.
 
+\section{Softmax classifier}
+
+Softmax function, also named normalized exponential, is a generalization of logistic function which squeezes a $d$ dimensional arbitrary real values vector to a $d$ dimensional vector of real values in the range $(0,1)$ that add up to 1. Because the softmax function is the gradient log normalizer of categorical probability distribution, it can be used in probabilistic multiclass classification methods.
+
+The softmax layer begins the same way as normal layer which forms the weighted inputs $z^L_j = \sum_{k} w^L_{jk} x^{L-1}_k + b^L_j$ where $L$ is layer number, $k$ is input data number and $j$ is output neuron number. Then it implements a softmax function to the $z^L_j$ and the activation $a^L_j$ of the $j$ output neuron is
+\begin{equation}\label{eq:SoftmaxActivation}
+a^L_j = \frac{e^{z^L_j}}{\sum_k e^{z^L_k}}
+\end{equation}
+The equation \ref{eq:SoftmaxActivation} implies that the output values are all positive and the sum of all values $\sum_j a^L_j$ is $1$.
+
+Softmax classifier is used to handle a multiclass classification. For a training dataset $(x_{1}, y_{1}), \ldots, (x_{m}, y_{m}), y_{i} \in \{1, 2, \ldots, K\} $ of $m$ labelled examples, label $y$ can have $K$ different values.
+
+Suppose to predict an unseen sample $x$, we will use hypothesis to estimate the probability $P(y=k | x)$ for each value $k = 1, \ldots, K$. For example, we want to compute the probability of the class label on each of $K$ different possible values. Then the neural network will output a $K$ dimensional vectors
 \section{Training protocols}
 
 In supervised learning, we have training dataset which is data with labels. We can use the neural networks to find the output of the training data and adjust the weights to optimal values. There are mainly  three types of training protocols, stochastic, batch and online training. In stochastic training, we randomly choose samples from training dataset and update weights every time depending on output of neural networks. In batch training, we use some samples and pass them through network, then update weights. In online training method, each sample of training dataset is used once and weights are updated each time. We usually call one time of passing all training dataset through neural networks one epoch.
