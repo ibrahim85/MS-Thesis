@@ -142,6 +142,28 @@ P(y = K | x; W)
 %\end{equation}
 Where $W^{j}$ are the weights of the model and the normalized distribution ensures that the sum is one.
 
+On the one hand, cross entropy can be used to interpreted softmax classifier. The cross entropy between actual  distribution $p$ and a predicted distribution $q$ is represented as
+\begin{equation}\label{eq:CrossEntropyDiff}
+H(p,q) = - \sum_x p(x) \log q(x)
+\end{equation}
+Hence, the task of softmax classifier is to minimize the cross entropy between the actual distribution and the predicted distribution. 
+
+On the other hand, softmax classifier can be interpreted in probability view. Given a sample $(x_i, y_i)$ and parameters $W$, we can compute the normalized probability by
+\begin{equation}\label{eq:ProbInter}
+P(y_i \mid x_i; W) = \frac{e^{f_{y_i}}}{\sum_j e^{f_j} }
+\end{equation}
+where $f_{y_i}$ is the score predicted by the model with weights $W$. Therefore the normalized probabilities are computed by exponentiating the values and dividing sum of all values. Then we can minimize the negative log likelihood of the ground truth labels which can be regarded as performing Max Likelihood Estimation(MLE). Instead of MLE, Maximum a posteriori(MAP) can be used to evaluate the performance of the model.
+
+\subsection{Practical issues}
+
+For numerical view, the exponentiation computation is easy overflow. Thus, the output of softmax function is not numeric stable through computing $e^{f_{y_i}}$ and $\sum_j e^{f_{y_j}}$ in straight way. It is important to implement with a normalization trick. It is mathematically equivalent if multiplying a constant $C$ both with top and bottom of the fraction.
+\begin{equation}\label{eq:SoftmaxTricks}
+\frac{e^{f_{y_i}}}{\sum_j e^{f_j}}
+= \frac{Ce^{f_{y_i}}}{C\sum_j e^{f_j}}
+= \frac{e^{f_{y_i} + \log C}}{\sum_j e^{f_j + \log C}}
+\end{equation}
+where $C$ can be any positive value. The $C$ does not change the output value, while it can improve the numerical stability of the computation. An experienced choice of $C$ is to set $\log C = -\max_j f_j$, and it can shift the vector $f$ to preserve the highest value as $0$.
+
 \section{Training protocols}
 
 In supervised learning, we have training dataset which is data with labels. We can use the neural networks to find the output of the training data and adjust the weights to optimal values. There are mainly  three types of training protocols, stochastic, batch and online training. In stochastic training, we randomly choose samples from training dataset and update weights every time depending on output of neural networks. In batch training, we use some samples and pass them through network, then update weights. In online training method, each sample of training dataset is used once and weights are updated each time. We usually call one time of passing all training dataset through neural networks one epoch.
