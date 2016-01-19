@@ -164,17 +164,25 @@ For numerical view, the exponentiation computation is easy overflow. Thus, the o
 \end{equation}
 where $C$ can be any positive value. The $C$ does not change the output value, while it can improve the numerical stability of the computation. An experienced choice of $C$ is to set $\log C = -\max_j f_j$, and it can shift the vector $f$ to preserve the highest value as $0$.
 
-\subsection{Loss function}
-The loss function is used to evaluate the performance of the model. We will generate a loss function for softmax regression. An indicator function, $I\{\cdot\}$, is introduced to represent the accuracy for each label. If the predicted result corresponds to the actual label, say $y^{(i)} = k$, the indicator function returns $1$, otherwise $0$. The loss function will be defined as
-\begin{equation}\label{eq:SoftmaxLossFunc}
+\subsection{Error function}
+The error function is used to evaluate the performance of the model. We will generate an error function for softmax regression. An indicator function, $I\{\cdot\}$, is introduced to represent the accuracy for each label. If the predicted result corresponds to the actual label, say $y^{(i)} = k$, the indicator function returns $1$, otherwise $0$. The error function will be defined as
+\begin{equation}\label{eq:LogLossFunc}
 L(W) = - \left[ \sum_{i=1}^{m} \sum_{k=1}^{K}  I\left\{y^{(i)} = k\right\} \log \frac{\exp(W^{(k)\top} x^{(i)})}{\sum_{j=1}^K \exp(W^{(j)\top} x^{(i)})}\right]
 \end{equation}
-where this generates the logistic regression loss function
-\begin{align}
+where this generates the logistic regression error function
+\begin{align}\label{eq:LogRegLossFunc}
 L(W) &= - \left[ \sum_{i=1}^m   (1-y^{(i)}) \log (1-h_W(x^{(i)})) + y^{(i)} \log h_W(x^{(i)}) \right] \\
 &= - \left[ \sum_{i=1}^{m} \sum_{k=0}^{1} 1\left\{y^{(i)} = k\right\} \log P(y^{(i)} = k | x^{(i)} ; W) \right]
 \end{align}
-
+Similar to the logistic regression error function, the softmax error function sum over the predicted different $K$ values of the class value. In the softmax regression, the posterior probability distribution can be represented as
+\begin{equation}\label{eq:PostProbDis}
+P(y^{(i)} = k | x^{(i)} ; W) = \frac{\exp(W^{(k)\top} x^{(i)})}{\sum_{j=1}^K \exp(W^{(j)\top} x^{(i)}) }
+\end{equation}
+It is not easy to solve equation \ref{eq:LogRegLossFunc}. Usually an optimization algorithm can help to approximate the optimal value. Taking derivative with respect to weights, we can get the entire gradient 
+\begin{equation}\label{eq:PartDer}
+\nabla_{W^{(k)}} L(W) = - \sum_{i=1}^{m}{ \left[ x^{(i)} \left( 1\{ y^{(i)} = k\}  - P(y^{(i)} = k | x^{(i)}; W) \right) \right]  }
+\end{equation}
+We can take partial derivative of $L(W)$ with respect to the $j$th element of $W^{(k)}$.
 
 \section{Training protocols}
 

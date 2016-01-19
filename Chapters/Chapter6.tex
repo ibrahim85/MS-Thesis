@@ -227,3 +227,10 @@ If there are several minimum values and optimal values are in a division, the mi
 
 The computation complexity of evaluating derivatives of the error function is linearly with neuron size of network. Three main components are composed of computation, feedforward process, backpropagation process and updating weights process. In feedforward process to compute $b_{i}$ and $c_{j}$, the computation cost is mainly on evaluation the sums and activation function. In backpropagation process(\ref{eq:MultiLableGenErr}and\ref{eq:MultiLableGenErrEsFin}), the computation complexity of $d_{k}$ and $e_{s}$ is $O(Q)$. In updating weights process, the overall computational cost is $O(W)$ where $W$ is the total number of weights . 
 
+\section{Experiment}
+
+We use the same hardware and software environment as described in weather classification.
+
+\subsection{Dataset}
+
+We generate $1000$
