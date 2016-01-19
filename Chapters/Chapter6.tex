@@ -16,7 +16,9 @@ To demonstrate the approach, the dataset, named color detector, is created artif
 
 For each sample $x_{i}$, it owns 3 labels ${y_{0},y_{1},y_{2}} y_{j} \in \{-1,1\}$ which represent $red$, $green$ and $blue$ respectively.
 
-\subsection{Colour Generation}
+\subsection{Image Generation}
+
+The RGB and HSV coordinate systems represent a geometric shape in the color space. Therefore, the distance among colors contains little meaning. However, corresponding distances make some intuitive sense and enable conversion possible between RGB coordinates and HSV coordinates.
 
 To generate dataset artificially, we create $16x16$ size images and each image has $256$ pixels. For each pixel, we generate a random floating point number $h$ in the range $[0.0, 1.0)$ and use it as value for Hue via formulation.
 \begin{equation}\label{eq:FormulationHue}
@@ -30,7 +32,7 @@ Where $r$ is another random floating point number. Then we generate 2 random flo
 \subfigure[L:-1 -1 1]{\label{fig:a}\includegraphics[width=0.3\textwidth]{0}}
 \subfigure[L:-1 1 1]{\label{fig:b}\includegraphics[width=0.3\textwidth]{1}}
 \subfigure[L:-1 1 -1]{\label{fig:c}\includegraphics[width=0.3\textwidth]{3}}
-\caption{Multi-label Samples. Left image is a blue one, middle one is green plus blue and right one is green.}
+\caption{Multi-label Samples. Three labels mean red, green and blue seperately.}
 \end{figure}
 
 The dataset contains $1000$ images in total. $960$ images are training samples and $40$ are test samples. 
@@ -229,8 +231,42 @@ The computation complexity of evaluating derivatives of the error function is li
 
 \section{Experiment}
 
-We use the same hardware and software environment as described in weather classification.
+We use the identical hardware and software environment as described in weather classification project.
 
 \subsection{Dataset}
 
-We generate $1000$
+We generate $1000$ raw RGB images with size $16x16$ automatically. $40$ images are reserved for testing and $960$ images are used for training. Each image has $3$ labels $y_i \in (-1, 1)$ representing three attributes, red, green and blue. If the image has the color attribute, the corresponding label is $1$, otherwise $-1$.
+
+\subsection{Details of network}
+
+We build a network architecture from scratch up. First, we need do determine how many layers needs to construct a multilayer network. In \cite{lippmann1987introduction}, Lippmann has proved that two hidden layers are able to create classification regions of arbitrary desired shape. However, Kolmogorov \citep{kolmogorov1963representation} showed that the superposition of continuous one-dimensional function can represent a continuous function with several variables. Then we set up a neural network with one fully connected hidden layer between input and output layers.
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.8\textwidth]{multilabel-topology.png}
+\caption{\label{fig:perceptron}Network topology for multilable classification.}
+\end{figure}
+Between two fully connected layers, we put a ReLU layer to apply the non-saturating activation function $f(x) = max(0,x)$ which can help the decision function increase the non-linear properties.
+
+Then we need to determine how many neurons need in the hidden layer. The number of neurons in the hidden layer depends mainly on
+\begin{enumerate}
+  \item number of input and output neurons
+  \item number of training samples
+  \item network architecture
+  \item training algorithms
+  \item type of activation function
+  \item regularization
+\end{enumerate}
+In general, it is hard to determine the best number of hidden neurons without evaluating several trained models and comparing the generalization error rates among the models. Lack of hidden neurons will lead to high training error and poor generalization performance because of underfitting and high bias. On the other hand, exceeding neuron number will achieve low training error but still poor generalization performance because of overfitting and high variance. One of crucial considerations is to evaluate hidden neuron effects on the bias/variance trade-off.
+
+There are many rules of thumb to determine the number of hidden neurons \citep{heaton2008introduction} such as
+\begin{enumerate}
+  \item The number should between the size of input layer and output layer.
+  \item The number should be $\frac{2}{3}$ of the sum of the input neurons plus the output neurons.
+  \item The number should be less than twice the size of the input layer.
+  \item Based on geometric pyramid rule, the number should between the number of input neurons and the output neurons.
+\end{enumerate}
+It is time-consuming to find the optimal number of hidden neurons. We will start from a number of neurons which is small and increase the number gradually by evaluating the performance of the network.
+
+The connecting method between different layers is fully connecting because we want to find which color label owned by each image in this case. The information of each color distributes evenly in each patch of images. The value of the weights and bias is initialized randomly. For weights, $xavier$ algorithm is applied to determine the scale of initialization depending on the number of input and output neurons. The bias is simply initialized as constant, default as $0$. The batch size is set to $40$ means that there are $40$ images feeding into neural network each time.
+
+In training process, the base learning rate is set to $0.0001$. The learning rate of weights is equal to base learning rate while the learning rate of bias double the base learning rate. We set momentum with $0.9$ to smooth the weight updating across iterations so that the learning process will be stable and fast. Weight decay is $0.0005$.

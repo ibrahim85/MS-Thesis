@@ -33,9 +33,10 @@
 \contentsline {figure}{\numberline {5.1}{\ignorespaces Example Image\relax }}{26}{figure.caption.104}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {6.1}{\ignorespaces Colour Wheel Diagram\relax }}{36}{figure.caption.141}
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Multi-label Samples. Left image is a blue one, middle one is green plus blue and right one is green.\relax }}{37}{figure.caption.144}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Multi-label Samples. Three labels mean red, green and blue seperately.\relax }}{37}{figure.caption.144}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {L:-1 -1 1}}}{37}{figure.caption.144}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {L:-1 1 1}}}{37}{figure.caption.144}
 \contentsline {subfigure}{\numberline {(c)}{\ignorespaces {L:-1 1 -1}}}{37}{figure.caption.144}
 \contentsline {figure}{\numberline {6.3}{\ignorespaces Network Topology For Multi-lable classification\relax }}{38}{figure.caption.150}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Network topology for multilable classification.\relax }}{46}{figure.caption.186}
 \addvspace {10\p@ }

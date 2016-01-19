@@ -1,4 +1,4 @@
-\begin{thebibliography}{20}
+\begin{thebibliography}{23}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -131,5 +131,21 @@ Andr{\'e} Elisseeff and Jason Weston.
 \newblock A kernel method for multi-labelled classification.
 \newblock In \emph{Advances in neural information processing systems}, pages
   681--687, 2001.
+
+\bibitem[Lippmann(1987)]{lippmann1987introduction}
+Richard~P Lippmann.
+\newblock An introduction to computing with neural nets.
+\newblock \emph{ASSP Magazine, IEEE}, 4\penalty0 (2):\penalty0 4--22, 1987.
+
+\bibitem[Kolmogorov(1963)]{kolmogorov1963representation}
+Andrei~Nikolaevich Kolmogorov.
+\newblock On the representation of continuous functions of many variables by
+  superposition of continuous functions of one variable and addition.
+\newblock \emph{Amer. Math. Soc. Transl}, 28:\penalty0 55--59, 1963.
+
+\bibitem[Heaton(2008)]{heaton2008introduction}
+Jeff Heaton.
+\newblock \emph{Introduction to neural networks with Java}.
+\newblock Heaton Research, Inc., 2008.
 
 \end{thebibliography}
