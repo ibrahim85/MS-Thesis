@@ -164,6 +164,18 @@ For numerical view, the exponentiation computation is easy overflow. Thus, the o
 \end{equation}
 where $C$ can be any positive value. The $C$ does not change the output value, while it can improve the numerical stability of the computation. An experienced choice of $C$ is to set $\log C = -\max_j f_j$, and it can shift the vector $f$ to preserve the highest value as $0$.
 
+\subsection{Loss function}
+The loss function is used to evaluate the performance of the model. We will generate a loss function for softmax regression. An indicator function, $I\{\cdot\}$, is introduced to represent the accuracy for each label. If the predicted result corresponds to the actual label, say $y^{(i)} = k$, the indicator function returns $1$, otherwise $0$. The loss function will be defined as
+\begin{equation}\label{eq:SoftmaxLossFunc}
+L(W) = - \left[ \sum_{i=1}^{m} \sum_{k=1}^{K}  I\left\{y^{(i)} = k\right\} \log \frac{\exp(W^{(k)\top} x^{(i)})}{\sum_{j=1}^K \exp(W^{(j)\top} x^{(i)})}\right]
+\end{equation}
+where this generates the logistic regression loss function
+\begin{align}
+L(W) &= - \left[ \sum_{i=1}^m   (1-y^{(i)}) \log (1-h_W(x^{(i)})) + y^{(i)} \log h_W(x^{(i)}) \right] \\
+&= - \left[ \sum_{i=1}^{m} \sum_{k=0}^{1} 1\left\{y^{(i)} = k\right\} \log P(y^{(i)} = k | x^{(i)} ; W) \right]
+\end{align}
+
+
 \section{Training protocols}
 
 In supervised learning, we have training dataset which is data with labels. We can use the neural networks to find the output of the training data and adjust the weights to optimal values. There are mainly  three types of training protocols, stochastic, batch and online training. In stochastic training, we randomly choose samples from training dataset and update weights every time depending on output of neural networks. In batch training, we use some samples and pass them through network, then update weights. In online training method, each sample of training dataset is used once and weights are updated each time. We usually call one time of passing all training dataset through neural networks one epoch.
