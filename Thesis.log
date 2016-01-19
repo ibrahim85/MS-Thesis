@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/W32TeX) (preloaded format=pdflatex 2015.3.12)  20 JAN 2016 00:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/W32TeX) (preloaded format=pdflatex 2015.3.12)  20 JAN 2016 07:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1131,7 +1131,7 @@ File: ./Figures/multilabel-topology.png Graphic file (type png)
 Package pdftex.def Info: ./Figures/multilabel-topology.png used on input line 2
 45.
 (pdftex.def)             Requested size: 333.97972pt x 456.40063pt.
- [45] [46 <./Figures/multilabel-topology.png>]) [47] (./Appendices/AppendixA.te
+ [45] [46 <./Figures/multilabel-topology.png>] [47]) (./Appendices/AppendixA.te
 x [48]
 Appendix A.
 ------------------------------------------------------------------------------
@@ -1193,7 +1193,7 @@ st/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2014/texmf-dist/fonts/
 type1/public/amsfonts/cm/cmtt10.pfb><c:/texlive/2014/texmf-dist/fonts/type1/pub
 lic/amsfonts/symbols/msam7.pfb><c:/texlive/2014/texmf-dist/fonts/type1/public/a
 msfonts/symbols/msbm10.pfb>
-Output written on Thesis.pdf (63 pages, 2840838 bytes).
+Output written on Thesis.pdf (63 pages, 2840894 bytes).
 PDF statistics:
  1068 PDF objects out of 1200 (max. 8388607)
  906 compressed objects within 10 object streams

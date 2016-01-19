@@ -270,3 +270,5 @@ It is time-consuming to find the optimal number of hidden neurons. We will start
 The connecting method between different layers is fully connecting because we want to find which color label owned by each image in this case. The information of each color distributes evenly in each patch of images. The value of the weights and bias is initialized randomly. For weights, $xavier$ algorithm is applied to determine the scale of initialization depending on the number of input and output neurons. The bias is simply initialized as constant, default as $0$. The batch size is set to $40$ means that there are $40$ images feeding into neural network each time.
 
 In training process, the base learning rate is set to $0.0001$. The learning rate of weights is equal to base learning rate while the learning rate of bias double the base learning rate. We set momentum with $0.9$ to smooth the weight updating across iterations so that the learning process will be stable and fast. Weight decay is $0.0005$.
+
+Label-metric is chosen as evaluation method. Each 
