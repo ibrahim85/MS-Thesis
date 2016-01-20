@@ -1,0 +1,873 @@
+I0120 16:20:41.341778 22060 train_net.cpp:26] Starting Optimization
+I0120 16:20:41.342016 22060 solver.cpp:36] Initializing solver from parameters: 
+train_net: "train.prototxt"
+test_net: "test.prototxt"
+test_iter: 1
+test_interval: 200
+base_lr: 0.0001
+display: 20
+max_iter: 5000
+lr_policy: "step"
+gamma: 0.1
+momentum: 0.9
+weight_decay: 0.0005
+stepsize: 1000
+snapshot: 1000
+snapshot_prefix: "multi_label_train"
+solver_mode: GPU
+I0120 16:20:41.527618 22060 solver.cpp:56] Creating training net from file: train.prototxt
+I0120 16:20:41.527865 22060 net.cpp:39] Initializing net from parameters: 
+name: "CaffeNet"
+layers {
+  top: "data"
+  top: "label"
+  name: "data"
+  type: DATA
+  data_param {
+    source: "multi-label-train.leveldb"
+    mean_file: "mean.binaryproto"
+    batch_size: 4
+  }
+}
+layers {
+  bottom: "data"
+  top: "ip1"
+  name: "ip1"
+  type: INNER_PRODUCT
+  blobs_lr: 1
+  blobs_lr: 2
+  inner_product_param {
+    num_output: 50
+    weight_filler {
+      type: "xavier"
+    }
+    bias_filler {
+      type: "constant"
+    }
+  }
+}
+layers {
+  bottom: "ip1"
+  top: "ip1"
+  name: "relu1"
+  type: RELU
+}
+layers {
+  bottom: "ip1"
+  top: "ipout2"
+  name: "ip2"
+  type: INNER_PRODUCT
+  blobs_lr: 1
+  blobs_lr: 2
+  inner_product_param {
+    num_output: 3
+    weight_filler {
+      type: "xavier"
+    }
+    bias_filler {
+      type: "constant"
+    }
+  }
+}
+layers {
+  bottom: "ipout2"
+  bottom: "label"
+  name: "loss"
+  type: MULTI_LABEL_LOSS
+}
+I0120 16:20:41.527925 22060 net.cpp:67] Creating Layer data
+I0120 16:20:41.527931 22060 net.cpp:187] data -> data
+I0120 16:20:41.527945 22060 net.cpp:187] data -> label
+I0120 16:20:41.527972 22060 data_layer.cpp:193] Opening leveldb multi-label-train.leveldb
+I0120 16:20:41.624411 22060 data_layer.cpp:278] output data size: 4,3,16,16
+I0120 16:20:41.624441 22060 data_layer.cpp:286] output label size: 4,3,1,1
+I0120 16:20:41.624451 22060 data_layer.cpp:303] Loading mean file frommean.binaryproto
+I0120 16:20:41.624583 22060 net.cpp:84] Top shape: 4 3 16 16 (3072)
+I0120 16:20:41.624600 22060 net.cpp:84] Top shape: 4 3 1 1 (12)
+I0120 16:20:41.624610 22060 net.cpp:126] data does not need backward computation.
+I0120 16:20:41.624626 22060 net.cpp:67] Creating Layer ip1
+I0120 16:20:41.624636 22060 net.cpp:226] ip1 <- data
+I0120 16:20:41.624655 22060 net.cpp:187] ip1 -> ip1
+I0120 16:20:41.625609 22060 net.cpp:84] Top shape: 4 50 1 1 (200)
+I0120 16:20:41.625643 22060 net.cpp:121] ip1 needs backward computation.
+I0120 16:20:41.625658 22060 net.cpp:67] Creating Layer relu1
+I0120 16:20:41.625666 22060 net.cpp:226] relu1 <- ip1
+I0120 16:20:41.625679 22060 net.cpp:177] relu1 -> ip1 (in-place)
+I0120 16:20:41.625702 22060 net.cpp:84] Top shape: 4 50 1 1 (200)
+I0120 16:20:41.625712 22060 net.cpp:121] relu1 needs backward computation.
+I0120 16:20:41.625725 22060 net.cpp:67] Creating Layer ip2
+I0120 16:20:41.625732 22060 net.cpp:226] ip2 <- ip1
+I0120 16:20:41.625746 22060 net.cpp:187] ip2 -> ipout2
+I0120 16:20:41.625771 22060 net.cpp:84] Top shape: 4 3 1 1 (12)
+I0120 16:20:41.625782 22060 net.cpp:121] ip2 needs backward computation.
+I0120 16:20:41.625803 22060 net.cpp:67] Creating Layer loss
+I0120 16:20:41.625814 22060 net.cpp:226] loss <- ipout2
+I0120 16:20:41.625821 22060 net.cpp:226] loss <- label
+I0120 16:20:41.625834 22060 net.cpp:121] loss needs backward computation.
+I0120 16:20:41.625843 22060 net.cpp:295] Collecting Learning Rate and Weight Decay.
+I0120 16:20:41.625849 22060 net.cpp:159] Network initialization done.
+I0120 16:20:41.625854 22060 net.cpp:160] Memory required for data: 0
+I0120 16:20:41.625876 22060 solver.cpp:75] Creating testing net (#0) from file: test.prototxt
+I0120 16:20:41.626199 22060 net.cpp:39] Initializing net from parameters: 
+name: "CaffeNet"
+layers {
+  top: "data"
+  top: "label"
+  name: "data"
+  type: DATA
+  data_param {
+    source: "multi-label-test.leveldb"
+    mean_file: "mean.binaryproto"
+    batch_size: 40
+  }
+}
+layers {
+  bottom: "data"
+  top: "ip1"
+  name: "ip1"
+  type: INNER_PRODUCT
+  inner_product_param {
+    num_output: 50
+    weight_filler {
+      type: "xavier"
+    }
+    bias_filler {
+      type: "constant"
+    }
+  }
+}
+layers {
+  bottom: "ip1"
+  top: "ip1"
+  name: "relu1"
+  type: RELU
+}
+layers {
+  bottom: "ip1"
+  top: "ipout2"
+  name: "ip2"
+  type: INNER_PRODUCT
+  inner_product_param {
+    num_output: 3
+    weight_filler {
+      type: "xavier"
+    }
+    bias_filler {
+      type: "constant"
+    }
+  }
+}
+layers {
+  bottom: "ipout2"
+  bottom: "label"
+  top: "accuracy"
+  name: "accuracy"
+  type: MULTI_LABEL_ACCURACY
+}
+I0120 16:20:41.626272 22060 net.cpp:67] Creating Layer data
+I0120 16:20:41.626286 22060 net.cpp:187] data -> data
+I0120 16:20:41.626303 22060 net.cpp:187] data -> label
+I0120 16:20:41.626320 22060 data_layer.cpp:193] Opening leveldb multi-label-test.leveldb
+I0120 16:20:41.710084 22060 data_layer.cpp:278] output data size: 40,3,16,16
+I0120 16:20:41.710109 22060 data_layer.cpp:286] output label size: 40,3,1,1
+I0120 16:20:41.710119 22060 data_layer.cpp:303] Loading mean file frommean.binaryproto
+I0120 16:20:41.710310 22060 net.cpp:84] Top shape: 40 3 16 16 (30720)
+I0120 16:20:41.710328 22060 net.cpp:84] Top shape: 40 3 1 1 (120)
+I0120 16:20:41.710338 22060 net.cpp:126] data does not need backward computation.
+I0120 16:20:41.710355 22060 net.cpp:67] Creating Layer ip1
+I0120 16:20:41.710366 22060 net.cpp:226] ip1 <- data
+I0120 16:20:41.710383 22060 net.cpp:187] ip1 -> ip1
+I0120 16:20:41.711256 22060 net.cpp:84] Top shape: 40 50 1 1 (2000)
+I0120 16:20:41.711279 22060 net.cpp:121] ip1 needs backward computation.
+I0120 16:20:41.711292 22060 net.cpp:67] Creating Layer relu1
+I0120 16:20:41.711302 22060 net.cpp:226] relu1 <- ip1
+I0120 16:20:41.711313 22060 net.cpp:177] relu1 -> ip1 (in-place)
+I0120 16:20:41.711326 22060 net.cpp:84] Top shape: 40 50 1 1 (2000)
+I0120 16:20:41.711336 22060 net.cpp:121] relu1 needs backward computation.
+I0120 16:20:41.711349 22060 net.cpp:67] Creating Layer ip2
+I0120 16:20:41.711356 22060 net.cpp:226] ip2 <- ip1
+I0120 16:20:41.711367 22060 net.cpp:187] ip2 -> ipout2
+I0120 16:20:41.711392 22060 net.cpp:84] Top shape: 40 3 1 1 (120)
+I0120 16:20:41.711403 22060 net.cpp:121] ip2 needs backward computation.
+I0120 16:20:41.711416 22060 net.cpp:67] Creating Layer accuracy
+I0120 16:20:41.711423 22060 net.cpp:226] accuracy <- ipout2
+I0120 16:20:41.711433 22060 net.cpp:226] accuracy <- label
+I0120 16:20:41.711444 22060 net.cpp:187] accuracy -> accuracy
+I0120 16:20:41.711459 22060 net.cpp:84] Top shape: 1 5 1 1 (5)
+I0120 16:20:41.711465 22060 net.cpp:121] accuracy needs backward computation.
+I0120 16:20:41.711470 22060 net.cpp:148] This network produces output accuracy
+I0120 16:20:41.711478 22060 net.cpp:295] Collecting Learning Rate and Weight Decay.
+I0120 16:20:41.711485 22060 net.cpp:159] Network initialization done.
+I0120 16:20:41.711490 22060 net.cpp:160] Memory required for data: 0
+I0120 16:20:41.711508 22060 solver.cpp:79] Solver scaffolding done.
+I0120 16:20:41.711514 22060 solver.cpp:85] Solving CaffeNet
+I0120 16:20:41.711522 22060 solver.cpp:138] Iteration 0, Testing net (#0)
+I0120 16:20:41.729640 22060 solver.cpp:176] Test score #0: 0.490566
+I0120 16:20:41.729693 22060 solver.cpp:176] Test score #1: 0.477612
+I0120 16:20:41.729708 22060 solver.cpp:176] Test score #2: 0.484002
+I0120 16:20:41.729722 22060 solver.cpp:176] Test score #3: 0.42623
+I0120 16:20:41.729733 22060 solver.cpp:176] Test score #4: 0.45614
+I0120 16:20:41.739555 22060 solver.cpp:271] Iteration 20, lr = 0.0001
+I0120 16:20:41.739790 22060 solver.cpp:111] Iteration 20, loss = 0.182894
+I0120 16:20:41.749241 22060 solver.cpp:271] Iteration 40, lr = 0.0001
+I0120 16:20:41.749346 22060 solver.cpp:111] Iteration 40, loss = 3.97361
+I0120 16:20:41.754508 22060 solver.cpp:271] Iteration 60, lr = 0.0001
+I0120 16:20:41.754613 22060 solver.cpp:111] Iteration 60, loss = 0.000112301
+I0120 16:20:41.759661 22060 solver.cpp:271] Iteration 80, lr = 0.0001
+I0120 16:20:41.759766 22060 solver.cpp:111] Iteration 80, loss = 0.000149176
+I0120 16:20:41.764638 22060 solver.cpp:271] Iteration 100, lr = 0.0001
+I0120 16:20:41.764742 22060 solver.cpp:111] Iteration 100, loss = 0.131207
+I0120 16:20:41.769460 22060 solver.cpp:271] Iteration 120, lr = 0.0001
+I0120 16:20:41.769565 22060 solver.cpp:111] Iteration 120, loss = 6.3445
+I0120 16:20:41.774369 22060 solver.cpp:271] Iteration 140, lr = 0.0001
+I0120 16:20:41.774474 22060 solver.cpp:111] Iteration 140, loss = 6.63776
+I0120 16:20:41.780848 22060 solver.cpp:271] Iteration 160, lr = 0.0001
+I0120 16:20:41.780954 22060 solver.cpp:111] Iteration 160, loss = 6.46187
+I0120 16:20:41.786056 22060 solver.cpp:271] Iteration 180, lr = 0.0001
+I0120 16:20:41.786159 22060 solver.cpp:111] Iteration 180, loss = 0
+I0120 16:20:41.791214 22060 solver.cpp:271] Iteration 200, lr = 0.0001
+I0120 16:20:41.791318 22060 solver.cpp:111] Iteration 200, loss = 0.096285
+I0120 16:20:41.791331 22060 solver.cpp:138] Iteration 200, Testing net (#0)
+I0120 16:20:41.791537 22060 solver.cpp:176] Test score #0: 0.962264
+I0120 16:20:41.791549 22060 solver.cpp:176] Test score #1: 0.970149
+I0120 16:20:41.791554 22060 solver.cpp:176] Test score #2: 0.966191
+I0120 16:20:41.791559 22060 solver.cpp:176] Test score #3: 0.962264
+I0120 16:20:41.791564 22060 solver.cpp:176] Test score #4: 0.962264
+I0120 16:20:41.796501 22060 solver.cpp:271] Iteration 220, lr = 0.0001
+I0120 16:20:41.796605 22060 solver.cpp:111] Iteration 220, loss = 5.27501
+I0120 16:20:41.801316 22060 solver.cpp:271] Iteration 240, lr = 0.0001
+I0120 16:20:41.801420 22060 solver.cpp:111] Iteration 240, loss = 1.03672
+I0120 16:20:41.806833 22060 solver.cpp:271] Iteration 260, lr = 0.0001
+I0120 16:20:41.806936 22060 solver.cpp:111] Iteration 260, loss = 3.00394
+I0120 16:20:41.812615 22060 solver.cpp:271] Iteration 280, lr = 0.0001
+I0120 16:20:41.812718 22060 solver.cpp:111] Iteration 280, loss = 0.000556089
+I0120 16:20:41.817425 22060 solver.cpp:271] Iteration 300, lr = 0.0001
+I0120 16:20:41.817528 22060 solver.cpp:111] Iteration 300, loss = 5.48893
+I0120 16:20:41.822528 22060 solver.cpp:271] Iteration 320, lr = 0.0001
+I0120 16:20:41.822633 22060 solver.cpp:111] Iteration 320, loss = 9.62597e-06
+I0120 16:20:41.828101 22060 solver.cpp:271] Iteration 340, lr = 0.0001
+I0120 16:20:41.828227 22060 solver.cpp:111] Iteration 340, loss = 0.376998
+I0120 16:20:41.832949 22060 solver.cpp:271] Iteration 360, lr = 0.0001
+I0120 16:20:41.833052 22060 solver.cpp:111] Iteration 360, loss = 1.77938
+I0120 16:20:41.838763 22060 solver.cpp:271] Iteration 380, lr = 0.0001
+I0120 16:20:41.838870 22060 solver.cpp:111] Iteration 380, loss = 0.00292583
+I0120 16:20:41.844338 22060 solver.cpp:271] Iteration 400, lr = 0.0001
+I0120 16:20:41.844442 22060 solver.cpp:111] Iteration 400, loss = 0.123869
+I0120 16:20:41.844455 22060 solver.cpp:138] Iteration 400, Testing net (#0)
+I0120 16:20:41.844645 22060 solver.cpp:176] Test score #0: 0.924528
+I0120 16:20:41.844657 22060 solver.cpp:176] Test score #1: 0.880597
+I0120 16:20:41.844663 22060 solver.cpp:176] Test score #2: 0.902028
+I0120 16:20:41.844668 22060 solver.cpp:176] Test score #3: 0.859649
+I0120 16:20:41.844672 22060 solver.cpp:176] Test score #4: 0.890909
+I0120 16:20:41.849408 22060 solver.cpp:271] Iteration 420, lr = 0.0001
+I0120 16:20:41.849514 22060 solver.cpp:111] Iteration 420, loss = 7.52163
+I0120 16:20:41.854244 22060 solver.cpp:271] Iteration 440, lr = 0.0001
+I0120 16:20:41.854349 22060 solver.cpp:111] Iteration 440, loss = 0.354765
+I0120 16:20:41.859169 22060 solver.cpp:271] Iteration 460, lr = 0.0001
+I0120 16:20:41.859272 22060 solver.cpp:111] Iteration 460, loss = 8.52332e-06
+I0120 16:20:41.864011 22060 solver.cpp:271] Iteration 480, lr = 0.0001
+I0120 16:20:41.864114 22060 solver.cpp:111] Iteration 480, loss = 2.05635e-06
+I0120 16:20:41.869825 22060 solver.cpp:271] Iteration 500, lr = 0.0001
+I0120 16:20:41.869952 22060 solver.cpp:111] Iteration 500, loss = 0.188735
+I0120 16:20:41.875443 22060 solver.cpp:271] Iteration 520, lr = 0.0001
+I0120 16:20:41.875548 22060 solver.cpp:111] Iteration 520, loss = 0.00092787
+I0120 16:20:41.880501 22060 solver.cpp:271] Iteration 540, lr = 0.0001
+I0120 16:20:41.880605 22060 solver.cpp:111] Iteration 540, loss = 0
+I0120 16:20:41.885368 22060 solver.cpp:271] Iteration 560, lr = 0.0001
+I0120 16:20:41.885473 22060 solver.cpp:111] Iteration 560, loss = 6.24694
+I0120 16:20:41.890192 22060 solver.cpp:271] Iteration 580, lr = 0.0001
+I0120 16:20:41.890296 22060 solver.cpp:111] Iteration 580, loss = 6.21526
+I0120 16:20:41.895057 22060 solver.cpp:271] Iteration 600, lr = 0.0001
+I0120 16:20:41.895162 22060 solver.cpp:111] Iteration 600, loss = 0
+I0120 16:20:41.895174 22060 solver.cpp:138] Iteration 600, Testing net (#0)
+I0120 16:20:41.895364 22060 solver.cpp:176] Test score #0: 0.981132
+I0120 16:20:41.895376 22060 solver.cpp:176] Test score #1: 0.970149
+I0120 16:20:41.895381 22060 solver.cpp:176] Test score #2: 0.97561
+I0120 16:20:41.895386 22060 solver.cpp:176] Test score #3: 0.962963
+I0120 16:20:41.895391 22060 solver.cpp:176] Test score #4: 0.971963
+I0120 16:20:41.901276 22060 solver.cpp:271] Iteration 620, lr = 0.0001
+I0120 16:20:41.901381 22060 solver.cpp:111] Iteration 620, loss = 0.919216
+I0120 16:20:41.906808 22060 solver.cpp:271] Iteration 640, lr = 0.0001
+I0120 16:20:41.906911 22060 solver.cpp:111] Iteration 640, loss = 0
+I0120 16:20:41.911936 22060 solver.cpp:271] Iteration 660, lr = 0.0001
+I0120 16:20:41.912040 22060 solver.cpp:111] Iteration 660, loss = 5.96046e-07
+I0120 16:20:41.916856 22060 solver.cpp:271] Iteration 680, lr = 0.0001
+I0120 16:20:41.916960 22060 solver.cpp:111] Iteration 680, loss = 5.48379
+I0120 16:20:41.921767 22060 solver.cpp:271] Iteration 700, lr = 0.0001
+I0120 16:20:41.921872 22060 solver.cpp:111] Iteration 700, loss = 6.13024
+I0120 16:20:41.930282 22060 solver.cpp:271] Iteration 720, lr = 0.0001
+I0120 16:20:41.930397 22060 solver.cpp:111] Iteration 720, loss = 0
+I0120 16:20:41.935789 22060 solver.cpp:271] Iteration 740, lr = 0.0001
+I0120 16:20:41.935899 22060 solver.cpp:111] Iteration 740, loss = 0.405021
+I0120 16:20:41.941007 22060 solver.cpp:271] Iteration 760, lr = 0.0001
+I0120 16:20:41.941114 22060 solver.cpp:111] Iteration 760, loss = 0
+I0120 16:20:41.946130 22060 solver.cpp:271] Iteration 780, lr = 0.0001
+I0120 16:20:41.946236 22060 solver.cpp:111] Iteration 780, loss = 0
+I0120 16:20:41.951004 22060 solver.cpp:271] Iteration 800, lr = 0.0001
+I0120 16:20:41.951109 22060 solver.cpp:111] Iteration 800, loss = 4.18495
+I0120 16:20:41.951120 22060 solver.cpp:138] Iteration 800, Testing net (#0)
+I0120 16:20:41.951315 22060 solver.cpp:176] Test score #0: 0.924528
+I0120 16:20:41.951328 22060 solver.cpp:176] Test score #1: 0.955224
+I0120 16:20:41.951334 22060 solver.cpp:176] Test score #2: 0.939626
+I0120 16:20:41.951339 22060 solver.cpp:176] Test score #3: 0.942308
+I0120 16:20:41.951344 22060 solver.cpp:176] Test score #4: 0.933333
+I0120 16:20:41.956058 22060 solver.cpp:271] Iteration 820, lr = 0.0001
+I0120 16:20:41.956164 22060 solver.cpp:111] Iteration 820, loss = 0
+I0120 16:20:41.962201 22060 solver.cpp:271] Iteration 840, lr = 0.0001
+I0120 16:20:41.962311 22060 solver.cpp:111] Iteration 840, loss = 0
+I0120 16:20:41.967756 22060 solver.cpp:271] Iteration 860, lr = 0.0001
+I0120 16:20:41.967859 22060 solver.cpp:111] Iteration 860, loss = 0
+I0120 16:20:41.972934 22060 solver.cpp:271] Iteration 880, lr = 0.0001
+I0120 16:20:41.973037 22060 solver.cpp:111] Iteration 880, loss = 0.00784291
+I0120 16:20:41.978101 22060 solver.cpp:271] Iteration 900, lr = 0.0001
+I0120 16:20:41.978204 22060 solver.cpp:111] Iteration 900, loss = 0
+I0120 16:20:41.982944 22060 solver.cpp:271] Iteration 920, lr = 0.0001
+I0120 16:20:41.983049 22060 solver.cpp:111] Iteration 920, loss = 0
+I0120 16:20:41.987804 22060 solver.cpp:271] Iteration 940, lr = 0.0001
+I0120 16:20:41.987929 22060 solver.cpp:111] Iteration 940, loss = 0
+I0120 16:20:41.994220 22060 solver.cpp:271] Iteration 960, lr = 0.0001
+I0120 16:20:41.994349 22060 solver.cpp:111] Iteration 960, loss = 0
+I0120 16:20:41.999105 22060 solver.cpp:271] Iteration 980, lr = 0.0001
+I0120 16:20:41.999228 22060 solver.cpp:111] Iteration 980, loss = 0
+I0120 16:20:42.003988 22060 solver.cpp:271] Iteration 1000, lr = 1e-05
+I0120 16:20:42.004112 22060 solver.cpp:111] Iteration 1000, loss = 6.95612
+I0120 16:20:42.004127 22060 solver.cpp:138] Iteration 1000, Testing net (#0)
+I0120 16:20:42.004335 22060 solver.cpp:176] Test score #0: 0.90566
+I0120 16:20:42.004350 22060 solver.cpp:176] Test score #1: 0.955224
+I0120 16:20:42.004360 22060 solver.cpp:176] Test score #2: 0.929782
+I0120 16:20:42.004370 22060 solver.cpp:176] Test score #3: 0.941176
+I0120 16:20:42.004379 22060 solver.cpp:176] Test score #4: 0.923077
+I0120 16:20:42.004994 22060 solver.cpp:193] Snapshotting to multi_label_train_iter_1000
+I0120 16:20:42.006278 22060 solver.cpp:200] Snapshotting solver state to multi_label_train_iter_1000.solverstate
+I0120 16:20:42.011607 22060 solver.cpp:271] Iteration 1020, lr = 1e-05
+I0120 16:20:42.011731 22060 solver.cpp:111] Iteration 1020, loss = 0
+I0120 16:20:42.016494 22060 solver.cpp:271] Iteration 1040, lr = 1e-05
+I0120 16:20:42.016618 22060 solver.cpp:111] Iteration 1040, loss = 0
+I0120 16:20:42.022449 22060 solver.cpp:271] Iteration 1060, lr = 1e-05
+I0120 16:20:42.022574 22060 solver.cpp:111] Iteration 1060, loss = 0
+I0120 16:20:42.028136 22060 solver.cpp:271] Iteration 1080, lr = 1e-05
+I0120 16:20:42.028272 22060 solver.cpp:111] Iteration 1080, loss = 0
+I0120 16:20:42.033027 22060 solver.cpp:271] Iteration 1100, lr = 1e-05
+I0120 16:20:42.033151 22060 solver.cpp:111] Iteration 1100, loss = 5.21086
+I0120 16:20:42.037933 22060 solver.cpp:271] Iteration 1120, lr = 1e-05
+I0120 16:20:42.038058 22060 solver.cpp:111] Iteration 1120, loss = 0
+I0120 16:20:42.042773 22060 solver.cpp:271] Iteration 1140, lr = 1e-05
+I0120 16:20:42.042898 22060 solver.cpp:111] Iteration 1140, loss = 0
+I0120 16:20:42.047623 22060 solver.cpp:271] Iteration 1160, lr = 1e-05
+I0120 16:20:42.047750 22060 solver.cpp:111] Iteration 1160, loss = 0
+I0120 16:20:42.053712 22060 solver.cpp:271] Iteration 1180, lr = 1e-05
+I0120 16:20:42.053843 22060 solver.cpp:111] Iteration 1180, loss = 1.78814e-07
+I0120 16:20:42.059298 22060 solver.cpp:271] Iteration 1200, lr = 1e-05
+I0120 16:20:42.059427 22060 solver.cpp:111] Iteration 1200, loss = 0
+I0120 16:20:42.059440 22060 solver.cpp:138] Iteration 1200, Testing net (#0)
+I0120 16:20:42.059653 22060 solver.cpp:176] Test score #0: 0.943396
+I0120 16:20:42.059669 22060 solver.cpp:176] Test score #1: 0.970149
+I0120 16:20:42.059677 22060 solver.cpp:176] Test score #2: 0.956586
+I0120 16:20:42.059687 22060 solver.cpp:176] Test score #3: 0.961538
+I0120 16:20:42.059696 22060 solver.cpp:176] Test score #4: 0.952381
+I0120 16:20:42.064560 22060 solver.cpp:271] Iteration 1220, lr = 1e-05
+I0120 16:20:42.064687 22060 solver.cpp:111] Iteration 1220, loss = 0
+I0120 16:20:42.069428 22060 solver.cpp:271] Iteration 1240, lr = 1e-05
+I0120 16:20:42.069555 22060 solver.cpp:111] Iteration 1240, loss = 0
+I0120 16:20:42.074318 22060 solver.cpp:271] Iteration 1260, lr = 1e-05
+I0120 16:20:42.074445 22060 solver.cpp:111] Iteration 1260, loss = 0
+I0120 16:20:42.079192 22060 solver.cpp:271] Iteration 1280, lr = 1e-05
+I0120 16:20:42.079316 22060 solver.cpp:111] Iteration 1280, loss = 0
+I0120 16:20:42.085719 22060 solver.cpp:271] Iteration 1300, lr = 1e-05
+I0120 16:20:42.085846 22060 solver.cpp:111] Iteration 1300, loss = 0
+I0120 16:20:42.090986 22060 solver.cpp:271] Iteration 1320, lr = 1e-05
+I0120 16:20:42.091112 22060 solver.cpp:111] Iteration 1320, loss = 0
+I0120 16:20:42.096115 22060 solver.cpp:271] Iteration 1340, lr = 1e-05
+I0120 16:20:42.096257 22060 solver.cpp:111] Iteration 1340, loss = 0.000688765
+I0120 16:20:42.101014 22060 solver.cpp:271] Iteration 1360, lr = 1e-05
+I0120 16:20:42.101142 22060 solver.cpp:111] Iteration 1360, loss = 0
+I0120 16:20:42.105952 22060 solver.cpp:271] Iteration 1380, lr = 1e-05
+I0120 16:20:42.106076 22060 solver.cpp:111] Iteration 1380, loss = 0
+I0120 16:20:42.110878 22060 solver.cpp:271] Iteration 1400, lr = 1e-05
+I0120 16:20:42.111006 22060 solver.cpp:111] Iteration 1400, loss = 0
+I0120 16:20:42.111019 22060 solver.cpp:138] Iteration 1400, Testing net (#0)
+I0120 16:20:42.111224 22060 solver.cpp:176] Test score #0: 0.924528
+I0120 16:20:42.111239 22060 solver.cpp:176] Test score #1: 0.970149
+I0120 16:20:42.111248 22060 solver.cpp:176] Test score #2: 0.94679
+I0120 16:20:42.111258 22060 solver.cpp:176] Test score #3: 0.960784
+I0120 16:20:42.111268 22060 solver.cpp:176] Test score #4: 0.942308
+I0120 16:20:42.117722 22060 solver.cpp:271] Iteration 1420, lr = 1e-05
+I0120 16:20:42.117849 22060 solver.cpp:111] Iteration 1420, loss = 0
+I0120 16:20:42.123026 22060 solver.cpp:271] Iteration 1440, lr = 1e-05
+I0120 16:20:42.123153 22060 solver.cpp:111] Iteration 1440, loss = 0
+I0120 16:20:42.128260 22060 solver.cpp:271] Iteration 1460, lr = 1e-05
+I0120 16:20:42.128387 22060 solver.cpp:111] Iteration 1460, loss = 0
+I0120 16:20:42.133095 22060 solver.cpp:271] Iteration 1480, lr = 1e-05
+I0120 16:20:42.133221 22060 solver.cpp:111] Iteration 1480, loss = 0
+I0120 16:20:42.138000 22060 solver.cpp:271] Iteration 1500, lr = 1e-05
+I0120 16:20:42.138128 22060 solver.cpp:111] Iteration 1500, loss = 0
+I0120 16:20:42.143569 22060 solver.cpp:271] Iteration 1520, lr = 1e-05
+I0120 16:20:42.143694 22060 solver.cpp:111] Iteration 1520, loss = 0
+I0120 16:20:42.149449 22060 solver.cpp:271] Iteration 1540, lr = 1e-05
+I0120 16:20:42.149576 22060 solver.cpp:111] Iteration 1540, loss = 0
+I0120 16:20:42.154716 22060 solver.cpp:271] Iteration 1560, lr = 1e-05
+I0120 16:20:42.154844 22060 solver.cpp:111] Iteration 1560, loss = 0
+I0120 16:20:42.159939 22060 solver.cpp:271] Iteration 1580, lr = 1e-05
+I0120 16:20:42.160065 22060 solver.cpp:111] Iteration 1580, loss = 0.000104376
+I0120 16:20:42.164875 22060 solver.cpp:271] Iteration 1600, lr = 1e-05
+I0120 16:20:42.165002 22060 solver.cpp:111] Iteration 1600, loss = 0
+I0120 16:20:42.165017 22060 solver.cpp:138] Iteration 1600, Testing net (#0)
+I0120 16:20:42.165218 22060 solver.cpp:176] Test score #0: 0.924528
+I0120 16:20:42.165232 22060 solver.cpp:176] Test score #1: 0.970149
+I0120 16:20:42.165242 22060 solver.cpp:176] Test score #2: 0.94679
+I0120 16:20:42.165252 22060 solver.cpp:176] Test score #3: 0.960784
+I0120 16:20:42.165261 22060 solver.cpp:176] Test score #4: 0.942308
+I0120 16:20:42.169980 22060 solver.cpp:271] Iteration 1620, lr = 1e-05
+I0120 16:20:42.170106 22060 solver.cpp:111] Iteration 1620, loss = 0
+I0120 16:20:42.175868 22060 solver.cpp:271] Iteration 1640, lr = 1e-05
+I0120 16:20:42.175997 22060 solver.cpp:111] Iteration 1640, loss = 0
+I0120 16:20:42.181146 22060 solver.cpp:271] Iteration 1660, lr = 1e-05
+I0120 16:20:42.181272 22060 solver.cpp:111] Iteration 1660, loss = 0
+I0120 16:20:42.186034 22060 solver.cpp:271] Iteration 1680, lr = 1e-05
+I0120 16:20:42.186183 22060 solver.cpp:111] Iteration 1680, loss = 0
+I0120 16:20:42.190898 22060 solver.cpp:271] Iteration 1700, lr = 1e-05
+I0120 16:20:42.191025 22060 solver.cpp:111] Iteration 1700, loss = 0
+I0120 16:20:42.195772 22060 solver.cpp:271] Iteration 1720, lr = 1e-05
+I0120 16:20:42.195899 22060 solver.cpp:111] Iteration 1720, loss = 0
+I0120 16:20:42.200671 22060 solver.cpp:271] Iteration 1740, lr = 1e-05
+I0120 16:20:42.200798 22060 solver.cpp:111] Iteration 1740, loss = 0
+I0120 16:20:42.206545 22060 solver.cpp:271] Iteration 1760, lr = 1e-05
+I0120 16:20:42.206672 22060 solver.cpp:111] Iteration 1760, loss = 0
+I0120 16:20:42.212126 22060 solver.cpp:271] Iteration 1780, lr = 1e-05
+I0120 16:20:42.212262 22060 solver.cpp:111] Iteration 1780, loss = 0
+I0120 16:20:42.217031 22060 solver.cpp:271] Iteration 1800, lr = 1e-05
+I0120 16:20:42.217159 22060 solver.cpp:111] Iteration 1800, loss = 0
+I0120 16:20:42.217172 22060 solver.cpp:138] Iteration 1800, Testing net (#0)
+I0120 16:20:42.217375 22060 solver.cpp:176] Test score #0: 0.924528
+I0120 16:20:42.217389 22060 solver.cpp:176] Test score #1: 0.970149
+I0120 16:20:42.217398 22060 solver.cpp:176] Test score #2: 0.94679
+I0120 16:20:42.217408 22060 solver.cpp:176] Test score #3: 0.960784
+I0120 16:20:42.217417 22060 solver.cpp:176] Test score #4: 0.942308
+I0120 16:20:42.222368 22060 solver.cpp:271] Iteration 1820, lr = 1e-05
+I0120 16:20:42.222494 22060 solver.cpp:111] Iteration 1820, loss = 0.000103482
+I0120 16:20:42.227952 22060 solver.cpp:271] Iteration 1840, lr = 1e-05
+I0120 16:20:42.228078 22060 solver.cpp:111] Iteration 1840, loss = 0
+I0120 16:20:42.232842 22060 solver.cpp:271] Iteration 1860, lr = 1e-05
+I0120 16:20:42.232967 22060 solver.cpp:111] Iteration 1860, loss = 0
+I0120 16:20:42.238636 22060 solver.cpp:271] Iteration 1880, lr = 1e-05
+I0120 16:20:42.238762 22060 solver.cpp:111] Iteration 1880, loss = 0
+I0120 16:20:42.244295 22060 solver.cpp:271] Iteration 1900, lr = 1e-05
+I0120 16:20:42.244422 22060 solver.cpp:111] Iteration 1900, loss = 0
+I0120 16:20:42.249140 22060 solver.cpp:271] Iteration 1920, lr = 1e-05
+I0120 16:20:42.249266 22060 solver.cpp:111] Iteration 1920, loss = 0
+I0120 16:20:42.253995 22060 solver.cpp:271] Iteration 1940, lr = 1e-05
+I0120 16:20:42.254122 22060 solver.cpp:111] Iteration 1940, loss = 0
+I0120 16:20:42.258910 22060 solver.cpp:271] Iteration 1960, lr = 1e-05
+I0120 16:20:42.259035 22060 solver.cpp:111] Iteration 1960, loss = 0
+I0120 16:20:42.263821 22060 solver.cpp:271] Iteration 1980, lr = 1e-05
+I0120 16:20:42.263947 22060 solver.cpp:111] Iteration 1980, loss = 0
+I0120 16:20:42.270279 22060 solver.cpp:271] Iteration 2000, lr = 1e-06
+I0120 16:20:42.270407 22060 solver.cpp:111] Iteration 2000, loss = 0
+I0120 16:20:42.270422 22060 solver.cpp:138] Iteration 2000, Testing net (#0)
+I0120 16:20:42.270638 22060 solver.cpp:176] Test score #0: 0.924528
+I0120 16:20:42.270653 22060 solver.cpp:176] Test score #1: 0.970149
+I0120 16:20:42.270663 22060 solver.cpp:176] Test score #2: 0.94679
+I0120 16:20:42.270673 22060 solver.cpp:176] Test score #3: 0.960784
+I0120 16:20:42.270681 22060 solver.cpp:176] Test score #4: 0.942308
+I0120 16:20:42.270992 22060 solver.cpp:193] Snapshotting to multi_label_train_iter_2000
+I0120 16:20:42.271816 22060 solver.cpp:200] Snapshotting solver state to multi_label_train_iter_2000.solverstate
+I0120 16:20:42.277328 22060 solver.cpp:271] Iteration 2020, lr = 1e-06
+I0120 16:20:42.277454 22060 solver.cpp:111] Iteration 2020, loss = 0
+I0120 16:20:42.282275 22060 solver.cpp:271] Iteration 2040, lr = 1e-06
+I0120 16:20:42.282402 22060 solver.cpp:111] Iteration 2040, loss = 0
+I0120 16:20:42.287183 22060 solver.cpp:271] Iteration 2060, lr = 1e-06
+I0120 16:20:42.287310 22060 solver.cpp:111] Iteration 2060, loss = 0.000102618
+I0120 16:20:42.292052 22060 solver.cpp:271] Iteration 2080, lr = 1e-06
+I0120 16:20:42.292177 22060 solver.cpp:111] Iteration 2080, loss = 0
+I0120 16:20:42.298044 22060 solver.cpp:271] Iteration 2100, lr = 1e-06
+I0120 16:20:42.298171 22060 solver.cpp:111] Iteration 2100, loss = 0
+I0120 16:20:42.303632 22060 solver.cpp:271] Iteration 2120, lr = 1e-06
+I0120 16:20:42.303758 22060 solver.cpp:111] Iteration 2120, loss = 0
+I0120 16:20:42.308892 22060 solver.cpp:271] Iteration 2140, lr = 1e-06
+I0120 16:20:42.309020 22060 solver.cpp:111] Iteration 2140, loss = 0
+I0120 16:20:42.313895 22060 solver.cpp:271] Iteration 2160, lr = 1e-06
+I0120 16:20:42.314021 22060 solver.cpp:111] Iteration 2160, loss = 0
+I0120 16:20:42.318765 22060 solver.cpp:271] Iteration 2180, lr = 1e-06
+I0120 16:20:42.318892 22060 solver.cpp:111] Iteration 2180, loss = 0
+I0120 16:20:42.323755 22060 solver.cpp:271] Iteration 2200, lr = 1e-06
+I0120 16:20:42.323881 22060 solver.cpp:111] Iteration 2200, loss = 0
+I0120 16:20:42.323896 22060 solver.cpp:138] Iteration 2200, Testing net (#0)
+I0120 16:20:42.324102 22060 solver.cpp:176] Test score #0: 0.924528
+I0120 16:20:42.324116 22060 solver.cpp:176] Test score #1: 0.970149
+I0120 16:20:42.324126 22060 solver.cpp:176] Test score #2: 0.94679
+I0120 16:20:42.324136 22060 solver.cpp:176] Test score #3: 0.960784
+I0120 16:20:42.324144 22060 solver.cpp:176] Test score #4: 0.942308
+I0120 16:20:42.330075 22060 solver.cpp:271] Iteration 2220, lr = 1e-06
+I0120 16:20:42.330204 22060 solver.cpp:111] Iteration 2220, loss = 0
+I0120 16:20:42.335638 22060 solver.cpp:271] Iteration 2240, lr = 1e-06
+I0120 16:20:42.335767 22060 solver.cpp:111] Iteration 2240, loss = 0
+I0120 16:20:42.340885 22060 solver.cpp:271] Iteration 2260, lr = 1e-06
+I0120 16:20:42.341013 22060 solver.cpp:111] Iteration 2260, loss = 0
+I0120 16:20:42.345999 22060 solver.cpp:271] Iteration 2280, lr = 1e-06
+I0120 16:20:42.346125 22060 solver.cpp:111] Iteration 2280, loss = 0
+I0120 16:20:42.350920 22060 solver.cpp:271] Iteration 2300, lr = 1e-06
+I0120 16:20:42.351047 22060 solver.cpp:111] Iteration 2300, loss = 0.000102588
+I0120 16:20:42.355783 22060 solver.cpp:271] Iteration 2320, lr = 1e-06
+I0120 16:20:42.355909 22060 solver.cpp:111] Iteration 2320, loss = 0
+I0120 16:20:42.362184 22060 solver.cpp:271] Iteration 2340, lr = 1e-06
+I0120 16:20:42.362310 22060 solver.cpp:111] Iteration 2340, loss = 0
+I0120 16:20:42.367108 22060 solver.cpp:271] Iteration 2360, lr = 1e-06
+I0120 16:20:42.367234 22060 solver.cpp:111] Iteration 2360, loss = 0
+I0120 16:20:42.371937 22060 solver.cpp:271] Iteration 2380, lr = 1e-06
+I0120 16:20:42.372064 22060 solver.cpp:111] Iteration 2380, loss = 0
+I0120 16:20:42.376786 22060 solver.cpp:271] Iteration 2400, lr = 1e-06
+I0120 16:20:42.376914 22060 solver.cpp:111] Iteration 2400, loss = 0
+I0120 16:20:42.376927 22060 solver.cpp:138] Iteration 2400, Testing net (#0)
+I0120 16:20:42.377130 22060 solver.cpp:176] Test score #0: 0.924528
+I0120 16:20:42.377145 22060 solver.cpp:176] Test score #1: 0.970149
+I0120 16:20:42.377152 22060 solver.cpp:176] Test score #2: 0.94679
+I0120 16:20:42.377162 22060 solver.cpp:176] Test score #3: 0.960784
+I0120 16:20:42.377171 22060 solver.cpp:176] Test score #4: 0.942308
+I0120 16:20:42.381948 22060 solver.cpp:271] Iteration 2420, lr = 1e-06
+I0120 16:20:42.382076 22060 solver.cpp:111] Iteration 2420, loss = 0
+I0120 16:20:42.386852 22060 solver.cpp:271] Iteration 2440, lr = 1e-06
+I0120 16:20:42.386977 22060 solver.cpp:111] Iteration 2440, loss = 0
+I0120 16:20:42.393435 22060 solver.cpp:271] Iteration 2460, lr = 1e-06
+I0120 16:20:42.393563 22060 solver.cpp:111] Iteration 2460, loss = 0
+I0120 16:20:42.398397 22060 solver.cpp:271] Iteration 2480, lr = 1e-06
+I0120 16:20:42.398525 22060 solver.cpp:111] Iteration 2480, loss = 0
+I0120 16:20:42.403246 22060 solver.cpp:271] Iteration 2500, lr = 1e-06
+I0120 16:20:42.403373 22060 solver.cpp:111] Iteration 2500, loss = 0
+I0120 16:20:42.408080 22060 solver.cpp:271] Iteration 2520, lr = 1e-06
+I0120 16:20:42.408205 22060 solver.cpp:111] Iteration 2520, loss = 0
+I0120 16:20:42.412986 22060 solver.cpp:271] Iteration 2540, lr = 1e-06
+I0120 16:20:42.413111 22060 solver.cpp:111] Iteration 2540, loss = 0.000102529
+I0120 16:20:42.417915 22060 solver.cpp:271] Iteration 2560, lr = 1e-06
+I0120 16:20:42.418042 22060 solver.cpp:111] Iteration 2560, loss = 0
+I0120 16:20:42.424437 22060 solver.cpp:271] Iteration 2580, lr = 1e-06
+I0120 16:20:42.424566 22060 solver.cpp:111] Iteration 2580, loss = 0
+I0120 16:20:42.429559 22060 solver.cpp:271] Iteration 2600, lr = 1e-06
+I0120 16:20:42.429684 22060 solver.cpp:111] Iteration 2600, loss = 0
+I0120 16:20:42.429699 22060 solver.cpp:138] Iteration 2600, Testing net (#0)
+I0120 16:20:42.429900 22060 solver.cpp:176] Test score #0: 0.924528
+I0120 16:20:42.429915 22060 solver.cpp:176] Test score #1: 0.970149
+I0120 16:20:42.429924 22060 solver.cpp:176] Test score #2: 0.94679
+I0120 16:20:42.429934 22060 solver.cpp:176] Test score #3: 0.960784
+I0120 16:20:42.429942 22060 solver.cpp:176] Test score #4: 0.942308
+I0120 16:20:42.434679 22060 solver.cpp:271] Iteration 2620, lr = 1e-06
+I0120 16:20:42.434806 22060 solver.cpp:111] Iteration 2620, loss = 0
+I0120 16:20:42.439533 22060 solver.cpp:271] Iteration 2640, lr = 1e-06
+I0120 16:20:42.439661 22060 solver.cpp:111] Iteration 2640, loss = 0
+I0120 16:20:42.444438 22060 solver.cpp:271] Iteration 2660, lr = 1e-06
+I0120 16:20:42.444564 22060 solver.cpp:111] Iteration 2660, loss = 0
+I0120 16:20:42.449919 22060 solver.cpp:271] Iteration 2680, lr = 1e-06
+I0120 16:20:42.450045 22060 solver.cpp:111] Iteration 2680, loss = 0
+I0120 16:20:42.455773 22060 solver.cpp:271] Iteration 2700, lr = 1e-06
+I0120 16:20:42.455899 22060 solver.cpp:111] Iteration 2700, loss = 0
+I0120 16:20:42.461053 22060 solver.cpp:271] Iteration 2720, lr = 1e-06
+I0120 16:20:42.461180 22060 solver.cpp:111] Iteration 2720, loss = 0
+I0120 16:20:42.465930 22060 solver.cpp:271] Iteration 2740, lr = 1e-06
+I0120 16:20:42.466056 22060 solver.cpp:111] Iteration 2740, loss = 0
+I0120 16:20:42.470847 22060 solver.cpp:271] Iteration 2760, lr = 1e-06
+I0120 16:20:42.470973 22060 solver.cpp:111] Iteration 2760, loss = 0
+I0120 16:20:42.475740 22060 solver.cpp:271] Iteration 2780, lr = 1e-06
+I0120 16:20:42.475867 22060 solver.cpp:111] Iteration 2780, loss = 0.000102439
+I0120 16:20:42.481555 22060 solver.cpp:271] Iteration 2800, lr = 1e-06
+I0120 16:20:42.481696 22060 solver.cpp:111] Iteration 2800, loss = 0
+I0120 16:20:42.481711 22060 solver.cpp:138] Iteration 2800, Testing net (#0)
+I0120 16:20:42.481967 22060 solver.cpp:176] Test score #0: 0.924528
+I0120 16:20:42.481982 22060 solver.cpp:176] Test score #1: 0.970149
+I0120 16:20:42.481992 22060 solver.cpp:176] Test score #2: 0.94679
+I0120 16:20:42.482002 22060 solver.cpp:176] Test score #3: 0.960784
+I0120 16:20:42.482010 22060 solver.cpp:176] Test score #4: 0.942308
+I0120 16:20:42.487401 22060 solver.cpp:271] Iteration 2820, lr = 1e-06
+I0120 16:20:42.487526 22060 solver.cpp:111] Iteration 2820, loss = 0
+I0120 16:20:42.492663 22060 solver.cpp:271] Iteration 2840, lr = 1e-06
+I0120 16:20:42.492787 22060 solver.cpp:111] Iteration 2840, loss = 0
+I0120 16:20:42.497659 22060 solver.cpp:271] Iteration 2860, lr = 1e-06
+I0120 16:20:42.497807 22060 solver.cpp:111] Iteration 2860, loss = 0
+I0120 16:20:42.502562 22060 solver.cpp:271] Iteration 2880, lr = 1e-06
+I0120 16:20:42.502687 22060 solver.cpp:111] Iteration 2880, loss = 0
+I0120 16:20:42.507427 22060 solver.cpp:271] Iteration 2900, lr = 1e-06
+I0120 16:20:42.507552 22060 solver.cpp:111] Iteration 2900, loss = 0
+I0120 16:20:42.513468 22060 solver.cpp:271] Iteration 2920, lr = 1e-06
+I0120 16:20:42.513595 22060 solver.cpp:111] Iteration 2920, loss = 0
+I0120 16:20:42.519099 22060 solver.cpp:271] Iteration 2940, lr = 1e-06
+I0120 16:20:42.519224 22060 solver.cpp:111] Iteration 2940, loss = 0
+I0120 16:20:42.524386 22060 solver.cpp:271] Iteration 2960, lr = 1e-06
+I0120 16:20:42.524513 22060 solver.cpp:111] Iteration 2960, loss = 0
+I0120 16:20:42.529567 22060 solver.cpp:271] Iteration 2980, lr = 1e-06
+I0120 16:20:42.529693 22060 solver.cpp:111] Iteration 2980, loss = 0
+I0120 16:20:42.534425 22060 solver.cpp:271] Iteration 3000, lr = 1e-07
+I0120 16:20:42.534592 22060 solver.cpp:111] Iteration 3000, loss = 0
+I0120 16:20:42.534607 22060 solver.cpp:138] Iteration 3000, Testing net (#0)
+I0120 16:20:42.534811 22060 solver.cpp:176] Test score #0: 0.924528
+I0120 16:20:42.534826 22060 solver.cpp:176] Test score #1: 0.970149
+I0120 16:20:42.534834 22060 solver.cpp:176] Test score #2: 0.94679
+I0120 16:20:42.534844 22060 solver.cpp:176] Test score #3: 0.960784
+I0120 16:20:42.534853 22060 solver.cpp:176] Test score #4: 0.942308
+I0120 16:20:42.535109 22060 solver.cpp:193] Snapshotting to multi_label_train_iter_3000
+I0120 16:20:42.535847 22060 solver.cpp:200] Snapshotting solver state to multi_label_train_iter_3000.solverstate
+I0120 16:20:42.542019 22060 solver.cpp:271] Iteration 3020, lr = 1e-07
+I0120 16:20:42.542148 22060 solver.cpp:111] Iteration 3020, loss = 0.00010241
+I0120 16:20:42.547690 22060 solver.cpp:271] Iteration 3040, lr = 1e-07
+I0120 16:20:42.547816 22060 solver.cpp:111] Iteration 3040, loss = 0
+I0120 16:20:42.552983 22060 solver.cpp:271] Iteration 3060, lr = 1e-07
+I0120 16:20:42.553108 22060 solver.cpp:111] Iteration 3060, loss = 0
+I0120 16:20:42.558265 22060 solver.cpp:271] Iteration 3080, lr = 1e-07
+I0120 16:20:42.558392 22060 solver.cpp:111] Iteration 3080, loss = 0
+I0120 16:20:42.563360 22060 solver.cpp:271] Iteration 3100, lr = 1e-07
+I0120 16:20:42.563487 22060 solver.cpp:111] Iteration 3100, loss = 0
+I0120 16:20:42.568231 22060 solver.cpp:271] Iteration 3120, lr = 1e-07
+I0120 16:20:42.568358 22060 solver.cpp:111] Iteration 3120, loss = 0
+I0120 16:20:42.574342 22060 solver.cpp:271] Iteration 3140, lr = 1e-07
+I0120 16:20:42.574470 22060 solver.cpp:111] Iteration 3140, loss = 0
+I0120 16:20:42.579792 22060 solver.cpp:271] Iteration 3160, lr = 1e-07
+I0120 16:20:42.579918 22060 solver.cpp:111] Iteration 3160, loss = 0
+I0120 16:20:42.584720 22060 solver.cpp:271] Iteration 3180, lr = 1e-07
+I0120 16:20:42.584846 22060 solver.cpp:111] Iteration 3180, loss = 0
+I0120 16:20:42.589691 22060 solver.cpp:271] Iteration 3200, lr = 1e-07
+I0120 16:20:42.589824 22060 solver.cpp:111] Iteration 3200, loss = 0
+I0120 16:20:42.589839 22060 solver.cpp:138] Iteration 3200, Testing net (#0)
+I0120 16:20:42.590044 22060 solver.cpp:176] Test score #0: 0.924528
+I0120 16:20:42.590059 22060 solver.cpp:176] Test score #1: 0.970149
+I0120 16:20:42.590068 22060 solver.cpp:176] Test score #2: 0.94679
+I0120 16:20:42.590077 22060 solver.cpp:176] Test score #3: 0.960784
+I0120 16:20:42.590087 22060 solver.cpp:176] Test score #4: 0.942308
+I0120 16:20:42.594825 22060 solver.cpp:271] Iteration 3220, lr = 1e-07
+I0120 16:20:42.594951 22060 solver.cpp:111] Iteration 3220, loss = 0
+I0120 16:20:42.599740 22060 solver.cpp:271] Iteration 3240, lr = 1e-07
+I0120 16:20:42.599865 22060 solver.cpp:111] Iteration 3240, loss = 0
+I0120 16:20:42.606142 22060 solver.cpp:271] Iteration 3260, lr = 1e-07
+I0120 16:20:42.606268 22060 solver.cpp:111] Iteration 3260, loss = 0.00010241
+I0120 16:20:42.611424 22060 solver.cpp:271] Iteration 3280, lr = 1e-07
+I0120 16:20:42.611551 22060 solver.cpp:111] Iteration 3280, loss = 0
+I0120 16:20:42.616310 22060 solver.cpp:271] Iteration 3300, lr = 1e-07
+I0120 16:20:42.616436 22060 solver.cpp:111] Iteration 3300, loss = 0
+I0120 16:20:42.621204 22060 solver.cpp:271] Iteration 3320, lr = 1e-07
+I0120 16:20:42.621330 22060 solver.cpp:111] Iteration 3320, loss = 0
+I0120 16:20:42.626094 22060 solver.cpp:271] Iteration 3340, lr = 1e-07
+I0120 16:20:42.626220 22060 solver.cpp:111] Iteration 3340, loss = 0
+I0120 16:20:42.631000 22060 solver.cpp:271] Iteration 3360, lr = 1e-07
+I0120 16:20:42.631126 22060 solver.cpp:111] Iteration 3360, loss = 0
+I0120 16:20:42.637527 22060 solver.cpp:271] Iteration 3380, lr = 1e-07
+I0120 16:20:42.637655 22060 solver.cpp:111] Iteration 3380, loss = 0
+I0120 16:20:42.642740 22060 solver.cpp:271] Iteration 3400, lr = 1e-07
+I0120 16:20:42.642866 22060 solver.cpp:111] Iteration 3400, loss = 0
+I0120 16:20:42.642881 22060 solver.cpp:138] Iteration 3400, Testing net (#0)
+I0120 16:20:42.643100 22060 solver.cpp:176] Test score #0: 0.924528
+I0120 16:20:42.643115 22060 solver.cpp:176] Test score #1: 0.970149
+I0120 16:20:42.643124 22060 solver.cpp:176] Test score #2: 0.94679
+I0120 16:20:42.643133 22060 solver.cpp:176] Test score #3: 0.960784
+I0120 16:20:42.643143 22060 solver.cpp:176] Test score #4: 0.942308
+I0120 16:20:42.648020 22060 solver.cpp:271] Iteration 3420, lr = 1e-07
+I0120 16:20:42.648146 22060 solver.cpp:111] Iteration 3420, loss = 0
+I0120 16:20:42.652941 22060 solver.cpp:271] Iteration 3440, lr = 1e-07
+I0120 16:20:42.653069 22060 solver.cpp:111] Iteration 3440, loss = 0
+I0120 16:20:42.657896 22060 solver.cpp:271] Iteration 3460, lr = 1e-07
+I0120 16:20:42.658021 22060 solver.cpp:111] Iteration 3460, loss = 0
+I0120 16:20:42.663401 22060 solver.cpp:271] Iteration 3480, lr = 1e-07
+I0120 16:20:42.663527 22060 solver.cpp:111] Iteration 3480, loss = 0
+I0120 16:20:42.669252 22060 solver.cpp:271] Iteration 3500, lr = 1e-07
+I0120 16:20:42.669379 22060 solver.cpp:111] Iteration 3500, loss = 0.00010241
+I0120 16:20:42.674497 22060 solver.cpp:271] Iteration 3520, lr = 1e-07
+I0120 16:20:42.674623 22060 solver.cpp:111] Iteration 3520, loss = 0
+I0120 16:20:42.679615 22060 solver.cpp:271] Iteration 3540, lr = 1e-07
+I0120 16:20:42.679739 22060 solver.cpp:111] Iteration 3540, loss = 0
+I0120 16:20:42.684546 22060 solver.cpp:271] Iteration 3560, lr = 1e-07
+I0120 16:20:42.684674 22060 solver.cpp:111] Iteration 3560, loss = 0
+I0120 16:20:42.689414 22060 solver.cpp:271] Iteration 3580, lr = 1e-07
+I0120 16:20:42.689539 22060 solver.cpp:111] Iteration 3580, loss = 0
+I0120 16:20:42.695255 22060 solver.cpp:271] Iteration 3600, lr = 1e-07
+I0120 16:20:42.695402 22060 solver.cpp:111] Iteration 3600, loss = 0
+I0120 16:20:42.695417 22060 solver.cpp:138] Iteration 3600, Testing net (#0)
+I0120 16:20:42.695668 22060 solver.cpp:176] Test score #0: 0.924528
+I0120 16:20:42.695683 22060 solver.cpp:176] Test score #1: 0.970149
+I0120 16:20:42.695693 22060 solver.cpp:176] Test score #2: 0.94679
+I0120 16:20:42.695703 22060 solver.cpp:176] Test score #3: 0.960784
+I0120 16:20:42.695711 22060 solver.cpp:176] Test score #4: 0.942308
+I0120 16:20:42.701114 22060 solver.cpp:271] Iteration 3620, lr = 1e-07
+I0120 16:20:42.701241 22060 solver.cpp:111] Iteration 3620, loss = 0
+I0120 16:20:42.706356 22060 solver.cpp:271] Iteration 3640, lr = 1e-07
+I0120 16:20:42.706480 22060 solver.cpp:111] Iteration 3640, loss = 0
+I0120 16:20:42.711580 22060 solver.cpp:271] Iteration 3660, lr = 1e-07
+I0120 16:20:42.711706 22060 solver.cpp:111] Iteration 3660, loss = 0
+I0120 16:20:42.716441 22060 solver.cpp:271] Iteration 3680, lr = 1e-07
+I0120 16:20:42.716567 22060 solver.cpp:111] Iteration 3680, loss = 0
+I0120 16:20:42.721359 22060 solver.cpp:271] Iteration 3700, lr = 1e-07
+I0120 16:20:42.721487 22060 solver.cpp:111] Iteration 3700, loss = 0
+I0120 16:20:42.727306 22060 solver.cpp:271] Iteration 3720, lr = 1e-07
+I0120 16:20:42.727434 22060 solver.cpp:111] Iteration 3720, loss = 0
+I0120 16:20:42.732913 22060 solver.cpp:271] Iteration 3740, lr = 1e-07
+I0120 16:20:42.733038 22060 solver.cpp:111] Iteration 3740, loss = 0.00010238
+I0120 16:20:42.738219 22060 solver.cpp:271] Iteration 3760, lr = 1e-07
+I0120 16:20:42.738346 22060 solver.cpp:111] Iteration 3760, loss = 0
+I0120 16:20:42.743445 22060 solver.cpp:271] Iteration 3780, lr = 1e-07
+I0120 16:20:42.743571 22060 solver.cpp:111] Iteration 3780, loss = 0
+I0120 16:20:42.748464 22060 solver.cpp:271] Iteration 3800, lr = 1e-07
+I0120 16:20:42.748591 22060 solver.cpp:111] Iteration 3800, loss = 0
+I0120 16:20:42.748606 22060 solver.cpp:138] Iteration 3800, Testing net (#0)
+I0120 16:20:42.748805 22060 solver.cpp:176] Test score #0: 0.924528
+I0120 16:20:42.748821 22060 solver.cpp:176] Test score #1: 0.970149
+I0120 16:20:42.748831 22060 solver.cpp:176] Test score #2: 0.94679
+I0120 16:20:42.748839 22060 solver.cpp:176] Test score #3: 0.960784
+I0120 16:20:42.748848 22060 solver.cpp:176] Test score #4: 0.942308
+I0120 16:20:42.753613 22060 solver.cpp:271] Iteration 3820, lr = 1e-07
+I0120 16:20:42.753737 22060 solver.cpp:111] Iteration 3820, loss = 0
+I0120 16:20:42.760082 22060 solver.cpp:271] Iteration 3840, lr = 1e-07
+I0120 16:20:42.760241 22060 solver.cpp:111] Iteration 3840, loss = 0
+I0120 16:20:42.765087 22060 solver.cpp:271] Iteration 3860, lr = 1e-07
+I0120 16:20:42.765213 22060 solver.cpp:111] Iteration 3860, loss = 0
+I0120 16:20:42.769963 22060 solver.cpp:271] Iteration 3880, lr = 1e-07
+I0120 16:20:42.770089 22060 solver.cpp:111] Iteration 3880, loss = 0
+I0120 16:20:42.774819 22060 solver.cpp:271] Iteration 3900, lr = 1e-07
+I0120 16:20:42.774945 22060 solver.cpp:111] Iteration 3900, loss = 0
+I0120 16:20:42.779685 22060 solver.cpp:271] Iteration 3920, lr = 1e-07
+I0120 16:20:42.779811 22060 solver.cpp:111] Iteration 3920, loss = 0
+I0120 16:20:42.784617 22060 solver.cpp:271] Iteration 3940, lr = 1e-07
+I0120 16:20:42.784741 22060 solver.cpp:111] Iteration 3940, loss = 0
+I0120 16:20:42.791115 22060 solver.cpp:271] Iteration 3960, lr = 1e-07
+I0120 16:20:42.791242 22060 solver.cpp:111] Iteration 3960, loss = 0
+I0120 16:20:42.796288 22060 solver.cpp:271] Iteration 3980, lr = 1e-07
+I0120 16:20:42.796412 22060 solver.cpp:111] Iteration 3980, loss = 0.00010241
+I0120 16:20:42.801200 22060 solver.cpp:271] Iteration 4000, lr = 1e-08
+I0120 16:20:42.801324 22060 solver.cpp:111] Iteration 4000, loss = 0
+I0120 16:20:42.801339 22060 solver.cpp:138] Iteration 4000, Testing net (#0)
+I0120 16:20:42.801539 22060 solver.cpp:176] Test score #0: 0.924528
+I0120 16:20:42.801554 22060 solver.cpp:176] Test score #1: 0.970149
+I0120 16:20:42.801564 22060 solver.cpp:176] Test score #2: 0.94679
+I0120 16:20:42.801573 22060 solver.cpp:176] Test score #3: 0.960784
+I0120 16:20:42.801583 22060 solver.cpp:176] Test score #4: 0.942308
+I0120 16:20:42.801841 22060 solver.cpp:193] Snapshotting to multi_label_train_iter_4000
+I0120 16:20:42.802574 22060 solver.cpp:200] Snapshotting solver state to multi_label_train_iter_4000.solverstate
+I0120 16:20:42.807760 22060 solver.cpp:271] Iteration 4020, lr = 1e-08
+I0120 16:20:42.807888 22060 solver.cpp:111] Iteration 4020, loss = 0
+I0120 16:20:42.812597 22060 solver.cpp:271] Iteration 4040, lr = 1e-08
+I0120 16:20:42.812749 22060 solver.cpp:111] Iteration 4040, loss = 0
+I0120 16:20:42.818444 22060 solver.cpp:271] Iteration 4060, lr = 1e-08
+I0120 16:20:42.818570 22060 solver.cpp:111] Iteration 4060, loss = 0
+I0120 16:20:42.824112 22060 solver.cpp:271] Iteration 4080, lr = 1e-08
+I0120 16:20:42.824295 22060 solver.cpp:111] Iteration 4080, loss = 0
+I0120 16:20:42.829315 22060 solver.cpp:271] Iteration 4100, lr = 1e-08
+I0120 16:20:42.829442 22060 solver.cpp:111] Iteration 4100, loss = 0
+I0120 16:20:42.834158 22060 solver.cpp:271] Iteration 4120, lr = 1e-08
+I0120 16:20:42.834285 22060 solver.cpp:111] Iteration 4120, loss = 0
+I0120 16:20:42.839093 22060 solver.cpp:271] Iteration 4140, lr = 1e-08
+I0120 16:20:42.839217 22060 solver.cpp:111] Iteration 4140, loss = 0
+I0120 16:20:42.843967 22060 solver.cpp:271] Iteration 4160, lr = 1e-08
+I0120 16:20:42.844092 22060 solver.cpp:111] Iteration 4160, loss = 0
+I0120 16:20:42.850296 22060 solver.cpp:271] Iteration 4180, lr = 1e-08
+I0120 16:20:42.850422 22060 solver.cpp:111] Iteration 4180, loss = 0
+I0120 16:20:42.855584 22060 solver.cpp:271] Iteration 4200, lr = 1e-08
+I0120 16:20:42.855710 22060 solver.cpp:111] Iteration 4200, loss = 0
+I0120 16:20:42.855725 22060 solver.cpp:138] Iteration 4200, Testing net (#0)
+I0120 16:20:42.855943 22060 solver.cpp:176] Test score #0: 0.924528
+I0120 16:20:42.855958 22060 solver.cpp:176] Test score #1: 0.970149
+I0120 16:20:42.855968 22060 solver.cpp:176] Test score #2: 0.94679
+I0120 16:20:42.855978 22060 solver.cpp:176] Test score #3: 0.960784
+I0120 16:20:42.855986 22060 solver.cpp:176] Test score #4: 0.942308
+I0120 16:20:42.861207 22060 solver.cpp:271] Iteration 4220, lr = 1e-08
+I0120 16:20:42.861332 22060 solver.cpp:111] Iteration 4220, loss = 0.00010238
+I0120 16:20:42.866122 22060 solver.cpp:271] Iteration 4240, lr = 1e-08
+I0120 16:20:42.866247 22060 solver.cpp:111] Iteration 4240, loss = 0
+I0120 16:20:42.871001 22060 solver.cpp:271] Iteration 4260, lr = 1e-08
+I0120 16:20:42.871127 22060 solver.cpp:111] Iteration 4260, loss = 0
+I0120 16:20:42.875852 22060 solver.cpp:271] Iteration 4280, lr = 1e-08
+I0120 16:20:42.875977 22060 solver.cpp:111] Iteration 4280, loss = 0
+I0120 16:20:42.882292 22060 solver.cpp:271] Iteration 4300, lr = 1e-08
+I0120 16:20:42.882418 22060 solver.cpp:111] Iteration 4300, loss = 0
+I0120 16:20:42.887580 22060 solver.cpp:271] Iteration 4320, lr = 1e-08
+I0120 16:20:42.887706 22060 solver.cpp:111] Iteration 4320, loss = 0
+I0120 16:20:42.892922 22060 solver.cpp:271] Iteration 4340, lr = 1e-08
+I0120 16:20:42.893049 22060 solver.cpp:111] Iteration 4340, loss = 0
+I0120 16:20:42.897913 22060 solver.cpp:271] Iteration 4360, lr = 1e-08
+I0120 16:20:42.898041 22060 solver.cpp:111] Iteration 4360, loss = 0
+I0120 16:20:42.902812 22060 solver.cpp:271] Iteration 4380, lr = 1e-08
+I0120 16:20:42.902940 22060 solver.cpp:111] Iteration 4380, loss = 0
+I0120 16:20:42.908561 22060 solver.cpp:271] Iteration 4400, lr = 1e-08
+I0120 16:20:42.908686 22060 solver.cpp:111] Iteration 4400, loss = 0
+I0120 16:20:42.908700 22060 solver.cpp:138] Iteration 4400, Testing net (#0)
+I0120 16:20:42.909052 22060 solver.cpp:176] Test score #0: 0.924528
+I0120 16:20:42.909067 22060 solver.cpp:176] Test score #1: 0.970149
+I0120 16:20:42.909076 22060 solver.cpp:176] Test score #2: 0.94679
+I0120 16:20:42.909085 22060 solver.cpp:176] Test score #3: 0.960784
+I0120 16:20:42.909096 22060 solver.cpp:176] Test score #4: 0.942308
+I0120 16:20:42.914557 22060 solver.cpp:271] Iteration 4420, lr = 1e-08
+I0120 16:20:42.914683 22060 solver.cpp:111] Iteration 4420, loss = 0
+I0120 16:20:42.919781 22060 solver.cpp:271] Iteration 4440, lr = 1e-08
+I0120 16:20:42.919905 22060 solver.cpp:111] Iteration 4440, loss = 0
+I0120 16:20:42.929011 22060 solver.cpp:271] Iteration 4460, lr = 1e-08
+I0120 16:20:42.929345 22060 solver.cpp:111] Iteration 4460, loss = 0.00010238
+I0120 16:20:42.937830 22060 solver.cpp:271] Iteration 4480, lr = 1e-08
+I0120 16:20:42.938020 22060 solver.cpp:111] Iteration 4480, loss = 0
+I0120 16:20:42.944922 22060 solver.cpp:271] Iteration 4500, lr = 1e-08
+I0120 16:20:42.945032 22060 solver.cpp:111] Iteration 4500, loss = 0
+I0120 16:20:42.949762 22060 solver.cpp:271] Iteration 4520, lr = 1e-08
+I0120 16:20:42.949867 22060 solver.cpp:111] Iteration 4520, loss = 0
+I0120 16:20:42.954612 22060 solver.cpp:271] Iteration 4540, lr = 1e-08
+I0120 16:20:42.954716 22060 solver.cpp:111] Iteration 4540, loss = 0
+I0120 16:20:42.959460 22060 solver.cpp:271] Iteration 4560, lr = 1e-08
+I0120 16:20:42.959563 22060 solver.cpp:111] Iteration 4560, loss = 0
+I0120 16:20:42.964331 22060 solver.cpp:271] Iteration 4580, lr = 1e-08
+I0120 16:20:42.964435 22060 solver.cpp:111] Iteration 4580, loss = 0
+I0120 16:20:42.969753 22060 solver.cpp:271] Iteration 4600, lr = 1e-08
+I0120 16:20:42.969921 22060 solver.cpp:111] Iteration 4600, loss = 0
+I0120 16:20:42.969938 22060 solver.cpp:138] Iteration 4600, Testing net (#0)
+I0120 16:20:42.970381 22060 solver.cpp:176] Test score #0: 0.924528
+I0120 16:20:42.970398 22060 solver.cpp:176] Test score #1: 0.970149
+I0120 16:20:42.970407 22060 solver.cpp:176] Test score #2: 0.94679
+I0120 16:20:42.970417 22060 solver.cpp:176] Test score #3: 0.960784
+I0120 16:20:42.970424 22060 solver.cpp:176] Test score #4: 0.942308
+I0120 16:20:42.976228 22060 solver.cpp:271] Iteration 4620, lr = 1e-08
+I0120 16:20:42.976336 22060 solver.cpp:111] Iteration 4620, loss = 0
+I0120 16:20:42.981209 22060 solver.cpp:271] Iteration 4640, lr = 1e-08
+I0120 16:20:42.981312 22060 solver.cpp:111] Iteration 4640, loss = 0
+I0120 16:20:42.986050 22060 solver.cpp:271] Iteration 4660, lr = 1e-08
+I0120 16:20:42.986155 22060 solver.cpp:111] Iteration 4660, loss = 0
+I0120 16:20:42.990844 22060 solver.cpp:271] Iteration 4680, lr = 1e-08
+I0120 16:20:42.990949 22060 solver.cpp:111] Iteration 4680, loss = 0
+I0120 16:20:42.995729 22060 solver.cpp:271] Iteration 4700, lr = 1e-08
+I0120 16:20:42.995833 22060 solver.cpp:111] Iteration 4700, loss = 0.00010238
+I0120 16:20:43.001787 22060 solver.cpp:271] Iteration 4720, lr = 1e-08
+I0120 16:20:43.001894 22060 solver.cpp:111] Iteration 4720, loss = 0
+I0120 16:20:43.007359 22060 solver.cpp:271] Iteration 4740, lr = 1e-08
+I0120 16:20:43.007464 22060 solver.cpp:111] Iteration 4740, loss = 0
+I0120 16:20:43.012480 22060 solver.cpp:271] Iteration 4760, lr = 1e-08
+I0120 16:20:43.012584 22060 solver.cpp:111] Iteration 4760, loss = 0
+I0120 16:20:43.017299 22060 solver.cpp:271] Iteration 4780, lr = 1e-08
+I0120 16:20:43.017403 22060 solver.cpp:111] Iteration 4780, loss = 0
+I0120 16:20:43.022130 22060 solver.cpp:271] Iteration 4800, lr = 1e-08
+I0120 16:20:43.022233 22060 solver.cpp:111] Iteration 4800, loss = 0
+I0120 16:20:43.022244 22060 solver.cpp:138] Iteration 4800, Testing net (#0)
+I0120 16:20:43.022438 22060 solver.cpp:176] Test score #0: 0.924528
+I0120 16:20:43.022454 22060 solver.cpp:176] Test score #1: 0.970149
+I0120 16:20:43.022464 22060 solver.cpp:176] Test score #2: 0.94679
+I0120 16:20:43.022472 22060 solver.cpp:176] Test score #3: 0.960784
+I0120 16:20:43.022485 22060 solver.cpp:176] Test score #4: 0.942308
+I0120 16:20:43.028118 22060 solver.cpp:271] Iteration 4820, lr = 1e-08
+I0120 16:20:43.028250 22060 solver.cpp:111] Iteration 4820, loss = 0
+I0120 16:20:43.034170 22060 solver.cpp:271] Iteration 4840, lr = 1e-08
+I0120 16:20:43.034296 22060 solver.cpp:111] Iteration 4840, loss = 0
+I0120 16:20:43.039042 22060 solver.cpp:271] Iteration 4860, lr = 1e-08
+I0120 16:20:43.039165 22060 solver.cpp:111] Iteration 4860, loss = 0
+I0120 16:20:43.044628 22060 solver.cpp:271] Iteration 4880, lr = 1e-08
+I0120 16:20:43.044752 22060 solver.cpp:111] Iteration 4880, loss = 0
+I0120 16:20:43.049494 22060 solver.cpp:271] Iteration 4900, lr = 1e-08
+I0120 16:20:43.049618 22060 solver.cpp:111] Iteration 4900, loss = 0
+I0120 16:20:43.054373 22060 solver.cpp:271] Iteration 4920, lr = 1e-08
+I0120 16:20:43.054541 22060 solver.cpp:111] Iteration 4920, loss = 0
+I0120 16:20:43.059336 22060 solver.cpp:271] Iteration 4940, lr = 1e-08
+I0120 16:20:43.059460 22060 solver.cpp:111] Iteration 4940, loss = 0.00010238
+I0120 16:20:43.066009 22060 solver.cpp:271] Iteration 4960, lr = 1e-08
+I0120 16:20:43.066134 22060 solver.cpp:111] Iteration 4960, loss = 0
+I0120 16:20:43.071259 22060 solver.cpp:271] Iteration 4980, lr = 1e-08
+I0120 16:20:43.071383 22060 solver.cpp:111] Iteration 4980, loss = 0
+I0120 16:20:43.076503 22060 solver.cpp:271] Iteration 5000, lr = 1e-09
+I0120 16:20:43.076627 22060 solver.cpp:111] Iteration 5000, loss = 0
+I0120 16:20:43.076642 22060 solver.cpp:138] Iteration 5000, Testing net (#0)
+I0120 16:20:43.076856 22060 solver.cpp:176] Test score #0: 0.924528
+I0120 16:20:43.076871 22060 solver.cpp:176] Test score #1: 0.970149
+I0120 16:20:43.076880 22060 solver.cpp:176] Test score #2: 0.94679
+I0120 16:20:43.076889 22060 solver.cpp:176] Test score #3: 0.960784
+I0120 16:20:43.076902 22060 solver.cpp:176] Test score #4: 0.942308
+I0120 16:20:43.077177 22060 solver.cpp:193] Snapshotting to multi_label_train_iter_5000
+I0120 16:20:43.077827 22060 solver.cpp:200] Snapshotting solver state to multi_label_train_iter_5000.solverstate
+I0120 16:20:43.078310 22060 solver.cpp:193] Snapshotting to multi_label_train_iter_5000
+I0120 16:20:43.102761 22060 solver.cpp:200] Snapshotting solver state to multi_label_train_iter_5000.solverstate
+I0120 16:20:43.103194 22060 solver.cpp:124] Optimization Done.
+I0120 16:20:43.103204 22060 train_net.cpp:34] Optimization Done.
