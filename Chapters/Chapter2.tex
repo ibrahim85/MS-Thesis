@@ -4,7 +4,6 @@
 \label{Chapter2}
 \lhead{Chapter 2. \emph{Background and Related Work}}
 
-
 \section{Single-Layer Networks}
 
 Artificial neurons were introduced as information processing devices more than fifty years ago\citep{mcculloch1943logical}. Following the early work, perceptrons were deployed in layers to do pattern recognition job. A lot of resource was invested in researching capability of learning perceptrons theoretically and experimentally. As shown in Figure 2.1, a perceptron computes a weighted summation of its n inputs and then thresholds the result to give a binary output y. We can treat n input as an vector with n elements, and represent the vector as either class A(for output +1) or class B(for output -1).
@@ -15,12 +14,11 @@ Artificial neurons were introduced as information processing devices more than f
 \caption{\label{fig:perceptron}Diagram of a perceptron.}
 \end{figure}
 
-
 Each output is updated according to the equation:
 \begin{equation}\label{eq:BasicEq}
 y_{i} = f(h_{i}) = f\left(\sum_{j}w_{ij}x_{j}\right)
 \end{equation}
-where $y_{i}$ is the $i$th output, $h_{i}$ is the net input into node $i$, The weight $w_{ij}$ connects the $i$th output and the $j$th input, and $x_{j}$ is the $j$th input. The function $f(h)$ is the activation function and usually makes up the form
+where $y_{i}$ is the $i$th output, $h_{i}$ is the net input into node $i$, The weight $w_{ij}$ connects the $i$th output and the $j$th input, and $x_{j}$ is the $j$th input. The threshold function $f(h)$ is the activation function and usually makes up the form
 \begin{equation}\label{eq:FullEq}
 f(h) = sign(h) = 
   \begin{cases}
@@ -28,6 +26,54 @@ f(h) = sign(h) =
     1  & \quad h \geq 0\\
   \end{cases}
 \end{equation}
+and it can be plotted out
+\graphicspath{ {./Figures/} }
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.4\textwidth]{bipolar-threshold.jpg}
+\caption{\label{fig:1LayerErrorSurface}Threshold function}
+\end{figure}
+
+Besides threshold function, there are servel deterministic action functions.
+\begin{itemize}
+  \item Linear function 
+\begin{equation}\label{eq:LinearFunc}
+f(h) = h
+\end{equation}
+
+\graphicspath{ {./Figures/} }
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.4\textwidth]{Linear_function.png}
+\caption{\label{fig:1LayerErrorSurface}Linear function}
+\end{figure}
+  
+  \item Sigmoid function
+\begin{equation}\label{eq:SigmoidFunc}
+f(h) = \frac{1}{1+e^{-h}}
+\end{equation}
+
+\graphicspath{ {./Figures/} }
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.4\textwidth]{Logistic-curve.png}
+\caption{\label{fig:1LayerErrorSurface}Sigmoid function}
+\end{figure}
+
+  \item tanh function)
+\begin{equation}\label{eq:TanhFunc}
+f(h) = tanh(h)
+\end{equation}
+
+\graphicspath{ {./Figures/} }
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.4\textwidth]{tanh.png}
+\caption{\label{fig:1LayerErrorSurface}Tanh function}
+\end{figure}
+%  \item The third etc \ldots
+\end{itemize}
+
 We can also represent \ref{eq:FullEq} in vector notation, as in 
 \begin{equation}\label{eq:UsedEq}
 y = f(h) = f(\bf w \cdot x)
@@ -47,10 +93,30 @@ y = f(\sum_{i=0}^{n}w_{i}x_{i}) = 1  & \quad x \in Class A\\
 y = f(\sum_{i=0}^{n}w_{i}x_{i}) = 0  & \quad x \in Class B
 \end{align*}
 
+Single layer neural network classifier is simple to implement, while it can only support a linear decision boundary. We can build a pretty simple neural network to acquire intuition behind mathematical theory. The network has no bias and one neuron which means it has one weight, say $w1$. And we implement a logistic sigmoid activation function on the multiply of input data and weight $w1$. Therefore, the network can map the input data $a_0$ onto an output $a_{out}$ based on the function
+\begin{equation}\label{eq:1LayerExample}
+a_{out} = f(a_{0}w_{1})
+\end{equation}
+where $f()$ is a logistic function. Supposing that an input data $1$ maps to an output data $1$, we can compute the value of the error function for each possible value of $w_{1}$. Feeding value of $w_{1}$ in range $(-10,10)$, we can plot error surface in Figure\ref{{fig:1LayerErrorSurface}}.
+\graphicspath{ {./Figures/} }
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.4\textwidth]{1LayerErrorSurface.png}
+\caption{\label{fig:1LayerErrorSurface}Error surface for a single layer neural network. Source: Internet}
+\end{figure}
+
+Single layer neural network has a decision boundary which is linear. However, it is clear this is a very limited class of decision boundary. It can be illustrated by two types of dataset.
+\graphicspath{ {./Figures/} }
+\begin{figure}[!htb]
+\centering     %%% not \center
+\subfigure{\label{fig:a}\includegraphics[width=0.4\textwidth]{SingleLayerSimpleData}}
+\subfigure{\label{fig:b}\includegraphics[width=0.4\textwidth]{SingleLayerCircleData}}
+\caption{Two types of dataset. Left one can be separated by a single layer neural network. Right one cannot be separated by a single neural network.}
+\end{figure}
 
 \section{Multi-Layer Networks}
 
-Single-layer networks have some important limitation in terms of the representing range of functions. We are seeking to learn the nonlinearity as the linear discriminant.To improve the representation capability, we can stack layers networks. This is the approach of multilayer neural networks. Multilayer neural networks implement linear discriminants via mapping input data to a nonlinear space. They can use fairly simple algorithms to learn form of the nonlinearity from training data.
+Single layer networks have some important limitation in terms of the representing range of functions. We are seeking to learn the nonlinearity as the linear discriminant.To improve the representation capability, we can stack layers networks. This is the approach of multilayer neural networks. Multilayer neural networks implement linear discriminants via mapping input data to a nonlinear space. They can use fairly simple algorithms to learn form of the nonlinearity from training data.
 
 In the thesis, we limit multi-layer networks in subset of feedforward networks. As feedforward networks can provide a general mechanism for representing nonlinear functional mapping between a set of input data and a set of labels. The \ref{fig:ffnet} is a feedforward network having two layers of adaptive weights.
 
@@ -76,6 +142,25 @@ f(x) = tanh(x) = \frac{e^{x}-e^{-x}}{e^{x}+e^{-x}}
 \end{equation}
 
 The three layer neural network is capable of approximating any function with enough hidden units which means the networks with two layers of weights and sigmoid nonlinearities can provide any accuracy in classification problems. 
+
+Again, we can use a simple example to illustrate the power of multilayer neural network. In this example, we have one input, one hidden neuron and one output. There is no bias in input layer and hidden layer. There are two weights existing in the network, say $(w_{1}, w_{2})$, and the output can be calculated via
+\begin{equation}\label{eq:2LayerExample}
+a_{out} = f(f(a_{0}w_{1})w_{2})
+\end{equation}
+where $f()$ is logistic function. With varying $w_{1}$ and $w_{2}$, the error surface can be represented
+\graphicspath{ {./Figures/} }
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.4\textwidth]{2LayerErrorSurface.png}
+\caption{\label{fig:2LayerErrorSurface}Error surface for a multilayer neural network. Source: Internet}
+\end{figure}
+And the samples which cannot be separated by single neural network can be done by multilayer neural network.
+\graphicspath{ {./Figures/} }
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.4\textwidth]{MultiLayerCircleData.png}
+\caption{\label{fig:2LayerErrorSurface}Source: Internet}
+\end{figure}
 
 \section{Backpropagation}
 

@@ -1,42 +1,50 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Diagram of a perceptron.\relax }}{5}{figure.caption.24}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Diagram of a feedford neural networks.\relax }}{7}{figure.caption.31}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Diagram of LeNet.\relax }}{12}{figure.caption.58}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Diagram of Spatial Pyramid Match.\relax }}{13}{figure.caption.60}
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Diagram of Transfer Learning.\relax }}{14}{figure.caption.63}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Threshold function\relax }}{6}{figure.caption.27}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Linear function\relax }}{6}{figure.caption.29}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Sigmoid function\relax }}{7}{figure.caption.31}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Tanh function\relax }}{7}{figure.caption.33}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Error surface for a single layer neural network. Source: Internet\relax }}{8}{figure.caption.38}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Two types of dataset. Left one can be separated by a single layer neural network. Right one cannot be separated by a single neural network.\relax }}{9}{figure.caption.39}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Diagram of a feedford neural networks.\relax }}{10}{figure.caption.43}
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Error surface for a multilayer neural network. Source: Internet\relax }}{11}{figure.caption.48}
+\contentsline {figure}{\numberline {2.10}{\ignorespaces Source: Internet\relax }}{11}{figure.caption.49}
+\contentsline {figure}{\numberline {2.11}{\ignorespaces Diagram of LeNet.\relax }}{16}{figure.caption.73}
+\contentsline {figure}{\numberline {2.12}{\ignorespaces Diagram of Spatial Pyramid Match.\relax }}{16}{figure.caption.75}
+\contentsline {figure}{\numberline {2.13}{\ignorespaces Diagram of Transfer Learning.\relax }}{17}{figure.caption.78}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces 2 Figures from ImageNet\relax }}{15}{figure.caption.66}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces 2 Figures from Weather Dataset\relax }}{16}{figure.caption.67}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Diagram of Spatial Pyramid Pooling layer\relax }}{17}{figure.caption.70}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Architecture of AlexNet\relax }}{17}{figure.caption.72}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces 2 Figures from ImageNet\relax }}{18}{figure.caption.81}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces 2 Figures from Weather Dataset\relax }}{19}{figure.caption.82}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Diagram of Spatial Pyramid Pooling layer\relax }}{20}{figure.caption.85}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Architecture of AlexNet\relax }}{20}{figure.caption.87}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Finetune Process\relax }}{22}{figure.caption.82}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Finetune Process\relax }}{22}{figure.caption.83}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces A cloudy image and outputs of convolutional layers\relax }}{23}{figure.caption.85}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {raw image}}}{23}{figure.caption.85}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {conv1 output}}}{23}{figure.caption.85}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {conv2 output}}}{23}{figure.caption.85}
-\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {conv3 output}}}{23}{figure.caption.85}
-\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {conv4 output}}}{23}{figure.caption.85}
-\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {conv5 output}}}{23}{figure.caption.85}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces A sunny image and outputs of convolutional layers\relax }}{24}{figure.caption.92}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {raw image}}}{24}{figure.caption.92}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {conv1 output}}}{24}{figure.caption.92}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {conv2 output}}}{24}{figure.caption.92}
-\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {conv3 output}}}{24}{figure.caption.92}
-\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {conv4 output}}}{24}{figure.caption.92}
-\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {conv5 output}}}{24}{figure.caption.92}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Visiualization of feature maps outputs between original CNN model and CNN-SPP model. The upper images are from original model and the lower images are from fine tuned model\relax }}{25}{figure.caption.100}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Histogram distribution of vectors from FC7. Left one is from CNN model and right one is from finetuned model\relax }}{25}{figure.caption.101}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Finetune Process\relax }}{25}{figure.caption.97}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Finetune Process\relax }}{25}{figure.caption.98}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces A cloudy image and outputs of convolutional layers\relax }}{26}{figure.caption.100}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {raw image}}}{26}{figure.caption.100}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {conv1 output}}}{26}{figure.caption.100}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {conv2 output}}}{26}{figure.caption.100}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {conv3 output}}}{26}{figure.caption.100}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {conv4 output}}}{26}{figure.caption.100}
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {conv5 output}}}{26}{figure.caption.100}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces A sunny image and outputs of convolutional layers\relax }}{27}{figure.caption.107}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {raw image}}}{27}{figure.caption.107}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {conv1 output}}}{27}{figure.caption.107}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {conv2 output}}}{27}{figure.caption.107}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {conv3 output}}}{27}{figure.caption.107}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {conv4 output}}}{27}{figure.caption.107}
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {conv5 output}}}{27}{figure.caption.107}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Visiualization of feature maps outputs between original CNN model and CNN-SPP model. The upper images are from original model and the lower images are from fine tuned model\relax }}{28}{figure.caption.115}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Histogram distribution of vectors from FC7. Left one is from CNN model and right one is from finetuned model\relax }}{28}{figure.caption.116}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Example Image\relax }}{26}{figure.caption.104}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Example Image\relax }}{29}{figure.caption.119}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Colour Wheel Diagram\relax }}{36}{figure.caption.141}
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Multi-label Samples. Three labels mean red, green and blue seperately.\relax }}{37}{figure.caption.144}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {L:-1 -1 1}}}{37}{figure.caption.144}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {L:-1 1 1}}}{37}{figure.caption.144}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {L:-1 1 -1}}}{37}{figure.caption.144}
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Network Topology For Multi-lable classification\relax }}{38}{figure.caption.150}
-\contentsline {figure}{\numberline {6.4}{\ignorespaces Network topology for multilable classification.\relax }}{46}{figure.caption.186}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Colour Wheel Diagram\relax }}{39}{figure.caption.156}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Multi-label Samples. Three labels mean red, green and blue seperately.\relax }}{40}{figure.caption.159}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {L:-1 -1 1}}}{40}{figure.caption.159}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {L:-1 1 1}}}{40}{figure.caption.159}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {L:-1 1 -1}}}{40}{figure.caption.159}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Network Topology For Multi-lable classification\relax }}{41}{figure.caption.165}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Network topology for multilable classification.\relax }}{49}{figure.caption.201}
 \addvspace {10\p@ }

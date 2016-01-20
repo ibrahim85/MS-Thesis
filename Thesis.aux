@@ -57,262 +57,286 @@
 \newlabel{fig:perceptron}{{2.1}{5}{Diagram of a perceptron.\relax }{figure.caption.24}{}}
 \newlabel{eq:BasicEq}{{2.1}{5}{Single-Layer Networks}{equation.25}{}}
 \newlabel{eq:FullEq}{{2.2}{6}{Single-Layer Networks}{equation.26}{}}
-\newlabel{eq:UsedEq}{{2.3}{6}{Single-Layer Networks}{equation.27}{}}
-\newlabel{eq:WithBias}{{2.4}{6}{Single-Layer Networks}{equation.28}{}}
-\newlabel{eq:finalEq}{{2.5}{6}{Single-Layer Networks}{equation.29}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.2}Multi-Layer Networks}{6}{section.30}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.2}{\ignorespaces Diagram of a feedford neural networks.\relax }}{7}{figure.caption.31}}
-\newlabel{fig:ffnet}{{2.2}{7}{Diagram of a feedford neural networks.\relax }{figure.caption.31}{}}
-\newlabel{eq:ffEq}{{2.6}{7}{Multi-Layer Networks}{equation.32}{}}
-\newlabel{eq:sigmoid}{{2.7}{7}{Multi-Layer Networks}{equation.33}{}}
-\newlabel{eq:tanh}{{2.8}{7}{Multi-Layer Networks}{equation.34}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.3}Backpropagation}{8}{section.35}}
-\newlabel{eq:UpdateWeights}{{2.9}{8}{Backpropagation}{equation.36}{}}
-\newlabel{eq:DeltaWeights}{{2.10}{8}{Backpropagation}{equation.37}{}}
-\newlabel{eq:h2oBP}{{2.11}{8}{Backpropagation}{equation.38}{}}
-\newlabel{eq:hiddenBP}{{2.12}{8}{Backpropagation}{equation.39}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.4}Softmax classifier}{9}{section.40}}
-\newlabel{eq:SoftmaxActivation}{{2.13}{9}{Softmax classifier}{equation.41}{}}
-\newlabel{eq:CrossEntropyDiff}{{2.15}{10}{Softmax classifier}{equation.43}{}}
-\newlabel{eq:ProbInter}{{2.16}{10}{Softmax classifier}{equation.44}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.4.1}Practical issues}{10}{subsection.45}}
-\newlabel{eq:SoftmaxTricks}{{2.17}{10}{Practical issues}{equation.46}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.4.2}Error function}{10}{subsection.47}}
-\newlabel{eq:LogLossFunc}{{2.18}{11}{Error function}{equation.48}{}}
-\newlabel{eq:LogRegLossFunc}{{2.19}{11}{Error function}{equation.49}{}}
-\newlabel{eq:PostProbDis}{{2.21}{11}{Error function}{equation.51}{}}
-\newlabel{eq:PartDer}{{2.22}{11}{Error function}{equation.52}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.5}Training protocols}{11}{section.53}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.2}{\ignorespaces Threshold function\relax }}{6}{figure.caption.27}}
+\newlabel{fig:1LayerErrorSurface}{{2.2}{6}{Threshold function\relax }{figure.caption.27}{}}
+\newlabel{eq:LinearFunc}{{2.3}{6}{Single-Layer Networks}{equation.28}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.3}{\ignorespaces Linear function\relax }}{6}{figure.caption.29}}
+\newlabel{fig:1LayerErrorSurface}{{2.3}{6}{Linear function\relax }{figure.caption.29}{}}
+\newlabel{eq:SigmoidFunc}{{2.4}{6}{Single-Layer Networks}{equation.30}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.4}{\ignorespaces Sigmoid function\relax }}{7}{figure.caption.31}}
+\newlabel{fig:1LayerErrorSurface}{{2.4}{7}{Sigmoid function\relax }{figure.caption.31}{}}
+\newlabel{eq:TanhFunc}{{2.5}{7}{Single-Layer Networks}{equation.32}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.5}{\ignorespaces Tanh function\relax }}{7}{figure.caption.33}}
+\newlabel{fig:1LayerErrorSurface}{{2.5}{7}{Tanh function\relax }{figure.caption.33}{}}
+\newlabel{eq:UsedEq}{{2.6}{7}{Single-Layer Networks}{equation.34}{}}
+\newlabel{eq:WithBias}{{2.7}{7}{Single-Layer Networks}{equation.35}{}}
+\newlabel{eq:finalEq}{{2.8}{7}{Single-Layer Networks}{equation.36}{}}
+\newlabel{eq:1LayerExample}{{2.9}{8}{Single-Layer Networks}{equation.37}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.6}{\ignorespaces Error surface for a single layer neural network. Source: Internet\relax }}{8}{figure.caption.38}}
+\newlabel{fig:1LayerErrorSurface}{{2.6}{8}{Error surface for a single layer neural network. Source: Internet\relax }{figure.caption.38}{}}
+\newlabel{fig:a}{{2.7(a)}{9}{Subfigure 2 2.7(a)}{subfigure.40}{}}
+\newlabel{sub@fig:a}{{(a)}{9}{Subfigure 2 2.7(a)\relax }{subfigure.40}{}}
+\newlabel{fig:b}{{2.7(b)}{9}{Subfigure 2 2.7(b)}{subfigure.41}{}}
+\newlabel{sub@fig:b}{{(b)}{9}{Subfigure 2 2.7(b)\relax }{subfigure.41}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.7}{\ignorespaces Two types of dataset. Left one can be separated by a single layer neural network. Right one cannot be separated by a single neural network.\relax }}{9}{figure.caption.39}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.2}Multi-Layer Networks}{9}{section.42}}
+\newlabel{eq:ffEq}{{2.10}{9}{Multi-Layer Networks}{equation.44}{}}
+\newlabel{eq:sigmoid}{{2.11}{9}{Multi-Layer Networks}{equation.45}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.8}{\ignorespaces Diagram of a feedford neural networks.\relax }}{10}{figure.caption.43}}
+\newlabel{fig:ffnet}{{2.8}{10}{Diagram of a feedford neural networks.\relax }{figure.caption.43}{}}
+\newlabel{eq:tanh}{{2.12}{10}{Multi-Layer Networks}{equation.46}{}}
+\newlabel{eq:2LayerExample}{{2.13}{10}{Multi-Layer Networks}{equation.47}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.3}Backpropagation}{10}{section.50}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.9}{\ignorespaces Error surface for a multilayer neural network. Source: Internet\relax }}{11}{figure.caption.48}}
+\newlabel{fig:2LayerErrorSurface}{{2.9}{11}{Error surface for a multilayer neural network. Source: Internet\relax }{figure.caption.48}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.10}{\ignorespaces Source: Internet\relax }}{11}{figure.caption.49}}
+\newlabel{fig:2LayerErrorSurface}{{2.10}{11}{Source: Internet\relax }{figure.caption.49}{}}
+\newlabel{eq:UpdateWeights}{{2.14}{12}{Backpropagation}{equation.51}{}}
+\newlabel{eq:DeltaWeights}{{2.15}{12}{Backpropagation}{equation.52}{}}
+\newlabel{eq:h2oBP}{{2.16}{12}{Backpropagation}{equation.53}{}}
+\newlabel{eq:hiddenBP}{{2.17}{12}{Backpropagation}{equation.54}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.4}Softmax classifier}{12}{section.55}}
+\newlabel{eq:SoftmaxActivation}{{2.18}{13}{Softmax classifier}{equation.56}{}}
+\newlabel{eq:CrossEntropyDiff}{{2.20}{13}{Softmax classifier}{equation.58}{}}
+\newlabel{eq:ProbInter}{{2.21}{13}{Softmax classifier}{equation.59}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4.1}Practical issues}{14}{subsection.60}}
+\newlabel{eq:SoftmaxTricks}{{2.22}{14}{Practical issues}{equation.61}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4.2}Error function}{14}{subsection.62}}
+\newlabel{eq:LogLossFunc}{{2.23}{14}{Error function}{equation.63}{}}
+\newlabel{eq:LogRegLossFunc}{{2.24}{14}{Error function}{equation.64}{}}
+\newlabel{eq:PostProbDis}{{2.26}{14}{Error function}{equation.66}{}}
 \citation{lecun1998gradient}
 \citation{krizhevsky2012imagenet}
+\newlabel{eq:PartDer}{{2.27}{15}{Error function}{equation.67}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.5}Training protocols}{15}{section.68}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.6}Stochastic Gradient Descent}{15}{section.69}}
+\newlabel{eq:LossMin}{{2.28}{15}{Stochastic Gradient Descent}{equation.70}{}}
+\newlabel{eq:SGDUpdate}{{2.29}{15}{Stochastic Gradient Descent}{equation.71}{}}
 \citation{lazebnik2006beyond}
-\@writefile{toc}{\contentsline {section}{\numberline {2.6}Stochastic Gradient Descent}{12}{section.54}}
-\newlabel{eq:LossMin}{{2.23}{12}{Stochastic Gradient Descent}{equation.55}{}}
-\newlabel{eq:SGDUpdate}{{2.24}{12}{Stochastic Gradient Descent}{equation.56}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.7}Convolutional Neural Networks}{12}{section.57}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.3}{\ignorespaces Diagram of LeNet.\relax }}{12}{figure.caption.58}}
-\newlabel{fig:perceptron}{{2.3}{12}{Diagram of LeNet.\relax }{figure.caption.58}{}}
 \citation{pan2010survey}
-\@writefile{toc}{\contentsline {section}{\numberline {2.8}Spatial Pyramid Match}{13}{section.59}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.4}{\ignorespaces Diagram of Spatial Pyramid Match.\relax }}{13}{figure.caption.60}}
-\newlabel{fig:perceptron}{{2.4}{13}{Diagram of Spatial Pyramid Match.\relax }{figure.caption.60}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.9}Transfer Learning}{13}{section.61}}
-\newlabel{eq:TransLearning}{{2.25}{13}{Transfer Learning}{equation.62}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.5}{\ignorespaces Diagram of Transfer Learning.\relax }}{14}{figure.caption.63}}
-\newlabel{fig:perceptron}{{2.5}{14}{Diagram of Transfer Learning.\relax }{figure.caption.63}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.7}Convolutional Neural Networks}{16}{section.72}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.11}{\ignorespaces Diagram of LeNet.\relax }}{16}{figure.caption.73}}
+\newlabel{fig:perceptron}{{2.11}{16}{Diagram of LeNet.\relax }{figure.caption.73}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.8}Spatial Pyramid Match}{16}{section.74}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.12}{\ignorespaces Diagram of Spatial Pyramid Match.\relax }}{16}{figure.caption.75}}
+\newlabel{fig:perceptron}{{2.12}{16}{Diagram of Spatial Pyramid Match.\relax }{figure.caption.75}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.9}Transfer Learning}{17}{section.76}}
+\newlabel{eq:TransLearning}{{2.30}{17}{Transfer Learning}{equation.77}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.13}{\ignorespaces Diagram of Transfer Learning.\relax }}{17}{figure.caption.78}}
+\newlabel{fig:perceptron}{{2.13}{17}{Diagram of Transfer Learning.\relax }{figure.caption.78}{}}
 \citation{russell2008labelme}
 \citation{xiao2010sun}
-\@writefile{toc}{\contentsline {chapter}{\numberline {3}Methodology}{15}{chapter.64}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {3}Methodology}{18}{chapter.79}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{Chapter3}{{3}{15}{Methodology}{chapter.64}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.1}Dataset}{15}{section.65}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces 2 Figures from ImageNet\relax }}{15}{figure.caption.66}}
-\newlabel{fig:ImageNetExamples}{{3.1}{15}{2 Figures from ImageNet\relax }{figure.caption.66}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces 2 Figures from Weather Dataset\relax }}{16}{figure.caption.67}}
-\newlabel{fig:WeatherExamples}{{3.2}{16}{2 Figures from Weather Dataset\relax }{figure.caption.67}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.2}Data Argument}{16}{section.68}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.3}Spatial Pyramid Pooling}{16}{section.69}}
+\newlabel{Chapter3}{{3}{18}{Methodology}{chapter.79}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.1}Dataset}{18}{section.80}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces 2 Figures from ImageNet\relax }}{18}{figure.caption.81}}
+\newlabel{fig:ImageNetExamples}{{3.1}{18}{2 Figures from ImageNet\relax }{figure.caption.81}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces 2 Figures from Weather Dataset\relax }}{19}{figure.caption.82}}
+\newlabel{fig:WeatherExamples}{{3.2}{19}{2 Figures from Weather Dataset\relax }{figure.caption.82}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.2}Data Argument}{19}{section.83}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.3}Spatial Pyramid Pooling}{19}{section.84}}
 \citation{krizhevsky2012imagenet}
 \citation{nair2010rectified}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces Diagram of Spatial Pyramid Pooling layer\relax }}{17}{figure.caption.70}}
-\newlabel{fig:sppnet}{{3.3}{17}{Diagram of Spatial Pyramid Pooling layer\relax }{figure.caption.70}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.4}Convolutional Neural Networks Architecture}{17}{section.71}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.4}{\ignorespaces Architecture of AlexNet\relax }}{17}{figure.caption.72}}
-\newlabel{fig:ImageNetArch}{{3.4}{17}{Architecture of AlexNet\relax }{figure.caption.72}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {3.1}{\ignorespaces Parameters of model\relax }}{18}{table.caption.73}}
-\newlabel{fig:NetPara}{{3.1}{18}{Parameters of model\relax }{table.caption.73}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces Diagram of Spatial Pyramid Pooling layer\relax }}{20}{figure.caption.85}}
+\newlabel{fig:sppnet}{{3.3}{20}{Diagram of Spatial Pyramid Pooling layer\relax }{figure.caption.85}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.4}Convolutional Neural Networks Architecture}{20}{section.86}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.4}{\ignorespaces Architecture of AlexNet\relax }}{20}{figure.caption.87}}
+\newlabel{fig:ImageNetArch}{{3.4}{20}{Architecture of AlexNet\relax }{figure.caption.87}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.1}{\ignorespaces Parameters of model\relax }}{21}{table.caption.88}}
+\newlabel{fig:NetPara}{{3.1}{21}{Parameters of model\relax }{table.caption.88}{}}
 \citation{jia2014caffe}
 \citation{jia2014caffe}
 \citation{ZeilerF13}
-\@writefile{toc}{\contentsline {chapter}{\numberline {4}Experiment}{19}{chapter.74}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {4}Experiment}{22}{chapter.89}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{Chapter4}{{4}{19}{Experiment}{chapter.74}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.1}Training Neural Network}{19}{section.75}}
-\newlabel{eq:ReLU}{{4.1}{19}{Training Neural Network}{equation.76}{}}
-\newlabel{eq:ffEq}{{4.2}{20}{Training Neural Network}{equation.77}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.2}Fine-tuning Model}{20}{section.78}}
+\newlabel{Chapter4}{{4}{22}{Experiment}{chapter.89}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.1}Training Neural Network}{22}{section.90}}
+\newlabel{eq:ReLU}{{4.1}{22}{Training Neural Network}{equation.91}{}}
+\newlabel{eq:ffEq}{{4.2}{23}{Training Neural Network}{equation.92}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.2}Fine-tuning Model}{23}{section.93}}
 \citation{krizhevsky2012imagenet}
-\@writefile{toc}{\contentsline {section}{\numberline {4.3}Companion Experimental}{21}{section.79}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.4}Experimental Result}{21}{section.80}}
-\@writefile{lot}{\contentsline {table}{\numberline {4.1}{\ignorespaces CNN means with original trained model, SPP means model deployed with spatial pyramid pooling layer\relax }}{21}{table.caption.81}}
-\newlabel{ExpRes}{{4.1}{21}{CNN means with original trained model, SPP means model deployed with spatial pyramid pooling layer\relax }{table.caption.81}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces Finetune Process\relax }}{22}{figure.caption.82}}
-\newlabel{fig:finetuneprocess}{{4.1}{22}{Finetune Process\relax }{figure.caption.82}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces Finetune Process\relax }}{22}{figure.caption.83}}
-\newlabel{fig:FTvsSC}{{4.2}{22}{Finetune Process\relax }{figure.caption.83}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.3}Companion Experimental}{24}{section.94}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.4}Experimental Result}{24}{section.95}}
+\@writefile{lot}{\contentsline {table}{\numberline {4.1}{\ignorespaces CNN means with original trained model, SPP means model deployed with spatial pyramid pooling layer\relax }}{24}{table.caption.96}}
+\newlabel{ExpRes}{{4.1}{24}{CNN means with original trained model, SPP means model deployed with spatial pyramid pooling layer\relax }{table.caption.96}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces Finetune Process\relax }}{25}{figure.caption.97}}
+\newlabel{fig:finetuneprocess}{{4.1}{25}{Finetune Process\relax }{figure.caption.97}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces Finetune Process\relax }}{25}{figure.caption.98}}
+\newlabel{fig:FTvsSC}{{4.2}{25}{Finetune Process\relax }{figure.caption.98}{}}
 \citation{razavian2014cnn}
-\@writefile{toc}{\contentsline {section}{\numberline {4.5}Architecture Analysis}{23}{section.84}}
-\newlabel{fig:cloudy}{{4.3(a)}{23}{Subfigure 4 4.3(a)}{subfigure.86}{}}
-\newlabel{sub@fig:cloudy}{{(a)}{23}{Subfigure 4 4.3(a)\relax }{subfigure.86}{}}
-\newlabel{fig:cloudy_conv1}{{4.3(b)}{23}{Subfigure 4 4.3(b)}{subfigure.87}{}}
-\newlabel{sub@fig:cloudy_conv1}{{(b)}{23}{Subfigure 4 4.3(b)\relax }{subfigure.87}{}}
-\newlabel{fig:cloudy_conv2}{{4.3(c)}{23}{Subfigure 4 4.3(c)}{subfigure.88}{}}
-\newlabel{sub@fig:cloudy_conv2}{{(c)}{23}{Subfigure 4 4.3(c)\relax }{subfigure.88}{}}
-\newlabel{fig:cloudy_conv3}{{4.3(d)}{23}{Subfigure 4 4.3(d)}{subfigure.89}{}}
-\newlabel{sub@fig:cloudy_conv3}{{(d)}{23}{Subfigure 4 4.3(d)\relax }{subfigure.89}{}}
-\newlabel{fig:cloudy_conv4}{{4.3(e)}{23}{Subfigure 4 4.3(e)}{subfigure.90}{}}
-\newlabel{sub@fig:cloudy_conv4}{{(e)}{23}{Subfigure 4 4.3(e)\relax }{subfigure.90}{}}
-\newlabel{fig:cloudy_conv5}{{4.3(f)}{23}{Subfigure 4 4.3(f)}{subfigure.91}{}}
-\newlabel{sub@fig:cloudy_conv5}{{(f)}{23}{Subfigure 4 4.3(f)\relax }{subfigure.91}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.3}{\ignorespaces A cloudy image and outputs of convolutional layers\relax }}{23}{figure.caption.85}}
-\newlabel{fig:cloudy_finetuneprocess}{{4.3}{23}{A cloudy image and outputs of convolutional layers\relax }{figure.caption.85}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {raw image}}}{23}{figure.caption.85}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {conv1 output}}}{23}{figure.caption.85}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {conv2 output}}}{23}{figure.caption.85}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {conv3 output}}}{23}{figure.caption.85}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {conv4 output}}}{23}{figure.caption.85}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(f)}{\ignorespaces {conv5 output}}}{23}{figure.caption.85}}
-\newlabel{fig:sunny}{{4.4(a)}{24}{Subfigure 4 4.4(a)}{subfigure.93}{}}
-\newlabel{sub@fig:sunny}{{(a)}{24}{Subfigure 4 4.4(a)\relax }{subfigure.93}{}}
-\newlabel{fig:sunny_conv1}{{4.4(b)}{24}{Subfigure 4 4.4(b)}{subfigure.94}{}}
-\newlabel{sub@fig:sunny_conv1}{{(b)}{24}{Subfigure 4 4.4(b)\relax }{subfigure.94}{}}
-\newlabel{fig:sunny_conv2}{{4.4(c)}{24}{Subfigure 4 4.4(c)}{subfigure.95}{}}
-\newlabel{sub@fig:sunny_conv2}{{(c)}{24}{Subfigure 4 4.4(c)\relax }{subfigure.95}{}}
-\newlabel{fig:sunny_conv3}{{4.4(d)}{24}{Subfigure 4 4.4(d)}{subfigure.96}{}}
-\newlabel{sub@fig:sunny_conv3}{{(d)}{24}{Subfigure 4 4.4(d)\relax }{subfigure.96}{}}
-\newlabel{fig:sunny_conv4}{{4.4(e)}{24}{Subfigure 4 4.4(e)}{subfigure.97}{}}
-\newlabel{sub@fig:sunny_conv4}{{(e)}{24}{Subfigure 4 4.4(e)\relax }{subfigure.97}{}}
-\newlabel{fig:sunny_conv5}{{4.4(f)}{24}{Subfigure 4 4.4(f)}{subfigure.98}{}}
-\newlabel{sub@fig:sunny_conv5}{{(f)}{24}{Subfigure 4 4.4(f)\relax }{subfigure.98}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.4}{\ignorespaces A sunny image and outputs of convolutional layers\relax }}{24}{figure.caption.92}}
-\newlabel{fig:sunny_finetuneprocess}{{4.4}{24}{A sunny image and outputs of convolutional layers\relax }{figure.caption.92}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {raw image}}}{24}{figure.caption.92}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {conv1 output}}}{24}{figure.caption.92}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {conv2 output}}}{24}{figure.caption.92}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {conv3 output}}}{24}{figure.caption.92}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {conv4 output}}}{24}{figure.caption.92}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(f)}{\ignorespaces {conv5 output}}}{24}{figure.caption.92}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.6}Transfer Learning}{25}{section.99}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.5}{\ignorespaces Visiualization of feature maps outputs between original CNN model and CNN-SPP model. The upper images are from original model and the lower images are from fine tuned model\relax }}{25}{figure.caption.100}}
-\newlabel{fig:diff_featuremap}{{4.5}{25}{Visiualization of feature maps outputs between original CNN model and CNN-SPP model. The upper images are from original model and the lower images are from fine tuned model\relax }{figure.caption.100}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.6}{\ignorespaces Histogram distribution of vectors from FC7. Left one is from CNN model and right one is from finetuned model\relax }}{25}{figure.caption.101}}
-\newlabel{fig:fc7_hist_output}{{4.6}{25}{Histogram distribution of vectors from FC7. Left one is from CNN model and right one is from finetuned model\relax }{figure.caption.101}{}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {5}Introduction}{26}{chapter.102}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.5}Architecture Analysis}{26}{section.99}}
+\newlabel{fig:cloudy}{{4.3(a)}{26}{Subfigure 4 4.3(a)}{subfigure.101}{}}
+\newlabel{sub@fig:cloudy}{{(a)}{26}{Subfigure 4 4.3(a)\relax }{subfigure.101}{}}
+\newlabel{fig:cloudy_conv1}{{4.3(b)}{26}{Subfigure 4 4.3(b)}{subfigure.102}{}}
+\newlabel{sub@fig:cloudy_conv1}{{(b)}{26}{Subfigure 4 4.3(b)\relax }{subfigure.102}{}}
+\newlabel{fig:cloudy_conv2}{{4.3(c)}{26}{Subfigure 4 4.3(c)}{subfigure.103}{}}
+\newlabel{sub@fig:cloudy_conv2}{{(c)}{26}{Subfigure 4 4.3(c)\relax }{subfigure.103}{}}
+\newlabel{fig:cloudy_conv3}{{4.3(d)}{26}{Subfigure 4 4.3(d)}{subfigure.104}{}}
+\newlabel{sub@fig:cloudy_conv3}{{(d)}{26}{Subfigure 4 4.3(d)\relax }{subfigure.104}{}}
+\newlabel{fig:cloudy_conv4}{{4.3(e)}{26}{Subfigure 4 4.3(e)}{subfigure.105}{}}
+\newlabel{sub@fig:cloudy_conv4}{{(e)}{26}{Subfigure 4 4.3(e)\relax }{subfigure.105}{}}
+\newlabel{fig:cloudy_conv5}{{4.3(f)}{26}{Subfigure 4 4.3(f)}{subfigure.106}{}}
+\newlabel{sub@fig:cloudy_conv5}{{(f)}{26}{Subfigure 4 4.3(f)\relax }{subfigure.106}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.3}{\ignorespaces A cloudy image and outputs of convolutional layers\relax }}{26}{figure.caption.100}}
+\newlabel{fig:cloudy_finetuneprocess}{{4.3}{26}{A cloudy image and outputs of convolutional layers\relax }{figure.caption.100}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {raw image}}}{26}{figure.caption.100}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {conv1 output}}}{26}{figure.caption.100}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {conv2 output}}}{26}{figure.caption.100}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {conv3 output}}}{26}{figure.caption.100}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {conv4 output}}}{26}{figure.caption.100}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(f)}{\ignorespaces {conv5 output}}}{26}{figure.caption.100}}
+\newlabel{fig:sunny}{{4.4(a)}{27}{Subfigure 4 4.4(a)}{subfigure.108}{}}
+\newlabel{sub@fig:sunny}{{(a)}{27}{Subfigure 4 4.4(a)\relax }{subfigure.108}{}}
+\newlabel{fig:sunny_conv1}{{4.4(b)}{27}{Subfigure 4 4.4(b)}{subfigure.109}{}}
+\newlabel{sub@fig:sunny_conv1}{{(b)}{27}{Subfigure 4 4.4(b)\relax }{subfigure.109}{}}
+\newlabel{fig:sunny_conv2}{{4.4(c)}{27}{Subfigure 4 4.4(c)}{subfigure.110}{}}
+\newlabel{sub@fig:sunny_conv2}{{(c)}{27}{Subfigure 4 4.4(c)\relax }{subfigure.110}{}}
+\newlabel{fig:sunny_conv3}{{4.4(d)}{27}{Subfigure 4 4.4(d)}{subfigure.111}{}}
+\newlabel{sub@fig:sunny_conv3}{{(d)}{27}{Subfigure 4 4.4(d)\relax }{subfigure.111}{}}
+\newlabel{fig:sunny_conv4}{{4.4(e)}{27}{Subfigure 4 4.4(e)}{subfigure.112}{}}
+\newlabel{sub@fig:sunny_conv4}{{(e)}{27}{Subfigure 4 4.4(e)\relax }{subfigure.112}{}}
+\newlabel{fig:sunny_conv5}{{4.4(f)}{27}{Subfigure 4 4.4(f)}{subfigure.113}{}}
+\newlabel{sub@fig:sunny_conv5}{{(f)}{27}{Subfigure 4 4.4(f)\relax }{subfigure.113}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.4}{\ignorespaces A sunny image and outputs of convolutional layers\relax }}{27}{figure.caption.107}}
+\newlabel{fig:sunny_finetuneprocess}{{4.4}{27}{A sunny image and outputs of convolutional layers\relax }{figure.caption.107}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {raw image}}}{27}{figure.caption.107}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {conv1 output}}}{27}{figure.caption.107}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {conv2 output}}}{27}{figure.caption.107}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {conv3 output}}}{27}{figure.caption.107}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {conv4 output}}}{27}{figure.caption.107}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(f)}{\ignorespaces {conv5 output}}}{27}{figure.caption.107}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.6}Transfer Learning}{28}{section.114}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.5}{\ignorespaces Visiualization of feature maps outputs between original CNN model and CNN-SPP model. The upper images are from original model and the lower images are from fine tuned model\relax }}{28}{figure.caption.115}}
+\newlabel{fig:diff_featuremap}{{4.5}{28}{Visiualization of feature maps outputs between original CNN model and CNN-SPP model. The upper images are from original model and the lower images are from fine tuned model\relax }{figure.caption.115}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.6}{\ignorespaces Histogram distribution of vectors from FC7. Left one is from CNN model and right one is from finetuned model\relax }}{28}{figure.caption.116}}
+\newlabel{fig:fc7_hist_output}{{4.6}{28}{Histogram distribution of vectors from FC7. Left one is from CNN model and right one is from finetuned model\relax }{figure.caption.116}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {5}Introduction}{29}{chapter.117}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{Chapter5}{{5}{26}{Introduction}{chapter.102}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.1}Overview}{26}{section.103}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces Example Image\relax }}{26}{figure.caption.104}}
-\newlabel{fig:MultilableImage}{{5.1}{26}{Example Image\relax }{figure.caption.104}{}}
+\newlabel{Chapter5}{{5}{29}{Introduction}{chapter.117}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.1}Overview}{29}{section.118}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces Example Image\relax }}{29}{figure.caption.119}}
+\newlabel{fig:MultilableImage}{{5.1}{29}{Example Image\relax }{figure.caption.119}{}}
 \citation{read2011classifier}
 \citation{read2011classifier}
 \citation{tsoumakas2006multi}
 \citation{tsoumakas2007random}
-\@writefile{lot}{\contentsline {table}{\numberline {5.1}{\ignorespaces Multilabel $Y_{1},...,Y_{L} \in 2^L$\relax }}{27}{table.caption.105}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.2}Multi-Label Learning}{27}{section.106}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.1}{\ignorespaces Multilabel $Y_{1},...,Y_{L} \in 2^L$\relax }}{30}{table.caption.120}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.2}Multi-Label Learning}{30}{section.121}}
 \citation{ghamrawi2005collective}
 \citation{tsoumakas2007random}
-\@writefile{toc}{\contentsline {section}{\numberline {5.3}Evaluation Metrics}{29}{section.107}}
-\newlabel{eq:UniLabel}{{5.1}{29}{Evaluation Metrics}{equation.108}{}}
-\newlabel{eq:IndicatorFunc}{{5.2}{29}{Evaluation Metrics}{equation.109}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.1}Example-based Metrics}{30}{subsection.110}}
-\newlabel{eq:HammingLoss}{{5.3}{30}{Example-based Metrics}{equation.111}{}}
-\newlabel{eq:SubsetAcu}{{5.4}{30}{Example-based Metrics}{equation.112}{}}
-\newlabel{eq:Precision}{{5.5}{30}{Example-based Metrics}{equation.113}{}}
-\newlabel{eq:Recall}{{5.6}{30}{Example-based Metrics}{equation.114}{}}
-\newlabel{eq:Accuracy}{{5.7}{30}{Example-based Metrics}{equation.115}{}}
-\newlabel{eq:Accuracy}{{5.8}{30}{Example-based Metrics}{equation.116}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.2}Label-based Metrics}{30}{subsection.117}}
-\newlabel{eq:MacroPrecision}{{5.9}{30}{Label-based Metrics}{equation.118}{}}
-\newlabel{eq:MacroRecall}{{5.10}{30}{Label-based Metrics}{equation.119}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.3}Evaluation Metrics}{32}{section.122}}
+\newlabel{eq:UniLabel}{{5.1}{32}{Evaluation Metrics}{equation.123}{}}
+\newlabel{eq:IndicatorFunc}{{5.2}{32}{Evaluation Metrics}{equation.124}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.1}Example-based Metrics}{33}{subsection.125}}
+\newlabel{eq:HammingLoss}{{5.3}{33}{Example-based Metrics}{equation.126}{}}
+\newlabel{eq:SubsetAcu}{{5.4}{33}{Example-based Metrics}{equation.127}{}}
+\newlabel{eq:Precision}{{5.5}{33}{Example-based Metrics}{equation.128}{}}
+\newlabel{eq:Recall}{{5.6}{33}{Example-based Metrics}{equation.129}{}}
+\newlabel{eq:Accuracy}{{5.7}{33}{Example-based Metrics}{equation.130}{}}
+\newlabel{eq:Accuracy}{{5.8}{33}{Example-based Metrics}{equation.131}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.2}Label-based Metrics}{33}{subsection.132}}
+\newlabel{eq:MacroPrecision}{{5.9}{33}{Label-based Metrics}{equation.133}{}}
+\newlabel{eq:MacroRecall}{{5.10}{33}{Label-based Metrics}{equation.134}{}}
 \citation{gao2013consistency}
-\newlabel{eq:LabelAccuracy}{{5.11}{31}{Label-based Metrics}{equation.120}{}}
-\newlabel{eq:MicroPrecision}{{5.12}{31}{Label-based Metrics}{equation.121}{}}
-\newlabel{eq:MicroRecall}{{5.13}{31}{Label-based Metrics}{equation.122}{}}
-\newlabel{eq:LabelMicroAccuracy}{{5.14}{31}{Label-based Metrics}{equation.123}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.4}Learning Algorithms}{31}{section.124}}
+\newlabel{eq:LabelAccuracy}{{5.11}{34}{Label-based Metrics}{equation.135}{}}
+\newlabel{eq:MicroPrecision}{{5.12}{34}{Label-based Metrics}{equation.136}{}}
+\newlabel{eq:MicroRecall}{{5.13}{34}{Label-based Metrics}{equation.137}{}}
+\newlabel{eq:LabelMicroAccuracy}{{5.14}{34}{Label-based Metrics}{equation.138}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.4}Learning Algorithms}{34}{section.139}}
 \citation{read2011classifier}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.4.1}Problem Transformation Methods}{32}{subsection.125}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.4.1.1}Binary Relevance}{32}{subsubsection.126}}
-\newlabel{eq:BinaryRelevance}{{5.15}{32}{Binary Relevance}{equation.127}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.4.1.2}Classifier Chains}{32}{subsubsection.128}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4.1}Problem Transformation Methods}{35}{subsection.140}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.4.1.1}Binary Relevance}{35}{subsubsection.141}}
+\newlabel{eq:BinaryRelevance}{{5.15}{35}{Binary Relevance}{equation.142}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.4.1.2}Classifier Chains}{35}{subsubsection.143}}
 \citation{zhang2007ml}
-\newlabel{eq:ClassifierChains}{{5.16}{33}{Classifier Chains}{equation.129}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.4.2}Algorithm Adaptation Methods}{33}{subsection.130}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.4.2.1}Multi-label k-Nearest Neighbor(ML-kNN)}{33}{subsubsection.131}}
+\newlabel{eq:ClassifierChains}{{5.16}{36}{Classifier Chains}{equation.144}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4.2}Algorithm Adaptation Methods}{36}{subsection.145}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.4.2.1}Multi-label k-Nearest Neighbor(ML-kNN)}{36}{subsubsection.146}}
 \citation{ghamrawi2005collective}
-\newlabel{eq:KNNCounting}{{5.17}{34}{Multi-label k-Nearest Neighbor(ML-kNN)}{equation.132}{}}
-\newlabel{eq:CategoryVec}{{5.18}{34}{Multi-label k-Nearest Neighbor(ML-kNN)}{equation.133}{}}
-\newlabel{eq:CategoryVecBay}{{5.19}{34}{Multi-label k-Nearest Neighbor(ML-kNN)}{equation.134}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.4.2.2}Collective Multi-label Classifier(CML)}{34}{subsubsection.135}}
-\newlabel{eq:CMLExpect}{{5.20}{34}{Collective Multi-label Classifier(CML)}{equation.136}{}}
-\newlabel{eq:CMLOptimal}{{5.21}{35}{Collective Multi-label Classifier(CML)}{equation.137}{}}
-\newlabel{eq:CMLLabel}{{5.22}{35}{Collective Multi-label Classifier(CML)}{equation.138}{}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {6}Multi-lable Classification Methodology}{36}{chapter.139}}
+\newlabel{eq:KNNCounting}{{5.17}{37}{Multi-label k-Nearest Neighbor(ML-kNN)}{equation.147}{}}
+\newlabel{eq:CategoryVec}{{5.18}{37}{Multi-label k-Nearest Neighbor(ML-kNN)}{equation.148}{}}
+\newlabel{eq:CategoryVecBay}{{5.19}{37}{Multi-label k-Nearest Neighbor(ML-kNN)}{equation.149}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.4.2.2}Collective Multi-label Classifier(CML)}{37}{subsubsection.150}}
+\newlabel{eq:CMLExpect}{{5.20}{37}{Collective Multi-label Classifier(CML)}{equation.151}{}}
+\newlabel{eq:CMLOptimal}{{5.21}{38}{Collective Multi-label Classifier(CML)}{equation.152}{}}
+\newlabel{eq:CMLLabel}{{5.22}{38}{Collective Multi-label Classifier(CML)}{equation.153}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {6}Multi-lable Classification Methodology}{39}{chapter.154}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{Chapter6}{{6}{36}{Multi-lable Classification Methodology}{chapter.139}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.1}Artificial Dataset}{36}{section.140}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.1}{\ignorespaces Colour Wheel Diagram\relax }}{36}{figure.caption.141}}
-\newlabel{fig:perceptron}{{6.1}{36}{Colour Wheel Diagram\relax }{figure.caption.141}{}}
+\newlabel{Chapter6}{{6}{39}{Multi-lable Classification Methodology}{chapter.154}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.1}Artificial Dataset}{39}{section.155}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.1}{\ignorespaces Colour Wheel Diagram\relax }}{39}{figure.caption.156}}
+\newlabel{fig:perceptron}{{6.1}{39}{Colour Wheel Diagram\relax }{figure.caption.156}{}}
 \citation{barron1993universal}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.1}Image Generation}{37}{subsection.142}}
-\newlabel{eq:FormulationHue}{{6.1}{37}{Image Generation}{equation.143}{}}
-\newlabel{fig:a}{{6.2(a)}{37}{Subfigure 6 6.2(a)}{subfigure.145}{}}
-\newlabel{sub@fig:a}{{(a)}{37}{Subfigure 6 6.2(a)\relax }{subfigure.145}{}}
-\newlabel{fig:b}{{6.2(b)}{37}{Subfigure 6 6.2(b)}{subfigure.146}{}}
-\newlabel{sub@fig:b}{{(b)}{37}{Subfigure 6 6.2(b)\relax }{subfigure.146}{}}
-\newlabel{fig:c}{{6.2(c)}{37}{Subfigure 6 6.2(c)}{subfigure.147}{}}
-\newlabel{sub@fig:c}{{(c)}{37}{Subfigure 6 6.2(c)\relax }{subfigure.147}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.2}{\ignorespaces Multi-label Samples. Three labels mean red, green and blue seperately.\relax }}{37}{figure.caption.144}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {L:-1 -1 1}}}{37}{figure.caption.144}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {L:-1 1 1}}}{37}{figure.caption.144}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {L:-1 1 -1}}}{37}{figure.caption.144}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.2}Artificial Neural Networks}{37}{section.148}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.1}Network Architecture}{38}{subsection.149}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.3}{\ignorespaces Network Topology For Multi-lable classification\relax }}{38}{figure.caption.150}}
-\newlabel{fig:MultiLabelNet}{{6.3}{38}{Network Topology For Multi-lable classification\relax }{figure.caption.150}{}}
-\newlabel{eq:MultiLableError}{{6.2}{39}{Network Architecture}{equation.151}{}}
-\newlabel{eq:MultiLableSamError}{{6.3}{39}{Network Architecture}{equation.152}{}}
-\newlabel{eq:MultiLableGlobalError}{{6.4}{39}{Network Architecture}{equation.153}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.2}Error Function}{40}{subsection.154}}
-\newlabel{eq:JointProbDensity}{{6.5}{40}{Error Function}{equation.155}{}}
-\newlabel{eq:ProbDensityX}{{6.6}{40}{Error Function}{equation.156}{}}
-\newlabel{eq:LikelihoodLoss}{{6.7}{40}{Error Function}{equation.157}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.1}Image Generation}{40}{subsection.157}}
+\newlabel{eq:FormulationHue}{{6.1}{40}{Image Generation}{equation.158}{}}
+\newlabel{fig:a}{{6.2(a)}{40}{Subfigure 6 6.2(a)}{subfigure.160}{}}
+\newlabel{sub@fig:a}{{(a)}{40}{Subfigure 6 6.2(a)\relax }{subfigure.160}{}}
+\newlabel{fig:b}{{6.2(b)}{40}{Subfigure 6 6.2(b)}{subfigure.161}{}}
+\newlabel{sub@fig:b}{{(b)}{40}{Subfigure 6 6.2(b)\relax }{subfigure.161}{}}
+\newlabel{fig:c}{{6.2(c)}{40}{Subfigure 6 6.2(c)}{subfigure.162}{}}
+\newlabel{sub@fig:c}{{(c)}{40}{Subfigure 6 6.2(c)\relax }{subfigure.162}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.2}{\ignorespaces Multi-label Samples. Three labels mean red, green and blue seperately.\relax }}{40}{figure.caption.159}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {L:-1 -1 1}}}{40}{figure.caption.159}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {L:-1 1 1}}}{40}{figure.caption.159}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {L:-1 1 -1}}}{40}{figure.caption.159}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.2}Artificial Neural Networks}{40}{section.163}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.1}Network Architecture}{41}{subsection.164}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.3}{\ignorespaces Network Topology For Multi-lable classification\relax }}{41}{figure.caption.165}}
+\newlabel{fig:MultiLabelNet}{{6.3}{41}{Network Topology For Multi-lable classification\relax }{figure.caption.165}{}}
+\newlabel{eq:MultiLableError}{{6.2}{42}{Network Architecture}{equation.166}{}}
+\newlabel{eq:MultiLableSamError}{{6.3}{42}{Network Architecture}{equation.167}{}}
+\newlabel{eq:MultiLableGlobalError}{{6.4}{42}{Network Architecture}{equation.168}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.2}Error Function}{43}{subsection.169}}
+\newlabel{eq:JointProbDensity}{{6.5}{43}{Error Function}{equation.170}{}}
+\newlabel{eq:ProbDensityX}{{6.6}{43}{Error Function}{equation.171}{}}
+\newlabel{eq:LikelihoodLoss}{{6.7}{43}{Error Function}{equation.172}{}}
 \citation{bermejo2001oriented}
-\newlabel{eq:LikelihoodErrorFunc}{{6.8}{41}{Error Function}{equation.158}{}}
-\newlabel{eq:SimLikelihoodErrorFunc}{{6.9}{41}{Error Function}{equation.159}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.3}Cross Entropy}{41}{subsection.160}}
-\newlabel{eq:RelativeEngtropy}{{6.10}{41}{Cross Entropy}{equation.161}{}}
-\newlabel{eq:EquationNN}{{6.11}{41}{Cross Entropy}{equation.162}{}}
-\newlabel{eq:TwoClassCrossEntropyCostFunc}{{6.12}{42}{Cross Entropy}{equation.163}{}}
-\newlabel{eq:DerCrossEntropyCostFunc}{{6.13}{42}{Cross Entropy}{equation.164}{}}
-\newlabel{eq:SecondDerCrossEntropyCostFunc}{{6.15}{42}{Cross Entropy}{equation.165}{}}
-\newlabel{eq:SimDerCrossEntropyCostFunc}{{6.16}{42}{Cross Entropy}{equation.166}{}}
-\newlabel{eq:BiasCrossEntropyCostFunc}{{6.17}{43}{Cross Entropy}{equation.167}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.4}Training and Testing}{43}{subsection.168}}
-\newlabel{eq:MultiLabelActivation}{{6.18}{43}{Training and Testing}{equation.169}{}}
-\newlabel{eq:MultiLabel}{{6.19}{43}{Training and Testing}{equation.170}{}}
-\newlabel{eq:MultiLableErrorDif}{{6.20}{43}{Training and Testing}{equation.171}{}}
-\newlabel{eq:MultiLableChainRule}{{6.21}{43}{Training and Testing}{equation.172}{}}
-\newlabel{eq:MultiLablePartialC}{{6.22}{43}{Training and Testing}{equation.173}{}}
-\newlabel{eq:MultiLableGenErr}{{6.23}{43}{Training and Testing}{equation.174}{}}
+\newlabel{eq:LikelihoodErrorFunc}{{6.8}{44}{Error Function}{equation.173}{}}
+\newlabel{eq:SimLikelihoodErrorFunc}{{6.9}{44}{Error Function}{equation.174}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.3}Cross Entropy}{44}{subsection.175}}
+\newlabel{eq:RelativeEngtropy}{{6.10}{44}{Cross Entropy}{equation.176}{}}
+\newlabel{eq:EquationNN}{{6.11}{44}{Cross Entropy}{equation.177}{}}
+\newlabel{eq:TwoClassCrossEntropyCostFunc}{{6.12}{45}{Cross Entropy}{equation.178}{}}
+\newlabel{eq:DerCrossEntropyCostFunc}{{6.13}{45}{Cross Entropy}{equation.179}{}}
+\newlabel{eq:SecondDerCrossEntropyCostFunc}{{6.15}{45}{Cross Entropy}{equation.180}{}}
+\newlabel{eq:SimDerCrossEntropyCostFunc}{{6.16}{45}{Cross Entropy}{equation.181}{}}
+\newlabel{eq:BiasCrossEntropyCostFunc}{{6.17}{46}{Cross Entropy}{equation.182}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.4}Training and Testing}{46}{subsection.183}}
+\newlabel{eq:MultiLabelActivation}{{6.18}{46}{Training and Testing}{equation.184}{}}
+\newlabel{eq:MultiLabel}{{6.19}{46}{Training and Testing}{equation.185}{}}
+\newlabel{eq:MultiLableErrorDif}{{6.20}{46}{Training and Testing}{equation.186}{}}
+\newlabel{eq:MultiLableChainRule}{{6.21}{46}{Training and Testing}{equation.187}{}}
+\newlabel{eq:MultiLablePartialC}{{6.22}{46}{Training and Testing}{equation.188}{}}
+\newlabel{eq:MultiLableGenErr}{{6.23}{46}{Training and Testing}{equation.189}{}}
 \citation{elisseeff2001kernel}
-\newlabel{eq:MultiLableGenErrS}{{6.24}{44}{Training and Testing}{equation.175}{}}
-\newlabel{eq:MultiLablePartialE}{{6.25}{44}{Training and Testing}{equation.176}{}}
-\newlabel{eq:MultiLableGenErrEs}{{6.26}{44}{Training and Testing}{equation.177}{}}
-\newlabel{eq:MultiLableGenErrEsFin}{{6.27}{44}{Training and Testing}{equation.178}{}}
-\newlabel{eq:MultiLableUpdateWeights}{{6.28}{44}{Training and Testing}{equation.179}{}}
-\newlabel{eq:MultiLableUpdateHidWeights}{{6.29}{44}{Training and Testing}{equation.180}{}}
-\newlabel{eq:MultiLableUpdateBias}{{6.30}{44}{Training and Testing}{equation.181}{}}
+\newlabel{eq:MultiLableGenErrS}{{6.24}{47}{Training and Testing}{equation.190}{}}
+\newlabel{eq:MultiLablePartialE}{{6.25}{47}{Training and Testing}{equation.191}{}}
+\newlabel{eq:MultiLableGenErrEs}{{6.26}{47}{Training and Testing}{equation.192}{}}
+\newlabel{eq:MultiLableGenErrEsFin}{{6.27}{47}{Training and Testing}{equation.193}{}}
+\newlabel{eq:MultiLableUpdateWeights}{{6.28}{47}{Training and Testing}{equation.194}{}}
+\newlabel{eq:MultiLableUpdateHidWeights}{{6.29}{47}{Training and Testing}{equation.195}{}}
+\newlabel{eq:MultiLableUpdateBias}{{6.30}{47}{Training and Testing}{equation.196}{}}
 \citation{lippmann1987introduction}
 \citation{kolmogorov1963representation}
-\newlabel{eq:MultiLableThreshFunc}{{6.31}{45}{Training and Testing}{equation.182}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.3}Experiment}{45}{section.183}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.3.1}Dataset}{45}{subsection.184}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.3.2}Details of network}{46}{subsection.185}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.4}{\ignorespaces Network topology for multilable classification.\relax }}{46}{figure.caption.186}}
-\newlabel{fig:perceptron}{{6.4}{46}{Network topology for multilable classification.\relax }{figure.caption.186}{}}
+\newlabel{eq:MultiLableThreshFunc}{{6.31}{48}{Training and Testing}{equation.197}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.3}Experiment}{48}{section.198}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3.1}Dataset}{48}{subsection.199}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3.2}Details of network}{49}{subsection.200}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.4}{\ignorespaces Network topology for multilable classification.\relax }}{49}{figure.caption.201}}
+\newlabel{fig:perceptron}{{6.4}{49}{Network topology for multilable classification.\relax }{figure.caption.201}{}}
 \citation{heaton2008introduction}
-\newlabel{tb:MultiLableTestResult}{{\caption@xref {tb:MultiLableTestResult}{ on input line 276}}{48}{Details of network}{table.caption.197}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {6.1}{\ignorespaces Test results for different hidden neuron number\relax }}{48}{table.caption.197}}
+\newlabel{tb:MultiLableTestResult}{{\caption@xref {tb:MultiLableTestResult}{ on input line 276}}{51}{Details of network}{table.caption.212}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {6.1}{\ignorespaces Test results for different number of hidden neurons.\relax }}{51}{table.caption.212}}
 \@writefile{toc}{\vspace  {2em}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {A}Appendix Title Here}{49}{appendix.198}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {A}Appendix Title Here}{52}{appendix.213}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{AppendixA}{{A}{49}{Appendix Title Here}{appendix.198}{}}
+\newlabel{AppendixA}{{A}{52}{Appendix Title Here}{appendix.213}{}}
 \@writefile{toc}{\vspace  {2em}}
 \bibstyle{unsrtnat}
 \bibdata{Bibliography}
@@ -326,8 +350,8 @@
 \bibcite{nair2010rectified}{{8}{2010}{{Nair and Hinton}}{{}}}
 \bibcite{jia2014caffe}{{9}{2014}{{Jia et~al.}}{{Jia, Shelhamer, Donahue, Karayev, Long, Girshick, Guadarrama, and Darrell}}}
 \bibcite{ZeilerF13}{{10}{2013}{{Zeiler and Fergus}}{{}}}
-\@writefile{toc}{\contentsline {chapter}{Bibliography}{50}{dummy.199}}
-\newlabel{Bibliography}{{8}{50}{Appendix Title Here}{dummy.199}{}}
+\@writefile{toc}{\contentsline {chapter}{Bibliography}{53}{dummy.214}}
+\newlabel{Bibliography}{{8}{53}{Appendix Title Here}{dummy.214}{}}
 \bibcite{razavian2014cnn}{{11}{2014}{{Razavian et~al.}}{{Razavian, Azizpour, Sullivan, and Carlsson}}}
 \bibcite{read2011classifier}{{12}{2011}{{Read et~al.}}{{Read, Pfahringer, Holmes, and Frank}}}
 \bibcite{tsoumakas2006multi}{{13}{2006}{{Tsoumakas and Katakis}}{{}}}
