@@ -1,11 +1,11 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {3.1}{\ignorespaces Parameters of model\relax }}{21}{table.caption.88}
+\contentsline {table}{\numberline {3.1}{\ignorespaces Parameters of model\relax }}{22}{table.caption.90}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {4.1}{\ignorespaces CNN means with original trained model, SPP means model deployed with spatial pyramid pooling layer\relax }}{24}{table.caption.96}
+\contentsline {table}{\numberline {4.1}{\ignorespaces CNN means with original trained model, SPP means model deployed with spatial pyramid pooling layer\relax }}{25}{table.caption.98}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {5.1}{\ignorespaces Multilabel $Y_{1},...,Y_{L} \in 2^L$\relax }}{30}{table.caption.120}
+\contentsline {table}{\numberline {5.1}{\ignorespaces Multilabel $Y_{1},...,Y_{L} \in 2^L$\relax }}{31}{table.caption.122}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {6.1}{\ignorespaces Test results for different number of hidden neurons.\relax }}{51}{table.caption.225}
+\contentsline {table}{\numberline {6.1}{\ignorespaces Test results for different number of hidden neurons.\relax }}{52}{table.caption.227}
 \addvspace {10\p@ }

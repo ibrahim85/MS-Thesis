@@ -269,6 +269,17 @@ It is not easy to solve equation \ref{eq:LogRegLossFunc}. Usually an optimizatio
 \end{equation}
 We can take partial derivative of $L(W)$ with respect to the $j$th element of $W^{(k)}$.
 
+\section{Overfitting and Regularization}
+
+Overfitting is a common phenomenon that the model has a high performance on training dataset, but poor on testing dataset in classification tasks. Given that a classification problem with two classes and two input variables, left figure in \ref{fig:OverfittingExample} shows a decent decision boundaries. With increasing complexity of the model, the decision boundaries become more complex and fit the training dataset extremely well. 
+\graphicspath{ {./Figures/} }
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.8\textwidth]{overfitting_examples.jpg}
+\caption{\label{fig:OverfittingExample}Overfitting example}
+\end{figure}
+From the example in Figure \ref{fig:OverfittingExample}, it is clear that a model, whose complexity is neither too small nor too large, has the best generalization performance. 
+
 \section{Training protocols}
 
 In supervised learning, we have training dataset which is data with labels. We can use the neural networks to find the output of the training data and adjust the weights to optimal values. There are mainly  three types of training protocols, stochastic, batch and online training. In stochastic training, we randomly choose samples from training dataset and update weights every time depending on output of neural networks. In batch training, we use some samples and pass them through network, then update weights. In online training method, each sample of training dataset is used once and weights are updated each time. We usually call one time of passing all training dataset through neural networks one epoch.
