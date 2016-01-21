@@ -26,14 +26,28 @@ H = h + r * 0.4 - 0.2 (r \in [0.0,1.0))
 \end{equation}
 Where $r$ is another random floating point number. Then we generate 2 random floating point numbers as Saturation(S) and Value(V) values. We transform HSV values to RGB values and time $255$ for each pixel. Repeating the steps, we can get a $256$ pixels image. Because we get a RGB image via converting a HSV image, we compute RGB label value basing on previous $h$.
 
-\graphicspath{ {./Figures/} }
+\graphicspath{ {./Figures/RGBhist/} }
 \begin{figure}[!htb]
 \centering     %%% not \center
-\subfigure[L:-1 -1 1]{\label{fig:a}\includegraphics[width=0.3\textwidth]{0}}
-\subfigure[L:-1 1 1]{\label{fig:b}\includegraphics[width=0.3\textwidth]{1}}
-\subfigure[L:-1 1 -1]{\label{fig:c}\includegraphics[width=0.3\textwidth]{3}}
-\caption{Multi-label Samples. Three labels mean red, green and blue seperately.}
+\subfigure[Label:1 -1 1]{\includegraphics[width=0.2\textwidth]{0}}
+\subfigure{\includegraphics[width=0.25\textwidth]{0r}}
+\subfigure{\includegraphics[width=0.25\textwidth]{0g}}
+\subfigure{\includegraphics[width=0.25\textwidth]{0b}}
+\subfigure[Label:1 1 -1]{\includegraphics[width=0.2\textwidth]{1}}
+\subfigure{\includegraphics[width=0.25\textwidth]{1r}}
+\subfigure{\includegraphics[width=0.25\textwidth]{1g}}
+\subfigure{\includegraphics[width=0.25\textwidth]{1b}}
+\subfigure[Label:-1 1 -1]{\includegraphics[width=0.2\textwidth]{2}}
+\subfigure{\includegraphics[width=0.25\textwidth]{2r}}
+\subfigure{\includegraphics[width=0.25\textwidth]{2g}}
+\subfigure{\includegraphics[width=0.25\textwidth]{2b}}
+\subfigure[Label:-1 -1 1]{\includegraphics[width=0.2\textwidth]{3}}
+\subfigure{\includegraphics[width=0.25\textwidth]{3r}}
+\subfigure{\includegraphics[width=0.25\textwidth]{3g}}
+\subfigure{\includegraphics[width=0.25\textwidth]{3b}}
+\caption{A multilabel sample and RGB color histograms. Three labels mean red, green and blue. }
 \end{figure}
+
 
 The dataset contains $1000$ images in total. $960$ images are training samples and $40$ are test samples. 
 

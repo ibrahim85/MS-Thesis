@@ -9,7 +9,7 @@
 \contentsline {figure}{\numberline {2.7}{\ignorespaces Two types of dataset. Left one can be separated by a single layer neural network. Right one cannot be separated by a single neural network.\relax }}{9}{figure.caption.39}
 \contentsline {figure}{\numberline {2.8}{\ignorespaces Diagram of a feedford neural networks.\relax }}{10}{figure.caption.43}
 \contentsline {figure}{\numberline {2.9}{\ignorespaces Error surface for a multilayer neural network. Source: Internet\relax }}{11}{figure.caption.48}
-\contentsline {figure}{\numberline {2.10}{\ignorespaces Source: Internet\relax }}{11}{figure.caption.49}
+\contentsline {figure}{\numberline {2.10}{\ignorespaces A multilayer neural network can separate a complicated dataset. Source: Internet\relax }}{11}{figure.caption.49}
 \contentsline {figure}{\numberline {2.11}{\ignorespaces Diagram of LeNet.\relax }}{16}{figure.caption.73}
 \contentsline {figure}{\numberline {2.12}{\ignorespaces Diagram of Spatial Pyramid Match.\relax }}{16}{figure.caption.75}
 \contentsline {figure}{\numberline {2.13}{\ignorespaces Diagram of Transfer Learning.\relax }}{17}{figure.caption.78}
@@ -41,10 +41,11 @@
 \contentsline {figure}{\numberline {5.1}{\ignorespaces Example Image\relax }}{29}{figure.caption.119}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {6.1}{\ignorespaces Colour Wheel Diagram\relax }}{39}{figure.caption.156}
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Multi-label Samples. Three labels mean red, green and blue seperately.\relax }}{40}{figure.caption.159}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {L:-1 -1 1}}}{40}{figure.caption.159}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {L:-1 1 1}}}{40}{figure.caption.159}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {L:-1 1 -1}}}{40}{figure.caption.159}
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Network Topology For Multi-lable classification\relax }}{41}{figure.caption.165}
-\contentsline {figure}{\numberline {6.4}{\ignorespaces Network topology for multilable classification.\relax }}{49}{figure.caption.201}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces A multilabel sample and RGB color histograms. Three labels mean red, green and blue. \relax }}{41}{figure.caption.159}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Label:1 -1 1}}}{41}{figure.caption.159}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {Label:1 1 -1}}}{41}{figure.caption.159}
+\contentsline {subfigure}{\numberline {(i)}{\ignorespaces {Label:-1 1 -1}}}{41}{figure.caption.159}
+\contentsline {subfigure}{\numberline {(m)}{\ignorespaces {Label:-1 -1 1}}}{41}{figure.caption.159}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Network Topology For Multi-lable classification\relax }}{42}{figure.caption.178}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Network topology for multilable classification.\relax }}{50}{figure.caption.214}
 \addvspace {10\p@ }
