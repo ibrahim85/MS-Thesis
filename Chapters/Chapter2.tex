@@ -191,6 +191,43 @@ where $$\delta_{j} = \frac{\partial E}{\partial a_{j}} = \displaystyle\sum_{k} \
 
 The $\delta_{j}$ of a hidden unit is based on the $\delta_{k}$s of output units to which it links. To minimise the error function$E$ with gradient descent, it needs the propagation of errors backwards.
 
+\section{Overfitting and Regularization}
+
+Overfitting is a common phenomenon that the model has a high performance on training dataset, but poor on testing dataset in classification tasks. Given that a classification problem with two classes and two input variables, left figure in \ref{fig:OverfittingExample} shows a decent decision boundaries. With increasing complexity of the model, the decision boundaries become more complex and fit the training dataset extremely well. 
+\graphicspath{ {./Figures/} }
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.8\textwidth]{overfitting.png}
+\caption{\label{fig:OverfittingExample}Overfitting example, left one has a decent generalization performance and right one is overfitting.}
+\end{figure}
+From the example in Figure \ref{fig:OverfittingExample}, it is clear that a model, whose complexity is neither too small nor too large, has the best generalization performance. 
+
+In order to find the optimal complexity of the neural network, there are mainly two approaches. One is to change the adaptive parameters, like neuron numbers in hidden layers. This is named structural stabilization. It can be approached from two directions. We can start from a small network and increasing layer number or neuron number in the learning process and arrive at a effective neural network architecture. The other one is to start from a large network and prune out layers or neurons in the learning process to achieve the optimal network. Another fundamental basis method to control the complexity of the model is use of regularization which includes add a penalty term in error function. The degree of regularization can be adjusted by scaling the term via a multiplicative parameter.
+
+Regularization helps to smooth decision boundary surface via introducing a penalty term $\Omega$ to the error function
+\begin{equation}\label{eq:Regularization}
+\hat{E} = E + \lambda\Omega
+\end{equation}
+where $E$ is the standard error function and the $\lambda$ adjust the extent of the penalty $\Omega$ effects on the solution. The task of the learning is to minimize the total error function $\hat{E}$. It needs to compute the derivatives of $\Omega$ with respect to the weights efficiently. A model, which has high accuracy in training dataset, has a small value for $E$. At the same time, the smooth error surface of neural network give a small value for $\Omega$.
+
+A number form of regularizers have been performed in practices, like weight decay, early stopping, training with noise, weight sharing etc..
+
+\subsection{Weight Decay}
+
+In order to make decision boundary surface smooth, the weight values should be small. The weight decay regularizer can be represented as
+\begin{equation}\label{eq:WeightDcay}
+\Omega = \frac{1}{2} \sum_i w_{i}^2
+\end{equation}
+where the sum includes all weights and biases. Weight decay of this form lead to major improvements in generalization empirically \citep{hinton1987learning}. Intuitively, in equation \ref{eq:WeightDcay}, the smaller the weightw are, the better the regularizer is. Usually, the derivatives of the total error function with respect to the weight is used to train neural network. The network is trained by gradient descent in the continuous time limit. The weights will evolve with time $t$
+\begin{equation}\label{eq:WeightDecayTime}
+\frac{w}{t} = -\eta\nabla E = -\eta\lambda w
+\end{equation}
+where $\eta$ is learning rate. And the equation has solution
+\begin{equation}\label{eq:WeightDecaySolution}
+w(t) = w(0)exp(-\eta\lambda t)
+\end{equation}
+and the exponential function reduce weights to zero quickly.
+ 
 \section{Softmax classifier}
 
 Softmax function, also named normalized exponential, is a generalization of logistic function which squeezes a $d$ dimensional arbitrary real values vector to a $d$ dimensional vector of real values in the range $(0,1)$ that add up to 1. Because the softmax function is the gradient log normalizer of categorical probability distribution, it can be used in probabilistic multiclass classification methods.
@@ -268,17 +305,6 @@ It is not easy to solve equation \ref{eq:LogRegLossFunc}. Usually an optimizatio
 \nabla_{W^{(k)}} L(W) = - \sum_{i=1}^{m}{ \left[ x^{(i)} \left( 1\{ y^{(i)} = k\}  - P(y^{(i)} = k | x^{(i)}; W) \right) \right]  }
 \end{equation}
 We can take partial derivative of $L(W)$ with respect to the $j$th element of $W^{(k)}$.
-
-\section{Overfitting and Regularization}
-
-Overfitting is a common phenomenon that the model has a high performance on training dataset, but poor on testing dataset in classification tasks. Given that a classification problem with two classes and two input variables, left figure in \ref{fig:OverfittingExample} shows a decent decision boundaries. With increasing complexity of the model, the decision boundaries become more complex and fit the training dataset extremely well. 
-\graphicspath{ {./Figures/} }
-\begin{figure}[!htb]
-\centering
-\includegraphics[width=0.8\textwidth]{overfitting_examples.jpg}
-\caption{\label{fig:OverfittingExample}Overfitting example}
-\end{figure}
-From the example in Figure \ref{fig:OverfittingExample}, it is clear that a model, whose complexity is neither too small nor too large, has the best generalization performance. 
 
 \section{Training protocols}
 
