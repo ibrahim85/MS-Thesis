@@ -162,6 +162,20 @@ And the samples which cannot be separated by single neural network can be done b
 \caption{\label{fig:2LayerErrorSurface}A multilayer neural network can separate a complicated dataset. Source: Internet}
 \end{figure}
 
+\section{Stochastic Gradient Descent}
+
+Because weights space in neural networks is continuous, training can reach the optimal weights value through optimization algorithms, which means minimizing loss value of function
+\begin{equation}\label{eq:LossMin}
+L(f_{w}) = \sum L(y, f_{w}(x))
+\end{equation}
+Gradient descent is a method which starts from a random point, then moves to a nearby point that is downhill repeatly. It converges on a minimum possible loss.
+
+Stochastic gradient descent is a subtype of gradient descent. It only considers a single training point and move to nearby point based on
+\begin{equation}\label{eq:SGDUpdate}
+w = w - \eta  \Delta L(w) = w - \eta \sum_{i=1}^{n} \Delta L_{i}(w)
+\end{equation}
+where $\eta$ is the learning rate and $L_{i}(w)$ is the value of the loss function at the $i^{th}$ sample. Although stochastic gradient descent does not guarantee convergence, it is fast.
+
 \section{Backpropagation}
 
 Multi-layer neural networks can represent mapping from input data to output classes. How to learn a suitable mapping from training dataset? And there is no explicit mapping between output and hidden units. This will be resolved by a popular learning algorithm-backpropagation.
@@ -226,8 +240,19 @@ where $\eta$ is learning rate. And the equation has solution
 \begin{equation}\label{eq:WeightDecaySolution}
 w(t) = w(0)exp(-\eta\lambda t)
 \end{equation}
-and the exponential function reduce weights to zero quickly.
- 
+and the exponential function reduce weights to zero quickly. Weight decay is also named L2 regularization.
+
+\subsection{Dropout}
+
+Neural network with deep layers and large amount of neurons is a very powerful learning machine. However, the more parameters the network has, the easier it is overfitting. Recently, dropout\citep{srivastava2014dropout} is a simple and extremely effective regularization technique which complements the other methods. At training stage, random neurons are selected with some probability $p$ to update their associated weights, and the others are inactive. In the other words, only a reduced network is trained based on the input data at the training stage. 
+\graphicspath{ {./Figures/} }
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.8\textwidth]{dropout.jpeg}
+\caption{\label{fig:Dropout}Illustration of dropout \citep{srivastava2014dropout}.}
+\end{figure}
+At testing stage, there is no dropout applied and all neurons are active. Dropout method is replaced by performing a scaling of layer outputs by the same probability $p$. This method can keep the outputs of neurons to be the same in both training and testing stages. For example, if a neuron has $p$ probability to be dropout in the training stage, the neuron should output $l$ without dropout in testing stage. Then we should apply $p\ast l + (1 - p)\ast 0)$ on the output, because the output has $(1-p)$ probability to be $0$.
+
 \section{Softmax classifier}
 
 Softmax function, also named normalized exponential, is a generalization of logistic function which squeezes a $d$ dimensional arbitrary real values vector to a $d$ dimensional vector of real values in the range $(0,1)$ that add up to 1. Because the softmax function is the gradient log normalizer of categorical probability distribution, it can be used in probabilistic multiclass classification methods.
@@ -310,19 +335,6 @@ We can take partial derivative of $L(W)$ with respect to the $j$th element of $W
 
 In supervised learning, we have training dataset which is data with labels. We can use the neural networks to find the output of the training data and adjust the weights to optimal values. There are mainly  three types of training protocols, stochastic, batch and online training. In stochastic training, we randomly choose samples from training dataset and update weights every time depending on output of neural networks. In batch training, we use some samples and pass them through network, then update weights. In online training method, each sample of training dataset is used once and weights are updated each time. We usually call one time of passing all training dataset through neural networks one epoch.
 
-\section{Stochastic Gradient Descent}
-
-Because weights space in neural networks is continuous, training can reach the optimal weights value through optimization algorithms, which means minimizing loss value of function
-\begin{equation}\label{eq:LossMin}
-L(f_{w}) = \sum L(y, f_{w}(x))
-\end{equation}
-Gradient descent is a method which starts from a random point, then moves to a nearby point that is downhill repeatly. It converges on a minimum possible loss.
-
-Stochastic gradient descent is a subtype of gradient descent. It only considers a single training point and move to nearby point based on
-\begin{equation}\label{eq:SGDUpdate}
-w = w - \eta  \Delta L(w) = w - \eta \sum_{i=1}^{n} \Delta L_{i}(w)
-\end{equation}
-where $\eta$ is the learning rate and $L_{i}(w)$ is the value of the loss function at the $i^{th}$ sample. Although stochastic gradient descent does not guarantee convergence, it is fast.
 
 \section{Convolutional Neural Networks}
 

@@ -355,6 +355,17 @@ pages={951-958},
   year={2010}
 }
 
+@article{bermejo2001oriented,
+  title={Oriented principal component analysis for large margin classifiers},
+  author={Bermejo, Sergio and Cabestany, Joan},
+  journal={Neural Networks},
+  volume={14},
+  number={10},
+  pages={1447--1461},
+  year={2001},
+  publisher={Elsevier}
+}
+
 @article{CC01a,
  author = {Chang, Chih-Chung and Lin, Chih-Jen},
  title = {{LIBSVM}: A library for support vector machines},
@@ -450,5 +461,55 @@ pages={951-958},
   pages={681--687},
   year={2001}
 }
+
+@article{lippmann1987introduction,
+  title={An introduction to computing with neural nets},
+  author={Lippmann, Richard P},
+  journal={ASSP Magazine, IEEE},
+  volume={4},
+  number={2},
+  pages={4--22},
+  year={1987},
+  publisher={IEEE}
+}
+
+@article{kolmogorov1963representation,
+  title={On the representation of continuous functions of many variables by superposition of continuous functions of one variable and addition},
+  author={Kolmogorov, Andrei Nikolaevich},
+  journal={Amer. Math. Soc. Transl},
+  volume={28},
+  pages={55--59},
+  year={1963}
+}
+
+@book{heaton2008introduction,
+  title={Introduction to neural networks with Java},
+  author={Heaton, Jeff},
+  year={2008},
+  publisher={Heaton Research, Inc.}
+}
+
+@article{srivastava2014dropout,
+  title={Dropout: A simple way to prevent neural networks from overfitting},
+  author={Srivastava, Nitish and Hinton, Geoffrey and Krizhevsky, Alex and Sutskever, Ilya and Salakhutdinov, Ruslan},
+  journal={The Journal of Machine Learning Research},
+  volume={15},
+  number={1},
+  pages={1929--1958},
+  year={2014},
+  publisher={JMLR. org}
+}
+
+@article{hinton1987learning,
+  title={Learning sets of filters using back-propagation},
+  author={Plaut, David C and Hinton, Geoffrey E},
+  journal={Computer Speech \& Language},
+  volume={2},
+  number={1},
+  pages={35--61},
+  year={1987},
+  publisher={Elsevier}
+}
+
 
 
