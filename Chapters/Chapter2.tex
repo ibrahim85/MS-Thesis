@@ -4,6 +4,14 @@
 \label{Chapter2}
 \lhead{Chapter 2. \emph{Background and Related Work}}
 
+\section{Related Work}
+
+There were many research that has been done on weather classification. Most works use method - extracting features plus classifiers~\citep{bishop1995neural,roser2008classification,serrano2002computationally,gokalp2007scene}.
+Some work on low-level features, like color~\citep{szummer1998indoor}, texture~\citep{shotton2009textonboost,vailaya2002automatic}. Some use filters or segmentation~\citep{boutell2004learning,shotton2009textonboost} to extract high-level features, such as sky, shadow~\citep{lutwo}. Some works use statistical measure methods~\citep{he2014spatial,roser2008classification} to analyse low-level feature distribution.
+
+Most previous jobs are based on discriminative model. They extracted human recognizable features to classify scene. This type of shadow learning depends mainly on quality of features and has less capability to represent different layer features and their relations.
+
+Scene understanding approaches depends on structural information to category a image into one of classes. Structural information is concluded from illumination invariant features, like SIFT. However, previous jobs have limits on classifying diversity images. It is hard to list total factors which determinate the weather condition. 
 \section{Single-Layer Networks}
 
 Artificial neurons were introduced as information processing devices more than fifty years ago\citep{mcculloch1943logical}. Following the early work, perceptrons were deployed in layers to do pattern recognition job. A lot of resource was invested in researching capability of learning perceptrons theoretically and experimentally. As shown in Figure 2.1, a perceptron computes a weighted summation of its n inputs and then thresholds the result to give a binary output y. We can treat n input as an vector with n elements, and represent the vector as either class A(for output +1) or class B(for output -1).
@@ -205,6 +213,12 @@ where $$\delta_{j} = \frac{\partial E}{\partial a_{j}} = \displaystyle\sum_{k} \
 
 The $\delta_{j}$ of a hidden unit is based on the $\delta_{k}$s of output units to which it links. To minimise the error function$E$ with gradient descent, it needs the propagation of errors backwards.
 
+\subsection{Training protocols}
+
+In supervised learning, we have training dataset which is data with labels. We can use the neural networks to find the output of the training data and adjust the weights to optimal values. There are mainly  three types of training protocols, stochastic, batch and online training. In stochastic training, we randomly choose samples from training dataset and update weights every time depending on output of neural networks. In batch training, we use some samples and pass them through network, then update weights. In online training method, each sample of training dataset is used once and weights are updated each time. We usually call one time of passing all training dataset through neural networks one epoch.
+
+It is worth noting batch learning. In large scale application, the training dataset can be over millions of samples. It is time consuming to compute the loss function over all training dataset, in order to update weights once. It is a practical approach that computes the gradient over a batch of training dataset. Will it be disadvantage on generalization performance? It depends on the correlations among the training dataset. Consider there are more than one million images in the ILSVRC which is made up of only 1000 category images. If the images in a batch are selected even from each category, the gradient from the batch is good enough approximation of the gradient of the full training dataset. Therefore, batch learning leads to faster convergence by evaluating the batch gradients to update weights frequently.
+
 \section{Overfitting and Regularization}
 
 Overfitting is a common phenomenon that the model has a high performance on training dataset, but poor on testing dataset in classification tasks. Given that a classification problem with two classes and two input variables, left figure in \ref{fig:OverfittingExample} shows a decent decision boundaries. With increasing complexity of the model, the decision boundaries become more complex and fit the training dataset extremely well. 
@@ -330,11 +344,6 @@ It is not easy to solve equation \ref{eq:LogRegLossFunc}. Usually an optimizatio
 \nabla_{W^{(k)}} L(W) = - \sum_{i=1}^{m}{ \left[ x^{(i)} \left( 1\{ y^{(i)} = k\}  - P(y^{(i)} = k | x^{(i)}; W) \right) \right]  }
 \end{equation}
 We can take partial derivative of $L(W)$ with respect to the $j$th element of $W^{(k)}$.
-
-\section{Training protocols}
-
-In supervised learning, we have training dataset which is data with labels. We can use the neural networks to find the output of the training data and adjust the weights to optimal values. There are mainly  three types of training protocols, stochastic, batch and online training. In stochastic training, we randomly choose samples from training dataset and update weights every time depending on output of neural networks. In batch training, we use some samples and pass them through network, then update weights. In online training method, each sample of training dataset is used once and weights are updated each time. We usually call one time of passing all training dataset through neural networks one epoch.
-
 
 \section{Convolutional Neural Networks}
 

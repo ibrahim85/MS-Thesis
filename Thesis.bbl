@@ -1,4 +1,4 @@
-\begin{thebibliography}{25}
+\begin{thebibliography}{35}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -13,17 +13,82 @@ Nitish Srivastava, Geoffrey Hinton, Alex Krizhevsky, Ilya Sutskever, and Ruslan
 \newblock \emph{The Journal of Machine Learning Research}, 15\penalty0
   (1):\penalty0 1929--1958, 2014.
 
+\bibitem[Bishop(1995)]{bishop1995neural}
+Christopher~M. Bishop.
+\newblock \emph{Neural networks for pattern recognition}.
+\newblock Clarendon press Oxford, 1995.
+
+\bibitem[Roser and Moosmann(2008)]{roser2008classification}
+Martin Roser and Frank Moosmann.
+\newblock Classification of weather situations on single color images.
+\newblock \emph{Intelligent Vehicles Symposium, IEEE}, 2008.
+
+\bibitem[Serrano et~al.(2002)Serrano, Savakis, and
+  Luo]{serrano2002computationally}
+Navid Serrano, Andreas Savakis, and Jiebo Luo.
+\newblock A computationally efficient approach to indoor/outdoor scene
+  classification.
+\newblock In \emph{Pattern Recognition, 2002. Proceedings. 16th International
+  Conference on}, volume~4, pages 146--149. IEEE, 2002.
+
+\bibitem[Gokalp and Aksoy(2007)]{gokalp2007scene}
+Demir Gokalp and Selim Aksoy.
+\newblock Scene classification using bag-of-regions representations.
+\newblock In \emph{Computer Vision and Pattern Recognition, 2007. CVPR'07. IEEE
+  Conference on}, pages 1--8. IEEE, 2007.
+
+\bibitem[Szummer and Picard(1998)]{szummer1998indoor}
+Martin Szummer and Rosalind~W Picard.
+\newblock Indoor-outdoor image classification.
+\newblock In \emph{Content-Based Access of Image and Video Database, 1998.
+  Proceedings., 1998 IEEE International Workshop on}, pages 42--51. IEEE, 1998.
+
+\bibitem[Shotton et~al.(2009)Shotton, Winn, Rother, and
+  Criminisi]{shotton2009textonboost}
+Jamie Shotton, John Winn, Carsten Rother, and Antonio Criminisi.
+\newblock Textonboost for image understanding: Multi-class object recognition
+  and segmentation by jointly modeling texture, layout, and context.
+\newblock \emph{International Journal of Computer Vision}, 81\penalty0
+  (1):\penalty0 2--23, 2009.
+
+\bibitem[Vailaya et~al.(2002)Vailaya, Zhang, Yang, Liu, and
+  Jain]{vailaya2002automatic}
+Aditya Vailaya, HongJiang Zhang, Changjiang Yang, Feng-I Liu, and Anil~K Jain.
+\newblock Automatic image orientation detection.
+\newblock \emph{Image Processing, IEEE Transactions on}, 11\penalty0
+  (7):\penalty0 746--755, 2002.
+
+\bibitem[Boutell et~al.(2004)Boutell, Luo, Shen, and
+  Brown]{boutell2004learning}
+Matthew~R Boutell, Jiebo Luo, Xipeng Shen, and Christopher~M Brown.
+\newblock Learning multi-label scene classification.
+\newblock \emph{Pattern recognition}, 37\penalty0 (9):\penalty0 1757--1771,
+  2004.
+
+\bibitem[Lu et~al.(2014)Lu, Lin, Jia, and Tang]{lutwo}
+Cewu Lu, Di~Lin, Jiaya Jia, and Chi-Keung Tang.
+\newblock Two-class weather classification.
+\newblock \emph{IEEE Conference on Computer Vision and Pattern Recognition
+  (CVPR)}, 2014.
+
+\bibitem[He et~al.(2014)He, Zhang, Ren, and Sun]{he2014spatial}
+Kaiming He, Xiangyu Zhang, Shaoqing Ren, and Jian Sun.
+\newblock Spatial pyramid pooling in deep convolutional networks for visual
+  recognition.
+\newblock \emph{The 13th European Conference on Computer Vision (ECCV)}, 2014.
+
 \bibitem[McCulloch and Pitts(1943)]{mcculloch1943logical}
 Warren~S McCulloch and Walter Pitts.
 \newblock A logical calculus of the ideas immanent in nervous activity.
 \newblock \emph{The bulletin of mathematical biophysics}, 5\penalty0
   (4):\penalty0 115--133, 1943.
 
-\bibitem[Plaut and Hinton(1987)]{hinton1987learning}
-David~C Plaut and Geoffrey~E Hinton.
-\newblock Learning sets of filters using back-propagation.
-\newblock \emph{Computer Speech \& Language}, 2\penalty0 (1):\penalty0 35--61,
-  1987.
+\bibitem[Hinton(1987)]{hinton1987learning}
+Geoffrey~E Hinton.
+\newblock Learning translation invariant recognition in a massively parallel
+  networks.
+\newblock In \emph{PARLE Parallel Architectures and Languages Europe}, pages
+  1--13. Springer, 1987.
 
 \bibitem[LeCun et~al.(1998)LeCun, Bottou, Bengio, and
   Haffner]{lecun1998gradient}
