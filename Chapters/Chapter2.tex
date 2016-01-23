@@ -9,9 +9,10 @@
 There were many research that has been done on weather classification. Most works use method - extracting features plus classifiers~\citep{bishop1995neural,roser2008classification,serrano2002computationally,gokalp2007scene}.
 Some work on low-level features, like color~\citep{szummer1998indoor}, texture~\citep{shotton2009textonboost,vailaya2002automatic}. Some use filters or segmentation~\citep{boutell2004learning,shotton2009textonboost} to extract high-level features, such as sky, shadow~\citep{lutwo}. Some works use statistical measure methods~\citep{he2014spatial,roser2008classification} to analyse low-level feature distribution.
 
-Most previous jobs are based on discriminative model. They extracted human recognizable features to classify scene. This type of shadow learning depends mainly on quality of features and has less capability to represent different layer features and their relations.
+Generally, traditional methods follow three basic steps\citep{roser2008classification,yan2009weather}. First, some Regions of Interest (ROIs), for example, sky and shadow,  are extracted from a weather image. Then, histogram descriptors are used to represent the difference between them. Finally, a classifier, e.g., Support Vector Machine, is built up based on the extracted features. 
 
-Scene understanding approaches depends on structural information to category a image into one of classes. Structural information is concluded from illumination invariant features, like SIFT. However, previous jobs have limits on classifying diversity images. It is hard to list total factors which determinate the weather condition. 
+Most previous jobs are based on discriminative model. They extracted human recognizable features to classify scene. This type of shadow learning depends mainly on quality of features and human being prior knowledge. An image without prior features or poor features is hard to classify. Furthermore, the methods require a lot of work on data pre-processing and are not flexible. And the approaches depends on structural information to category a image into one of classes. Structural information is concluded from illumination invariant features, like SIFT. However, previous jobs have limits on classifying diversity images. It is hard to list total factors which determinate the weather condition.
+
 \section{Single-Layer Networks}
 
 Artificial neurons were introduced as information processing devices more than fifty years ago\citep{mcculloch1943logical}. Following the early work, perceptrons were deployed in layers to do pattern recognition job. A lot of resource was invested in researching capability of learning perceptrons theoretically and experimentally. As shown in Figure 2.1, a perceptron computes a weighted summation of its n inputs and then thresholds the result to give a binary output y. We can treat n input as an vector with n elements, and represent the vector as either class A(for output +1) or class B(for output -1).
@@ -347,15 +348,28 @@ We can take partial derivative of $L(W)$ with respect to the $j$th element of $W
 
 \section{Convolutional Neural Networks}
 
-Convolutional Neural Networks\citep{lecun1998gradient} are widely applied in image data and they achieved top rank in image classification competetion\citep{krizhevsky2012imagenet}. Convolutional neural networks have three types of layers, convolutional layer, pooling layer and fully connected layer. At the output of the network, a softmax layer is used to do classification job.  Convolutional layer is used to detect invariants in locat receptive fields. Pooling layer is downsampling feature maps. Fully connected layer makes the output of each unit an activation of dot product of all inputs.
+Convolutional Neural Networks\citep{lecun1998gradient} （CNN） are widely applied in image understanding and achieve top rank in image classification competetion\citep{krizhevsky2012imagenet}. Compared to regular neural networks, CNN architectures assume that the inputs are images and pixels are related in region. Regular neural networks fully connect layers and the method is computation expensive.
+
+CNN architecture have neurons arranged in 3 dimension, say width, height and depth. For example, there is an image which has dimensions $32x32x3$. The neurons in a layer will connect to a customised region of the previous layer. Moreover, the final output layer has dimensions $1x1xd$, where $d$ is the number of class. The dimensions are reduced from $3072$ to $d$. The output is a single vector of class scores.
 
 \graphicspath{ {./Figures/} }
 \begin{figure}[!htb]
 \centering
-\includegraphics[width=0.8\textwidth]{lenet.png}
-\caption{\label{fig:perceptron}Diagram of LeNet.}
+\includegraphics[width=0.4\textwidth]{neural_net2.jpeg}
+\includegraphics[width=0.4\textwidth]{cnn.jpeg}
+\caption{\label{fig:perceptron}Left is a fully connect regular neural network. Right is a CNN in 3 dimensions.}
 \end{figure}
 
+\subsection{Layers in CNN}
+CNNs have three main type of layers, convolutional layer, pooling layer and fully connected layer. Every layer transforms input to output via a differentiable function. 
+\begin{enumerate}
+  \item Convolutional layer compute the output of neurons which connect to local regions in previous layer. In brief, CNN apply a dot product between the weights and region in the input volume connected in the input. Dimensions have no change.
+  \item ReLU layer acts as an activation function after convolutional layer. It leaves the dimensions unchanged. There is no parameters in ReLU layer.
+  \item Pooling layer will downsample the input spatial dimensions(width, height). There is no parameters in pooling layer.
+  \item Fully connected layer computes the output of neurons which connect all the neurons in the previous layer.
+\end{enumerate}
+Following layer by layer, CNN transforms an image from a set of pixel values to the final class scores.
+ 
 \section{Spatial Pyramid Match}
 
 Spatial pyramid match\citep{lazebnik2006beyond} is used to classify high-level semantic attributes, based on low-level features. The method subdivides a image in several different levels of resolution and counts features falling in each spatial bin. It extends bags of features and derives spatial information from images.

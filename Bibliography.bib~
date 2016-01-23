@@ -11,6 +11,21 @@
 	Url = {http://link.aip.org/link/?RSI/72/4477/1},
 	Year = {2001}}
 
+@book{bishop1995neural,
+  title={Neural networks for pattern recognition},
+  author={Bishop, Christopher M.},
+  year={1995},
+  publisher={Clarendon press Oxford}
+}
+
+@article{roser2008classification,
+  title={Classification of weather situations on single color images},
+  author={Roser, Martin and Moosmann, Frank},
+  journal={Intelligent Vehicles Symposium, IEEE},
+  year={2008},
+  organization={IEEE}
+}
+
 @article{Reference3,
 	Abstract = {Operating a laser diode in an extended cavity which provides frequency-selective feedback is a very effective method of reducing the laser's linewidth and improving its tunability. We have developed an extremely simple laser of this type, built from inexpensive commercial components with only a few minor modifications. A 780~nm laser built to this design has an output power of 80~mW, a linewidth of 350~kHz, and it has been continuously locked to a Doppler-free rubidium transition for several days.},
 	Author = {A. S. Arnold and J. S. Wilson and M. G. Boshier},
@@ -97,12 +112,6 @@
   year={1998}
 }
 
-@book{bishop1995neural,
-  title={Neural networks for pattern recognition},
-  author={Bishop, Christopher M.},
-  year={1995},
-  publisher={Clarendon press Oxford}
-}
 
 @article{lutwo,
   title={Two-Class Weather Classification},
@@ -155,13 +164,6 @@
   publisher={Elsevier}
 }
 
-@article{roser2008classification,
-  title={Classification of weather situations on single color images},
-  author={Roser, Martin and Moosmann, Frank},
-  journal={Intelligent Vehicles Symposium, IEEE},
-  year={2008},
-  organization={IEEE}
-}
 
 @article{klinker1990physical,
   title={A physical approach to color image understanding},
@@ -203,6 +205,26 @@
   year={2002},
   organization={IEEE}
 }
+
+
+@inproceedings{szummer1998indoor,
+  title={Indoor-outdoor image classification},
+  author={Szummer, Martin and Picard, Rosalind W},
+  booktitle={Content-Based Access of Image and Video Database, 1998. Proceedings., 1998 IEEE International Workshop on},
+  pages={42--51},
+  year={1998},
+  organization={IEEE}
+}
+
+@inproceedings{gokalp2007scene,
+  title={Scene classification using bag-of-regions representations},
+  author={Gokalp, Demir and Aksoy, Selim},
+  booktitle={Computer Vision and Pattern Recognition, 2007. CVPR'07. IEEE Conference on},
+  pages={1--8},
+  year={2007},
+  organization={IEEE}
+}
+
 @inproceedings{yan2003predicting,
   title={On predicting rare classes with SVM ensembles in scene classification},
   author={Yan, Rong and Liu, Yan and Jin, Rong and Hauptmann, Alex},
@@ -212,14 +234,7 @@
   year={2003},
   organization={IEEE}
 }
-@inproceedings{gokalp2007scene,
-  title={Scene classification using bag-of-regions representations},
-  author={Gokalp, Demir and Aksoy, Selim},
-  booktitle={Computer Vision and Pattern Recognition, 2007. CVPR'07. IEEE Conference on},
-  pages={1--8},
-  year={2007},
-  organization={IEEE}
-}
+
 
 @article{serrano2004improved,
   title={Improved scene classification using efficient low-level features and semantic cues},
@@ -259,14 +274,6 @@
   organization={IEEE}
 }
 
-@inproceedings{szummer1998indoor,
-  title={Indoor-outdoor image classification},
-  author={Szummer, Martin and Picard, Rosalind W},
-  booktitle={Content-Based Access of Image and Video Database, 1998. Proceedings., 1998 IEEE International Workshop on},
-  pages={42--51},
-  year={1998},
-  organization={IEEE}
-}
 
 @article{vailaya2002automatic,
   title={Automatic image orientation detection},
@@ -500,16 +507,13 @@ pages={951-958},
   publisher={JMLR. org}
 }
 
-@article{hinton1987learning,
-  title={Learning sets of filters using back-propagation},
-  author={Plaut, David C and Hinton, Geoffrey E},
-  journal={Computer Speech \& Language},
-  volume={2},
-  number={1},
-  pages={35--61},
+@inproceedings{hinton1987learning,
+  title={Learning translation invariant recognition in a massively parallel networks},
+  author={Hinton, Geoffrey E},
+  booktitle={PARLE Parallel Architectures and Languages Europe},
+  pages={1--13},
   year={1987},
-  publisher={Elsevier}
+  organization={Springer}
 }
-
 
 

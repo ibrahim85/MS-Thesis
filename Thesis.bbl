@@ -1,4 +1,4 @@
-\begin{thebibliography}{35}
+\begin{thebibliography}{36}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -76,6 +76,13 @@ Kaiming He, Xiangyu Zhang, Shaoqing Ren, and Jian Sun.
 \newblock Spatial pyramid pooling in deep convolutional networks for visual
   recognition.
 \newblock \emph{The 13th European Conference on Computer Vision (ECCV)}, 2014.
+
+\bibitem[Yan et~al.(2009)Yan, Luo, and Zheng]{yan2009weather}
+Xunshi Yan, Yupin Luo, and Xiaoming Zheng.
+\newblock Weather recognition based on images captured by vision system in
+  vehicle.
+\newblock In \emph{Advances in Neural Networks--ISNN 2009}, pages 390--398.
+  Springer, 2009.
 
 \bibitem[McCulloch and Pitts(1943)]{mcculloch1943logical}
 Warren~S McCulloch and Walter Pitts.
