@@ -363,13 +363,27 @@ CNN architecture have neurons arranged in 3 dimension, say width, height and dep
 \subsection{Layers in CNN}
 CNNs have three main type of layers, convolutional layer, pooling layer and fully connected layer. Every layer transforms input to output via a differentiable function. 
 \begin{enumerate}
-  \item Convolutional layer compute the output of neurons which connect to local regions in previous layer. In brief, CNN apply a dot product between the weights and region in the input volume connected in the input. Dimensions have no change.
-  \item ReLU layer acts as an activation function after convolutional layer. It leaves the dimensions unchanged. There is no parameters in ReLU layer.
-  \item Pooling layer will downsample the input spatial dimensions(width, height). There is no parameters in pooling layer.
-  \item Fully connected layer computes the output of neurons which connect all the neurons in the previous layer.
+  \item Convolutional layer
+  \item ReLU layer
+  \item Pooling layer
+  \item Fully connected layer
 \end{enumerate}
 Following layer by layer, CNN transforms an image from a set of pixel values to the final class scores.
- 
+
+The convolutional layer is the key component of CNN and its output can be represented as neurons shaped in 3D volume. A set of learning filters make up the convoultional layer's parameters. Even the size of filter is flexible, it is usually set as a small size. During the feedforward process, each filter slides across the input volume and produces a $2$-dimensional feature map. In each slide, the input and the filter have a dot product computation. If there are some specific feature at some spatial position, they can be learnt by filters.
+
+Local connectivity is the key properties of CNN is. Regular neural networks use fully connected method between layers. That is unaffordable for image, even with high capability hardware. Instead, each neuron connects a local region of the input only. There are two main benefits from local connectivity. One is reducing parameters significantly and controlling overfitting. The other one is based on a key image property. Pixels are strongly correlated with nearby pixels. This can be regarded as a local receptive field which can retrieve information from subregions of the image.
+
+\graphicspath{ {./Figures/} }
+\begin{wrapfigure}{r}{0.5\textwidth}
+  \begin{center}
+    \includegraphics[width=0.48\textwidth]{depthcol.jpeg}
+  \end{center}
+  \caption{Diagram for depth in convolutional layer}
+\end{wrapfigure}
+To control the output volume arrangement, three parameters are introduced. They are depth, stride and zero-padding. In convolutional layer, depth controls the number of neurons which connect the same subregion of the input volume. All the neurons learn the different features from the input volume. For example, the neurons along the depth in the convolutional layer after input data layer can activate existence of various edges, color, etc.. Stride is another parameter which controls the spatial position of nearby depth column of neurons. The smaller the stride is, the more overlapping receptive fields is shared by nearby columns. Last, zero-padding on border makes output volume to keep the same dimension with the input volume.
+
+
 \section{Spatial Pyramid Match}
 
 Spatial pyramid match\citep{lazebnik2006beyond} is used to classify high-level semantic attributes, based on low-level features. The method subdivides a image in several different levels of resolution and counts features falling in each spatial bin. It extends bags of features and derives spatial information from images.
