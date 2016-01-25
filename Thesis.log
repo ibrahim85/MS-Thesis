@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/W32TeX) (preloaded format=pdflatex 2015.3.12)  25 JAN 2016 20:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/W32TeX) (preloaded format=pdflatex 2015.3.12)  25 JAN 2016 23:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -873,22 +873,21 @@ File: ./Figures/depthcol.jpeg Graphic file (type jpg)
 <use ./Figures/depthcol.jpeg>
 Package pdftex.def Info: ./Figures/depthcol.jpeg used on input line 380.
 (pdftex.def)             Requested size: 200.38528pt x 140.78781pt.
-
-<./Figures/spm.jpg, id=697, 1014.79124pt x 608.2725pt>
+ [20 <./Figures/depthcol.jpeg>]
+<./Figures/spm.jpg, id=701, 1014.79124pt x 608.2725pt>
 File: ./Figures/spm.jpg Graphic file (type jpg)
  <use ./Figures/spm.jpg>
-Package pdftex.def Info: ./Figures/spm.jpg used on input line 393.
+Package pdftex.def Info: ./Figures/spm.jpg used on input line 400.
 (pdftex.def)             Requested size: 333.97972pt x 200.18294pt.
 
-[20 <./Figures/depthcol.jpeg>]
-<./Figures/MLvsTL.png, id=703, 526.96875pt x 384.43625pt>
+[21 <./Figures/spm.jpg>]
+<./Figures/MLvsTL.png, id=708, 526.96875pt x 384.43625pt>
 File: ./Figures/MLvsTL.png Graphic file (type png)
 
 <use ./Figures/MLvsTL.png>
-Package pdftex.def Info: ./Figures/MLvsTL.png used on input line 409.
+Package pdftex.def Info: ./Figures/MLvsTL.png used on input line 416.
 (pdftex.def)             Requested size: 333.97972pt x 243.65675pt.
-) (./Chapters/Chapter3.tex [21 <./Figures/spm.jpg>]
-[22 <./Figures/MLvsTL.png>]
+) (./Chapters/Chapter3.tex [22 <./Figures/MLvsTL.png>]
 Chapter 3.
 ------------------------------------------------------------------------------
  3 Methodology
@@ -1436,7 +1435,7 @@ st/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2014/texmf-dist/fonts/
 type1/public/amsfonts/cm/cmtt10.pfb><c:/texlive/2014/texmf-dist/fonts/type1/pub
 lic/amsfonts/symbols/msam7.pfb><c:/texlive/2014/texmf-dist/fonts/type1/public/a
 msfonts/symbols/msbm10.pfb>
-Output written on Thesis.pdf (75 pages, 4914812 bytes).
+Output written on Thesis.pdf (75 pages, 4916186 bytes).
 PDF statistics:
  1282 PDF objects out of 1440 (max. 8388607)
  1075 compressed objects within 11 object streams

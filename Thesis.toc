@@ -29,7 +29,7 @@
 \contentsline {section}{\numberline {2.8}Convolutional Neural Networks}{19}{section.82}
 \contentsline {subsection}{\numberline {2.8.1}Layers in CNN}{19}{subsection.84}
 \contentsline {section}{\numberline {2.9}Spatial Pyramid Match}{21}{section.90}
-\contentsline {section}{\numberline {2.10}Transfer Learning}{21}{section.92}
+\contentsline {section}{\numberline {2.10}Transfer Learning}{22}{section.92}
 \contentsline {chapter}{\numberline {3}Methodology}{23}{chapter.95}
 \contentsline {section}{\numberline {3.1}Dataset}{23}{section.96}
 \contentsline {section}{\numberline {3.2}Data Argument}{24}{section.99}

@@ -363,14 +363,14 @@ CNN architecture have neurons arranged in 3 dimension, say width, height and dep
 \subsection{Layers in CNN}
 CNNs have three main type of layers, convolutional layer, pooling layer and fully connected layer. Every layer transforms input to output via a differentiable function. 
 \begin{enumerate}
-  \item Convolutional layer
-  \item ReLU layer
-  \item Pooling layer
-  \item Fully connected layer
+  \item Convolutional Layer
+  \item ReLU Layer
+  \item Pooling Layer
+  \item Fully Connected Layer
 \end{enumerate}
 Following layer by layer, CNN transforms an image from a set of pixel values to the final class scores.
 
-The convolutional layer is the key component of CNN and its output can be represented as neurons shaped in 3D volume. A set of learning filters make up the convoultional layer's parameters. Even the size of filter is flexible, it is usually set as a small size. During the feedforward process, each filter slides across the input volume and produces a $2$-dimensional feature map. In each slide, the input and the filter have a dot product computation. If there are some specific feature at some spatial position, they can be learnt by filters.
+\textbf{Convolutional Layer} is the key component of CNN and its output can be represented as neurons shaped in 3D volume. A set of learning filters make up the convoultional layer's parameters. Even the size of filter is flexible, it is usually set as a small size. During the feedforward process, each filter slides across the input volume and produces a $2$-dimensional feature map. In each slide, the input and the filter have a dot product computation. If there are some specific feature at some spatial position, they can be learnt by filters.
 
 Local connectivity is the key properties of CNN is. Regular neural networks use fully connected method between layers. That is unaffordable for image, even with high capability hardware. Instead, each neuron connects a local region of the input only. There are two main benefits from local connectivity. One is reducing parameters significantly and controlling overfitting. The other one is based on a key image property. Pixels are strongly correlated with nearby pixels. This can be regarded as a local receptive field which can retrieve information from subregions of the image.
 
@@ -383,6 +383,13 @@ Local connectivity is the key properties of CNN is. Regular neural networks use 
 \end{wrapfigure}
 To control the output volume arrangement, three parameters are introduced. They are depth, stride and zero-padding. In convolutional layer, depth controls the number of neurons which connect the same subregion of the input volume. All the neurons learn the different features from the input volume. For example, the neurons along the depth in the convolutional layer after input data layer can activate existence of various edges, color, etc.. Stride is another parameter which controls the spatial position of nearby depth column of neurons. The smaller the stride is, the more overlapping receptive fields is shared by nearby columns. Last, zero-padding on border makes output volume to keep the same dimension with the input volume.
 
+A scheme, named parameter sharing, is implemented in convolutional layer to limit the number of parameters. The scheme suppose that a filter, which is helpful to compute at some spatial position, should be helpful to compute another position.
+
+\textbf{ReLU Layer} is the abbreviation of Rectified Linear Units. The neurons in the layer operate the non-saturating activation function $f(x) = max(0,x)$ over the result of dot product in convolutional layers. The layer increase non linearity to network without losing the receptive fields of convolutional layer.
+
+\textbf{Pooling Layer} is a mechanism of downsampling. It is usually appended after the convolutional layer to progressively decrease the spatial size of the feature map. It leads to decrease network parameters and makes the neurons in pooling layer to be relatively insensitive to small shifts of the image.
+
+\textbf{Fully Connected Layer} takes feature map, which has high level representation, from previous layers. Its difference with convolutional layer is that it connects to all neurons in previous layer instead of a receptive field only.
 
 \section{Spatial Pyramid Match}
 
