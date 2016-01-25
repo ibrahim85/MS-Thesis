@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/W32TeX) (preloaded format=pdflatex 2015.3.12)  25 JAN 2016 23:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/W32TeX) (preloaded format=pdflatex 2015.3.12)  26 JAN 2016 01:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -885,14 +885,14 @@ Package pdftex.def Info: ./Figures/spm.jpg used on input line 400.
 File: ./Figures/MLvsTL.png Graphic file (type png)
 
 <use ./Figures/MLvsTL.png>
-Package pdftex.def Info: ./Figures/MLvsTL.png used on input line 416.
+Package pdftex.def Info: ./Figures/MLvsTL.png used on input line 431.
 (pdftex.def)             Requested size: 333.97972pt x 243.65675pt.
-) (./Chapters/Chapter3.tex [22 <./Figures/MLvsTL.png>]
+) (./Chapters/Chapter3.tex [22] [23 <./Figures/MLvsTL.png>]
 Chapter 3.
 ------------------------------------------------------------------------------
  3 Methodology
 ------------------------------------------------------------------------------
-<./Figures/ILSVRC2012_val_00000001.JPEG, id=716, 256.96pt x 256.96pt>
+<./Figures/ILSVRC2012_val_00000001.JPEG, id=724, 256.96pt x 256.96pt>
 File: ./Figures/ILSVRC2012_val_00000001.JPEG Graphic file (type jpg)
 
 <use ./Figures/ILSVRC2012_val_00000001.JPEG>
@@ -900,7 +900,7 @@ Package pdftex.def Info: ./Figures/ILSVRC2012_val_00000001.JPEG used on input l
 ine 13.
 (pdftex.def)             Requested size: 166.98668pt x 166.99065pt.
 
-<./Figures/ILSVRC2012_val_00000002.JPEG, id=717, 256.96pt x 256.96pt>
+<./Figures/ILSVRC2012_val_00000002.JPEG, id=725, 256.96pt x 256.96pt>
 File: ./Figures/ILSVRC2012_val_00000002.JPEG Graphic file (type jpg)
 
 <use ./Figures/ILSVRC2012_val_00000002.JPEG>
@@ -908,37 +908,37 @@ Package pdftex.def Info: ./Figures/ILSVRC2012_val_00000002.JPEG used on input l
 ine 15.
 (pdftex.def)             Requested size: 166.98668pt x 166.99065pt.
 
-<./Figures/cloudy_0001.png, id=720, 256.96pt x 256.96pt>
+<./Figures/cloudy_0001.png, id=728, 256.96pt x 256.96pt>
 File: ./Figures/cloudy_0001.png Graphic file (type png)
 
 <use ./Figures/cloudy_0001.png>
 Package pdftex.def Info: ./Figures/cloudy_0001.png used on input line 24.
 (pdftex.def)             Requested size: 166.98668pt x 166.99065pt.
 
-<./Figures/sunny_0003.png, id=721, 256.96pt x 256.96pt>
+<./Figures/sunny_0003.png, id=729, 256.96pt x 256.96pt>
 File: ./Figures/sunny_0003.png Graphic file (type png)
 
 <use ./Figures/sunny_0003.png>
 Package pdftex.def Info: ./Figures/sunny_0003.png used on input line 26.
 (pdftex.def)             Requested size: 166.98668pt x 166.99065pt.
- [23
+ [24
 
  <./Figures/ILSVRC2012_val_00000001.JPEG> <./Figures/ILSVRC2012_val_00000002.JP
 EG>]
-<./Figures/sppnet.jpg, id=728, 642.4pt x 481.8pt>
+<./Figures/sppnet.jpg, id=737, 642.4pt x 481.8pt>
 File: ./Figures/sppnet.jpg Graphic file (type jpg)
  <use ./Figures/sppnet.jpg>
 Package pdftex.def Info: ./Figures/sppnet.jpg used on input line 43.
 (pdftex.def)             Requested size: 333.97972pt x 250.49332pt.
 
-[24 <./Figures/cloudy_0001.png (PNG copy)> <./Figures/sunny_0003.png (PNG copy)
->] <./Figures/AlexNet.png, id=735, 728.7225pt x 232.87pt>
+[25 <./Figures/cloudy_0001.png (PNG copy)> <./Figures/sunny_0003.png (PNG copy)
+>] <./Figures/AlexNet.png, id=744, 728.7225pt x 232.87pt>
 File: ./Figures/AlexNet.png Graphic file (type png)
 
 <use ./Figures/AlexNet.png>
 Package pdftex.def Info: ./Figures/AlexNet.png used on input line 55.
 (pdftex.def)             Requested size: 333.97972pt x 106.72351pt.
- [25 <./Figures/sppnet.jpg> <./Figures/AlexNet.png (PNG copy)>]
+ [26 <./Figures/sppnet.jpg> <./Figures/AlexNet.png (PNG copy)>]
 Missing character: There is no Ã in font cmr10!
 Missing character: There is no — in font cmr10!
 Missing character: There is no Ã in font cmr10!
@@ -947,24 +947,24 @@ Missing character: There is no Ã in font cmr10!
 Missing character: There is no — in font cmr10!
 Missing character: There is no Ã in font cmr10!
 Missing character: There is no — in font cmr10!
-) (./Chapters/Chapter4.tex [26]
+) (./Chapters/Chapter4.tex [27]
 Chapter 4.
 ------------------------------------------------------------------------------
  4 Experiment
 ------------------------------------------------------------------------------
 
-LaTeX Warning: Reference `eq:NetPara' on page 27 undefined on input line 19.
+LaTeX Warning: Reference `eq:NetPara' on page 28 undefined on input line 19.
 
-[27
+[28
 
-] [28] <./Figures/FinetuneAccuracy.png, id=763, 578.16pt x 433.62pt>
+] [29] <./Figures/FinetuneAccuracy.png, id=771, 578.16pt x 433.62pt>
 File: ./Figures/FinetuneAccuracy.png Graphic file (type png)
 
 <use ./Figures/FinetuneAccuracy.png>
 Package pdftex.def Info: ./Figures/FinetuneAccuracy.png used on input line 63.
 (pdftex.def)             Requested size: 333.97972pt x 250.48083pt.
- [29]
-<./Figures/finetuneCNNProcess.png, id=769, 578.16pt x 433.62pt>
+ [30]
+<./Figures/finetuneCNNProcess.png, id=778, 578.16pt x 433.62pt>
 File: ./Figures/finetuneCNNProcess.png Graphic file (type png)
 
 <use ./Figures/finetuneCNNProcess.png>
@@ -972,16 +972,16 @@ Package pdftex.def Info: ./Figures/finetuneCNNProcess.png used on input line 74
 .
 (pdftex.def)             Requested size: 166.98668pt x 125.2371pt.
 
-<./Figures/finetuneSPPProcess.png, id=770, 578.16pt x 433.62pt>
+<./Figures/finetuneSPPProcess.png, id=779, 578.16pt x 433.62pt>
 File: ./Figures/finetuneSPPProcess.png Graphic file (type png)
 
 <use ./Figures/finetuneSPPProcess.png>
 Package pdftex.def Info: ./Figures/finetuneSPPProcess.png used on input line 75
 .
 (pdftex.def)             Requested size: 166.98668pt x 125.2371pt.
- [30 <./Figures/FinetuneAccuracy.png> <./Figures/finetuneCNNProcess.png> <./Fig
+ [31 <./Figures/FinetuneAccuracy.png> <./Figures/finetuneCNNProcess.png> <./Fig
 ures/finetuneSPPProcess.png>]
-<./Figures/DifferentLayers/cloudy1.png, id=781, 256.96pt x 256.96pt>
+<./Figures/DifferentLayers/cloudy1.png, id=789, 256.96pt x 256.96pt>
 File: ./Figures/DifferentLayers/cloudy1.png Graphic file (type png)
 
 <use ./Figures/DifferentLayers/cloudy1.png>
@@ -989,7 +989,7 @@ Package pdftex.def Info: ./Figures/DifferentLayers/cloudy1.png used on input li
 ne 101.
 (pdftex.def)             Requested size: 125.24318pt x 125.24495pt.
 
-<./Figures/DifferentLayers/cloudy1_conv1_fm.png, id=782, 596.2275pt x 592.2125p
+<./Figures/DifferentLayers/cloudy1_conv1_fm.png, id=790, 596.2275pt x 592.2125p
 t>
 File: ./Figures/DifferentLayers/cloudy1_conv1_fm.png Graphic file (type png)
  <use ./Figures/DifferentLayers/cloudy1_conv1_fm.png>
@@ -997,7 +997,7 @@ Package pdftex.def Info: ./Figures/DifferentLayers/cloudy1_conv1_fm.png used on
  input line 107.
 (pdftex.def)             Requested size: 125.24318pt x 124.3954pt.
 
-<./Figures/DifferentLayers/cloudy1_conv2_fm.png, id=783, 595.22375pt x 591.2087
+<./Figures/DifferentLayers/cloudy1_conv2_fm.png, id=791, 595.22375pt x 591.2087
 6pt>
 File: ./Figures/DifferentLayers/cloudy1_conv2_fm.png Graphic file (type png)
  <use ./Figures/DifferentLayers/cloudy1_conv2_fm.png>
@@ -1005,7 +1005,7 @@ Package pdftex.def Info: ./Figures/DifferentLayers/cloudy1_conv2_fm.png used on
  input line 113.
 (pdftex.def)             Requested size: 125.24318pt x 124.39204pt.
 
-<./Figures/DifferentLayers/cloudy1_conv3_fm.png, id=784, 596.2275pt x 592.2125p
+<./Figures/DifferentLayers/cloudy1_conv3_fm.png, id=792, 596.2275pt x 592.2125p
 t>
 File: ./Figures/DifferentLayers/cloudy1_conv3_fm.png Graphic file (type png)
  <use ./Figures/DifferentLayers/cloudy1_conv3_fm.png>
@@ -1013,7 +1013,7 @@ Package pdftex.def Info: ./Figures/DifferentLayers/cloudy1_conv3_fm.png used on
  input line 119.
 (pdftex.def)             Requested size: 125.24318pt x 124.3954pt.
 
-<./Figures/DifferentLayers/cloudy1_conv4_fm.png, id=785, 596.2275pt x 592.2125p
+<./Figures/DifferentLayers/cloudy1_conv4_fm.png, id=793, 596.2275pt x 592.2125p
 t>
 File: ./Figures/DifferentLayers/cloudy1_conv4_fm.png Graphic file (type png)
  <use ./Figures/DifferentLayers/cloudy1_conv4_fm.png>
@@ -1021,18 +1021,18 @@ Package pdftex.def Info: ./Figures/DifferentLayers/cloudy1_conv4_fm.png used on
  input line 125.
 (pdftex.def)             Requested size: 125.24318pt x 124.3954pt.
 
-<./Figures/DifferentLayers/cloudy1_conv5_fm.png, id=786, 596.2275pt x 592.2125p
+<./Figures/DifferentLayers/cloudy1_conv5_fm.png, id=794, 596.2275pt x 592.2125p
 t>
 File: ./Figures/DifferentLayers/cloudy1_conv5_fm.png Graphic file (type png)
  <use ./Figures/DifferentLayers/cloudy1_conv5_fm.png>
 Package pdftex.def Info: ./Figures/DifferentLayers/cloudy1_conv5_fm.png used on
  input line 131.
 (pdftex.def)             Requested size: 125.24318pt x 124.3954pt.
- [31 <./Figures/DifferentLayers/cloudy1.png (PNG copy)> <./Figures/DifferentLay
+ [32 <./Figures/DifferentLayers/cloudy1.png (PNG copy)> <./Figures/DifferentLay
 ers/cloudy1_conv1_fm.png> <./Figures/DifferentLayers/cloudy1_conv2_fm.png> <./F
 igures/DifferentLayers/cloudy1_conv3_fm.png> <./Figures/DifferentLayers/cloudy1
 _conv4_fm.png> <./Figures/DifferentLayers/cloudy1_conv5_fm.png>]
-<./Figures/DifferentLayers/sunny2.png, id=805, 596.2275pt x 592.2125pt>
+<./Figures/DifferentLayers/sunny2.png, id=813, 596.2275pt x 592.2125pt>
 File: ./Figures/DifferentLayers/sunny2.png Graphic file (type png)
 
 <use ./Figures/DifferentLayers/sunny2.png>
@@ -1040,7 +1040,7 @@ Package pdftex.def Info: ./Figures/DifferentLayers/sunny2.png used on input lin
 e 149.
 (pdftex.def)             Requested size: 125.24318pt x 124.3954pt.
 
-<./Figures/DifferentLayers/sunny2_conv1_fm.png, id=806, 596.2275pt x 592.2125pt
+<./Figures/DifferentLayers/sunny2_conv1_fm.png, id=814, 596.2275pt x 592.2125pt
 >
 File: ./Figures/DifferentLayers/sunny2_conv1_fm.png Graphic file (type png)
  <use ./Figures/DifferentLayers/sunny2_conv1_fm.png>
@@ -1048,7 +1048,7 @@ Package pdftex.def Info: ./Figures/DifferentLayers/sunny2_conv1_fm.png used on
 input line 155.
 (pdftex.def)             Requested size: 125.24318pt x 124.3954pt.
 
-<./Figures/DifferentLayers/sunny2_conv2_fm.png, id=807, 595.22375pt x 591.20876
+<./Figures/DifferentLayers/sunny2_conv2_fm.png, id=815, 595.22375pt x 591.20876
 pt>
 File: ./Figures/DifferentLayers/sunny2_conv2_fm.png Graphic file (type png)
  <use ./Figures/DifferentLayers/sunny2_conv2_fm.png>
@@ -1056,7 +1056,7 @@ Package pdftex.def Info: ./Figures/DifferentLayers/sunny2_conv2_fm.png used on
 input line 161.
 (pdftex.def)             Requested size: 125.24318pt x 124.39204pt.
 
-<./Figures/DifferentLayers/sunny2_conv3_fm.png, id=808, 596.2275pt x 592.2125pt
+<./Figures/DifferentLayers/sunny2_conv3_fm.png, id=816, 596.2275pt x 592.2125pt
 >
 File: ./Figures/DifferentLayers/sunny2_conv3_fm.png Graphic file (type png)
  <use ./Figures/DifferentLayers/sunny2_conv3_fm.png>
@@ -1064,7 +1064,7 @@ Package pdftex.def Info: ./Figures/DifferentLayers/sunny2_conv3_fm.png used on
 input line 167.
 (pdftex.def)             Requested size: 125.24318pt x 124.3954pt.
 
-<./Figures/DifferentLayers/sunny2_conv4_fm.png, id=809, 596.2275pt x 592.2125pt
+<./Figures/DifferentLayers/sunny2_conv4_fm.png, id=817, 596.2275pt x 592.2125pt
 >
 File: ./Figures/DifferentLayers/sunny2_conv4_fm.png Graphic file (type png)
  <use ./Figures/DifferentLayers/sunny2_conv4_fm.png>
@@ -1072,14 +1072,14 @@ Package pdftex.def Info: ./Figures/DifferentLayers/sunny2_conv4_fm.png used on
 input line 173.
 (pdftex.def)             Requested size: 125.24318pt x 124.3954pt.
 
-<./Figures/DifferentLayers/sunny2_conv5_fm.png, id=810, 596.2275pt x 592.2125pt
+<./Figures/DifferentLayers/sunny2_conv5_fm.png, id=818, 596.2275pt x 592.2125pt
 >
 File: ./Figures/DifferentLayers/sunny2_conv5_fm.png Graphic file (type png)
  <use ./Figures/DifferentLayers/sunny2_conv5_fm.png>
 Package pdftex.def Info: ./Figures/DifferentLayers/sunny2_conv5_fm.png used on 
 input line 179.
 (pdftex.def)             Requested size: 125.24318pt x 124.3954pt.
- [32 <./Figures/DifferentLayers/sunny2.png> <./Figures/DifferentLayers/sunny2_c
+ [33 <./Figures/DifferentLayers/sunny2.png> <./Figures/DifferentLayers/sunny2_c
 onv1_fm.png> <./Figures/DifferentLayers/sunny2_conv2_fm.png> <./Figures/Differe
 ntLayers/sunny2_conv3_fm.png> <./Figures/DifferentLayers/sunny2_conv4_fm.png> <
 ./Figures/DifferentLayers/sunny2_conv5_fm.png>]
@@ -1089,7 +1089,7 @@ Package pdftex.def Info: ./Figures/DifferentLayers/sunny2.png used on input lin
 e 197.
 (pdftex.def)             Requested size: 59.62624pt x 59.22472pt.
 
-<./Figures/DifferentLayers/sunny2_caffe_conv1_fm.png, id=829, 596.2275pt x 592.
+<./Figures/DifferentLayers/sunny2_caffe_conv1_fm.png, id=837, 596.2275pt x 592.
 2125pt>
 File: ./Figures/DifferentLayers/sunny2_caffe_conv1_fm.png Graphic file (type pn
 g)
@@ -1098,7 +1098,7 @@ Package pdftex.def Info: ./Figures/DifferentLayers/sunny2_caffe_conv1_fm.png us
 ed on input line 198.
 (pdftex.def)             Requested size: 59.62624pt x 59.22472pt.
 
-<./Figures/DifferentLayers/sunny2_caffe_conv2_fm.png, id=830, 595.22375pt x 591
+<./Figures/DifferentLayers/sunny2_caffe_conv2_fm.png, id=838, 595.22375pt x 591
 .20876pt>
 File: ./Figures/DifferentLayers/sunny2_caffe_conv2_fm.png Graphic file (type pn
 g)
@@ -1107,7 +1107,7 @@ Package pdftex.def Info: ./Figures/DifferentLayers/sunny2_caffe_conv2_fm.png us
 ed on input line 199.
 (pdftex.def)             Requested size: 59.52585pt x 59.12433pt.
 
-<./Figures/DifferentLayers/sunny2_caffe_conv3_fm.png, id=831, 596.2275pt x 592.
+<./Figures/DifferentLayers/sunny2_caffe_conv3_fm.png, id=839, 596.2275pt x 592.
 2125pt>
 File: ./Figures/DifferentLayers/sunny2_caffe_conv3_fm.png Graphic file (type pn
 g)
@@ -1116,7 +1116,7 @@ Package pdftex.def Info: ./Figures/DifferentLayers/sunny2_caffe_conv3_fm.png us
 ed on input line 200.
 (pdftex.def)             Requested size: 59.62624pt x 59.22472pt.
 
-<./Figures/DifferentLayers/sunny2_caffe_conv4_fm.png, id=832, 596.2275pt x 592.
+<./Figures/DifferentLayers/sunny2_caffe_conv4_fm.png, id=840, 596.2275pt x 592.
 2125pt>
 File: ./Figures/DifferentLayers/sunny2_caffe_conv4_fm.png Graphic file (type pn
 g)
@@ -1125,7 +1125,7 @@ Package pdftex.def Info: ./Figures/DifferentLayers/sunny2_caffe_conv4_fm.png us
 ed on input line 201.
 (pdftex.def)             Requested size: 59.62624pt x 59.22472pt.
 
-<./Figures/DifferentLayers/sunny2_caffe_conv5_fm.png, id=833, 596.2275pt x 592.
+<./Figures/DifferentLayers/sunny2_caffe_conv5_fm.png, id=841, 596.2275pt x 592.
 2125pt>
 File: ./Figures/DifferentLayers/sunny2_caffe_conv5_fm.png Graphic file (type pn
 g)
@@ -1175,7 +1175,7 @@ Overfull \hbox (12.18396pt too wide) in paragraph at lines 195--212
  []
 
 
-<./Figures/DifferentLayers/sunny2_hist_caffe_fc7.png, id=834, 592.2125pt x 288.
+<./Figures/DifferentLayers/sunny2_hist_caffe_fc7.png, id=842, 592.2125pt x 288.
 07625pt>
 File: ./Figures/DifferentLayers/sunny2_hist_caffe_fc7.png Graphic file (type pn
 g)
@@ -1184,7 +1184,7 @@ Package pdftex.def Info: ./Figures/DifferentLayers/sunny2_hist_caffe_fc7.png us
 ed on input line 220.
 (pdftex.def)             Requested size: 166.98668pt x 81.22783pt.
 
-<./Figures/DifferentLayers/sunny2_hist_spp_fc7.png, id=835, 592.2125pt x 288.07
+<./Figures/DifferentLayers/sunny2_hist_spp_fc7.png, id=843, 592.2125pt x 288.07
 625pt>
 File: ./Figures/DifferentLayers/sunny2_hist_spp_fc7.png Graphic file (type png)
 
@@ -1193,7 +1193,7 @@ Package pdftex.def Info: ./Figures/DifferentLayers/sunny2_hist_spp_fc7.png used
  on input line 221.
 (pdftex.def)             Requested size: 166.98668pt x 81.22783pt.
 )
-(./Chapters/Chapter5.tex [33 <./Figures/DifferentLayers/sunny2_caffe_conv1_fm.p
+(./Chapters/Chapter5.tex [34 <./Figures/DifferentLayers/sunny2_caffe_conv1_fm.p
 ng> <./Figures/DifferentLayers/sunny2_caffe_conv2_fm.png> <./Figures/DifferentL
 ayers/sunny2_caffe_conv3_fm.png> <./Figures/DifferentLayers/sunny2_caffe_conv4_
 fm.png> <./Figures/DifferentLayers/sunny2_caffe_conv5_fm.png> <./Figures/Differ
@@ -1203,7 +1203,7 @@ Chapter 5.
 ------------------------------------------------------------------------------
  5 Introduction
 ------------------------------------------------------------------------------
-<./Figures/beach.jpg, id=847, 285.065pt x 177.66376pt>
+<./Figures/beach.jpg, id=855, 285.065pt x 177.66376pt>
 File: ./Figures/beach.jpg Graphic file (type jpg)
 
 <use ./Figures/beach.jpg>
@@ -1211,192 +1211,192 @@ Package pdftex.def Info: ./Figures/beach.jpg used on input line 15.
 (pdftex.def)             Requested size: 333.97972pt x 208.15039pt.
 
 
-LaTeX Warning: Reference `tab:MultilabelTable' on page 34 undefined on input li
+LaTeX Warning: Reference `tab:MultilabelTable' on page 35 undefined on input li
 ne 39.
 
-[34
+[35
 
- <./Figures/beach.jpg>] [35] [36] [37] [38] [39] [40] [41] [42])
-(./Chapters/Chapter6.tex [43]
+ <./Figures/beach.jpg>] [36] [37] [38] [39] [40] [41] [42] [43])
+(./Chapters/Chapter6.tex [44]
 Chapter 6.
 ------------------------------------------------------------------------------
  6 Multi-lable Classification Methodology
 ------------------------------------------------------------------------------
-<./Figures/color_wheel.jpg, id=934, 2060.69875pt x 2001.4775pt>
+<./Figures/color_wheel.jpg, id=942, 2060.69875pt x 2001.4775pt>
 File: ./Figures/color_wheel.jpg Graphic file (type jpg)
 
 <use ./Figures/color_wheel.jpg>
 Package pdftex.def Info: ./Figures/color_wheel.jpg used on input line 13.
 (pdftex.def)             Requested size: 206.08194pt x 200.15947pt.
- [44
+ [45
 
  <./Figures/color_wheel.jpg>]
-<./Figures/RGBhist/0.png, id=939, 32.12pt x 32.12pt>
+<./Figures/RGBhist/0.png, id=947, 32.12pt x 32.12pt>
 File: ./Figures/RGBhist/0.png Graphic file (type png)
 
 <use ./Figures/RGBhist/0.png>
 Package pdftex.def Info: ./Figures/RGBhist/0.png used on input line 32.
 (pdftex.def)             Requested size: 83.49333pt x 83.50017pt.
 
-<./Figures/RGBhist/0r.png, id=940, 578.16pt x 433.62pt>
+<./Figures/RGBhist/0r.png, id=948, 578.16pt x 433.62pt>
 File: ./Figures/RGBhist/0r.png Graphic file (type png)
 
 <use ./Figures/RGBhist/0r.png>
 Package pdftex.def Info: ./Figures/RGBhist/0r.png used on input line 33.
 (pdftex.def)             Requested size: 104.36826pt x 78.2732pt.
 
-<./Figures/RGBhist/0g.png, id=941, 578.16pt x 433.62pt>
+<./Figures/RGBhist/0g.png, id=949, 578.16pt x 433.62pt>
 File: ./Figures/RGBhist/0g.png Graphic file (type png)
 
 <use ./Figures/RGBhist/0g.png>
 Package pdftex.def Info: ./Figures/RGBhist/0g.png used on input line 34.
 (pdftex.def)             Requested size: 104.36826pt x 78.2732pt.
 
-<./Figures/RGBhist/0b.png, id=942, 578.16pt x 433.62pt>
+<./Figures/RGBhist/0b.png, id=950, 578.16pt x 433.62pt>
 File: ./Figures/RGBhist/0b.png Graphic file (type png)
 
 <use ./Figures/RGBhist/0b.png>
 Package pdftex.def Info: ./Figures/RGBhist/0b.png used on input line 35.
 (pdftex.def)             Requested size: 104.36826pt x 78.2732pt.
 
-<./Figures/RGBhist/1.png, id=943, 32.12pt x 32.12pt>
+<./Figures/RGBhist/1.png, id=951, 32.12pt x 32.12pt>
 File: ./Figures/RGBhist/1.png Graphic file (type png)
 
 <use ./Figures/RGBhist/1.png>
 Package pdftex.def Info: ./Figures/RGBhist/1.png used on input line 36.
 (pdftex.def)             Requested size: 83.49333pt x 83.50017pt.
 
-<./Figures/RGBhist/1r.png, id=944, 578.16pt x 433.62pt>
+<./Figures/RGBhist/1r.png, id=952, 578.16pt x 433.62pt>
 File: ./Figures/RGBhist/1r.png Graphic file (type png)
 
 <use ./Figures/RGBhist/1r.png>
 Package pdftex.def Info: ./Figures/RGBhist/1r.png used on input line 37.
 (pdftex.def)             Requested size: 104.36826pt x 78.2732pt.
 
-<./Figures/RGBhist/1g.png, id=945, 578.16pt x 433.62pt>
+<./Figures/RGBhist/1g.png, id=953, 578.16pt x 433.62pt>
 File: ./Figures/RGBhist/1g.png Graphic file (type png)
 
 <use ./Figures/RGBhist/1g.png>
 Package pdftex.def Info: ./Figures/RGBhist/1g.png used on input line 38.
 (pdftex.def)             Requested size: 104.36826pt x 78.2732pt.
 
-<./Figures/RGBhist/1b.png, id=946, 578.16pt x 433.62pt>
+<./Figures/RGBhist/1b.png, id=954, 578.16pt x 433.62pt>
 File: ./Figures/RGBhist/1b.png Graphic file (type png)
 
 <use ./Figures/RGBhist/1b.png>
 Package pdftex.def Info: ./Figures/RGBhist/1b.png used on input line 39.
 (pdftex.def)             Requested size: 104.36826pt x 78.2732pt.
 
-<./Figures/RGBhist/2.png, id=947, 32.12pt x 32.12pt>
+<./Figures/RGBhist/2.png, id=955, 32.12pt x 32.12pt>
 File: ./Figures/RGBhist/2.png Graphic file (type png)
 
 <use ./Figures/RGBhist/2.png>
 Package pdftex.def Info: ./Figures/RGBhist/2.png used on input line 40.
 (pdftex.def)             Requested size: 83.49333pt x 83.50017pt.
 
-<./Figures/RGBhist/2r.png, id=948, 578.16pt x 433.62pt>
+<./Figures/RGBhist/2r.png, id=956, 578.16pt x 433.62pt>
 File: ./Figures/RGBhist/2r.png Graphic file (type png)
 
 <use ./Figures/RGBhist/2r.png>
 Package pdftex.def Info: ./Figures/RGBhist/2r.png used on input line 41.
 (pdftex.def)             Requested size: 104.36826pt x 78.2732pt.
 
-<./Figures/RGBhist/2g.png, id=949, 578.16pt x 433.62pt>
+<./Figures/RGBhist/2g.png, id=957, 578.16pt x 433.62pt>
 File: ./Figures/RGBhist/2g.png Graphic file (type png)
 
 <use ./Figures/RGBhist/2g.png>
 Package pdftex.def Info: ./Figures/RGBhist/2g.png used on input line 42.
 (pdftex.def)             Requested size: 104.36826pt x 78.2732pt.
 
-<./Figures/RGBhist/2b.png, id=950, 578.16pt x 433.62pt>
+<./Figures/RGBhist/2b.png, id=958, 578.16pt x 433.62pt>
 File: ./Figures/RGBhist/2b.png Graphic file (type png)
 
 <use ./Figures/RGBhist/2b.png>
 Package pdftex.def Info: ./Figures/RGBhist/2b.png used on input line 43.
 (pdftex.def)             Requested size: 104.36826pt x 78.2732pt.
 
-<./Figures/RGBhist/3.png, id=951, 32.12pt x 32.12pt>
+<./Figures/RGBhist/3.png, id=959, 32.12pt x 32.12pt>
 File: ./Figures/RGBhist/3.png Graphic file (type png)
 
 <use ./Figures/RGBhist/3.png>
 Package pdftex.def Info: ./Figures/RGBhist/3.png used on input line 44.
 (pdftex.def)             Requested size: 83.49333pt x 83.50017pt.
 
-<./Figures/RGBhist/3r.png, id=952, 578.16pt x 433.62pt>
+<./Figures/RGBhist/3r.png, id=960, 578.16pt x 433.62pt>
 File: ./Figures/RGBhist/3r.png Graphic file (type png)
 
 <use ./Figures/RGBhist/3r.png>
 Package pdftex.def Info: ./Figures/RGBhist/3r.png used on input line 45.
 (pdftex.def)             Requested size: 104.36826pt x 78.2732pt.
 
-<./Figures/RGBhist/3g.png, id=953, 578.16pt x 433.62pt>
+<./Figures/RGBhist/3g.png, id=961, 578.16pt x 433.62pt>
 File: ./Figures/RGBhist/3g.png Graphic file (type png)
 
 <use ./Figures/RGBhist/3g.png>
 Package pdftex.def Info: ./Figures/RGBhist/3g.png used on input line 46.
 (pdftex.def)             Requested size: 104.36826pt x 78.2732pt.
 
-<./Figures/RGBhist/3b.png, id=954, 578.16pt x 433.62pt>
+<./Figures/RGBhist/3b.png, id=962, 578.16pt x 433.62pt>
 File: ./Figures/RGBhist/3b.png Graphic file (type png)
 
 <use ./Figures/RGBhist/3b.png>
 Package pdftex.def Info: ./Figures/RGBhist/3b.png used on input line 47.
 (pdftex.def)             Requested size: 104.36826pt x 78.2732pt.
- [45]
-<./Figures/MultiLabelNet.jpeg, id=963, 294.26862pt x 240.9pt>
+ [46]
+<./Figures/MultiLabelNet.jpeg, id=971, 294.26862pt x 240.9pt>
 File: ./Figures/MultiLabelNet.jpeg Graphic file (type jpg)
 
 <use ./Figures/MultiLabelNet.jpeg>
 Package pdftex.def Info: ./Figures/MultiLabelNet.jpeg used on input line 67.
 (pdftex.def)             Requested size: 333.97972pt x 273.42316pt.
- [46 <./Figures/RGBhist/0.png (PNG copy)> <./Figures/RGBhist/0r.png (PNG copy)>
+ [47 <./Figures/RGBhist/0.png (PNG copy)> <./Figures/RGBhist/0r.png (PNG copy)>
  <./Figures/RGBhist/0g.png (PNG copy)> <./Figures/RGBhist/0b.png (PNG copy)> <.
 /Figures/RGBhist/1.png (PNG copy)> <./Figures/RGBhist/1r.png (PNG copy)> <./Fig
 ures/RGBhist/1g.png (PNG copy)> <./Figures/RGBhist/1b.png (PNG copy)> <./Figure
 s/RGBhist/2.png (PNG copy)> <./Figures/RGBhist/2r.png (PNG copy)> <./Figures/RG
 Bhist/2g.png (PNG copy)> <./Figures/RGBhist/2b.png (PNG copy)> <./Figures/RGBhi
 st/3.png (PNG copy)> <./Figures/RGBhist/3r.png (PNG copy)> <./Figures/RGBhist/3
-g.png (PNG copy)> <./Figures/RGBhist/3b.png (PNG copy)>] [47 <./Figures/MultiLa
-belNet.jpeg>] [48] [49] [50] [51] [52]
-[53] <./Figures/multilabel-topology.png, id=1070, 473.77pt x 647.41875pt>
+g.png (PNG copy)> <./Figures/RGBhist/3b.png (PNG copy)>] [48 <./Figures/MultiLa
+belNet.jpeg>] [49] [50] [51] [52] [53]
+[54] <./Figures/multilabel-topology.png, id=1079, 473.77pt x 647.41875pt>
 File: ./Figures/multilabel-topology.png Graphic file (type png)
 
 <use ./Figures/multilabel-topology.png>
 Package pdftex.def Info: ./Figures/multilabel-topology.png used on input line 2
 59.
 (pdftex.def)             Requested size: 333.97972pt x 456.40063pt.
- [54] [55 <./Figures/multilabel-topology.png>]
+ [55] [56 <./Figures/multilabel-topology.png>]
 
 Package caption Warning: \label without proper \caption on input line 290.
 See the caption package documentation for explanation.
 
 
-LaTeX Warning: Reference `tb:MultiLableTestResult' on page 56 undefined on inpu
+LaTeX Warning: Reference `tb:MultiLableTestResult' on page 57 undefined on inpu
 t line 309.
 
-) (./Appendices/AppendixA.tex [56] [57]
+) (./Appendices/AppendixA.tex [57] [58]
 Appendix A.
 ------------------------------------------------------------------------------
  A Appendix Title Here
 ------------------------------------------------------------------------------
-) [58
+) [59
 
 ]
 ------------------------------------------------------------------------------
  Bibliography
 ------------------------------------------------------------------------------
-(./Thesis.bbl [59
+(./Thesis.bbl [60
 
 
-] [60] [61])
+] [61] [62])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 200.
- [62]
+ [63]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 200.
  (./Thesis.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 200.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 200.
 Package rerunfilecheck Info: File `Thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 1BE0A39D33816B5AEB1BE03E7C3BDFD5;11687.
+(rerunfilecheck)             Checksum: 13E5A2A4FD96ABCBE7CB2974A423C97B;11703.
 
 
 LaTeX Warning: There were undefined references.
@@ -1407,10 +1407,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 200.
  ) 
 Here is how much of TeX's memory you used:
- 13971 strings out of 493117
- 203780 string characters out of 6138984
- 270414 words of memory out of 5000000
- 16798 multiletter control sequences out of 15000+600000
+ 13978 strings out of 493117
+ 203892 string characters out of 6138984
+ 270575 words of memory out of 5000000
+ 16801 multiletter control sequences out of 15000+600000
  16377 words of font info for 61 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  49i,15n,45p,1209b,505s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1429,16 +1429,17 @@ type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2014/texmf-dist/fonts/type1/publi
 c/amsfonts/cm/cmr8.pfb><c:/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmr9.pfb><c:/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl12.p
 fb><c:/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/te
-xlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2014
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/texlive/2014/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2014/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmtt10.pfb><c:/texlive/2014/texmf-dist/fonts/type1/pub
-lic/amsfonts/symbols/msam7.pfb><c:/texlive/2014/texmf-dist/fonts/type1/public/a
-msfonts/symbols/msbm10.pfb>
-Output written on Thesis.pdf (75 pages, 4916186 bytes).
+xlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2014
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2014/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/texlive/2014/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2014/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmtt10.pfb><c:/texlive/2014/texmf-dist/fonts/type1/public/amsfon
+ts/symbols/msam7.pfb><c:/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/sy
+mbols/msbm10.pfb>
+Output written on Thesis.pdf (76 pages, 4926953 bytes).
 PDF statistics:
- 1282 PDF objects out of 1440 (max. 8388607)
- 1075 compressed objects within 11 object streams
- 356 named destinations out of 1000 (max. 500000)
+ 1293 PDF objects out of 1440 (max. 8388607)
+ 1084 compressed objects within 11 object streams
+ 360 named destinations out of 1000 (max. 500000)
  867 words of extra memory for PDF output out of 10000 (max. 10000000)
 

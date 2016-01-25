@@ -391,15 +391,30 @@ A scheme, named parameter sharing, is implemented in convolutional layer to limi
 
 \textbf{Fully Connected Layer} takes feature map, which has high level representation, from previous layers. Its difference with convolutional layer is that it connects to all neurons in previous layer instead of a receptive field only.
 
-\section{Spatial Pyramid Match}
+\section{Spatial Pyramid Matching}
 
-Spatial pyramid match\citep{lazebnik2006beyond} is used to classify high-level semantic attributes, based on low-level features. The method subdivides a image in several different levels of resolution and counts features falling in each spatial bin. It extends bags of features and derives spatial information from images.
+Spatial pyramid matching\citep{lazebnik2006beyond} is used to classify high-level semantic attributes, based on low-level features. The method subdivides a image in several different levels of resolution and counts features falling in each spatial bin. It extends bags of features and derives spatial information from images.
 \graphicspath{ {./Figures/} }
 \begin{figure}[!htb]
 \centering
 \includegraphics[width=0.8\textwidth]{spm.jpg}
 \caption{\label{fig:perceptron}Diagram of Spatial Pyramid Match.}
 \end{figure}
+
+Let two sets of vectors $X$ and $Y$ be in a $d$-dimensional feature space. Pyramid matching is used to find the approximate correspondence between them. In brief, pyramid matching places a chain of grids over the feature space and takes sum of number of matches occuring at each level of resolution. The points falling into the same grid are matched and the match points in finer resolutions have higher weights. Specifically, a chain of grids at resolutions $0,\dotso,L$, have $2^0,\dotso,2^L$ cells respectively. $H_{X}^l$ and $H_{Y}^l$ are the histograms of $X$ and $Y$ at $l$ resolution, so that the number of points in the $i$th cell from $X$ and $Y$ can be represented as $H_{X}^l(i)$ and $H_{Y}^l(i)$. The histogram intersection function denotes the number of matches at level $l$
+\begin{equation}\label{eq:HistInterFunc}
+I(H_{X}^l, H_{Y}^l) = \sum_{i=1}^D min(H_{X}^l(i), H_{Y}^l(i))
+\end{equation}
+
+Because the match points found in $l$ level includes the match points found in the finer level $l+1$, the number of new match points at level $l$ is $I^l - I^{l+1}$. The weight assigned to level $l$ is $\frac{1}{2^{L-l}}$. Putting all together, the pyramid match kernel can be represented as
+\begin{eqnarray}\label{eq:PyramidChanMatchKernel}
+  K^L(X,Y) & = & I^L + \sum_{l=0}^{L-1} \frac{1}{2^{L-l}}(I^l-I^{l+1})\\
+ & = & \frac{1}{2^L}I^0 + \sum_{l=1}^{L}\frac{1}{2^{L-l+1}}I^l
+\end{eqnarray}
+Then we perform pyramid matching in $2$-dimensional image space and apply standard vector quantization in the feature space. All feature vectors are quantized into $M$ discrete types and only the same type features match to one another. Two sets of $2$-dimensional vectors, $X_m$ and $Y_m$, represent the coordinate of the features of type $m$ in the individual images. The match kernel of two images is the sum of total channel kernels
+\begin{eqnarray}\label{eq:PyramidMatchKernel}
+  K^L(X,Y) = \sum_{m=1}^{M} K^L(X_m, Y_m)
+\end{eqnarray}
 
 \section{Transfer Learning}
 
