@@ -418,16 +418,26 @@ Then we perform pyramid matching in $2$-dimensional image space and apply standa
 
 \section{Transfer Learning}
 
-In machine learning literature, transfer learning\citep{pan2010survey} focuses on storing knowledge from one domain and applying it to a related problem. It has two benefits. One is saving time to build a model from scratch up. Another is saving effort to collect training data.
+In machine learning literature, transfer learning\citep{pan2010survey} focuses on storing knowledge from one domain and applying it to a related problem. In other words, the relevant knowledge learned from previous tasks can be applied to new tasks. The more related a new job relates to previous knowledge, the more easily it can be solved. In contrast, other machine learning algorithms solve problems independently. 
 
-A domain with two components, a feature space and a marginal probability distribution, can be represented
-\begin{equation}\label{eq:TransLearning}
-D = \{ \chi, P(X) \}
-\end{equation}
-where $\chi$ is feature space and $P(X)$ is the marginal probability distribution. 
+It introduces three benefits. One is saving time to collect training data.  Processed data is expensive. Collecting and processing raw data are time consuming in every learning task. Utilizing existing knowledge, which is extracted from previous learning task, can reduce volume of training dataset significantly. At the same time, one major challenge is to transfer related knowledge and avoid unrelated knowledge between tasks. The other one is saving time to build a model from scratch up. Training a model from scratch up could be a long way. Transfer learning can reduce a lot of training time. The last benefit is to reduce the risk of overfitting. Complicated model with less training data are easily to cause overfitting. Transfer learning method can control it because of existing knowledge.
+
 \graphicspath{ {./Figures/} }
 \begin{figure}[!htb]
 \centering
 \includegraphics[width=0.8\textwidth]{MLvsTL.png}
-\caption{\label{fig:perceptron}Diagram of Transfer Learning.}
+\caption{\label{fig:perceptron}Lef is traditional ML. Right is Transfer Learning.}
 \end{figure}
+
+A domain with two components, a feature space and a marginal probability distribution, can be represented
+\begin{equation}\label{eq:TransLearning}
+D = \{ X, P(X) \}
+\end{equation}
+where $X$ is feature space and $P(X)$ is the marginal probability distribution. 
+
+In transfer learning, there are two main challenges: 
+\begin{enumerate}
+  \item Which part of previous knowledge is useful to new task?
+  \item How to represent existing knowledge in new model
+\end{enumerate}
+The first challenge arise when we evaluate the relation between previous knowledge and current task. The specific knowledge for current tasks can improve the performance. Otherwise, it is useless or even harmful. After discovering the useful knowledge, some learning algorithms should be developed to transfer the knowledge. The leads to the second challenge. Knowledge has different representations. The translation process should keep the accuracy and minimize the loss of knowledge. 
