@@ -32,7 +32,51 @@ The two datasets are different. ImageNet dataset is for object classification an
 
 \section{Data Argument}
 
-The model has about 60 million neurons, and it is essential to avoid overfitting. One of methods is to do data argument. Dataset is artificially enlarged via image transformations and horizontal reflections. For each $256\times256$ image, the network extracts five $224\times224$ patches from four corners and center and reflects them horizontally. Hence, there are 10 patches for 1 image in total. 
+\graphicspath{ {./Figures/} }
+\begin{figure}[!htb]
+    \centering
+    \subfigure[original image]{
+		\begin{minipage}{0.3\textwidth}
+		   		\includegraphics[width=1\textwidth]{crop}
+		   		\label{fig:orig}
+		\end{minipage}
+    	} 
+    \subfigure[cropped from left up]{
+		\begin{minipage}{0.3\textwidth}
+		   		\includegraphics[width=1\textwidth]{cropleftup}
+		   		\label{fig:leftup}
+		\end{minipage}
+    	} 
+    \subfigure[cropped from left down]{
+		\begin{minipage}{0.3\textwidth}
+		   		\includegraphics[width=1\textwidth]{cropleftdown}
+		   		\label{fig:leftdown}
+		\end{minipage}
+    	} 
+    \subfigure[cropped from right up]{
+		\begin{minipage}{0.3\textwidth}
+		   		\includegraphics[width=1\textwidth]{croprightup}
+		   		\label{fig:rightup}
+		\end{minipage}
+    	} 
+    \subfigure[cropped from right down]{
+		\begin{minipage}{0.3\textwidth}
+		   		\includegraphics[width=1\textwidth]{croprightdown}
+		   		\label{fig:rightdown}
+		\end{minipage}
+    	} 
+    \subfigure[cropped from center]{
+		\begin{minipage}{0.3\textwidth}
+		   		\includegraphics[width=1\textwidth]{cropcen}
+		   		\label{fig:cropcen}
+		\end{minipage}
+    	} 
+
+    \caption{A set of cropped patches from original image}%
+
+    \label{fig:dataargument}%
+\end{figure}
+The model has about 60 million neurons, and it is essential to avoid overfitting. One of methods is to do data argument. Dataset is artificially enlarged via image transformations and horizontal reflections. For each $256\times256$ image, the network extracts five $224\times224$ patches from four corners and center and reflects them horizontally. Hence, there are 10 patches for 1 image in total. Figures \ref{fig:dataargument} show the method of data argument.
 % add image examples here
 
 \section{Spatial Pyramid Pooling}
