@@ -11,7 +11,7 @@ To demonstrate the approach, the dataset, named color detector, is created artif
 \begin{figure}[!htb]
 \centering
 \includegraphics[scale=0.1]{color_wheel.jpg}
-\caption{\label{fig:perceptron}Colour Wheel Diagram}
+\caption{\label{fig:ColorWheel}Colour Wheel Diagram}
 \end{figure}
 
 For each sample $x_{i}$, it owns 3 labels ${y_{0},y_{1},y_{2}} y_{j} \in \{-1,1\}$ which represent $red$, $green$ and $blue$ respectively.
@@ -257,7 +257,7 @@ We build a network architecture from scratch up. First, we need do determine how
 \begin{figure}[!htb]
 \centering
 \includegraphics[width=0.8\textwidth]{multilabel-topology.png}
-\caption{\label{fig:perceptron}Network topology for multilable classification.}
+\caption{\label{fig:MLtopology}Network topology for multilable classification.}
 \end{figure}
 Between two fully connected layers, we put a ReLU layer to apply the non-saturating activation function $f(x) = max(0,x)$ which can help the decision function increase the non-linear properties.
 
@@ -285,9 +285,14 @@ The connecting method between different layers is fully connecting because we wa
 
 In training process, the base learning rate is set to $0.0001$. The learning rate of weights is equal to base learning rate while the learning rate of bias double the base learning rate. We set momentum with $0.9$ to smooth the weight updating across iterations so that the learning process will be stable and fast. Weight decay is $0.0005$.
 
+Label-metric is used as evaluation metric. Each label will be counted separately and statistics will be calculated in total. The definitions are described in chapter \ref{Chapter5}.
+
+\subsection{Details of network}
+
+The test results with different number of hidden neurons are showed in table \ref{tb:tMLtestneurons} and figure \ref{fig:MLtestneurons}. Results show that the model with 200 neurons in the hidden layer has the best performance.
 \begin{table}
 \centering
-\begin{tabular}{l*{6}{c}}\label{tb:MultiLableTestResult}
+\begin{tabular}{l*{6}{c}}
 Neuron number              & Sensitivity & Specificity & Harmonic Mean & Precission & F1 Score  \\
 \hline
 4 				& 0.9245 & 0.9552 & 0.9396 & 0.9423 & 0.9333   \\
@@ -302,8 +307,10 @@ Neuron number              & Sensitivity & Specificity & Harmonic Mean & Preciss
 450             & 0.9245 & 0.9701 & 0.9468 & 0.9608 &  0.9423   \\
 500             & 0.9622 & 0.9701 & 0.9662 & 0.9623 &  0.9623   \\
 \end{tabular}
-\caption{Test results for different number of hidden neurons.}
+\caption{\label{tb:tMLtestneurons}Test results for different number of hidden neurons.}
 \end{table}
-Label-metric is used as evaluation metric. Each label will be counted separately and statistics will be calculated in total. The definitions are described in chapter \ref{Chapter5}.
-
-The test results with different number of hidden neurons are showed in the table \ref{tb:MultiLableTestResult}. Results show that the model with 200 neurons in the hidden layer has the best performance.
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.8\textwidth]{MLtestneurons}
+\caption{\label{fig:MLtestneurons}Test results for different number of hidden neurons. Blue circle for Sensitivity. Black plus for Specificity. Cyan star for Harmonic Mean. Red dot for Precission. Green x for  F1 Score.}
+\end{figure}

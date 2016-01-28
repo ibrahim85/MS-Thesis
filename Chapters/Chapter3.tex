@@ -85,7 +85,7 @@ The factors which have effects on scene classification can be any spatial positi
 
 A spatial pyramid pooling layer is deployed behind the fifth convolutional layer. A set of bin sizes are set to discern different size local information from output of the fifth convolutional layer.  A sliding window pooling  is implemented on the feature maps after the fifth convolutional layer. Assuming dimension of feature map is $axa$ and bin size is $n$, each window size is $\lceil a/n \rceil$ and stride size is $\lfloor a/n \rfloor$ where $\lceil \rceil$ and $\lfloor \rfloor$ denote ceiling and flooring operations. For $l$ level pyramid, there are $l$ spatial pyramid pooling layers, The the $l$ layers will be concatenated into a fully connected layer. The bin sizes are 1, 2, 3 and 6.
 
-\begin{figure}[!htb]
+\begin{figure}[htb]
     \centering
 	\includegraphics[width=0.8\textwidth]{sppnet.jpg}
     \caption{Diagram of Spatial Pyramid Pooling layer}%
@@ -97,7 +97,7 @@ With implementing spatial pyramid pooling layers in convolutional neural network
 \section{Convolutional Neural Networks Architecture}
 
 Due to the significant performance of AlexNet \citep{krizhevsky2012imagenet} deep convolutional neural networks, we train a model based on it. The architecture of the network has seven hidden adaptive layers-five convolutional and two fully connected layers.
-\begin{figure}[!htb]
+\begin{figure}[htb]
     \centering
 	\includegraphics[width=0.8\textwidth]{AlexNet.png}
     \caption{Architecture of AlexNet}%

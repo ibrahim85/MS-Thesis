@@ -100,7 +100,7 @@ We have a look for the feature maps of each convolutional layers a cloudy image.
 
 \graphicspath{ {./Figures/DifferentLayers/} }
 
-\begin{figure}[!htb]
+\begin{figure}[htb]
     \centering
     \subfigure[raw image]{
 		\begin{minipage}{0.3\textwidth}
@@ -224,7 +224,7 @@ Image & Conv1 & Conv2 & Conv3 & Conv4 & Conv5  \\ \hline
 	\label{fig:diff_featuremap}%
 \end{figure*}
 
-\begin{figure}[!htb]
+\begin{figure}[htb]
     \centering
 	\includegraphics[width=0.4\textwidth]{sunny2_hist_caffe_fc7.png}
 	\includegraphics[width=0.4\textwidth]{sunny2_hist_spp_fc7.png}
@@ -235,23 +235,10 @@ Image & Conv1 & Conv2 & Conv3 & Conv4 & Conv5  \\ \hline
 From the feature maps and histogram distribution maps, We can find that the outputs are slightly different. The fine tuned model generates smoother histogram distribution. 
 
 \section{Error Results}
-\graphicspath{ {./Figures/} }
-\begin{figure}[!htb]
-    \centering
-	\includegraphics[width=0.4\textwidth]{err_sunny1.jpg}
-	\includegraphics[width=0.4\textwidth]{err_sunny2.jpg}
-	\includegraphics[width=0.4\textwidth]{err_sunny3.jpg}
-	\includegraphics[width=0.4\textwidth]{err_cloudy1.jpg}
-	\includegraphics[width=0.4\textwidth]{err_cloudy2.jpg}
-	\includegraphics[width=0.4\textwidth]{err_cloudy3.jpg}
-    \caption{Finetune Process}%
-    \label{fig:FTvsSC}%
-\end{figure}
 
-
-Although the accuracy is high, there are still some misclassification.
+The images \ref{fig:Misclassification} are misclassified. They are hard to judge sunny or cloudy, even for human being.
 \graphicspath{ {./Figures/} }
-\begin{figure}[!htb]
+\begin{figure}[htb]
     \centering
     \subfigure[sunny]{
 		\begin{minipage}{0.3\textwidth}
@@ -289,8 +276,6 @@ Although the accuracy is high, there are still some misclassification.
 		   		\label{fig:sunny_conv5}
 		\end{minipage}
     	} 
-
-    \caption{Misclassification images. Up side is sunny, and down side is cloudy.}%
-
+    \caption{Misclassified images}%
     \label{fig:Misclassification}%
 \end{figure}
