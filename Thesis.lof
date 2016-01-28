@@ -48,15 +48,23 @@
 \contentsline {subfigure}{\numberline {(f)}{\ignorespaces {conv5 output}}}{35}{figure.caption.136}
 \contentsline {figure}{\numberline {4.6}{\ignorespaces Visiualization of feature maps outputs between original CNN model and CNN-SPP model. The upper images are from original model and the lower images are from fine tuned model\relax }}{36}{figure.caption.144}
 \contentsline {figure}{\numberline {4.7}{\ignorespaces Histogram distribution of vectors from FC7. Left one is from CNN model and right one is from finetuned model\relax }}{36}{figure.caption.145}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Finetune Process\relax }}{37}{figure.caption.147}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Misclassification images. Up side is sunny, and down side is cloudy.\relax }}{38}{figure.caption.148}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {sunny}}}{38}{figure.caption.148}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {sunny}}}{38}{figure.caption.148}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {sunny}}}{38}{figure.caption.148}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {cloudy}}}{38}{figure.caption.148}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {cloudy}}}{38}{figure.caption.148}
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {cloudy}}}{38}{figure.caption.148}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Example Image\relax }}{37}{figure.caption.148}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Example Image\relax }}{39}{figure.caption.157}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Colour Wheel Diagram\relax }}{47}{figure.caption.185}
-\contentsline {figure}{\numberline {6.2}{\ignorespaces A multilabel sample and RGB color histograms. Three labels mean red, green and blue. \relax }}{49}{figure.caption.188}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Label:1 -1 1}}}{49}{figure.caption.188}
-\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {Label:1 1 -1}}}{49}{figure.caption.188}
-\contentsline {subfigure}{\numberline {(i)}{\ignorespaces {Label:-1 1 -1}}}{49}{figure.caption.188}
-\contentsline {subfigure}{\numberline {(m)}{\ignorespaces {Label:-1 -1 1}}}{49}{figure.caption.188}
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Network Topology For Multi-lable classification\relax }}{50}{figure.caption.207}
-\contentsline {figure}{\numberline {6.4}{\ignorespaces Network topology for multilable classification.\relax }}{58}{figure.caption.243}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Colour Wheel Diagram\relax }}{49}{figure.caption.194}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces A multilabel sample and RGB color histograms. Three labels mean red, green and blue. \relax }}{51}{figure.caption.197}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Label:1 -1 1}}}{51}{figure.caption.197}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {Label:1 1 -1}}}{51}{figure.caption.197}
+\contentsline {subfigure}{\numberline {(i)}{\ignorespaces {Label:-1 1 -1}}}{51}{figure.caption.197}
+\contentsline {subfigure}{\numberline {(m)}{\ignorespaces {Label:-1 -1 1}}}{51}{figure.caption.197}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Network Topology For Multi-lable classification\relax }}{52}{figure.caption.216}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Network topology for multilable classification.\relax }}{60}{figure.caption.252}
 \addvspace {10\p@ }
