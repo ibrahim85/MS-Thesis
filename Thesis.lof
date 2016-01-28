@@ -31,31 +31,32 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Finetune Process\relax }}{32}{figure.caption.125}
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Finetune Process\relax }}{32}{figure.caption.126}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces A cloudy image and outputs of convolutional layers\relax }}{33}{figure.caption.128}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {raw image}}}{33}{figure.caption.128}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {conv1 output}}}{33}{figure.caption.128}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {conv2 output}}}{33}{figure.caption.128}
-\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {conv3 output}}}{33}{figure.caption.128}
-\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {conv4 output}}}{33}{figure.caption.128}
-\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {conv5 output}}}{33}{figure.caption.128}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces A sunny image and outputs of convolutional layers\relax }}{34}{figure.caption.135}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {raw image}}}{34}{figure.caption.135}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {conv1 output}}}{34}{figure.caption.135}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {conv2 output}}}{34}{figure.caption.135}
-\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {conv3 output}}}{34}{figure.caption.135}
-\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {conv4 output}}}{34}{figure.caption.135}
-\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {conv5 output}}}{34}{figure.caption.135}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Visiualization of feature maps outputs between original CNN model and CNN-SPP model. The upper images are from original model and the lower images are from fine tuned model\relax }}{35}{figure.caption.143}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Histogram distribution of vectors from FC7. Left one is from CNN model and right one is from finetuned model\relax }}{35}{figure.caption.144}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces ROC Curve\relax }}{33}{figure.caption.127}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces A cloudy image and outputs of convolutional layers\relax }}{34}{figure.caption.129}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {raw image}}}{34}{figure.caption.129}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {conv1 output}}}{34}{figure.caption.129}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {conv2 output}}}{34}{figure.caption.129}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {conv3 output}}}{34}{figure.caption.129}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {conv4 output}}}{34}{figure.caption.129}
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {conv5 output}}}{34}{figure.caption.129}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces A sunny image and outputs of convolutional layers\relax }}{35}{figure.caption.136}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {raw image}}}{35}{figure.caption.136}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {conv1 output}}}{35}{figure.caption.136}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {conv2 output}}}{35}{figure.caption.136}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {conv3 output}}}{35}{figure.caption.136}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {conv4 output}}}{35}{figure.caption.136}
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {conv5 output}}}{35}{figure.caption.136}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Visiualization of feature maps outputs between original CNN model and CNN-SPP model. The upper images are from original model and the lower images are from fine tuned model\relax }}{36}{figure.caption.144}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Histogram distribution of vectors from FC7. Left one is from CNN model and right one is from finetuned model\relax }}{36}{figure.caption.145}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Example Image\relax }}{36}{figure.caption.147}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Example Image\relax }}{37}{figure.caption.148}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Colour Wheel Diagram\relax }}{46}{figure.caption.184}
-\contentsline {figure}{\numberline {6.2}{\ignorespaces A multilabel sample and RGB color histograms. Three labels mean red, green and blue. \relax }}{48}{figure.caption.187}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Label:1 -1 1}}}{48}{figure.caption.187}
-\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {Label:1 1 -1}}}{48}{figure.caption.187}
-\contentsline {subfigure}{\numberline {(i)}{\ignorespaces {Label:-1 1 -1}}}{48}{figure.caption.187}
-\contentsline {subfigure}{\numberline {(m)}{\ignorespaces {Label:-1 -1 1}}}{48}{figure.caption.187}
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Network Topology For Multi-lable classification\relax }}{49}{figure.caption.206}
-\contentsline {figure}{\numberline {6.4}{\ignorespaces Network topology for multilable classification.\relax }}{57}{figure.caption.242}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Colour Wheel Diagram\relax }}{47}{figure.caption.185}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces A multilabel sample and RGB color histograms. Three labels mean red, green and blue. \relax }}{49}{figure.caption.188}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Label:1 -1 1}}}{49}{figure.caption.188}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {Label:1 1 -1}}}{49}{figure.caption.188}
+\contentsline {subfigure}{\numberline {(i)}{\ignorespaces {Label:-1 1 -1}}}{49}{figure.caption.188}
+\contentsline {subfigure}{\numberline {(m)}{\ignorespaces {Label:-1 -1 1}}}{49}{figure.caption.188}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Network Topology For Multi-lable classification\relax }}{50}{figure.caption.207}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Network topology for multilable classification.\relax }}{58}{figure.caption.243}
 \addvspace {10\p@ }
