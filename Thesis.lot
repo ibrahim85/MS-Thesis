@@ -5,7 +5,7 @@
 \addvspace {10\p@ }
 \contentsline {table}{\numberline {4.1}{\ignorespaces CNN means with original trained model, SPP means model deployed with spatial pyramid pooling layer\relax }}{31}{table.caption.124}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {5.1}{\ignorespaces Multilabel $Y_{1},...,Y_{L} \in 2^L$\relax }}{39}{table.caption.157}
+\contentsline {table}{\numberline {5.1}{\ignorespaces Multilabel $Y_{1},...,Y_{L} \in 2^L$\relax }}{39}{table.caption.158}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {6.1}{\ignorespaces Test results for different number of hidden neurons.\relax }}{61}{table.caption.263}
+\contentsline {table}{\numberline {6.1}{\ignorespaces Test results for different number of hidden neurons.\relax }}{61}{table.caption.264}
 \addvspace {10\p@ }

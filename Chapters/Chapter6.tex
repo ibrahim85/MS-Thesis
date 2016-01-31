@@ -287,9 +287,9 @@ In training process, the base learning rate is set to $0.0001$. The learning rat
 
 Label-metric is used as evaluation metric. Each label will be counted separately and statistics will be calculated in total. The definitions are described in chapter \ref{Chapter5}.
 
-\subsection{Details of network}
+\subsection{Results}
 
-The test results with different number of hidden neurons are showed in table \ref{tb:tMLtestneurons} and figure \ref{fig:MLtestneurons}. Results show that the model with 200 neurons in the hidden layer has the best performance.
+In this section, we present the results of experiments. The test results with different number of hidden neurons are showed in table \ref{tb:tMLtestneurons} and figure \ref{fig:MLtestneurons}. Results show that the model with 200 neurons in the hidden layer has the best performance.
 \begin{table}
 \centering
 \begin{tabular}{l*{6}{c}}
@@ -315,15 +315,23 @@ Neuron number              & Sensitivity & Specificity & Harmonic Mean & Preciss
 \caption{\label{fig:MLtestneurons}Test results for different number of hidden neurons. Blue circle for Sensitivity. Black plus for Specificity. Cyan star for Harmonic Mean. Red dot for Precission. Green x for  F1 Score.}
 \end{figure}
 
-The ROC curve\ref{fig:MLROCCurve} \ref{fig:MLROCCurveExt} for multilabel classification shows that average accuracy is high. In details, accuracy on label $0$(red) and label $1$(green) are higher than label $2$(blue).
+The table\ref{tb:tMLtestneurons} and figure \ref{fig:MLtestneurons} show that the network with $200$ neurons has the best performance.
+
+The ROC curve\ref{fig:MLROCCurve} \ref{fig:MLROCCurveExt} for multilabel classification shows that average accuracy is high. In details, the micro-accuracy for label $0$(red) is the highest, followed by accuracies for label $1$(green) and label $2$(blue). 
 \begin{figure}[htb]
 \centering
 \includegraphics[width=0.8\textwidth]{ROCMultilabel}
-\caption{\label{fig:MLROCCurve}}
+\caption{\label{fig:MLROCCurve}ROC curve for 200 hidden neurons}
 \end{figure}
 
 \begin{figure}[htb]
 \centering
 \includegraphics[width=0.8\textwidth]{ROCMultilabelExt}
-\caption{\label{fig:MLROCCurveExt}}
+\caption{\label{fig:MLROCCurveExt}ROC curve for 200 hidden neurons}
 \end{figure}
+
+\section{Conclusion and Future Work}
+
+We have presented a learning approach to classify two types of weather. The simple two type weather classification is not trivial at given diversity of outdoor images. The contribution is that model avoids human being common senses in judging weather conditions, instead of feature maps understood by neural networks. Experimental results proves that this is an effective and inspiring method that can be deployed in related tasks.
+
+The project show high performance of neural network in classifying a single weather image. However, it is far from solving weather classification including other conditions, like rain, fog, storm. And the question why convolutional neural network works is still a puzzle. The two tasks need more research. We hope the project can help attract interest and following work on the subject.
