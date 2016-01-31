@@ -4,11 +4,15 @@ specificity = [0.9552,0.9701,0.9701,0.9552,1.0,1.0,0.9701,0.9701,0.9701,0.9701,0
 harm = [0.9396,0.9468,0.9662,0.9298,0.9905,0.9709,0.9756,0.9566,0.9266,0.9468,0.9662];
 preci = [0.9423,0.9608,0.9623,0.9412,1.0,1.0,0.9630,0.9615,0.9592,0.9608,0.9623];
 f1 = [0.9333,0.9423,0.9623,0.9231,0.9905,0.9709,0.9720,0.9524,0.9216,0.9423,0.9623];
+fig = figure;
 
 plot(x,sensitivity,'--bo',x,specificity,'--k+',x,harm,'--c*',x,preci,'--r.',x,f1,'--gx');
-title('Test results')
+title('Multilabel Test Results')
 xlabel('Neuron numbers')
+ylabel('Accuracy')
+axis([0 550 0.85 1.05])
 set(0,'DefaultFigureMenu','none');
+print(fig,'MLtestneurons','-dpng')
 %{
 x=(0:10);
 y1=[1.21, 1.13, 1.15, 1.13, 1.14, 1.15, 1.16, 1.12, 1.18, 1.13];  
