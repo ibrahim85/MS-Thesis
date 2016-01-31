@@ -317,6 +317,13 @@ Neuron number              & Sensitivity & Specificity & Harmonic Mean & Preciss
 
 The table\ref{tb:tMLtestneurons} and figure \ref{fig:MLtestneurons} show that the network with $200$ neurons has the best performance.
 
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.8\textwidth]{MLLearningRates}
+\caption{\label{fig:MLLearningRates}Learning speed for 200 neurons in the hidden layer. Blue circle for Sensitivity. Black plus for Specificity. Cyan star for Harmonic Mean. Red dot for Precission. Green x for  F1 Score.}
+\end{figure}
+The learning speed \ref{fig:MLLearningRates}is quick. After reaching high accuracy, the model keeps stable. 
+
 The ROC curve\ref{fig:MLROCCurve} \ref{fig:MLROCCurveExt} for multilabel classification shows that average accuracy is high. In details, the micro-accuracy for label $0$(red) is the highest, followed by accuracies for label $1$(green) and label $2$(blue). 
 \begin{figure}[htb]
 \centering
