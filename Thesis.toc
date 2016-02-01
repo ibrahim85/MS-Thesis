@@ -15,7 +15,7 @@
 \contentsline {section}{\numberline {1.4}Weather Classification}{3}{section.21}
 \contentsline {chapter}{\numberline {2}Background}{5}{chapter.22}
 \contentsline {section}{\numberline {2.1}Related Work}{5}{section.23}
-\contentsline {section}{\numberline {2.2}Single-Layer Networks}{5}{section.24}
+\contentsline {section}{\numberline {2.2}Single-Layer Networks}{6}{section.24}
 \contentsline {section}{\numberline {2.3}Multi-Layer Networks}{9}{section.43}
 \contentsline {section}{\numberline {2.4}Stochastic Gradient Descent}{12}{section.51}
 \contentsline {section}{\numberline {2.5}Backpropagation}{12}{section.54}

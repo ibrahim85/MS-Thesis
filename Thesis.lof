@@ -6,11 +6,11 @@
 \contentsline {figure}{\numberline {2.4}{\ignorespaces Sigmoid function\relax }}{7}{figure.caption.32}
 \contentsline {figure}{\numberline {2.5}{\ignorespaces Tanh function\relax }}{8}{figure.caption.34}
 \contentsline {figure}{\numberline {2.6}{\ignorespaces Error surface for a single layer neural network. Source: Internet\relax }}{9}{figure.caption.39}
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Two types of dataset. Left one can be separated by a single layer neural network. Right one cannot be separated by a single neural network.\relax }}{9}{figure.caption.40}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Two types of dataset. The left one can be separated by a single layer neural network. The right one cannot be separated by a single neural network.\relax }}{9}{figure.caption.40}
 \contentsline {figure}{\numberline {2.8}{\ignorespaces Diagram of a feedford neural networks.\relax }}{10}{figure.caption.44}
 \contentsline {figure}{\numberline {2.9}{\ignorespaces Error surface for a multilayer neural network. Source: Internet\relax }}{11}{figure.caption.49}
 \contentsline {figure}{\numberline {2.10}{\ignorespaces A multilayer neural network can separate a complicated dataset. Source: Internet\relax }}{11}{figure.caption.50}
-\contentsline {figure}{\numberline {2.11}{\ignorespaces Overfitting example, left one has a decent generalization performance and right one is overfitting.\relax }}{14}{figure.caption.61}
+\contentsline {figure}{\numberline {2.11}{\ignorespaces Overfitting example, the left one has a decent generalization performance and the right one is overfitting.\relax }}{14}{figure.caption.61}
 \contentsline {figure}{\numberline {2.12}{\ignorespaces Illustration of dropout \citep {srivastava2014dropout}.\relax }}{16}{figure.caption.68}
 \contentsline {figure}{\numberline {2.13}{\ignorespaces Left is a fully connect regular neural network. Right is a CNN in 3 dimensions.\relax }}{19}{figure.caption.83}
 \contentsline {figure}{\numberline {2.14}{\ignorespaces Diagram for depth in convolutional layer\relax }}{20}{figure.caption.89}

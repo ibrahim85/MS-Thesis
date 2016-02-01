@@ -16,7 +16,7 @@ In experiment, a subset of ImageNet dataset, which contains 1.2 million labelled
 f(x) = max(0, x)
 \end{equation}
 
-The network model \ref{eq:NetPara} is trained with stochastic gradient descent as backpropagation learning rule, with a batch size of 128, and momentum of 0.9. The weights are initialized from a $0$ mean Gaussian distribution with standard deviation 0.01 in each layer. The neuron biases, in the $Conv_{2}$, $Conv_{4}$, $Conv_{5}$ and fully connected layers, are initialized with the constant 1, while biases in other layers are initialized with constant 0.
+The network model \ref{fig:ImageNetArch} is trained with stochastic gradient descent as backpropagation learning rule, with a batch size of 128, and momentum of 0.9. The weights are initialized from a $0$ mean Gaussian distribution with standard deviation 0.01 in each layer. The neuron biases, in the $Conv_{2}$, $Conv_{4}$, $Conv_{5}$ and fully connected layers, are initialized with the constant 1, while biases in other layers are initialized with constant 0.
 
 The learning rates are set equally for all layers. It was initialized at 0.01 and decreases with stepdown policy which means that it would drop by a factor of 10 after 100000 iteration. In total, the learning rate drops 3 times and accuracy stops after 370K iterations. 
 
