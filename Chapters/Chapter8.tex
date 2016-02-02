@@ -1,0 +1,118 @@
+% Chapter 8
+
+\chapter{Experiment} % Write in your own chapter title
+\label{Chapter8}
+\lhead{Chapter 8. \emph{Experiment}}
+
+We use the identical hardware and software environment as described in weather classification project.
+
+\section{Dataset}
+
+We generate $1000$ raw RGB images with size $16x16$ automatically. $40$ images are reserved for testing and $960$ images are used for training. Each image has $3$ labels $y_i \in (-1, 1)$ representing three attributes, red, green and blue. If the image has the color attribute, the corresponding label is $1$, otherwise $-1$.
+
+\section{Details of network}
+
+We build a network architecture from scratch up. First, we need do determine how many layers needs to construct a multilayer network. In \cite{lippmann1987introduction}, Lippmann has proved that two hidden layers are able to create classification regions of arbitrary desired shape. However, Kolmogorov \citep{kolmogorov1963representation} showed that the superposition of continuous one-dimensional function can represent a continuous function with several variables. Then we set up a neural network with one fully connected hidden layer between input and output layers.
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.8\textwidth]{multilabel-topology.png}
+\caption{\label{fig:MLtopology}Network topology for multilable classification.}
+\end{figure}
+Between two fully connected layers, we put a ReLU layer to apply the non-saturating activation function $f(x) = max(0,x)$ which can help the decision function increase the non-linear properties.
+
+Then we need to determine how many neurons need in the hidden layer. The number of neurons in the hidden layer depends mainly on
+\begin{enumerate}
+  \item number of input and output neurons
+  \item number of training samples
+  \item network architecture
+  \item training algorithms
+  \item type of activation function
+  \item regularization
+\end{enumerate}
+In general, it is hard to determine the best number of hidden neurons without evaluating several trained models and comparing the generalization error rates among the models. Lack of hidden neurons will lead to high training error and poor generalization performance because of underfitting and high bias. On the other hand, exceeding neuron number will achieve low training error but still poor generalization performance because of overfitting and high variance. One of crucial considerations is to evaluate hidden neuron effects on the bias/variance trade-off.
+
+There are many rules of thumb to determine the number of hidden neurons \citep{heaton2008introduction} such as
+\begin{enumerate}
+  \item The number should between the size of input layer and output layer.
+  \item The number should be $\frac{2}{3}$ of the sum of the input neurons plus the output neurons.
+  \item The number should be less than twice the size of the input layer.
+  \item Based on geometric pyramid rule, the number should between the number of input neurons and the output neurons.
+\end{enumerate}
+It is time-consuming to find the optimal number of hidden neurons. We will start from a number of neurons which is small and increase the number gradually by evaluating the performance of the network.
+
+The connecting method between different layers is fully connecting because we want to find which color label owned by each image in this case. The information of each color distributes evenly in each patch of images. The value of the weights and bias is initialized randomly. For weights, $xavier$ algorithm is applied to determine the scale of initialization depending on the number of input and output neurons. The bias is simply initialized as constant, default as $0$. The batch size is set to $40$ means that there are $40$ images feeding into neural network each time.
+
+In training process, the base learning rate is set to $0.0001$. The learning rate of weights is equal to base learning rate while the learning rate of bias double the base learning rate. We set momentum with $0.9$ to smooth the weight updating across iterations so that the learning process will be stable and fast. Weight decay is $0.0005$.
+
+Label-metric is used as evaluation metric. Each label will be counted separately and statistics will be calculated in total. The definitions are described in chapter \ref{Chapter5}.
+
+\section{Results}
+
+In this section, we present the results of experiments. The test results with different number of hidden neurons are showed in table \ref{tb:tMLtestneurons} and figure \ref{fig:MLtestneurons}. Results show that the model with 200 neurons in the hidden layer has the best performance.
+\begin{table}
+\centering
+\begin{tabular}{l*{6}{c}}
+Neuron number              & Sensitivity & Specificity & Harmonic Mean & Precission & F1 Score  \\
+\hline
+4 				& 0.9245 & 0.9552 & 0.9396 & 0.9423 & 0.9333   \\
+50              & 0.9245 & 0.9701 & 0.9468 & 0.9608 & 0.9423   \\
+100             & 0.9623 & 0.9701 & 0.9662 & 0.9623 &  0.9623  \\
+150             & 0.9057 & 0.9552 & 0.9298 & 0.9412 &  0.9231   \\
+200             & 0.9811 & 1.0000 & 0.9905 & 1.0000 &  0.9905   \\
+250             & 0.9434 & 1.0000 & 0.9709 & 1.0000 &  0.9709   \\
+300             & 0.9811 & 0.9701 & 0.9756 & 0.9630 &  0.9720   \\
+350             & 0.9434 & 0.9701 & 0.9566 & 0.9615 &  0.9524   \\
+400             & 0.8868 & 0.9701 & 0.9266 & 0.9592 &  0.9216   \\
+450             & 0.9245 & 0.9701 & 0.9468 & 0.9608 &  0.9423   \\
+500             & 0.9622 & 0.9701 & 0.9662 & 0.9623 &  0.9623   \\
+\end{tabular}
+\caption{\label{tb:tMLtestneurons}Test results for different number of hidden neurons.}
+\end{table}
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.8\textwidth]{MLtestneurons}
+\caption{\label{fig:MLtestneurons}Test results for different number of hidden neurons. Blue circle for Sensitivity. Black plus for Specificity. Cyan star for Harmonic Mean. Red dot for Precission. Green x for  F1 Score.}
+\end{figure}
+
+The table\ref{tb:tMLtestneurons} and figure \ref{fig:MLtestneurons} show that the network with $200$ neurons has the best performance.
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.8\textwidth]{MLLearningRates}
+\caption{\label{fig:MLLearningRates}Learning speed for 200 neurons in the hidden layer. Blue circle for Sensitivity. Black plus for Specificity. Cyan star for Harmonic Mean. Red dot for Precission. Green x for  F1 Score.}
+\end{figure}
+The learning speed \ref{fig:MLLearningRates}is quick. After reaching high accuracy, the model keeps stable. 
+
+The ROC curve\ref{fig:MLROCCurve} \ref{fig:MLROCCurveExt} for multilabel classification shows that average accuracy is high. In details, the micro-accuracy for label $0$(red) is the highest, followed by accuracies for label $1$(green) and label $2$(blue). 
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.8\textwidth]{ROCMultilabel}
+\caption{\label{fig:MLROCCurve}ROC curve for 200 hidden neurons}
+\end{figure}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.8\textwidth]{ROCMultilabelExt}
+\caption{\label{fig:MLROCCurveExt}ROC curve for 200 hidden neurons}
+\end{figure}
+
+\section{Conclusion and Future Work}
+
+We have presented a learning approach to classify two types of weather. The simple two type weather classification is not trivial at given diversity of outdoor images. The contribution is that model avoids human being common senses in judging weather conditions, instead of feature maps understood by neural networks. Experimental results proves that this is an effective and inspiring method that can be deployed in related tasks.
+
+The project show high performance of neural network in classifying a single weather image. However, it is far from solving weather classification including other conditions, like rain, fog, storm. And the question why convolutional neural network works is still a puzzle. The two tasks need more research. We hope the project can help attract interest and following work on the subject.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

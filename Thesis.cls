@@ -153,10 +153,10 @@
 \university  {\texorpdfstring{\href{University Web Site URL Here (include http://)}
                 {University Name}}
                 {University Name}}
-\UNIVERSITY  {\texorpdfstring{\href{University Web Site URL Here (include http://)}
+\UNIVERSITY  {\texorpdfstring{{}
                 {University of Adelaide}}
                 {University of Adelaide}}
-\department  {\texorpdfstring{\href{Department or School Web Site URL Here (include http://)}
+\department  {\texorpdfstring{{}
                 {School of Computer Science}}
                 {Department or School Name}}
 \DEPARTMENT  {\texorpdfstring{\href{Department or School Web Site URL Here (include http://)}
@@ -168,9 +168,9 @@
 \GROUP       {\texorpdfstring{\href{Research Group Web Site URL Here (include http://)}
                 {RESEARCH GROUP NAME (IN BLOCK CAPITALS)}}
                 {RESEARCH GROUP NAME (IN BLOCK CAPITALS)}}
-\faculty     {\texorpdfstring{\href{Faculty Web Site URL Here (include http://)}
-                {Chunhua Shen}}
-                {Javen Shi}}
+\faculty     {\texorpdfstring{{}
+                {Chunhua Shen and Javen Shi}}
+                {}}
 \FACULTY     {\texorpdfstring{\href{Faculty Web Site URL Here (include http://)}
                 {FACULTY NAME (IN BLOCK CAPITALS)}}
                 {FACULTY NAME (IN BLOCK CAPITALS)}}
@@ -205,7 +205,7 @@
       {\large degree of Master \par}
       \bigskip
       \bigskip
-      {\large in the \par}
+      {\large Under Supervised by \par}
       {\large \facname \par}
       {\large \deptname \par}
       \bigskip

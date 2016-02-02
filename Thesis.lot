@@ -7,5 +7,7 @@
 \addvspace {10\p@ }
 \contentsline {table}{\numberline {5.1}{\ignorespaces Multilabel $Y_{1},...,Y_{L} \in 2^L$\relax }}{39}{table.caption.157}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {6.1}{\ignorespaces Test results for different number of hidden neurons.\relax }}{61}{table.caption.263}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {8.1}{\ignorespaces Test results for different number of hidden neurons.\relax }}{62}{table.caption.264}
 \addvspace {10\p@ }
