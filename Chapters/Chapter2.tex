@@ -145,7 +145,7 @@ There are some choices for activation functions, sigmoid and tanh are related an
 \begin{equation}\label{eq:sigmoid}
 f(x) = \frac{1}{1+e^{-x}}
 \end{equation}
-Its outputs lie in range $(0,1)$. We can do a linear transformation $\hat{x}=x/2$ on input data and a linear transformation $hat{y}=2y-1$ on the output. Then we can get an equivalent activation function tanh which can be represented as
+Its outputs lie in range $(0,1)$. We can do a linear transformation $hat{x}=x/2$ on input data and a linear transformation $hat{y}=2y-1$ on the output. Then we can get an equivalent activation function tanh which can be represented as
 \begin{equation}\label{eq:tanh}
 f(x) = tanh(x) = \frac{e^{x}-e^{-x}}{e^{x}+e^{-x}}
 \end{equation}
@@ -270,19 +270,19 @@ At the testing stage, there is no dropout applied and all neurons are active. Th
 
 \section{Softmax classifier}
 
-Softmax function, also named normalized exponential, is a generalization of logistic function which squeezes a $d$ dimensional arbitrary real values vector to a $d$ dimensional vector of real values in the range $(0,1)$ that add up to 1. Because the softmax function is the gradient log normalizer of categorical probability distribution, it can be used in probabilistic multiclass classification methods.
+The softmax function, also named normalized exponential, is a generalisation of logistic function which squeezes a $d$ dimensional arbitrary real values vector to a $d$ dimensional vector of real values in the range $(0,1)$ that add up to 1. Because the softmax function is the gradient log normalizer of categorical probability distribution, it can be used in probabilistic multiclass classification methods.
 
 The softmax function derives from log linear models and interprets the weights in terms of convenient odds ratios. We can constrain the layer input to the output neurons to be positive and divide by the sum.
 
-The softmax layer begins the same way as normal layer which forms the weighted inputs $z^L_j = \sum_{k} w^L_{jk} x^{L-1}_k + b^L_j$ where $L$ is layer number, $k$ is input data number and $j$ is output neuron number. Then it implements a softmax function to the $z^L_j$ and the activation $a^L_j$ of the $j$ output neuron is
+The softmax layer begins the same way as the normal layer which forms the weighted inputs $z^L_j = \sum_{k} w^L_{jk} x^{L-1}_k + b^L_j$ where $L$ is the layer number, $k$ is the input data number and $j$ is the output neuron number. It, then, implements a softmax function to the $z^L_j$ and activates the $j$ output neuron:
 \begin{equation}\label{eq:SoftmaxActivation}
 f_j(z) = \frac{e^{z_j}}{\sum_k e^{z_k}}
 \end{equation}
 The equation \ref{eq:SoftmaxActivation} implies that the output values are all positive and the sum of all values $\sum_k a_k$ is $1$.
 
-Softmax classifier is used to handle a multiclass classification. For a training dataset $(x_{1}, y_{1}), \ldots, (x_{m}, y_{m}), y_{i} \in \{1, 2, \ldots, K\} $ of $m$ labelled examples, label $y$ can have $K$ different values.
+The softmax classifier is used to handle a multiclass classification. For a training dataset $(x_{1}, y_{1}), \ldots, (x_{m}, y_{m}), y_{i} \in \{1, 2, \ldots, K\} $ of $m$ labelled examples, the label $y$ can have $K$ different values.
 
-Suppose to predict an unseen sample $x$, we will use hypothesis to estimate the probability $P(y=k | x)$ for each value $k = 1, \ldots, K$. For example, we want to compute the probability of the class label on each of $K$ different possible values. Then the neural network will output a $K$ dimensional vectors which represent $K$ estimated probabilities. 
+To an unseen sample $x$, we will use a hypothesis to estimate the probability $P(y=k | x)$ for each value $k = 1, \ldots, K$. For example, we want to compute the probability of the class label on each of $K$ different possible values. The neural network will then output a $K$ dimensional vector which represents $K$ estimated probabilities. 
 %\begin{equation}\label{eq:SoftmaxPostPro}
 \begin{align}
 h_{W}(x) =
@@ -302,29 +302,29 @@ P(y = K | x; W)
 \end{bmatrix}
 \end{align}
 %\end{equation}
-Where $W^{j}$ are the weights of the model and the normalized distribution ensures that the sum is one.
+Where $W^{j}$ are the weights of the model and the normalised distribution ensures that the sum is one.
 
-On the one hand, cross entropy can be used to interpreted softmax classifier. The cross entropy between actual  distribution $p$ and a predicted distribution $q$ is represented as
+On the one hand, cross entropy can be used to interpret softmax classifier. The cross entropy between actual  distribution $p$ and a predicted distribution $q$ is represented as
 \begin{equation}\label{eq:CrossEntropyDiff}
 H(p,q) = - \sum_x p(x) \log q(x)
 \end{equation}
-Hence, the task of softmax classifier is to minimize the cross entropy between the actual distribution and the predicted distribution. 
+Hence, the task of the softmax classifier is to minimise the cross entropy between the actual distribution and the predicted distribution. 
 
-On the other hand, softmax classifier can be interpreted in probability view. Given a sample $(x_i, y_i)$ and parameters $W$, we can compute the normalized probability by
+On the other hand, the softmax classifier can be interpreted in probability view. Given a sample $(x_i, y_i)$ and parameters $W$, we can compute the normalised probability:
 \begin{equation}\label{eq:ProbInter}
 P(y_i \mid x_i; W) = \frac{e^{f_{y_i}}}{\sum_j e^{f_j} }
 \end{equation}
-where $f_{y_i}$ is the score predicted by the model with weights $W$. Therefore the normalized probabilities are computed by exponentiating the values and dividing sum of all values. Then we can minimize the negative log likelihood of the ground truth labels which can be regarded as performing Max Likelihood Estimation(MLE). Instead of MLE, Maximum a posteriori(MAP) can be used to evaluate the performance of the model.
+where $f_{y_i}$ is the score predicted by the model with weights $W$. Therefore the normalised probabilities are computed by exponentiating the values and dividing the sum of all values. We can minimise the negative log likelihood of the ground truth labels which can be regarded as performing the Max Likelihood Estimation(MLE). Aside from MLE, the Maximum a posteriori(MAP) can also be used to evaluate the performance of the model.
 
 \subsection{Practical issues}
 
-For numerical view, the exponentiation computation is easy overflow. Thus, the output of softmax function is not numeric stable through computing $e^{f_{y_i}}$ and $\sum_j e^{f_{y_j}}$ in straight way. It is important to implement with a normalization trick. It is mathematically equivalent if multiplying a constant $C$ both with top and bottom of the fraction.
+From a numerical view, the exponential computation is easy overflow. Thus, the output of the softmax function is not numerically stable through computing $e^{f_{y_i}}$ and $\sum_j e^{f_{y_j}}$ directly. The implementation requires a normalisation trick. It is mathematically equivalent to multiplying a constant $C$ with both the top and bottom of the fraction.
 \begin{equation}\label{eq:SoftmaxTricks}
 \frac{e^{f_{y_i}}}{\sum_j e^{f_j}}
 = \frac{Ce^{f_{y_i}}}{C\sum_j e^{f_j}}
 = \frac{e^{f_{y_i} + \log C}}{\sum_j e^{f_j + \log C}}
 \end{equation}
-where $C$ can be any positive value. The $C$ does not change the output value, while it can improve the numerical stability of the computation. An experienced choice of $C$ is to set $\log C = -\max_j f_j$, and it can shift the vector $f$ to preserve the highest value as $0$.
+where $C$ can be any positive value. The constant $C$ does not change the output value, but it can improve the numerical stability of the computation. An experienced choice of $C$ is to set $\log C = -\max_j f_j$, and it can shift the vector $f$ to preserve the highest value as $0$.
 
 \subsection{Error function}
 The error function is used to evaluate the performance of the model. We will generate an error function for softmax regression. An indicator function, $I\{\cdot\}$, is introduced to represent the accuracy for each label. If the predicted result corresponds to the actual label, say $y^{(i)} = k$, the indicator function returns $1$, otherwise $0$. The error function will be defined as

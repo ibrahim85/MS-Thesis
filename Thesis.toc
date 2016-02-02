@@ -30,49 +30,49 @@
 \contentsline {subsection}{\numberline {2.8.1}Layers in CNN}{18}{subsection.82}
 \contentsline {section}{\numberline {2.9}Spatial Pyramid Matching}{20}{section.88}
 \contentsline {section}{\numberline {2.10}Transfer Learning}{21}{section.93}
-\contentsline {chapter}{\numberline {3}Methodology}{23}{chapter.98}
-\contentsline {section}{\numberline {3.1}Dataset}{23}{section.99}
-\contentsline {section}{\numberline {3.2}Data Argument}{24}{section.102}
-\contentsline {section}{\numberline {3.3}Spatial Pyramid Pooling}{24}{section.110}
-\contentsline {section}{\numberline {3.4}Convolutional Neural Networks Architecture}{25}{section.112}
-\contentsline {chapter}{\numberline {4}Experiment}{28}{chapter.115}
-\contentsline {section}{\numberline {4.1}Training Neural Network}{28}{section.116}
-\contentsline {section}{\numberline {4.2}Fine-tuning Model}{29}{section.119}
-\contentsline {section}{\numberline {4.3}Companion Experimental}{30}{section.120}
-\contentsline {section}{\numberline {4.4}Experimental Result}{30}{section.121}
-\contentsline {section}{\numberline {4.5}Architecture Analysis}{32}{section.126}
-\contentsline {section}{\numberline {4.6}Transfer Learning}{34}{section.141}
-\contentsline {section}{\numberline {4.7}Error Results}{34}{section.144}
-\contentsline {section}{\numberline {4.8}Conclusion and Future Work}{35}{section.152}
-\contentsline {part}{II\hspace {1em}Multilabel Learning}{37}{part.153}
-\contentsline {chapter}{\numberline {5}Introduction}{38}{chapter.154}
-\contentsline {section}{\numberline {5.1}Overview}{38}{section.155}
-\contentsline {section}{\numberline {5.2}Multi-Label Learning}{39}{section.158}
-\contentsline {chapter}{\numberline {6}Background}{41}{chapter.159}
-\contentsline {section}{\numberline {6.1}Evaluation Metrics}{41}{section.160}
-\contentsline {subsection}{\numberline {6.1.1}Example-based Metrics}{42}{subsection.163}
-\contentsline {subsection}{\numberline {6.1.2}Label-based Metrics}{43}{subsection.170}
-\contentsline {section}{\numberline {6.2}Learning Algorithms}{44}{section.177}
-\contentsline {subsection}{\numberline {6.2.1}Problem Transformation Methods}{44}{subsection.178}
-\contentsline {subsubsection}{\numberline {6.2.1.1}Binary Relevance}{44}{subsubsection.179}
-\contentsline {subsubsection}{\numberline {6.2.1.2}Classifier Chains}{45}{subsubsection.181}
-\contentsline {subsection}{\numberline {6.2.2}Algorithm Adaptation Methods}{46}{subsection.183}
-\contentsline {subsubsection}{\numberline {6.2.2.1}Multi-label k-Nearest Neighbor(ML-kNN)}{46}{subsubsection.184}
-\contentsline {subsubsection}{\numberline {6.2.2.2}Collective Multi-label Classifier(CML)}{46}{subsubsection.188}
-\contentsline {chapter}{\numberline {7}Methodology}{48}{chapter.192}
-\contentsline {section}{\numberline {7.1}Artificial Dataset}{48}{section.193}
-\contentsline {subsection}{\numberline {7.1.1}Manufacturing data}{49}{subsection.195}
-\contentsline {section}{\numberline {7.2}Artificial Neural Networks}{49}{section.214}
-\contentsline {subsection}{\numberline {7.2.1}Network Architecture}{50}{subsection.215}
-\contentsline {subsection}{\numberline {7.2.2}Error Function}{52}{subsection.220}
-\contentsline {subsection}{\numberline {7.2.3}Cross Entropy}{53}{subsection.226}
-\contentsline {subsection}{\numberline {7.2.4}Training and Testing}{55}{subsection.234}
-\contentsline {chapter}{\numberline {8}Experiment}{59}{chapter.249}
-\contentsline {section}{\numberline {8.1}Dataset}{59}{section.250}
-\contentsline {section}{\numberline {8.2}Details of network}{59}{section.251}
-\contentsline {section}{\numberline {8.3}Results}{61}{section.263}
-\contentsline {section}{\numberline {8.4}Conclusion and Future Work}{63}{section.269}
+\contentsline {chapter}{\numberline {3}Methodology}{24}{chapter.98}
+\contentsline {section}{\numberline {3.1}Dataset}{24}{section.99}
+\contentsline {section}{\numberline {3.2}Data Argument}{25}{section.102}
+\contentsline {section}{\numberline {3.3}Spatial Pyramid Pooling}{25}{section.110}
+\contentsline {section}{\numberline {3.4}Convolutional Neural Networks Architecture}{26}{section.112}
+\contentsline {chapter}{\numberline {4}Experiment}{29}{chapter.115}
+\contentsline {section}{\numberline {4.1}Training Neural Network}{29}{section.116}
+\contentsline {section}{\numberline {4.2}Fine-tuning Model}{30}{section.119}
+\contentsline {section}{\numberline {4.3}Companion Experimental}{31}{section.120}
+\contentsline {section}{\numberline {4.4}Experimental Result}{31}{section.121}
+\contentsline {section}{\numberline {4.5}Architecture Analysis}{33}{section.126}
+\contentsline {section}{\numberline {4.6}Transfer Learning}{35}{section.141}
+\contentsline {section}{\numberline {4.7}Error Results}{35}{section.144}
+\contentsline {section}{\numberline {4.8}Conclusion and Future Work}{36}{section.152}
+\contentsline {part}{II\hspace {1em}Multilabel Learning}{38}{part.153}
+\contentsline {chapter}{\numberline {5}Introduction}{39}{chapter.154}
+\contentsline {section}{\numberline {5.1}Overview}{39}{section.155}
+\contentsline {section}{\numberline {5.2}Multi-Label Learning}{40}{section.158}
+\contentsline {chapter}{\numberline {6}Background}{42}{chapter.159}
+\contentsline {section}{\numberline {6.1}Evaluation Metrics}{42}{section.160}
+\contentsline {subsection}{\numberline {6.1.1}Example-based Metrics}{43}{subsection.163}
+\contentsline {subsection}{\numberline {6.1.2}Label-based Metrics}{44}{subsection.170}
+\contentsline {section}{\numberline {6.2}Learning Algorithms}{45}{section.177}
+\contentsline {subsection}{\numberline {6.2.1}Problem Transformation Methods}{45}{subsection.178}
+\contentsline {subsubsection}{\numberline {6.2.1.1}Binary Relevance}{45}{subsubsection.179}
+\contentsline {subsubsection}{\numberline {6.2.1.2}Classifier Chains}{46}{subsubsection.181}
+\contentsline {subsection}{\numberline {6.2.2}Algorithm Adaptation Methods}{47}{subsection.183}
+\contentsline {subsubsection}{\numberline {6.2.2.1}Multi-label k-Nearest Neighbor(ML-kNN)}{47}{subsubsection.184}
+\contentsline {subsubsection}{\numberline {6.2.2.2}Collective Multi-label Classifier(CML)}{47}{subsubsection.188}
+\contentsline {chapter}{\numberline {7}Methodology}{49}{chapter.192}
+\contentsline {section}{\numberline {7.1}Artificial Dataset}{49}{section.193}
+\contentsline {subsection}{\numberline {7.1.1}Manufacturing data}{50}{subsection.195}
+\contentsline {section}{\numberline {7.2}Artificial Neural Networks}{50}{section.214}
+\contentsline {subsection}{\numberline {7.2.1}Network Architecture}{51}{subsection.215}
+\contentsline {subsection}{\numberline {7.2.2}Error Function}{53}{subsection.220}
+\contentsline {subsection}{\numberline {7.2.3}Cross Entropy}{54}{subsection.226}
+\contentsline {subsection}{\numberline {7.2.4}Training and Testing}{56}{subsection.234}
+\contentsline {chapter}{\numberline {8}Experiment}{60}{chapter.249}
+\contentsline {section}{\numberline {8.1}Dataset}{60}{section.250}
+\contentsline {section}{\numberline {8.2}Details of network}{60}{section.251}
+\contentsline {section}{\numberline {8.3}Results}{62}{section.263}
+\contentsline {section}{\numberline {8.4}Conclusion and Future Work}{64}{section.269}
 \vspace {2em}
-\contentsline {chapter}{\numberline {A}Appendix Title Here}{65}{appendix.270}
+\contentsline {chapter}{\numberline {A}Appendix Title Here}{66}{appendix.270}
 \vspace {2em}
-\contentsline {chapter}{Bibliography}{66}{dummy.271}
+\contentsline {chapter}{Bibliography}{67}{dummy.271}
