@@ -13,7 +13,7 @@
 \contentsline {figure}{\numberline {2.11}{\ignorespaces Overfitting example, the left one has a decent generalization performance and the right one is overfitting.\relax }}{13}{figure.caption.59}
 \contentsline {figure}{\numberline {2.12}{\ignorespaces Illustration of dropout \citep {srivastava2014dropout}.\relax }}{15}{figure.caption.66}
 \contentsline {figure}{\numberline {2.13}{\ignorespaces The left is a fully connect regular neural network. The right is a CNN in 3 dimensions.\relax }}{18}{figure.caption.81}
-\contentsline {figure}{\numberline {2.14}{\ignorespaces Diagram for depth in convolutional layer\relax }}{19}{figure.caption.87}
+\contentsline {figure}{\numberline {2.14}{\ignorespaces Diagram for depth in a convolutional layer\relax }}{19}{figure.caption.87}
 \contentsline {figure}{\numberline {2.15}{\ignorespaces Diagram of Spatial Pyramid Match.\relax }}{21}{figure.caption.89}
 \contentsline {figure}{\numberline {2.16}{\ignorespaces Lef is traditional ML. Right is Transfer Learning.\relax }}{22}{figure.caption.94}
 \addvspace {10\p@ }

@@ -346,7 +346,7 @@ It is hard to solve equation \ref{eq:LogRegLossFunc}. Usually an optimization al
 \end{equation}
 Thus, we can compute the $j$th element of the gradient.
 
-\section{Convolutional Neural Networks}
+\section{Convolutional Neural Network}
 
 The Convolutional Neural Network\citep{lecun1998gradient} （CNN）is widely applied in image understanding and achieves the top rank of the image classification competetion\citep{krizhevsky2012imagenet}. Compared to regular neural networks, CNN architectures assume that the inputs are images and pixels relating in the region. Usually, regular neural networks connect layers fully and the computation is expensive. But CNN computation can be affordable because of its connection method.
 
@@ -372,24 +372,24 @@ Following the layer by layer, CNN transforms an image from a set of pixel values
 
 \textbf{Convolutional Layer} is the key component of CNN and its output can be represented as neurons shaped in 3D volume. A set of learning filters make up the convoultional layer's parameters. Although the size of filter can be flexible, they are usually set with small values. During the feedforward process, each filter slides across the input volume and produces a $2$-dimensional feature map. In each slide, the input and the filter have a dot product computation. If there are some specific feature at some spatial position, they can be learnt by filters.
 
-Local connectivity is the key properties of CNN is. Regular neural networks use fully connected method between layers. That is unaffordable for image, even with high capability hardware. Instead, each neuron connects a local region of the input only. There are two main benefits from local connectivity. One is reducing parameters significantly and controlling overfitting. The other one is based on a key image property. Pixels are strongly correlated with nearby pixels. This can be regarded as a local receptive field which can retrieve information from subregions of the image.
+The local connectivity is the key property of CNN. Regular neural networks use a fully connected method between layers. Thus, computation is unaffordable, even with high performance hardware. Instead, each neuron connects a local region of the input only. There are two main benefits from the local connectivity. One is reducing parameters significantly.  According to the image property, pixels are strongly correlating with nearby pixels. Thus, a local receptive field can retrieve information from subregions of the image. This reduces the weight space. The other one is controlling overfitting. Less parameters avoid fitting noise into the model.
 
 \graphicspath{ {./Figures/} }
 \begin{wrapfigure}{r}{0.5\textwidth}
   \begin{center}
     \includegraphics[width=0.48\textwidth]{depthcol.jpeg}
   \end{center}
-  \caption{Diagram for depth in convolutional layer}
+  \caption{Diagram for depth in a convolutional layer}
 \end{wrapfigure}
-To control the output volume arrangement, three parameters are introduced. They are depth, stride and zero-padding. In convolutional layer, depth controls the number of neurons which connect the same subregion of the input volume. All the neurons learn the different features from the input volume. For example, the neurons along the depth in the convolutional layer after input data layer can activate existence of various edges, color, etc.. Stride is another parameter which controls the spatial position of nearby depth column of neurons. The smaller the stride is, the more overlapping receptive fields is shared by nearby columns. Last, zero-padding on border makes output volume to keep the same dimension with the input volume.
+three parameters, say depth, stride and zero-padding, are introduced to control the output volume arrangement. In the convolutional layer, the depth controls the number of neurons which connect the same subregion of the input volume. All neurons learn different features from the input volume. For example, the neurons along the depth in the convolutional layer after the data layer can activate existence of various edges, colours, etc.. The stride is another parameter which controls the spatial position of nearby depth column of neurons. The smaller the stride is, the more overlapping receptive fields are shared by nearby columns. Last, the zero-padding on border makes output volumes to keep the same dimension with the input volume.
 
-A scheme, named parameter sharing, is implemented in convolutional layer to limit the number of parameters. The scheme suppose that a filter, which is helpful to compute at some spatial position, should be helpful to compute another position.
+A scheme, named parameter sharing, is implemented in convolutional layer to limit the number of parameters. The scheme suppose that a filter, which computes at some spatial positions, should be helpful to compute another position.
 
-\textbf{ReLU Layer} is the abbreviation of Rectified Linear Units. The neurons in the layer operate the non-saturating activation function $f(x) = max(0,x)$ over the result of dot product in convolutional layers. The layer increase non linearity to network without losing the receptive fields of convolutional layer.
+\textbf{ReLU Layer} is the abbreviation of the Rectified Linear Units. The neurons in the layer operate the non-saturating activation function $f(x) = max(0,x)$ over the result of dot product in convolutional layers. The layer increases non linearity to the network without losing the receptive fields of convolutional layers.
 
-\textbf{Pooling Layer} is a mechanism of downsampling. It is usually appended after the convolutional layer to progressively decrease the spatial size of the feature map. It leads to decrease network parameters and makes the neurons in pooling layer to be relatively insensitive to small shifts of the image.
+\textbf{Pooling Layer} is a mechanism of downsampling. It is usually appended after convolutional layers to decrease the spatial size of the feature map progressively. It helps to decrease network parameters and makes the neurons of pooling layers to be relatively insensitive to small shifts of the image.
 
-\textbf{Fully Connected Layer} takes feature map, which has high level representation, from previous layers. Its difference with convolutional layer is that it connects to all neurons in previous layer instead of a receptive field only.
+\textbf{Fully Connected Layer} takes a feature map, which has high level representation, from previous layers. The difference, between a convolutional layer and a fully connected layer, is the method of connecting to the previous layer.
 
 \section{Spatial Pyramid Matching}
 

@@ -26,7 +26,7 @@
 \contentsline {section}{\numberline {2.7}Softmax classifier}{15}{section.67}
 \contentsline {subsection}{\numberline {2.7.1}Practical issues}{17}{subsection.72}
 \contentsline {subsection}{\numberline {2.7.2}Error function}{17}{subsection.74}
-\contentsline {section}{\numberline {2.8}Convolutional Neural Networks}{18}{section.80}
+\contentsline {section}{\numberline {2.8}Convolutional Neural Network}{18}{section.80}
 \contentsline {subsection}{\numberline {2.8.1}Layers in CNN}{18}{subsection.82}
 \contentsline {section}{\numberline {2.9}Spatial Pyramid Matching}{20}{section.88}
 \contentsline {section}{\numberline {2.10}Transfer Learning}{21}{section.93}
