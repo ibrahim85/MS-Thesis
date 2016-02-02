@@ -282,7 +282,7 @@ The equation \ref{eq:SoftmaxActivation} implies that the output values are all p
 
 The softmax classifier is used to handle a multiclass classification. For a training dataset $(x_{1}, y_{1}), \ldots, (x_{m}, y_{m}), y_{i} \in \{1, 2, \ldots, K\} $ of $m$ labelled examples, the label $y$ can have $K$ different values.
 
-To an unseen sample $x$, we will use a hypothesis to estimate the probability $P(y=k | x)$ for each value $k = 1, \ldots, K$. For example, we want to compute the probability of the class label on each of $K$ different possible values. The neural network will then output a $K$ dimensional vector which represents $K$ estimated probabilities. 
+With an unseen sample $x$, we will use a hypothesis to estimate the probability $P(y=k | x)$ for each value $k = 1, \ldots, K$. For example, we want to compute the probability of the class label on each of $K$ different possible values. The neural network will then output a $K$ dimensional vector which represents $K$ estimated probabilities. 
 %\begin{equation}\label{eq:SoftmaxPostPro}
 \begin{align}
 h_{W}(x) =
@@ -324,10 +324,10 @@ From a numerical view, the exponential computation is easy overflow. Thus, the o
 = \frac{Ce^{f_{y_i}}}{C\sum_j e^{f_j}}
 = \frac{e^{f_{y_i} + \log C}}{\sum_j e^{f_j + \log C}}
 \end{equation}
-where $C$ can be any positive value. The constant $C$ does not change the output value, but it can improve the numerical stability of the computation. An experienced choice of $C$ is to set $\log C = -\max_j f_j$, and it can shift the vector $f$ to preserve the highest value as $0$.
+where $C$ can be any positive value. The constant $C$ does not change the output value. At the same time, it can improve the numerical stability of the computation. An experienced choice of $C$ should be satisfying the equation $\log C = -\max_j f_j$, and it can shift the vector $f$ to preserve the highest value as $0$.
 
 \subsection{Error function}
-The error function is used to evaluate the performance of the model. We will generate an error function for softmax regression. An indicator function, $I\{\cdot\}$, is introduced to represent the accuracy for each label. If the predicted result corresponds to the actual label, say $y^{(i)} = k$, the indicator function returns $1$, otherwise $0$. The error function will be defined as
+The error function is used to evaluate the performance of models. We will generate an error function for the softmax regression. An indicator function, $I\{\cdot\}$, is introduced to represent the accuracy for each label. If the predicted result corresponds to the actual label, say $y^{(i)} = k$, the indicator function returns $1$, otherwise $0$. The error function will be defined:
 \begin{equation}\label{eq:LogLossFunc}
 L(W) = - \left[ \sum_{i=1}^{m} \sum_{k=1}^{K}  I\left\{y^{(i)} = k\right\} \log \frac{\exp(W^{(k)\top} x^{(i)})}{\sum_{j=1}^K \exp(W^{(j)\top} x^{(i)})}\right]
 \end{equation}
@@ -336,41 +336,41 @@ where this generates the logistic regression error function
 L(W) &= - \left[ \sum_{i=1}^m   (1-y^{(i)}) \log (1-h_W(x^{(i)})) + y^{(i)} \log h_W(x^{(i)}) \right] \\
 &= - \left[ \sum_{i=1}^{m} \sum_{k=0}^{1} 1\left\{y^{(i)} = k\right\} \log P(y^{(i)} = k | x^{(i)} ; W) \right]
 \end{align}
-Similar to the logistic regression error function, the softmax error function sum over the predicted different $K$ values of the class value. In the softmax regression, the posterior probability distribution can be represented as
+Similar to the logistic regression error function, the softmax error function sums up the predicted different $K$ values of the class. In the softmax regression, the posterior probability distribution can be represented:
 \begin{equation}\label{eq:PostProbDis}
 P(y^{(i)} = k | x^{(i)} ; W) = \frac{\exp(W^{(k)\top} x^{(i)})}{\sum_{j=1}^K \exp(W^{(j)\top} x^{(i)}) }
 \end{equation}
-It is not easy to solve equation \ref{eq:LogRegLossFunc}. Usually an optimization algorithm can help to approximate the optimal value. Taking derivative with respect to weights, we can get the entire gradient 
+It is hard to solve equation \ref{eq:LogRegLossFunc}. Usually an optimization algorithm can help approximate the optimal value. Taking derivative with respect to weights, we can get the entire gradient 
 \begin{equation}\label{eq:PartDer}
 \nabla_{W^{(k)}} L(W) = - \sum_{i=1}^{m}{ \left[ x^{(i)} \left( 1\{ y^{(i)} = k\}  - P(y^{(i)} = k | x^{(i)}; W) \right) \right]  }
 \end{equation}
-We can take partial derivative of $L(W)$ with respect to the $j$th element of $W^{(k)}$.
+Thus, we can compute the $j$th element of the gradient.
 
 \section{Convolutional Neural Networks}
 
-Convolutional Neural Networks\citep{lecun1998gradient} （CNN） are widely applied in image understanding and achieve top rank in image classification competetion\citep{krizhevsky2012imagenet}. Compared to regular neural networks, CNN architectures assume that the inputs are images and pixels are related in region. Regular neural networks fully connect layers and the method is computation expensive.
+The Convolutional Neural Network\citep{lecun1998gradient} （CNN）is widely applied in image understanding and achieves the top rank of the image classification competetion\citep{krizhevsky2012imagenet}. Compared to regular neural networks, CNN architectures assume that the inputs are images and pixels relating in the region. Usually, regular neural networks connect layers fully and the computation is expensive. But CNN computation can be affordable because of its connection method.
 
-CNN architecture have neurons arranged in 3 dimension, say width, height and depth. For example, there is an image which has dimensions $32x32x3$. The neurons in a layer will connect to a customised region of the previous layer. Moreover, the final output layer has dimensions $1x1xd$, where $d$ is the number of class. The dimensions are reduced from $3072$ to $d$. The output is a single vector of class scores.
+CNN architecture has neurons arranged in $3$-dimension, say width, height and depth. For example, there is an image which has dimensions $32 \times 32 \times 3$. The neurons in a layer will connect to a customised region of the previous layer. Moreover, the final output layer has dimensions $1 \times 1 \times d$, where $d$ is the number of classes. The dimensions are reduced from $3072$ to $d$ and the output is a single vector of class scores.
 
 \graphicspath{ {./Figures/} }
 \begin{figure}[!htb]
 \centering
 \includegraphics[width=0.4\textwidth]{neural_net2.jpeg}
 \includegraphics[width=0.4\textwidth]{cnn.jpeg}
-\caption{\label{fig:perceptron}Left is a fully connect regular neural network. Right is a CNN in 3 dimensions.}
+\caption{\label{fig:perceptron}The left is a fully connect regular neural network. The right is a CNN in 3 dimensions.}
 \end{figure}
 
 \subsection{Layers in CNN}
-CNNs have three main type of layers, convolutional layer, pooling layer and fully connected layer. Every layer transforms input to output via a differentiable function. 
+CNN has three main types of layers, convolutional layer, pooling layer and fully connected layer. Each layer transforms inputs to outputs through a differentiable function. 
 \begin{enumerate}
   \item Convolutional Layer
   \item ReLU Layer
   \item Pooling Layer
   \item Fully Connected Layer
 \end{enumerate}
-Following layer by layer, CNN transforms an image from a set of pixel values to the final class scores.
+Following the layer by layer, CNN transforms an image from a set of pixel values to the final class scores.
 
-\textbf{Convolutional Layer} is the key component of CNN and its output can be represented as neurons shaped in 3D volume. A set of learning filters make up the convoultional layer's parameters. Even the size of filter is flexible, it is usually set as a small size. During the feedforward process, each filter slides across the input volume and produces a $2$-dimensional feature map. In each slide, the input and the filter have a dot product computation. If there are some specific feature at some spatial position, they can be learnt by filters.
+\textbf{Convolutional Layer} is the key component of CNN and its output can be represented as neurons shaped in 3D volume. A set of learning filters make up the convoultional layer's parameters. Although the size of filter can be flexible, they are usually set with small values. During the feedforward process, each filter slides across the input volume and produces a $2$-dimensional feature map. In each slide, the input and the filter have a dot product computation. If there are some specific feature at some spatial position, they can be learnt by filters.
 
 Local connectivity is the key properties of CNN is. Regular neural networks use fully connected method between layers. That is unaffordable for image, even with high capability hardware. Instead, each neuron connects a local region of the input only. There are two main benefits from local connectivity. One is reducing parameters significantly and controlling overfitting. The other one is based on a key image property. Pixels are strongly correlated with nearby pixels. This can be regarded as a local receptive field which can retrieve information from subregions of the image.
 
