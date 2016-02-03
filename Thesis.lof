@@ -17,8 +17,8 @@
 \contentsline {figure}{\numberline {2.15}{\ignorespaces Diagram of Spatial Pyramid Matching.\relax }}{21}{figure.caption.89}
 \contentsline {figure}{\numberline {2.16}{\ignorespaces The left is traditional machine learning method. The right is transfer learning.\relax }}{22}{figure.caption.94}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces 2 Figures from ImageNet\relax }}{24}{figure.caption.100}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces 2 Figures from Weather Dataset\relax }}{25}{figure.caption.101}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces 2 Figures from the ImageNet\relax }}{24}{figure.caption.100}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces 2 Figures from the Weather Dataset\relax }}{25}{figure.caption.101}
 \contentsline {figure}{\numberline {3.3}{\ignorespaces A set of cropped patches from original image\relax }}{26}{figure.caption.103}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {original image}}}{26}{figure.caption.103}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {cropped from left up}}}{26}{figure.caption.103}
@@ -26,8 +26,8 @@
 \contentsline {subfigure}{\numberline {(d)}{\ignorespaces {cropped from right up}}}{26}{figure.caption.103}
 \contentsline {subfigure}{\numberline {(e)}{\ignorespaces {cropped from right down}}}{26}{figure.caption.103}
 \contentsline {subfigure}{\numberline {(f)}{\ignorespaces {cropped from center}}}{26}{figure.caption.103}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Diagram of Spatial Pyramid Pooling layer\relax }}{27}{figure.caption.111}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Architecture of AlexNet\relax }}{27}{figure.caption.113}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Diagram of the Spatial Pyramid Pooling layer\relax }}{27}{figure.caption.111}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Architecture of the AlexNet\relax }}{27}{figure.caption.113}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Finetune Process\relax }}{32}{figure.caption.123}
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Finetune Process\relax }}{32}{figure.caption.124}
