@@ -29,32 +29,32 @@
 \contentsline {figure}{\numberline {3.4}{\ignorespaces Diagram of the Spatial Pyramid Pooling layer\relax }}{27}{figure.caption.111}
 \contentsline {figure}{\numberline {3.5}{\ignorespaces Architecture of the AlexNet\relax }}{27}{figure.caption.113}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Finetune Process\relax }}{32}{figure.caption.123}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Learning Process\relax }}{32}{figure.caption.123}
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Finetune Process\relax }}{32}{figure.caption.124}
 \contentsline {figure}{\numberline {4.3}{\ignorespaces ROC Curve\relax }}{33}{figure.caption.125}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces A cloudy image and outputs of convolutional layers\relax }}{34}{figure.caption.127}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces A cloudy image and the feature maps from convolutional layers\relax }}{34}{figure.caption.127}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {raw image}}}{34}{figure.caption.127}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {conv1 output}}}{34}{figure.caption.127}
 \contentsline {subfigure}{\numberline {(c)}{\ignorespaces {conv2 output}}}{34}{figure.caption.127}
 \contentsline {subfigure}{\numberline {(d)}{\ignorespaces {conv3 output}}}{34}{figure.caption.127}
 \contentsline {subfigure}{\numberline {(e)}{\ignorespaces {conv4 output}}}{34}{figure.caption.127}
 \contentsline {subfigure}{\numberline {(f)}{\ignorespaces {conv5 output}}}{34}{figure.caption.127}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces A sunny image and outputs of convolutional layers\relax }}{35}{figure.caption.134}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces A sunny image and the feature maps from convolutional layers\relax }}{35}{figure.caption.134}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {raw image}}}{35}{figure.caption.134}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {conv1 output}}}{35}{figure.caption.134}
 \contentsline {subfigure}{\numberline {(c)}{\ignorespaces {conv2 output}}}{35}{figure.caption.134}
 \contentsline {subfigure}{\numberline {(d)}{\ignorespaces {conv3 output}}}{35}{figure.caption.134}
 \contentsline {subfigure}{\numberline {(e)}{\ignorespaces {conv4 output}}}{35}{figure.caption.134}
 \contentsline {subfigure}{\numberline {(f)}{\ignorespaces {conv5 output}}}{35}{figure.caption.134}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Visiualization of feature maps outputs between original CNN model and CNN-SPP model. The upper images are from original model and the lower images are from fine tuned model\relax }}{36}{figure.caption.142}
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Histogram distribution of vectors from FC7. Left one is from CNN model and right one is from finetuned model\relax }}{36}{figure.caption.143}
-\contentsline {figure}{\numberline {4.8}{\ignorespaces Misclassified images\relax }}{37}{figure.caption.145}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {sunny}}}{37}{figure.caption.145}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {sunny}}}{37}{figure.caption.145}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {sunny}}}{37}{figure.caption.145}
-\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {cloudy}}}{37}{figure.caption.145}
-\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {cloudy}}}{37}{figure.caption.145}
-\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {cloudy}}}{37}{figure.caption.145}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Visiualisation of feature maps from CNN model and SPP model. The upper images are from the CNN model and the lower images are from the fine-tuned model.\relax }}{35}{figure.caption.142}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Histogram distribution of vectors from FC7. The left is from CNN model and the right is from the SPP model.\relax }}{36}{figure.caption.143}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Misclassified images\relax }}{36}{figure.caption.145}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {sunny}}}{36}{figure.caption.145}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {sunny}}}{36}{figure.caption.145}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {sunny}}}{36}{figure.caption.145}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {cloudy}}}{36}{figure.caption.145}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {cloudy}}}{36}{figure.caption.145}
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {cloudy}}}{36}{figure.caption.145}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {5.1}{\ignorespaces Example Image\relax }}{39}{figure.caption.156}
 \addvspace {10\p@ }

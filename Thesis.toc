@@ -38,11 +38,11 @@
 \contentsline {chapter}{\numberline {4}Experiment}{29}{chapter.115}
 \contentsline {section}{\numberline {4.1}Training Neural Network}{29}{section.116}
 \contentsline {section}{\numberline {4.2}Fine-tuning Model}{30}{section.119}
-\contentsline {section}{\numberline {4.3}Companion Experimental}{31}{section.120}
-\contentsline {section}{\numberline {4.4}Experimental Result}{31}{section.121}
+\contentsline {section}{\numberline {4.3}Companion Experiments}{31}{section.120}
+\contentsline {section}{\numberline {4.4}Experimental Results}{31}{section.121}
 \contentsline {section}{\numberline {4.5}Architecture Analysis}{33}{section.126}
-\contentsline {section}{\numberline {4.6}Transfer Learning}{35}{section.141}
-\contentsline {section}{\numberline {4.7}Error Results}{35}{section.144}
+\contentsline {section}{\numberline {4.6}Effects of SPP}{34}{section.141}
+\contentsline {section}{\numberline {4.7}Error Results}{36}{section.144}
 \contentsline {section}{\numberline {4.8}Conclusion and Future Work}{36}{section.152}
 \contentsline {part}{II\hspace {1em}Multilabel Learning}{38}{part.153}
 \contentsline {chapter}{\numberline {5}Introduction}{39}{chapter.154}
