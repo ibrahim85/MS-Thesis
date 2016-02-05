@@ -4,15 +4,15 @@
 \label{Chapter6}
 \lhead{Chapter 6. \emph{Background}}
 
-Compare to general classification, multi-label classification has different evaluation metrics and learning algorithms.
+Compared to general classification, multi-label classification has different evaluation metrics and learning algorithms.
 
 \section{Evaluation Metrics}
 
-In supervised learning settings, different metrics, like accuracy and area under the ROC curve, are used to evaluate the generalization performance of learning system. In multi-label learning, evaluating performance is more complicated  than single-label problems with the increasing number of labels simultaneously. Therefore, two main types of evaluation methods are implemented in multi-label learning, say example-based metrics\citep{ghamrawi2005collective} and label-metrics\citep{tsoumakas2007random}.
+In supervised learning, different metrics, like accuracy and area under the ROC curve, are used to evaluate the generalization performance of model. In the multi-label learning, evaluating performance is more complicated  than single-label problems because of increasing number of labels simultaneously. Therefore, two main types of evaluation methods are implemented in multi-label learning, say example-based metrics\citep{ghamrawi2005collective} and label-metrics\citep{tsoumakas2007random}.
 
-The two types of metrics evaluate the outputs of classifier from different perspective. Given that $S = {(x_{i}, Y_{i})}$ is the test instance and $h(\cdot)$ is the learned multi-label classifier. Example-based metrics achieve all class labels of each test example, and then compute the mean value of test set to evaluate generalization performance. Compared to considering all class labels simultaneously, label-based metrics evaluate performance by treating each class label separately and computing macro/micro-averaged value of all class labels.
+The two types of metrics evaluate outputs of classifiers from different perspectives. Given that $S = {(x_{i}, Y_{i})}$ is a test sample and $h(\cdot)$ is the learned multi-label classifier. The concept of example-based metrics is achieve all class labels of each test example, and then compute the mean value of test sets to evaluate generalization performance. Compared with considering all class labels simultaneously, label-based metrics evaluate performance by treating each class label separately and computing macro/micro-averaged value of all class labels.
 
-In a supervised classification problem, there have a ground truth output and a predicted output of test instance. So the results of each test instance can be be assigned to one of the four categories:
+In a supervised classification problem, there are a ground truth output and a predicted output for a test example. So the results of each test example can be be assigned to one of the four categories:
 \begin{itemize}
 \item True Positive (TP) - label is positive and prediction is also positive
 \item True Negative (TN) - label is negative and prediction is also negative
@@ -20,11 +20,11 @@ In a supervised classification problem, there have a ground truth output and a p
 \item False Negative (FN) - label is positive but prediction is negative
 \end{itemize}
 
-Here we define a set $D$ of $N$ instances and $Y_{i}$ to be a family of ground truth label sets and $P_{i} = h(x_{i})$ to be a family of predicted label set. The set of all unique labels is
+Here we define a set $D$ of $N$ examples and $Y_{i}$ to be a family of ground truth label sets and $P_{i} = h(x_{i})$ to be a family of predicted label set. The set of all unique labels is
 \begin{equation}\label{eq:UniLabel}
 L = \bigcup_{i=0}^{N-1} L_{i}
 \end{equation}
-While the definition of indicator function $I_{A}$ on a set $A$ is presented as
+While the definition of indicator function $I_{A}$ on a set $A$ is presented:
 \begin{equation}\label{eq:IndicatorFunc}
 I_{A}(x) =
   \begin{cases}
@@ -41,7 +41,7 @@ I_{A}(x) =
           \cap P_i\right|
 \end{equation}
 
-\textbf{Subset Accuracy} evaluates the fraction of correctly predicted instance while the predicted label set is identical to the ground truth label set. It is equivalent to traditional accuracy metric.
+\textbf{Subset Accuracy} evaluates the fraction of correctly predicted example while the predicted label set is identical to the ground truth label set. It is equivalent to traditional accuracy metric.
 \begin{equation}\label{eq:SubsetAcu}
 \frac{1}{N} \sum_{i=0}^{N-1} I_{\{L_i\}}(P_i)
 \end{equation}
@@ -90,7 +90,7 @@ F1(\ell) = 2
                             {PPV(\ell) + TPR(\ell)}\right)
 \end{equation}
 
-\textbf{Micro Precision} (precision averaged over all the example/label pairs) is defined as
+\textbf{Micro Precision} (precision averaged over all example/label pairs) is defined as
 \begin{equation}\label{eq:MicroPrecision}
 \frac{TP}{TP + FP}=\frac{\sum_{i=0}^{N-1} \left|P_i \cap L_i\right|}
           {\sum_{i=0}^{N-1} \left|P_i \cap L_i\right| + \sum_{i=0}^{N-1} \left|P_i - L_i\right|}
@@ -111,30 +111,30 @@ F1(\ell) = 2
 
 For the label-based metrics, the larger the metrics value means the higher generalization performance.
 
-With the previous metrics, there are diverse methods to evaluate model generalization performance. In most multi-label training, learning algorithms optimize one of the metrics. To make evaluation fair and precise, the learning algorithms should be tested on different metrics to evaluate performance to avoid bias.
+With the previous metrics, there are diverse methods to evaluate model generalization performance. In most multi-label training, learning algorithms optimise one of the metrics. To make evaluation fair and precise, learning algorithms should be tested on different metrics to evaluate performance.
 
-Most multi-label metrics are non-convex and discrete, most algorithms turn to optimize alternative multi-label metrics. Recently, some researcher study the consistency of multi-label learning\citep{gao2013consistency}. For example, it is ad hot to figure out if the loss of classifier converges to the Bayes loss while increasing training set size.
+Most metrics are non-convex and discrete, most algorithms turn to optimise alternative multi-label metrics. Recently, some researcher study the consistency of multi-label learning\citep{gao2013consistency}. It is ad hot to figure out if the loss of classifier converges to the Bayes loss with increasing training datasets.
 
 
 \section{Learning Algorithms}
 
-Algorithms play key role in the literature of machine learning, so there is no exception in multi-label learning. The capability of representation is an important criterion to evaluate the performance of a algorithm. Otherwise, there are some related criteria to be consider. Firstly, broad spectrum is considered. If the algorithm can cover an range of algorithmic design strategies with unique characteristics. Secondly, it is reasonable to evaluate the impact which the algorithm poses on the multi-label learning settings. Last, the algorithm complexity is a critical factor if the algorithm can be used in practice.
+Algorithms play a key role in the machine learning literature, and there is no exception in multi-label learning. The capability of representation is an important criterion to evaluate performance of a algorithm. Moreover, some relating criteria is important to performance. First, broad spectrum should be considered. A algorithm should cover a range of algorithmic design strategies with unique characteristics. Second, it is reasonable to evaluate the impact which the algorithm poses on the multi-label learning settings. Last, algorithm complexity is a critical factor that the algorithm is practical.
 
 \subsection{Problem Transformation Methods}
 
 \subsubsection{Binary Relevance}
 
-Binary Relevance is a elementary algorithm which decomposes multi-label learning problem into a set of independent binary classification problems in which each problem harmonizes a label of the $q$ labels in the set $L = {y_{1}, y_{2},...,y_{q}}$. The approach initially transforms multi-label dataset into $q$ binary datasets $D_{y_{i}} (i = 1,2,...,q)$, where each $D_{Y_{I}}$ includes all samples of the multi-label dataset and has a single binary label to instruct if the dataset has or has no attribute to relevant label. For example, if a sample has a positive value means that the sample owns the correlation label, otherwise, it does not own it. After transforming dataset, a set of $q$ binary classifiers, say $H_{i}(E) (i = 1,2,...,q)$, has been built up using the respective training dataset $D_{y_{i}}$. 
+The Binary Relevance is a elementary algorithm which decomposes a multi-label learning problem into a set of independent binary classification problems, and each problem harmonises one label in the set $L = {y_{1}, y_{2},...,y_{q}}$. The approach initially transforms multi-label dataset into $q$ binary datasets $D_{y_{i}} (i = 1,2,...,q)$, where each $D_{Y_{I}}$ includes all samples of the multi-label dataset and has a single binary label to instruct if the dataset has or has no attribute to the relevant label. For example, if a sample has a positive value means that the sample owns the correlation label, otherwise, it does not own it. After transforming the dataset, a set of $q$ binary classifiers, say $H_{i}(E) (i = 1,2,...,q)$, has been built up using the respective training dataset $D_{y_{i}}$. 
 
 \begin{equation}\label{eq:BinaryRelevance}
 H = \{C_{y_{i}}(x, y_{i}) \to y'_{i} \in \{0,1\}| y \in L, i = 1,2,...,q\}
 \end{equation}
 
-To classify a new multi-label sample, Binary Relevance outputs the collection of labels which are predicted with positive value by the independent binary classifiers.
+To classify a new multi-label sample, the Binary Relevance outputs the collection of labels which are predicted with positive value by independent binary classifiers.
 
-Binary Relevance combines computational efficiency and simple implementation. With a constant number of samples, the algorithm scales with size $q$ of label set $L$. Supposing that each classifier has complexity $f(|X|,|D|)$, Binary Relevance has complexity $O(qxf(|X|,|D|))$. With limit number of $q$, Binary Relevance can be regarded as a simple and effective method.
+The Binary Relevance method combines computational efficiency and simple implementation. With a constant number of samples, the algorithm scales with size $q$ of label set $L$. Supposing that each classifier has complexity $f(|X|,|D|)$, The Binary Relevance has complexity $O(qxf(|X|,|D|))$. With limit number of $q$, Binary Relevance can be regarded as a simple and effective method.
 
-One of the disadvantages of Binary Relevance is the limitation of label relationship information. Given that all labels are independent, Binary Relevance discards the information among labels.
+One of the disadvantages of Binary Relevance is the limitation of label relationship information. Except that all labels are independent, the Binary Relevance losses the information among labels.
 
 \subsubsection{Classifier Chains}
 
