@@ -54,25 +54,25 @@
 \contentsline {subsection}{\numberline {6.1.2}Label-based Metrics}{44}{subsection.170}
 \contentsline {section}{\numberline {6.2}Learning Algorithms}{45}{section.177}
 \contentsline {subsection}{\numberline {6.2.1}Problem Transformation Methods}{45}{subsection.178}
-\contentsline {subsubsection}{\numberline {6.2.1.1}Binary Relevance}{45}{subsubsection.179}
-\contentsline {subsubsection}{\numberline {6.2.1.2}Classifier Chains}{46}{subsubsection.181}
+\contentsline {subsubsection}{\numberline {6.2.1.1}Binary Relevance (BR)}{45}{subsubsection.179}
+\contentsline {subsubsection}{\numberline {6.2.1.2}Classifier Chains (CC)}{46}{subsubsection.181}
 \contentsline {subsection}{\numberline {6.2.2}Algorithm Adaptation Methods}{47}{subsection.183}
-\contentsline {subsubsection}{\numberline {6.2.2.1}Multi-label k-Nearest Neighbor(ML-kNN)}{47}{subsubsection.184}
+\contentsline {subsubsection}{\numberline {6.2.2.1}Multi-label k-Nearest Neighbour(ML-kNN)}{47}{subsubsection.184}
 \contentsline {subsubsection}{\numberline {6.2.2.2}Collective Multi-label Classifier(CML)}{47}{subsubsection.188}
 \contentsline {chapter}{\numberline {7}Methodology}{49}{chapter.192}
 \contentsline {section}{\numberline {7.1}Artificial Dataset}{49}{section.193}
-\contentsline {subsection}{\numberline {7.1.1}Manufacturing data}{50}{subsection.195}
-\contentsline {section}{\numberline {7.2}Artificial Neural Networks}{50}{section.214}
+\contentsline {subsection}{\numberline {7.1.1}Generating images}{50}{subsection.195}
+\contentsline {section}{\numberline {7.2}Artificial Neural Network}{50}{section.214}
 \contentsline {subsection}{\numberline {7.2.1}Network Architecture}{51}{subsection.215}
 \contentsline {subsection}{\numberline {7.2.2}Error Function}{53}{subsection.220}
 \contentsline {subsection}{\numberline {7.2.3}Cross Entropy}{54}{subsection.226}
 \contentsline {subsection}{\numberline {7.2.4}Training and Testing}{56}{subsection.234}
-\contentsline {chapter}{\numberline {8}Experiment}{60}{chapter.249}
-\contentsline {section}{\numberline {8.1}Dataset}{60}{section.250}
-\contentsline {section}{\numberline {8.2}Details of network}{60}{section.251}
-\contentsline {section}{\numberline {8.3}Results}{62}{section.263}
-\contentsline {section}{\numberline {8.4}Conclusion and Future Work}{64}{section.269}
+\contentsline {chapter}{\numberline {8}Experiment}{59}{chapter.249}
+\contentsline {section}{\numberline {8.1}Dataset}{59}{section.250}
+\contentsline {section}{\numberline {8.2}Details of network}{59}{section.251}
+\contentsline {section}{\numberline {8.3}Results}{61}{section.262}
+\contentsline {section}{\numberline {8.4}Conclusion and Future Work}{63}{section.268}
 \vspace {2em}
-\contentsline {chapter}{\numberline {A}Appendix Title Here}{66}{appendix.270}
+\contentsline {chapter}{\numberline {A}Appendix Title Here}{65}{appendix.269}
 \vspace {2em}
-\contentsline {chapter}{Bibliography}{67}{dummy.271}
+\contentsline {chapter}{Bibliography}{66}{dummy.270}

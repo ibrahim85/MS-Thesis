@@ -35,7 +35,7 @@ I_{A}(x) =
 
 \subsection{Example-based Metrics}
 
-\textbf{Hamming Loss} evaluates performance via counting the number of misclassification labels. The smaller value of hamming loss, the better performance.
+\textbf{Hamming Loss} evaluates performance via counting the number of misclassification labels. The smaller value of hamming loss is, the better performance the model has.
 \begin{equation}\label{eq:HammingLoss}
 \frac{1}{N \cdot \left|L\right|} \sum_{i=0}^{N - 1} \left|L_i\right| + \left|P_i\right| - 2\left|L_i
           \cap P_i\right|
@@ -113,82 +113,81 @@ For the label-based metrics, the larger the metrics value means the higher gener
 
 With the previous metrics, there are diverse methods to evaluate model generalization performance. In most multi-label training, learning algorithms optimise one of the metrics. To make evaluation fair and precise, learning algorithms should be tested on different metrics to evaluate performance.
 
-Most metrics are non-convex and discrete, most algorithms turn to optimise alternative multi-label metrics. Recently, some researcher study the consistency of multi-label learning\citep{gao2013consistency}. It is ad hot to figure out if the loss of classifier converges to the Bayes loss with increasing training datasets.
-
+Most metrics are non-convex and discrete, most algorithms turn to optimise alternative multi-label metrics. Recently, some researcher study the consistency of multi-label learning\citep{gao2013consistency}. 
 
 \section{Learning Algorithms}
 
-Algorithms play a key role in the machine learning literature, and there is no exception in multi-label learning. The capability of representation is an important criterion to evaluate performance of a algorithm. Moreover, some relating criteria is important to performance. First, broad spectrum should be considered. A algorithm should cover a range of algorithmic design strategies with unique characteristics. Second, it is reasonable to evaluate the impact which the algorithm poses on the multi-label learning settings. Last, algorithm complexity is a critical factor that the algorithm is practical.
+Algorithms play a key role in the literature on machine learning, and there is no exception in multi-label learning. The capability of representation is important to evaluate the performance of a algorithm. Moreover, some relating criterion can be used to measure performance. First, broad spectrum should be considered. A algorithm should cover a range of algorithmic design strategies with unique characteristics. Second, it is reasonable to evaluate the impact which the algorithm poses on the multi-label learning settings. Last, computational complexity is a critical factor to evaluate if a algorithm is practical.
 
 \subsection{Problem Transformation Methods}
 
-\subsubsection{Binary Relevance}
+\subsubsection{Binary Relevance (BR)}
 
-The Binary Relevance is a elementary algorithm which decomposes a multi-label learning problem into a set of independent binary classification problems, and each problem harmonises one label in the set $L = {y_{1}, y_{2},...,y_{q}}$. The approach initially transforms multi-label dataset into $q$ binary datasets $D_{y_{i}} (i = 1,2,...,q)$, where each $D_{Y_{I}}$ includes all samples of the multi-label dataset and has a single binary label to instruct if the dataset has or has no attribute to the relevant label. For example, if a sample has a positive value means that the sample owns the correlation label, otherwise, it does not own it. After transforming the dataset, a set of $q$ binary classifiers, say $H_{i}(E) (i = 1,2,...,q)$, has been built up using the respective training dataset $D_{y_{i}}$. 
+The Binary Relevance method is an elementary algorithm which decomposes a multi-label learning problem into a set of independent binary classification problems, and each problem harmonises one label in the set $L = {y_{1}, y_{2},...,y_{q}}$. The approach initially transforms multi-label dataset into $q$ binary datasets $D_{y_{i}} (i = 1,2,...,q)$, where each $D_{Y_{I}}$ includes all samples of the multi-label dataset and has a single binary label to instruct if the dataset has or has no attribute to the relevant label. For example, if a sample has a positive value means that the sample owns the correlation label, otherwise, it does not own it. After transforming the dataset, a set of $q$ binary classifiers, say $H_{i}(E) (i = 1,2,...,q)$, has been built up using the respective training dataset $D_{y_{i}}$. 
 
 \begin{equation}\label{eq:BinaryRelevance}
 H = \{C_{y_{i}}(x, y_{i}) \to y'_{i} \in \{0,1\}| y \in L, i = 1,2,...,q\}
 \end{equation}
 
-To classify a new multi-label sample, the Binary Relevance outputs the collection of labels which are predicted with positive value by independent binary classifiers.
+To classify a test sample, the BR method outputs the collection of labels which are predicted with positive value by the independent binary classifiers.
 
-The Binary Relevance method combines computational efficiency and simple implementation. With a constant number of samples, the algorithm scales with size $q$ of label set $L$. Supposing that each classifier has complexity $f(|X|,|D|)$, The Binary Relevance has complexity $O(qxf(|X|,|D|))$. With limit number of $q$, Binary Relevance can be regarded as a simple and effective method.
+The BR combines computational efficiency and simple implementation. With a constant number of samples, the algorithm scales with size $q$ of label set $L$. Supposing that each classifier has complexity $f(|X|,|D|)$, The BR has complexity $O(q \times f(|X|,|D|))$. With a limit number of $q$, the BR learns a model quickly and has an excellent performance.
 
-One of the disadvantages of Binary Relevance is the limitation of label relationship information. Except that all labels are independent, the Binary Relevance losses the information among labels.
+One of the disadvantages is the limitation to label relationship information. Unless all labels are independent, the BR losses the correlations among labels.
 
-\subsubsection{Classifier Chains}
+\subsubsection{Classifier Chains (CC)}
 
-To improve the performance of Binary Relevance, classifier chains has been introduced in multi-label classification literature\citep{read2011classifier}. The algorithm transform multi-label learning problems into a chain of binary classifiers based on label dependence.
+To achieve a better performance, the CC method has been introduced in the literature on multi-label classification\citep{read2011classifier}. The method transforms multi-label learning problems into a chain of binary classifiers based on label dependence.
 
-For a set of $q$ labels $L$, Classifier Chains model learns $q$ classifiers as Binary Relevance does. However, it links all classifiers through feature space. Given that there are a set of samples $D(x,y_{i}) (i = 1,2,...,q)$ where $y_{i}$ is a subset of labels $L$ and $x$ is domain of dataset. We transform the dataset into $q$ datasets in which the $j$-th sample is based on datasets and previous labels
+For a set of $q$ labels $L$, the CC model learns $q$ classifiers as Binary Relevance does. In addition, it links all classifiers in feature space. Given that there are a set of samples $D(x,y_{i}) (i = 1,2,...,q)$ where $y_{i}$ is a subset of labels $L$ and $x$ is the domain of dataset. The original dataset is transformed into a set of $q$ datasets in which the $j$th example is based on the previous dataset.
 
 \begin{equation}\label{eq:ClassifierChains}
 H = \{C_{y_{i}}(x, y_{1},y_{2},...,y_{i-1}) \to y'_{i} \in \{0,1\}| y \in L, i = 1,2,...,q\}
 \end{equation}
 
-Thus it forms a train of binary classifier $C_{1},C_{2},...,C_{q}$. Each classifier $C_{i}$ learns and predicts the binary association of label $y_{i}$ based on the dataset $x$ and all prior binary relevance predictions $y_{j}, j = 1,2,...,i-1$. The learning process starts from $C_{1}$ and follows the china step by step. Therefore, $C_{1}$ determines $p(y_{1}|x)$ and each classifier, say $C_{2},...,C_{q}$, determines $p(y_{i}|x_{i},y_{1},...,y_{i-1})$.
+Thus it forms a chain of binary classifiers $C_{1},C_{2},...,C_{q}$. Each classifier $C_{i}$ learns and predicts the binary association of label $y_{i}$ based on the dataset $x$ and all prior binary relevance predictions $y_{j}, j = 1,2,...,i-1$. The learning process starts from $C_{1}$ and follows the chain sequentially . Therefore, $C_{1}$ determines $p(y_{1}|x)$, and sequential classifiers, say $C_{2},...,C_{q}$, determine $p(y_{i}|x_{i},y_{1},...,y_{i-1})$.
 
-The Classifier Chains method propagates label information through classifiers, and post classifier takes into account previous predictions. This can overcome issues of ignorant label correlation in some degree. At the same time, the method keep benefits of Binary Relevance including computation efficiency and memory efficiency. The computational complexity of Classifier Chains can be close to Binary Relevance depending on the size of labels and complexity of elemental classifiers $C_{i}$. As stated in previous, the complexity of Binary Relevance is $O(qxf(|X|,|D|))$ where $f(|X|,|D|))$ is the complexity of elemental classifier. With extra computation introduced by previous labels, the complexity of Classifier Chains is $O(qxf(|X|+q,|D|))$, while the complexity will be worse in case $q \gg |X|$.
+The CC method propagates label information through classifiers, and back classifiers take account of previous predictions. This method can retrieve lost information among labels partly. At the same time, the method keep advantages of BR, say computation efficiency and memory efficiency. The computational complexity of the CC is close to the BR in terms of the number of labels and complexity of elemental classifiers $C_{i}$. As previous statement, the computational complexity of the BR is $O(q \times f(|X|,|D|))$ where $f(|X|,|D|))$ represents the elemental classifier. With extra computation introduced by previous labels, the computational complexity of the CC is $O(q \times f(|X|+q,|D|))$, while the computation will be unaffordable in case of $q \gg |X|$.
 
 \subsection{Algorithm Adaptation Methods}
 
-\subsubsection{Multi-label k-Nearest Neighbor(ML-kNN)}
+\subsubsection{Multi-label k-Nearest Neighbour(ML-kNN)}
 
-The algorithm adapts k-nearest neighbor techniques to propose multi-label data and utilize maximum a posteriori (MAP) to make prediction through reasoning embodied labelling information among neighbour \citep{zhang2007ml}.
+The algorithm adapts k-nearest Neighbour techniques to propose multi-label data and utilize maximum a posteriori (MAP) to make prediction through reasoning embodied labelling information among neighbours \citep{zhang2007ml}.
 
-Given dataset $X$ and its label set $Y$, $y$ represents output vector for $x$ where $i$-th element $y(i)$ is positive if $i \in Y$, otherwise it is negative. Suppose that $N(x)$ is the set of neighbour of $x$ in training set, we can compute a membership counting vector which represents the number of neighbours of $x$ owning $l$-th label.
+Given dataset $X$ and its label set $Y$, $y$ represents output vector for $x$ where $i$-th element $y(i)$ is positive if $i \in Y$, otherwise it is negative. Suppose that $N(x)$ is the set of neighbours of $x$ in the training dataset, we can compute a membership counting vector which represents the number of neighbours of $x$ owning the $l$-th label.
 
 \begin{equation}\label{eq:KNNCounting}
 C_{x}(i) = \sum_{a \in N(x)} y_{a}(i), i \in Y
 \end{equation}
 
-To test a new sample $t$, the algorithm sorts out its category in training dataset by kNN $N(t)$. Let $H_{1}^l$ denote that $t$ has label $l$ and $H_{0}^l$ denote that $t$ do not have label $l$. There are $j$ samples have label $l$, say $E_{j}^l (j \in {0,1,...,k})$. Then the category vector $y_{t}$ is determined via the MAP principle:
+To test a new sample $t$, the algorithm sorts out its category in the training dataset by kNN $N(t)$. Let $H_{1}^l$ denote that $t$ has the label $l$ and $H_{0}^l$ denote that $t$ do not have the label $l$. If $j$ samples have the label $l$, say $E_{j}^l (j \in {0,1,...,k})$, the category vector $y_{t}$ is determined by the MAP principle:
 
 \begin{equation}\label{eq:CategoryVec}
 y_{t}(l) = \operatorname*{arg\,max}_{b \in \{0,1\}} P(H_{b}^l|E_{C_{t}(i) }^l) l \in Y
 \end{equation}
 
-With the Bayesian rule, \ref{eq:CategoryVec} can be represented as
+With the Bayesian rule, \ref{eq:CategoryVecBay} can be represented as
 
 \begin{equation}\label{eq:CategoryVecBay}
 y_{t}(l) = \operatorname*{arg\,max}_{b \in \{0,1\}} P(H_{b}^l)P(E_{C_{t}(i) }^l|H_{b}^l) l \in Y
 \end{equation}
 
-As stated in \ref{eq:CategoryVecBay}, the output of test sample $t$ is $y_{t}(l)$. It can be computed via prior probability $P(H_{b}^l) l \in Y, b \in \{0,1\}$ and the posterior probability $P(E_{j}^l|H_{b}^l) (j \in \{0,1,...,k\})$.
+As stated in the equation\ref{eq:CategoryVecBay}, the output of a test sample $t$ is $y_{t}(l)$. It can be computed through prior probability $P(H_{b}^l) l \in Y, b \in \{0,1\}$ and the posterior probability $P(E_{j}^l|H_{b}^l) (j \in \{0,1,...,k\})$.
 
 \subsubsection{Collective Multi-label Classifier(CML)}
 
-Supposed that labels are highly interdependent in some scenarios, CML explores multi-label conditional random field (CRF) classification models which learn  parameters for each pair of labels directly\citep{ghamrawi2005collective}.
+Supposed that labels are highly interdependent in some scenarios, the CML explores multi-label conditional random field (CRF) classification models which learn  parameters for each pair of labels directly\citep{ghamrawi2005collective}.
 
-In dataset $(x,Y)$, each sample has a corresponding random variables representation $(x,y)$ in which $y = (y_{1},y_{2},...,y_{q}) y_{i} \in \{-1,1\}$ is binary label vector. If the sample contains $j$-th label, the $j$-th element of $y$ is $1$, otherwise $-1$. Then the aim of multi-label learning is to learn the joint probability distribution $p(x,y)$.
+In dataset $(x,Y)$, each sample has a corresponding random variables representation $(x,y)$, in which $y = (y_{1},y_{2},...,y_{q})  y_{i} \in \{-1,1\}$ is a binary label vector. If the sample contains $j$-th label, the $j$-th element of $y$ is $1$, otherwise $-1$. Then the aim is to learn the joint probability distribution $p(x,y)$.
 
-The entropy of $(x,y)$ is represented as $H_{p}(x,y)$ and gives the distribution $p(\cdot,\cdot)$ of $(x,y)$. The principle of maximum entropy can be achieved by maximizing $H_{p}(x,y)$. The fact is expressed with constrains on expectation of function $f(x,y)$. The expected value can be estimated from training dataset
+The entropy of $(x,y)$ is represented as $H_{p}(x,y)$ and gives the distribution $p(\cdot,\cdot)$ of $(x,y)$. The principle of maximum entropy can be achieved by maximising $H_{p}(x,y)$. The fact is expressed with constrains on the expectation of function $f(x,y)$. The expected value can be estimated from the training dataset
 
 \begin{equation}\label{eq:CMLExpect}
 F_{k} = \frac{1}{m}\sum_{(x,y) \in D}f_{k}(x,y)
 \end{equation}
 
-According to normalization constraint on $p(\cdot,\cdot)$, the optimal solution can be represented as:
+According to normalization constraint on $p(\cdot,\cdot)$, the optimal solution can be represented:
 
 \begin{equation}\label{eq:CMLOptimal}
 p(y|x) = \frac{1}{Z(x)}exp(\sum_{k \in K}\lambda_{k} \cdot f_{k}(x,y))
@@ -200,4 +199,4 @@ Yielding to Gaussian distribution, parameters can be found in a convex log-poste
 y_{x} = \operatorname*{arg\,max}_{y} p(y|x)
 \end{equation}
 
-It is notable that the exact inference is only suitable for small label space via arg max, because it needs to reduce the search space of arg max significantly via pruning strategies. CML is a second-order approach which considers correlations between every label pair constrains in $k_{2}$. 
+It is notable that the exact inference is only suitable for small label space via arg max, because it needs to reduce the search space of arg max significantly via pruning strategies. The CML is a second-order approach which considers correlations between every label pair constrains in $k_{2}$. 

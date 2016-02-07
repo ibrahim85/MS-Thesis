@@ -60,16 +60,16 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {7.1}{\ignorespaces Colour Wheel Diagram\relax }}{49}{figure.caption.194}
-\contentsline {figure}{\numberline {7.2}{\ignorespaces A multilabel sample and RGB color histograms. Three labels mean red, green and blue. \relax }}{51}{figure.caption.197}
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Multilabel samples and the RGB colour histograms. Three labels mean red, green and blue sequentially. \relax }}{51}{figure.caption.197}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Label:1 -1 1}}}{51}{figure.caption.197}
 \contentsline {subfigure}{\numberline {(e)}{\ignorespaces {Label:1 1 -1}}}{51}{figure.caption.197}
 \contentsline {subfigure}{\numberline {(i)}{\ignorespaces {Label:-1 1 -1}}}{51}{figure.caption.197}
 \contentsline {subfigure}{\numberline {(m)}{\ignorespaces {Label:-1 -1 1}}}{51}{figure.caption.197}
 \contentsline {figure}{\numberline {7.3}{\ignorespaces Network Topology For Multi-lable classification\relax }}{52}{figure.caption.216}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {8.1}{\ignorespaces Network topology for multilable classification.\relax }}{61}{figure.caption.252}
-\contentsline {figure}{\numberline {8.2}{\ignorespaces Test results for different number of hidden neurons. Blue circle for Sensitivity. Black plus for Specificity. Cyan star for Harmonic Mean. Red dot for Precission. Green x for F1 Score.\relax }}{63}{figure.caption.265}
-\contentsline {figure}{\numberline {8.3}{\ignorespaces Learning speed for 200 neurons in the hidden layer. Blue circle for Sensitivity. Black plus for Specificity. Cyan star for Harmonic Mean. Red dot for Precission. Green x for F1 Score.\relax }}{64}{figure.caption.266}
-\contentsline {figure}{\numberline {8.4}{\ignorespaces ROC curve for 200 hidden neurons\relax }}{65}{figure.caption.267}
-\contentsline {figure}{\numberline {8.5}{\ignorespaces ROC curve for 200 hidden neurons\relax }}{65}{figure.caption.268}
+\contentsline {figure}{\numberline {8.1}{\ignorespaces The network topology\relax }}{60}{figure.caption.252}
+\contentsline {figure}{\numberline {8.2}{\ignorespaces The test results for different number of hidden neurons. Blue circle for Sensitivity. Black plus for Specificity. Cyan star for Harmonic Mean. Red dot for Precission. Green x for F1 Score.\relax }}{62}{figure.caption.264}
+\contentsline {figure}{\numberline {8.3}{\ignorespaces The learning speed for 200 neurons in the hidden layer. Blue circle for Sensitivity. Black plus for Specificity. Cyan star for Harmonic Mean. Red dot for Precission. Green x for F1 Score.\relax }}{63}{figure.caption.265}
+\contentsline {figure}{\numberline {8.4}{\ignorespaces The ROC curve for 200 hidden neurons\relax }}{64}{figure.caption.266}
+\contentsline {figure}{\numberline {8.5}{\ignorespaces The ROC curve for 200 hidden neurons\relax }}{64}{figure.caption.267}
 \addvspace {10\p@ }
