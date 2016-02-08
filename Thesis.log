@@ -1,16 +1,16 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/W32TeX) (preloaded format=pdflatex 2015.3.12)  7 FEB 2016 19:48
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.8.5)  8 FEB 2016 17:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **Thesis.tex
 (./Thesis.tex
-LaTeX2e <2014/05/01>
-Babel <3.9k> and hyphenation patterns for 78 languages loaded.
+LaTeX2e <2011/06/27>
+Babel <3.9h> and hyphenation patterns for 4 languages loaded.
 (./Thesis.cls
 Document Class: Thesis 2007/22/02 v1.0 LaTeX document class
-(c:/texlive/2014/texmf-dist/tex/latex/base/book.cls
+(/usr/share/texlive/texmf-dist/tex/latex/base/book.cls
 Document Class: book 2007/10/19 v1.4h Standard LaTeX document class
-(c:/texlive/2014/texmf-dist/tex/latex/base/bk11.clo
+(/usr/share/texlive/texmf-dist/tex/latex/base/bk11.clo
 File: bk11.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
@@ -26,16 +26,16 @@ File: bk11.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-(c:/texlive/2014/texmf-dist/tex/latex/setspace/setspace.sty
+(/usr/share/texlive/texmf-dist/tex/latex/setspace/setspace.sty
 Package: setspace 2011/12/19 v6.7a set line spacing
 )
-(c:/texlive/2014/texmf-dist/tex/latex/vmargin/vmargin.sty
+(/usr/share/texlive/texmf-dist/tex/latex/vmargin/vmargin.sty
 Package: vmargin 2004/07/15 V2.5 set document margins (VK)
 
 Package: vmargin 2004/07/15 V2.5 set document margins (VK)
 \PaperWidth=\dimen103
 \PaperHeight=\dimen104
-) (c:/texlive/2014/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 \fancy@headwidth=\skip43
 \f@ncyO@elh=\skip44
 \f@ncyO@erh=\skip45
@@ -46,24 +46,24 @@ Package: vmargin 2004/07/15 V2.5 set document margins (VK)
 \f@ncyO@olf=\skip50
 \f@ncyO@orf=\skip51
 )
-(c:/texlive/2014/texmf-dist/tex/latex/amsmath/amsmath.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2013/01/14 v2.14 AMS math features
 \@mathmargin=\skip52
 
 For additional information on amsmath, use the `?' option.
-(c:/texlive/2014/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
 Package: amstext 2000/06/29 v2.01
 
-(c:/texlive/2014/texmf-dist/tex/latex/amsmath/amsgen.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0
 \@emptytoks=\toks14
 \ex@=\dimen105
 ))
-(c:/texlive/2014/texmf-dist/tex/latex/amsmath/amsbsy.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d
 \pmbraise@=\dimen106
 )
-(c:/texlive/2014/texmf-dist/tex/latex/amsmath/amsopn.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 1999/12/14 v2.01 operator names
 )
 \inf@bad=\count88
@@ -104,24 +104,24 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
 LaTeX Info: Redefining \[ on input line 2665.
 LaTeX Info: Redefining \] on input line 2666.
 )
-(c:/texlive/2014/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 )
-(c:/texlive/2014/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 )
-(c:/texlive/2014/texmf-dist/tex/latex/amsmath/amscd.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amscd.sty
 Package: amscd 1999/11/29 v2.0
 \athelp@=\toks19
 \minaw@=\dimen114
 \bigaw@=\dimen115
 \minCDarrowwidth=\dimen116
 )
-(c:/texlive/2014/texmf-dist/tex/latex/amscls/amsthm.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty
 Package: amsthm 2004/08/06 v2.20
 \thm@style=\toks20
 \thm@bodyfont=\toks21
@@ -133,21 +133,21 @@ Package: amsthm 2004/08/06 v2.20
 \thm@headsep=\skip57
 \dth@everypar=\toks25
 )
-(c:/texlive/2014/texmf-dist/tex/latex/tools/xspace.sty
+(/usr/share/texlive/texmf-dist/tex/latex/tools/xspace.sty
 Package: xspace 2009/10/20 v1.13 Space after command names (DPC,MH)
 )
 \c@example=\count100
 \c@theorem=\count101
 
-(c:/texlive/2014/texmf-dist/tex/latex/caption/caption.sty
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
 Package: caption 2013/05/02 v3.3-89 Customizing captions (AR)
 
-(c:/texlive/2014/texmf-dist/tex/latex/caption/caption3.sty
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2013/05/02 v1.6-88 caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 57.
 
-(c:/texlive/2014/texmf-dist/tex/latex/graphics/keyval.sty
-Package: keyval 2014/05/08 v1.15 key=value parser (DPC)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks26
 )
 \captionmargin=\dimen117
@@ -160,27 +160,27 @@ Package: keyval 2014/05/08 v1.15 key=value parser (DPC)
 )
 \c@ContinuedFloat=\count102
 )
-(c:/texlive/2014/texmf-dist/tex/latex/graphics/graphicx.sty
-Package: graphicx 2014/04/25 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
-(c:/texlive/2014/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
-(c:/texlive/2014/texmf-dist/tex/latex/graphics/trig.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-(c:/texlive/2014/texmf-dist/tex/latex/latexconfig/graphics.cfg
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/graphics.cfg
 File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
 )
 Package graphics Info: Driver file: pdftex.def on input line 91.
 
-(c:/texlive/2014/texmf-dist/tex/latex/pdftex-def/pdftex.def
+(/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 
-(c:/texlive/2014/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
 Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 )
-(c:/texlive/2014/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
 Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
 \Gread@gobject=\count103
@@ -188,28 +188,28 @@ Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 \Gin@req@height=\dimen124
 \Gin@req@width=\dimen125
 )
-(c:/texlive/2014/texmf-dist/tex/latex/oberdiek/epstopdf.sty
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf.sty
 Package: epstopdf 2010/02/09 v2.5 Conversion with epstopdf on the fly (HO)
 
-(c:/texlive/2014/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 
-(c:/texlive/2014/texmf-dist/tex/latex/oberdiek/grfext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
 Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
 
-(c:/texlive/2014/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
 Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
 ))
-(c:/texlive/2014/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
 Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
 
-(c:/texlive/2014/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
 Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
 
-(c:/texlive/2014/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/etexcmds.sty
 Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
 
-(c:/texlive/2014/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifluatex.sty
 Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
 Package ifluatex Info: LuaTeX not detected.
 )
@@ -218,11 +218,11 @@ Package etexcmds Info: Could not find \expanded.
 (etexcmds)             that some package has redefined \expanded.
 (etexcmds)             In the latter case, load this package earlier.
 )))
-(c:/texlive/2014/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
 
-(c:/texlive/2014/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
 Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
 Package ifpdf Info: pdfTeX in PDF mode is detected.
 )
@@ -236,11 +236,11 @@ Package grfext Info: Graphics extension search list:
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 452.
 
-(c:/texlive/2014/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 )))
-(c:/texlive/2014/texmf-dist/tex/latex/subfigure/subfigure.sty
+(/usr/share/texlive/texmf-dist/tex/latex/subfigure/subfigure.sty
 Package: subfigure 2002/03/15 v2.1.5 subfigure package
 \subfigtopskip=\skip58
 \subfigcapskip=\skip59
@@ -256,11 +256,11 @@ Package: subfigure 2002/03/15 v2.1.5 subfigure package
 ****************************************
 * Local config file subfigure.cfg used *
 ****************************************
-(c:/texlive/2014/texmf-dist/tex/latex/subfigure/subfigure.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/subfigure/subfigure.cfg)
 \subfig@top=\skip62
 \subfig@bottom=\skip63
 )
-(c:/texlive/2014/texmf-dist/tex/latex/booktabs/booktabs.sty
+(/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2005/04/14 v1.61803 publication quality tables
 \heavyrulewidth=\dimen128
 \lightrulewidth=\dimen129
@@ -280,10 +280,10 @@ Package: booktabs 2005/04/14 v1.61803 publication quality tables
 \@lastruleclass=\count111
 \@thisrulewidth=\dimen140
 )
-(c:/texlive/2014/texmf-dist/tex/latex/rotating/rotating.sty
+(/usr/share/texlive/texmf-dist/tex/latex/rotating/rotating.sty
 Package: rotating 2009/03/28 v2.16a rotated objects in LaTeX
 
-(c:/texlive/2014/texmf-dist/tex/latex/base/ifthen.sty
+(/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
 )
 \c@r@tfl@t=\count112
@@ -292,7 +292,7 @@ Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
 \rot@float@box=\box28
 \rot@mess@toks=\toks27
 )
-(c:/texlive/2014/texmf-dist/tex/latex/listings/listings.sty
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
 \lst@mode=\count113
 \lst@gtempboxa=\box29
 \lst@token=\toks28
@@ -309,38 +309,39 @@ Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
 
 ***
 *** This is a patch for listings 1.3, but you're using
-*** version 1.5c.
+*** version 1.5b.
 ***
 *** Patch file not loaded.
 ***
 
-) (c:/texlive/2014/texmf-dist/tex/latex/listings/lstmisc.sty
-File: lstmisc.sty 2014/03/04 1.5c (Carsten Heinz)
+) (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2013/08/26 1.5b (Carsten Heinz)
 \c@lstnumber=\count119
 \lst@skipnumbers=\count120
 \lst@framebox=\box30
 )
-(c:/texlive/2014/texmf-dist/tex/latex/listings/listings.cfg
-File: listings.cfg 2014/03/04 1.5c listings configuration
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2013/08/26 1.5b listings configuration
 ))
-Package: listings 2014/03/04 1.5c (Carsten Heinz)
- (./lstpatch.sty
+Package: listings 2013/08/26 1.5b (Carsten Heinz)
+
+(./lstpatch.sty
 
 ***
 *** This is a patch for listings 1.3, but you're using
-*** version 1.5c.
+*** version 1.5b.
 ***
  *** Patch file not loaded.
 ***
 
-) (c:/texlive/2014/texmf-dist/tex/latex/hyperref/hyperref.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2012/11/06 v6.83m Hypertext links for LaTeX
 
-(c:/texlive/2014/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
 Package: hobsub-hyperref 2012/05/28 v1.13 Bundle oberdiek, subset hyperref (HO)
 
 
-(c:/texlive/2014/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
 Package: hobsub-generic 2012/05/28 v1.13 Bundle oberdiek, subset generic (HO)
 Package: hobsub 2012/05/28 v1.13 Construct package bundles (HO)
 Package hobsub Info: Skipping package `infwarerr' (already loaded).
@@ -370,22 +371,22 @@ Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
 Package: refcount 2011/10/16 v3.4 Data extraction from label references (HO)
 Package: hycolor 2011/01/30 v1.7 Color options for hyperref/bookmark (HO)
 )
-(c:/texlive/2014/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+(/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
-(c:/texlive/2014/texmf-dist/tex/latex/oberdiek/auxhook.sty
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/auxhook.sty
 Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
 )
 \@linkdim=\dimen145
 \Hy@linkcounter=\count121
 \Hy@pagecounter=\count122
 
-(c:/texlive/2014/texmf-dist/tex/latex/hyperref/pd1enc.def
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
 )
 \Hy@SavedSpaceFactor=\count123
 
-(c:/texlive/2014/texmf-dist/tex/latex/latexconfig/hyperref.cfg
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
 Package hyperref Info: Option `bookmarks' set `true' on input line 4319.
@@ -396,7 +397,7 @@ Package hyperref Info: Option `hypertexnames' set `false' on input line 4319.
 Package hyperref Info: Option `colorlinks' set `true' on input line 4319.
 Package hyperref Info: Option `unicode' set `true' on input line 4319.
 
-(c:/texlive/2014/texmf-dist/tex/latex/hyperref/puenc.def
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/puenc.def
 File: puenc.def 2012/11/06 v6.83m Hyperref: PDF Unicode definition (HO)
 )
 Package hyperref Info: Option `breaklinks' set `true' on input line 4319.
@@ -409,7 +410,7 @@ Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4688.
 \c@Hy@tempcnt=\count124
 
-(c:/texlive/2014/texmf-dist/tex/latex/url/url.sty
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip11
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
@@ -434,12 +435,12 @@ LaTeX Info: Redefining \pageref on input line 6369.
 
 Package hyperref Message: Driver (autodetected): hpdftex.
 
-(c:/texlive/2014/texmf-dist/tex/latex/hyperref/hpdftex.def
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
 File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
 \Fld@listcount=\count129
 \c@bookmark@seq@number=\count130
 
-(c:/texlive/2014/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
 Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
@@ -448,7 +449,7 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \c@dummy=\count131
 
-(c:/texlive/2014/texmf-dist/tex/latex/tools/longtable.sty
+(/usr/share/texlive/texmf-dist/tex/latex/tools/longtable.sty
 Package: longtable 2004/02/01 v4.11 Multi-page Table package (DPC)
 \LTleft=\skip67
 \LTright=\skip68
@@ -466,14 +467,14 @@ Package: longtable 2004/02/01 v4.11 Multi-page Table package (DPC)
 \c@LT@chunks=\count136
 \LT@p@ftn=\toks29
 ))
-(c:/texlive/2014/texmf-dist/tex/latex/natbib/natbib.sty
+(/usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty
 Package: natbib 2010/09/13 8.31b (PWD, AO)
 \bibhang=\skip71
 \bibsep=\skip72
 LaTeX Info: Redefining \cite on input line 694.
 \c@NAT@ctr=\count137
 )
-(c:/texlive/2014/texmf-dist/tex/latex/tools/verbatim.sty
+(/usr/share/texlive/texmf-dist/tex/latex/tools/verbatim.sty
 Package: verbatim 2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
 \every@verbatim=\toks30
 \verbatim@line=\toks31
@@ -481,7 +482,7 @@ Package: verbatim 2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
 ) (./vector.sty
 Package: vector 1994/09/16 v1.0 vector macros for LaTeX2e (nde)
 
-(c:/texlive/2014/texmf-dist/tex/latex/tools/calc.sty
+(/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
 \calc@Acount=\count138
 \calc@Bcount=\count139
@@ -489,14 +490,14 @@ Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
 \calc@Bdimen=\dimen151
 \calc@Askip=\skip73
 \calc@Bskip=\skip74
-LaTeX Info: Redefining \setlength on input line 75.
-LaTeX Info: Redefining \addtolength on input line 76.
+LaTeX Info: Redefining \setlength on input line 76.
+LaTeX Info: Redefining \addtolength on input line 77.
 \calc@Ccount=\count140
 \calc@Cskip=\skip75
 )
 \c@vec@elem=\count141
 )
-(c:/texlive/2014/texmf-dist/tex/latex/wrapfig/wrapfig.sty
+(/usr/share/texlive/texmf-dist/tex/latex/wrapfig/wrapfig.sty
 \wrapoverhang=\dimen152
 \WF@size=\dimen153
 \c@WF@wrappedlines=\count142
@@ -505,62 +506,7 @@ LaTeX Info: Redefining \addtolength on input line 76.
 Package: wrapfig 2003/01/31  v 3.6
 )
 Package hyperref Info: Option `colorlinks' set `true' on input line 14.
- (./Thesis.aux
-
-LaTeX Warning: Label `fig:2LayerErrorSurface' multiply defined.
-
-
-LaTeX Warning: Label `fig:perceptron' multiply defined.
-
-
-LaTeX Warning: Label `fig:perceptron' multiply defined.
-
-
-LaTeX Warning: Label `fig:perceptron' multiply defined.
-
-
-LaTeX Warning: Label `eq:ffEq' multiply defined.
-
-
-LaTeX Warning: Label `fig:sunny' multiply defined.
-
-
-LaTeX Warning: Label `sub@fig:sunny' multiply defined.
-
-
-LaTeX Warning: Label `fig:sunny_conv1' multiply defined.
-
-
-LaTeX Warning: Label `sub@fig:sunny_conv1' multiply defined.
-
-
-LaTeX Warning: Label `fig:sunny_conv2' multiply defined.
-
-
-LaTeX Warning: Label `sub@fig:sunny_conv2' multiply defined.
-
-
-LaTeX Warning: Label `fig:sunny_conv3' multiply defined.
-
-
-LaTeX Warning: Label `sub@fig:sunny_conv3' multiply defined.
-
-
-LaTeX Warning: Label `fig:sunny_conv4' multiply defined.
-
-
-LaTeX Warning: Label `sub@fig:sunny_conv4' multiply defined.
-
-
-LaTeX Warning: Label `fig:sunny_conv5' multiply defined.
-
-
-LaTeX Warning: Label `sub@fig:sunny_conv5' multiply defined.
-
-
-LaTeX Warning: Label `eq:Accuracy' multiply defined.
-
-)
+ (./Thesis.aux)
 \openout1 = `Thesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
@@ -583,7 +529,8 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: longtable package is loaded.
- (c:/texlive/2014/texmf-dist/tex/latex/caption/ltcaption.sty
+
+(/usr/share/texlive/texmf-dist/tex/latex/caption/ltcaption.sty
 Package: ltcaption 2013/02/03 v1.3-62 longtable captions (AR)
 )
 Package caption Info: rotating package is loaded.
@@ -591,7 +538,7 @@ Package caption Info: subfigure package is loaded.
 Package caption Info: wrapfig package is loaded.
 Package caption Info: End \AtBeginDocument code.
 
-(c:/texlive/2014/texmf-dist/tex/context/base/supp-pdf.mkii
+(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count143
 \scratchdimen=\dimen154
@@ -607,20 +554,20 @@ Package caption Info: End \AtBeginDocument code.
 )
 \c@lstlisting=\count149
 \AtBeginShipoutBox=\box37
- (c:/texlive/2014/texmf-dist/tex/latex/graphics/color.sty
-Package: color 2014/04/23 v1.1a Standard LaTeX Color (DPC)
+ (/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
 
-(c:/texlive/2014/texmf-dist/tex/latex/latexconfig/color.cfg
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/color.cfg
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
-Package color Info: Driver file: pdftex.def on input line 137.
+Package color Info: Driver file: pdftex.def on input line 130.
 )
 Package hyperref Info: Link coloring ON on input line 17.
 
-(c:/texlive/2014/texmf-dist/tex/latex/hyperref/nameref.sty
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
-(c:/texlive/2014/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count150
@@ -641,17 +588,17 @@ LaTeX Info: Redefining \nameref on input line 17.
 
 
 
-{c:/Users/zjj/.texlive2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+{/home/zjj/.texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 ------------------------------------------------------------------------------
  Declaration of Authorship
 ------------------------------------------------------------------------------
 LaTeX Font Info:    Try loading font information for U+msa on input line 72.
-(c:/texlive/2014/texmf-dist/tex/latex/amsfonts/umsa.fd
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Try loading font information for U+msb on input line 72.
 
-(c:/texlive/2014/texmf-dist/tex/latex/amsfonts/umsb.fd
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 Underfull \hbox (badness 10000) in paragraph at lines 72--72
@@ -714,21 +661,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 72--72
 
 
 
-]
-------------------------------------------------------------------------------
- Physical Constants
-------------------------------------------------------------------------------
-[11
-
-
-
-]
-------------------------------------------------------------------------------
- Dedicatory
-------------------------------------------------------------------------------
-[12
-
-] [13
+] [11
 
 
 
@@ -740,12 +673,12 @@ Chapter 1.
 [1
 
 
-]) (./Chapters/Chapter2.tex [2] [3]
+] [2]) (./Chapters/Chapter2.tex [3]
 Chapter 2.
 ------------------------------------------------------------------------------
  2 Background
 ------------------------------------------------------------------------------
-<./Figures/Figure2-1.png, id=581, 602.25pt x 286.06876pt>
+<./Figures/Figure2-1.png, id=564, 602.25pt x 286.06876pt>
 File: ./Figures/Figure2-1.png Graphic file (type png)
 
 <use ./Figures/Figure2-1.png>
@@ -754,7 +687,7 @@ Package pdftex.def Info: ./Figures/Figure2-1.png used on input line 22.
  [4
 
 ]
-<./Figures/bipolar-threshold.jpg, id=596, 374.90062pt x 333.34537pt>
+<./Figures/bipolar-threshold.jpg, id=579, 374.90062pt x 333.34537pt>
 File: ./Figures/bipolar-threshold.jpg Graphic file (type jpg)
 
 <use ./Figures/bipolar-threshold.jpg>
@@ -763,43 +696,43 @@ Package pdftex.def Info: ./Figures/bipolar-threshold.jpg used on input line 42.
 (pdftex.def)             Requested size: 166.98668pt x 148.47809pt.
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 48.
 
-(c:/texlive/2014/texmf-dist/tex/latex/base/omscmr.fd
+(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 48.
-
-<./Figures/Linear_function.png, id=597, 301.125pt x 301.125pt>
+ [5 <./Figures/Figure2-1.png>] <./Figures/Linear_function.png, id=590, 301.125p
+t x 301.125pt>
 File: ./Figures/Linear_function.png Graphic file (type png)
 
 <use ./Figures/Linear_function.png>
 Package pdftex.def Info: ./Figures/Linear_function.png used on input line 56.
 (pdftex.def)             Requested size: 166.98668pt x 166.99309pt.
- [5 <./Figures/Figure2-1.png>]
-<./Figures/Logistic-curve.png, id=611, 2007.5pt x 1337.99875pt>
+
+<./Figures/Logistic-curve.png, id=592, 2007.5pt x 1337.99875pt>
 File: ./Figures/Logistic-curve.png Graphic file (type png)
 
 <use ./Figures/Logistic-curve.png>
 Package pdftex.def Info: ./Figures/Logistic-curve.png used on input line 68.
 (pdftex.def)             Requested size: 166.98668pt x 111.28865pt.
-
-<./Figures/tanh.png, id=612, 348.30125pt x 222.8325pt>
+ [6 <./Figures/bipolar-threshold.jpg> <./Figures/Linear_function.png> <./Figure
+s/Logistic-curve.png>]
+<./Figures/tanh.png, id=602, 348.30125pt x 222.8325pt>
 File: ./Figures/tanh.png Graphic file (type png)
 
 <use ./Figures/tanh.png>
 Package pdftex.def Info: ./Figures/tanh.png used on input line 80.
 (pdftex.def)             Requested size: 166.98668pt x 106.83258pt.
- [6 <./Figures/bipolar-threshold.jpg> <./Figures/Linear_function.png> <./Figure
-s/Logistic-curve.png>]
-<./Figures/1LayerErrorSurface.png, id=625, 334.24875pt x 324.46219pt>
+ [7 <./Figures/tanh.png>]
+<./Figures/1LayerErrorSurface.png, id=617, 334.24875pt x 324.46219pt>
 File: ./Figures/1LayerErrorSurface.png Graphic file (type png)
 
 <use ./Figures/1LayerErrorSurface.png>
 Package pdftex.def Info: ./Figures/1LayerErrorSurface.png used on input line 11
 3.
 (pdftex.def)             Requested size: 166.98668pt x 162.10196pt.
- [7 <./Figures/tanh.png>]
-<./Figures/SingleLayerSimpleData.png, id=635, 401.5pt x 401.5pt>
+
+<./Figures/SingleLayerSimpleData.png, id=618, 401.5pt x 401.5pt>
 File: ./Figures/SingleLayerSimpleData.png Graphic file (type png)
 
 <use ./Figures/SingleLayerSimpleData.png>
@@ -807,23 +740,23 @@ Package pdftex.def Info: ./Figures/SingleLayerSimpleData.png used on input line
  121.
 (pdftex.def)             Requested size: 166.98668pt x 166.98697pt.
 
-<./Figures/SingleLayerCircleData.png, id=636, 401.5pt x 401.5pt>
+<./Figures/SingleLayerCircleData.png, id=619, 401.5pt x 401.5pt>
 File: ./Figures/SingleLayerCircleData.png Graphic file (type png)
 
 <use ./Figures/SingleLayerCircleData.png>
 Package pdftex.def Info: ./Figures/SingleLayerCircleData.png used on input line
  122.
 (pdftex.def)             Requested size: 166.98668pt x 166.98697pt.
- [8 <./Figures/1LayerErrorSurface.png> <./Figures/SingleLayerSimpleData.png> <.
-/Figures/SingleLayerCircleData.png>]
-<./Figures/Figure2-2.png, id=647, 32.37291pt x 21.30795pt>
+ [8 <./Figures/1LayerErrorSurface.png>] <./Figures/Figure2-2.png, id=626, 32.37
+291pt x 21.30795pt>
 File: ./Figures/Figure2-2.png Graphic file (type png)
 
 <use ./Figures/Figure2-2.png>
 Package pdftex.def Info: ./Figures/Figure2-2.png used on input line 134.
 (pdftex.def)             Requested size: 333.97972pt x 220.02406pt.
- [9 <./Figures/Figure2-2.png>]
-<./Figures/2LayerErrorSurface.png, id=658, 298.11375pt x 326.72063pt>
+ [9 <./Figures/SingleLayerSimpleData.png> <./Figures/SingleLayerCircleData.png>
+ <./Figures/Figure2-2.png>]
+<./Figures/2LayerErrorSurface.png, id=639, 298.11375pt x 326.72063pt>
 File: ./Figures/2LayerErrorSurface.png Graphic file (type png)
 
 <use ./Figures/2LayerErrorSurface.png>
@@ -831,29 +764,29 @@ Package pdftex.def Info: ./Figures/2LayerErrorSurface.png used on input line 16
 3.
 (pdftex.def)             Requested size: 166.98668pt x 183.01215pt.
 
-<./Figures/MultiLayerCircleData.png, id=659, 401.5pt x 401.5pt>
+<./Figures/MultiLayerCircleData.png, id=640, 401.5pt x 401.5pt>
 File: ./Figures/MultiLayerCircleData.png Graphic file (type png)
 
 <use ./Figures/MultiLayerCircleData.png>
 Package pdftex.def Info: ./Figures/MultiLayerCircleData.png used on input line 
 170.
 (pdftex.def)             Requested size: 166.98668pt x 166.98697pt.
- [10 <./Figures/2LayerErrorSurface.png> <./Figures/MultiLayerCircleData.png>] [
-11] [12]
-<./Figures/overfitting.png, id=682, 322.20375pt x 147.55125pt>
+ [10 <./Figures/2LayerErrorSurface.png>] [11 <./Figures/MultiLayerCircleData.pn
+g>] [12]
+<./Figures/overfitting.png, id=664, 322.20375pt x 147.55125pt>
 File: ./Figures/overfitting.png Graphic file (type png)
 
 <use ./Figures/overfitting.png>
 Package pdftex.def Info: ./Figures/overfitting.png used on input line 229.
 (pdftex.def)             Requested size: 333.97972pt x 152.94983pt.
- [13 <./Figures/overfitting.png>]
-<./Figures/dropout.jpeg, id=691, 616.3025pt x 329.23pt>
+ [13] [14 <./Figures/overfitting.png>]
+<./Figures/dropout.jpeg, id=679, 616.3025pt x 329.23pt>
 File: ./Figures/dropout.jpeg Graphic file (type jpg)
 
 <use ./Figures/dropout.jpeg>
 Package pdftex.def Info: ./Figures/dropout.jpeg used on input line 266.
 (pdftex.def)             Requested size: 333.97972pt x 178.41452pt.
- [14] [15 <./Figures/dropout.jpeg>] [16] [17]
+ [15] [16 <./Figures/dropout.jpeg>] [17] [18]
 Missing character: There is no ï in font cmr10!
 Missing character: There is no ¼ in font cmr10!
 Missing character: There is no ˆ in font cmr10!
@@ -861,47 +794,46 @@ Missing character: There is no ï in font cmr10!
 Missing character: There is no ¼ in font cmr10!
 Missing character: There is no ‰ in font cmr10!
 
-<./Figures/neural_net2.jpeg, id=729, 793.96625pt x 389.455pt>
+<./Figures/neural_net2.jpeg, id=713, 793.96625pt x 389.455pt>
 File: ./Figures/neural_net2.jpeg Graphic file (type jpg)
 
 <use ./Figures/neural_net2.jpeg>
 Package pdftex.def Info: ./Figures/neural_net2.jpeg used on input line 358.
 (pdftex.def)             Requested size: 166.98668pt x 81.90681pt.
 
-<./Figures/cnn.jpeg, id=730, 571.13374pt x 202.7575pt>
+<./Figures/cnn.jpeg, id=714, 571.13374pt x 202.7575pt>
 File: ./Figures/cnn.jpeg Graphic file (type jpg)
 
 <use ./Figures/cnn.jpeg>
 Package pdftex.def Info: ./Figures/cnn.jpeg used on input line 359.
 (pdftex.def)             Requested size: 166.98668pt x 59.28079pt.
- [18 <./Figures/neural_net2.jpeg> <./Figures/cnn.jpeg>] <./Figures/depthcol.jpe
-g, id=740, 465.74pt x 327.2225pt>
+ [19]
+<./Figures/depthcol.jpeg, id=727, 465.74pt x 327.2225pt>
 File: ./Figures/depthcol.jpeg Graphic file (type jpg)
 
 <use ./Figures/depthcol.jpeg>
 Package pdftex.def Info: ./Figures/depthcol.jpeg used on input line 380.
 (pdftex.def)             Requested size: 200.38528pt x 140.78781pt.
- [19 <./Figures/depthcol.jpeg>]
-<./Figures/spm.jpg, id=750, 1014.79124pt x 608.2725pt>
+ [20 <./Figures/neural_net2.jpeg> <./Figures/cnn.jpeg>] <./Figures/spm.jpg, id=
+737, 1014.79124pt x 608.2725pt>
 File: ./Figures/spm.jpg Graphic file (type jpg)
- <use ./Figures/spm.jpg>
+
+<use ./Figures/spm.jpg>
 Package pdftex.def Info: ./Figures/spm.jpg used on input line 400.
 (pdftex.def)             Requested size: 333.97972pt x 200.18294pt.
-
-[20] [21 <./Figures/spm.jpg>]
-<./Figures/MLvsTL.png, id=767, 526.96875pt x 384.43625pt>
+ [21 <./Figures/depthcol.jpeg>] [22 <./Figures/spm.jpg>] <./Figures/MLvsTL.png,
+ id=749, 526.96875pt x 384.43625pt>
 File: ./Figures/MLvsTL.png Graphic file (type png)
 
 <use ./Figures/MLvsTL.png>
 Package pdftex.def Info: ./Figures/MLvsTL.png used on input line 428.
 (pdftex.def)             Requested size: 333.97972pt x 243.65675pt.
-) [22 <./Figures/MLvsTL.png>]
-(./Chapters/Chapter3.tex [23]
+ [23]) (./Chapters/Chapter3.tex [24 <./Figures/MLvsTL.png>]
 Chapter 3.
 ------------------------------------------------------------------------------
  3 Methodology
 ------------------------------------------------------------------------------
-<./Figures/ILSVRC2012_val_00000001.JPEG, id=781, 256.96pt x 256.96pt>
+<./Figures/ILSVRC2012_val_00000001.JPEG, id=767, 256.96pt x 256.96pt>
 File: ./Figures/ILSVRC2012_val_00000001.JPEG Graphic file (type jpg)
 
 <use ./Figures/ILSVRC2012_val_00000001.JPEG>
@@ -909,7 +841,7 @@ Package pdftex.def Info: ./Figures/ILSVRC2012_val_00000001.JPEG used on input l
 ine 13.
 (pdftex.def)             Requested size: 166.98668pt x 166.99065pt.
 
-<./Figures/ILSVRC2012_val_00000002.JPEG, id=782, 256.96pt x 256.96pt>
+<./Figures/ILSVRC2012_val_00000002.JPEG, id=768, 256.96pt x 256.96pt>
 File: ./Figures/ILSVRC2012_val_00000002.JPEG Graphic file (type jpg)
 
 <use ./Figures/ILSVRC2012_val_00000002.JPEG>
@@ -917,104 +849,101 @@ Package pdftex.def Info: ./Figures/ILSVRC2012_val_00000002.JPEG used on input l
 ine 15.
 (pdftex.def)             Requested size: 166.98668pt x 166.99065pt.
 
-<./Figures/cloudy_0001.png, id=786, 256.96pt x 256.96pt>
+<./Figures/cloudy_0001.png, id=772, 256.96pt x 256.96pt>
 File: ./Figures/cloudy_0001.png Graphic file (type png)
 
 <use ./Figures/cloudy_0001.png>
 Package pdftex.def Info: ./Figures/cloudy_0001.png used on input line 24.
 (pdftex.def)             Requested size: 166.98668pt x 166.99065pt.
 
-<./Figures/sunny_0003.png, id=787, 256.96pt x 256.96pt>
+<./Figures/sunny_0003.png, id=773, 256.96pt x 256.96pt>
 File: ./Figures/sunny_0003.png Graphic file (type png)
 
 <use ./Figures/sunny_0003.png>
 Package pdftex.def Info: ./Figures/sunny_0003.png used on input line 26.
 (pdftex.def)             Requested size: 166.98668pt x 166.99065pt.
- [24
+ [25
 
  <./Figures/ILSVRC2012_val_00000001.JPEG> <./Figures/ILSVRC2012_val_00000002.JP
 EG>]
-<./Figures/crop.png, id=794, 256.96pt x 256.96pt>
+<./Figures/crop.png, id=781, 256.96pt x 256.96pt>
 File: ./Figures/crop.png Graphic file (type png)
  <use ./Figures/crop.png>
 Package pdftex.def Info: ./Figures/crop.png used on input line 43.
 (pdftex.def)             Requested size: 125.24318pt x 125.24495pt.
 
-<./Figures/cropleftup.png, id=795, 227.85126pt x 227.85126pt>
+<./Figures/cropleftup.png, id=782, 227.85126pt x 227.85126pt>
 File: ./Figures/cropleftup.png Graphic file (type png)
 
 <use ./Figures/cropleftup.png>
 Package pdftex.def Info: ./Figures/cropleftup.png used on input line 49.
 (pdftex.def)             Requested size: 125.24318pt x 125.24556pt.
 
-<./Figures/cropleftdown.png, id=796, 227.85126pt x 227.85126pt>
+<./Figures/cropleftdown.png, id=783, 227.85126pt x 227.85126pt>
 File: ./Figures/cropleftdown.png Graphic file (type png)
 
 <use ./Figures/cropleftdown.png>
 Package pdftex.def Info: ./Figures/cropleftdown.png used on input line 55.
 (pdftex.def)             Requested size: 125.24318pt x 125.24556pt.
 
-<./Figures/croprightup.png, id=797, 227.85126pt x 227.85126pt>
+<./Figures/croprightup.png, id=784, 227.85126pt x 227.85126pt>
 File: ./Figures/croprightup.png Graphic file (type png)
 
 <use ./Figures/croprightup.png>
 Package pdftex.def Info: ./Figures/croprightup.png used on input line 61.
 (pdftex.def)             Requested size: 125.24318pt x 125.24556pt.
 
-<./Figures/croprightdown.png, id=798, 227.85126pt x 227.85126pt>
+<./Figures/croprightdown.png, id=785, 227.85126pt x 227.85126pt>
 File: ./Figures/croprightdown.png Graphic file (type png)
 
 <use ./Figures/croprightdown.png>
 Package pdftex.def Info: ./Figures/croprightdown.png used on input line 67.
 (pdftex.def)             Requested size: 125.24318pt x 125.24556pt.
 
-<./Figures/cropcen.png, id=799, 227.85126pt x 227.85126pt>
+<./Figures/cropcen.png, id=786, 227.85126pt x 227.85126pt>
 File: ./Figures/cropcen.png Graphic file (type png)
 
 <use ./Figures/cropcen.png>
 Package pdftex.def Info: ./Figures/cropcen.png used on input line 73.
 (pdftex.def)             Requested size: 125.24318pt x 125.24556pt.
- <./Figures/sppnet.jpg, id=802, 642.4pt x 481.8pt>
+ [26 <./Figures/cloudy_0001.png (PNG copy)> <./Figures/sunny_0003.png (PNG copy
+)>]
+<./Figures/sppnet.jpg, id=793, 642.4pt x 481.8pt>
 File: ./Figures/sppnet.jpg Graphic file (type jpg)
-
-<use ./Figures/sppnet.jpg>
+ <use ./Figures/sppnet.jpg>
 Package pdftex.def Info: ./Figures/sppnet.jpg used on input line 90.
 (pdftex.def)             Requested size: 333.97972pt x 250.49332pt.
- [25 <./Figures/cloudy_0001.png (PNG copy)> <./Figures/sunny_0003.png (PNG copy
-)>]
-<./Figures/AlexNet.png, id=808, 728.7225pt x 232.87pt>
+
+<./Figures/AlexNet.png, id=795, 728.7225pt x 232.87pt>
 File: ./Figures/AlexNet.png Graphic file (type png)
 
 <use ./Figures/AlexNet.png>
 Package pdftex.def Info: ./Figures/AlexNet.png used on input line 102.
 (pdftex.def)             Requested size: 333.97972pt x 106.72351pt.
- [26 <./Figures/crop.png> <./Figures/cropleftup.png (PNG copy)> <./Figures/crop
+ [27 <./Figures/crop.png> <./Figures/cropleftup.png (PNG copy)> <./Figures/crop
 leftdown.png (PNG copy)> <./Figures/croprightup.png (PNG copy)> <./Figures/crop
-rightdown.png (PNG copy)> <./Figures/cropcen.png (PNG copy)>]
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-) (./Chapters/Chapter4.tex [27 <./Figures/sppnet.jpg> <./Figures/AlexNet.png (P
-NG copy)>] [28]
+rightdown.png (PNG copy)> <./Figures/cropcen.png (PNG copy)>] [28 <./Figures/sp
+pnet.jpg> <./Figures/AlexNet.png (PNG copy)>])
+(./Chapters/Chapter4.tex [29]
 Chapter 4.
 ------------------------------------------------------------------------------
  4 Experiment
 ------------------------------------------------------------------------------
-[29
+[30
 
-] [30]
+] [31]
 Overfull \hbox (38.88704pt too wide) in paragraph at lines 51--56
  [] 
  []
 
-<./Figures/FinetuneAccuracy.png, id=847, 578.16pt x 433.62pt>
+[32] <./Figures/FinetuneAccuracy.png, id=839, 578.16pt x 433.62pt>
 File: ./Figures/FinetuneAccuracy.png Graphic file (type png)
 
 <use ./Figures/FinetuneAccuracy.png>
 Package pdftex.def Info: ./Figures/FinetuneAccuracy.png used on input line 65.
 (pdftex.def)             Requested size: 333.97972pt x 250.48083pt.
- [31]
-<./Figures/finetuneCNNProcess.png, id=853, 578.16pt x 433.62pt>
+
+<./Figures/finetuneCNNProcess.png, id=841, 578.16pt x 433.62pt>
 File: ./Figures/finetuneCNNProcess.png Graphic file (type png)
 
 <use ./Figures/finetuneCNNProcess.png>
@@ -1022,24 +951,23 @@ Package pdftex.def Info: ./Figures/finetuneCNNProcess.png used on input line 76
 .
 (pdftex.def)             Requested size: 166.98668pt x 125.2371pt.
 
-<./Figures/finetuneSPPProcess.png, id=854, 578.16pt x 433.62pt>
+<./Figures/finetuneSPPProcess.png, id=842, 578.16pt x 433.62pt>
 File: ./Figures/finetuneSPPProcess.png Graphic file (type png)
 
 <use ./Figures/finetuneSPPProcess.png>
 Package pdftex.def Info: ./Figures/finetuneSPPProcess.png used on input line 77
 .
 (pdftex.def)             Requested size: 166.98668pt x 125.2371pt.
- [32 <./Figures/FinetuneAccuracy.png> <./Figures/finetuneCNNProcess.png> <./Fig
-ures/finetuneSPPProcess.png>]
-<./Figures/ROCWeatherClassification.png, id=863, 722.7pt x 722.7pt>
+ [33 <./Figures/FinetuneAccuracy.png>]
+<./Figures/ROCWeatherClassification.png, id=849, 722.7pt x 722.7pt>
 File: ./Figures/ROCWeatherClassification.png Graphic file (type png)
 
 <use ./Figures/ROCWeatherClassification.png>
 Package pdftex.def Info: ./Figures/ROCWeatherClassification.png used on input l
 ine 86.
 (pdftex.def)             Requested size: 333.97972pt x 333.97885pt.
- [33 <./Figures/ROCWeatherClassification.png>]
-<./Figures/DifferentLayers/cloudy1.png, id=872, 256.96pt x 256.96pt>
+ [34 <./Figures/finetuneCNNProcess.png> <./Figures/finetuneSPPProcess.png>]
+<./Figures/DifferentLayers/cloudy1.png, id=859, 256.96pt x 256.96pt>
 File: ./Figures/DifferentLayers/cloudy1.png Graphic file (type png)
 
 <use ./Figures/DifferentLayers/cloudy1.png>
@@ -1047,7 +975,7 @@ Package pdftex.def Info: ./Figures/DifferentLayers/cloudy1.png used on input li
 ne 110.
 (pdftex.def)             Requested size: 125.24318pt x 125.24495pt.
 
-<./Figures/DifferentLayers/cloudy1_conv1_fm.png, id=873, 596.2275pt x 592.2125p
+<./Figures/DifferentLayers/cloudy1_conv1_fm.png, id=860, 596.2275pt x 592.2125p
 t>
 File: ./Figures/DifferentLayers/cloudy1_conv1_fm.png Graphic file (type png)
  <use ./Figures/DifferentLayers/cloudy1_conv1_fm.png>
@@ -1055,7 +983,7 @@ Package pdftex.def Info: ./Figures/DifferentLayers/cloudy1_conv1_fm.png used on
  input line 116.
 (pdftex.def)             Requested size: 125.24318pt x 124.3954pt.
 
-<./Figures/DifferentLayers/cloudy1_conv2_fm.png, id=874, 595.22375pt x 591.2087
+<./Figures/DifferentLayers/cloudy1_conv2_fm.png, id=861, 595.22375pt x 591.2087
 6pt>
 File: ./Figures/DifferentLayers/cloudy1_conv2_fm.png Graphic file (type png)
  <use ./Figures/DifferentLayers/cloudy1_conv2_fm.png>
@@ -1063,7 +991,7 @@ Package pdftex.def Info: ./Figures/DifferentLayers/cloudy1_conv2_fm.png used on
  input line 122.
 (pdftex.def)             Requested size: 125.24318pt x 124.39204pt.
 
-<./Figures/DifferentLayers/cloudy1_conv3_fm.png, id=875, 596.2275pt x 592.2125p
+<./Figures/DifferentLayers/cloudy1_conv3_fm.png, id=862, 596.2275pt x 592.2125p
 t>
 File: ./Figures/DifferentLayers/cloudy1_conv3_fm.png Graphic file (type png)
  <use ./Figures/DifferentLayers/cloudy1_conv3_fm.png>
@@ -1071,7 +999,7 @@ Package pdftex.def Info: ./Figures/DifferentLayers/cloudy1_conv3_fm.png used on
  input line 128.
 (pdftex.def)             Requested size: 125.24318pt x 124.3954pt.
 
-<./Figures/DifferentLayers/cloudy1_conv4_fm.png, id=876, 596.2275pt x 592.2125p
+<./Figures/DifferentLayers/cloudy1_conv4_fm.png, id=863, 596.2275pt x 592.2125p
 t>
 File: ./Figures/DifferentLayers/cloudy1_conv4_fm.png Graphic file (type png)
  <use ./Figures/DifferentLayers/cloudy1_conv4_fm.png>
@@ -1079,7 +1007,7 @@ Package pdftex.def Info: ./Figures/DifferentLayers/cloudy1_conv4_fm.png used on
  input line 134.
 (pdftex.def)             Requested size: 125.24318pt x 124.3954pt.
 
-<./Figures/DifferentLayers/cloudy1_conv5_fm.png, id=877, 596.2275pt x 592.2125p
+<./Figures/DifferentLayers/cloudy1_conv5_fm.png, id=864, 596.2275pt x 592.2125p
 t>
 File: ./Figures/DifferentLayers/cloudy1_conv5_fm.png Graphic file (type png)
  <use ./Figures/DifferentLayers/cloudy1_conv5_fm.png>
@@ -1087,7 +1015,7 @@ Package pdftex.def Info: ./Figures/DifferentLayers/cloudy1_conv5_fm.png used on
  input line 140.
 (pdftex.def)             Requested size: 125.24318pt x 124.3954pt.
 
-<./Figures/DifferentLayers/sunny2.png, id=879, 596.2275pt x 592.2125pt>
+<./Figures/DifferentLayers/sunny2.png, id=866, 596.2275pt x 592.2125pt>
 File: ./Figures/DifferentLayers/sunny2.png Graphic file (type png)
 
 <use ./Figures/DifferentLayers/sunny2.png>
@@ -1095,7 +1023,7 @@ Package pdftex.def Info: ./Figures/DifferentLayers/sunny2.png used on input lin
 e 156.
 (pdftex.def)             Requested size: 125.24318pt x 124.3954pt.
 
-<./Figures/DifferentLayers/sunny2_conv1_fm.png, id=880, 596.2275pt x 592.2125pt
+<./Figures/DifferentLayers/sunny2_conv1_fm.png, id=867, 596.2275pt x 592.2125pt
 >
 File: ./Figures/DifferentLayers/sunny2_conv1_fm.png Graphic file (type png)
  <use ./Figures/DifferentLayers/sunny2_conv1_fm.png>
@@ -1103,7 +1031,7 @@ Package pdftex.def Info: ./Figures/DifferentLayers/sunny2_conv1_fm.png used on
 input line 162.
 (pdftex.def)             Requested size: 125.24318pt x 124.3954pt.
 
-<./Figures/DifferentLayers/sunny2_conv2_fm.png, id=881, 595.22375pt x 591.20876
+<./Figures/DifferentLayers/sunny2_conv2_fm.png, id=868, 595.22375pt x 591.20876
 pt>
 File: ./Figures/DifferentLayers/sunny2_conv2_fm.png Graphic file (type png)
  <use ./Figures/DifferentLayers/sunny2_conv2_fm.png>
@@ -1111,7 +1039,7 @@ Package pdftex.def Info: ./Figures/DifferentLayers/sunny2_conv2_fm.png used on
 input line 168.
 (pdftex.def)             Requested size: 125.24318pt x 124.39204pt.
 
-<./Figures/DifferentLayers/sunny2_conv3_fm.png, id=882, 596.2275pt x 592.2125pt
+<./Figures/DifferentLayers/sunny2_conv3_fm.png, id=869, 596.2275pt x 592.2125pt
 >
 File: ./Figures/DifferentLayers/sunny2_conv3_fm.png Graphic file (type png)
  <use ./Figures/DifferentLayers/sunny2_conv3_fm.png>
@@ -1119,7 +1047,7 @@ Package pdftex.def Info: ./Figures/DifferentLayers/sunny2_conv3_fm.png used on
 input line 174.
 (pdftex.def)             Requested size: 125.24318pt x 124.3954pt.
 
-<./Figures/DifferentLayers/sunny2_conv4_fm.png, id=883, 596.2275pt x 592.2125pt
+<./Figures/DifferentLayers/sunny2_conv4_fm.png, id=870, 596.2275pt x 592.2125pt
 >
 File: ./Figures/DifferentLayers/sunny2_conv4_fm.png Graphic file (type png)
  <use ./Figures/DifferentLayers/sunny2_conv4_fm.png>
@@ -1127,21 +1055,21 @@ Package pdftex.def Info: ./Figures/DifferentLayers/sunny2_conv4_fm.png used on
 input line 180.
 (pdftex.def)             Requested size: 125.24318pt x 124.3954pt.
 
-<./Figures/DifferentLayers/sunny2_conv5_fm.png, id=884, 596.2275pt x 592.2125pt
+<./Figures/DifferentLayers/sunny2_conv5_fm.png, id=871, 596.2275pt x 592.2125pt
 >
 File: ./Figures/DifferentLayers/sunny2_conv5_fm.png Graphic file (type png)
  <use ./Figures/DifferentLayers/sunny2_conv5_fm.png>
 Package pdftex.def Info: ./Figures/DifferentLayers/sunny2_conv5_fm.png used on 
 input line 186.
 (pdftex.def)             Requested size: 125.24318pt x 124.3954pt.
+ [35 <./Figures/ROCWeatherClassification.png>]
 File: ./Figures/DifferentLayers/sunny2.png Graphic file (type png)
-
-<use ./Figures/DifferentLayers/sunny2.png>
+ <use ./Figures/DifferentLayers/sunny2.png>
 Package pdftex.def Info: ./Figures/DifferentLayers/sunny2.png used on input lin
 e 204.
 (pdftex.def)             Requested size: 59.62624pt x 59.22472pt.
 
-<./Figures/DifferentLayers/sunny2_caffe_conv1_fm.png, id=885, 596.2275pt x 592.
+<./Figures/DifferentLayers/sunny2_caffe_conv1_fm.png, id=877, 596.2275pt x 592.
 2125pt>
 File: ./Figures/DifferentLayers/sunny2_caffe_conv1_fm.png Graphic file (type pn
 g)
@@ -1150,7 +1078,7 @@ Package pdftex.def Info: ./Figures/DifferentLayers/sunny2_caffe_conv1_fm.png us
 ed on input line 205.
 (pdftex.def)             Requested size: 59.62624pt x 59.22472pt.
 
-<./Figures/DifferentLayers/sunny2_caffe_conv2_fm.png, id=886, 595.22375pt x 591
+<./Figures/DifferentLayers/sunny2_caffe_conv2_fm.png, id=878, 595.22375pt x 591
 .20876pt>
 File: ./Figures/DifferentLayers/sunny2_caffe_conv2_fm.png Graphic file (type pn
 g)
@@ -1159,7 +1087,7 @@ Package pdftex.def Info: ./Figures/DifferentLayers/sunny2_caffe_conv2_fm.png us
 ed on input line 206.
 (pdftex.def)             Requested size: 59.52585pt x 59.12433pt.
 
-<./Figures/DifferentLayers/sunny2_caffe_conv3_fm.png, id=887, 596.2275pt x 592.
+<./Figures/DifferentLayers/sunny2_caffe_conv3_fm.png, id=879, 596.2275pt x 592.
 2125pt>
 File: ./Figures/DifferentLayers/sunny2_caffe_conv3_fm.png Graphic file (type pn
 g)
@@ -1168,7 +1096,7 @@ Package pdftex.def Info: ./Figures/DifferentLayers/sunny2_caffe_conv3_fm.png us
 ed on input line 207.
 (pdftex.def)             Requested size: 59.62624pt x 59.22472pt.
 
-<./Figures/DifferentLayers/sunny2_caffe_conv4_fm.png, id=888, 596.2275pt x 592.
+<./Figures/DifferentLayers/sunny2_caffe_conv4_fm.png, id=880, 596.2275pt x 592.
 2125pt>
 File: ./Figures/DifferentLayers/sunny2_caffe_conv4_fm.png Graphic file (type pn
 g)
@@ -1177,7 +1105,7 @@ Package pdftex.def Info: ./Figures/DifferentLayers/sunny2_caffe_conv4_fm.png us
 ed on input line 208.
 (pdftex.def)             Requested size: 59.62624pt x 59.22472pt.
 
-<./Figures/DifferentLayers/sunny2_caffe_conv5_fm.png, id=889, 596.2275pt x 592.
+<./Figures/DifferentLayers/sunny2_caffe_conv5_fm.png, id=881, 596.2275pt x 592.
 2125pt>
 File: ./Figures/DifferentLayers/sunny2_caffe_conv5_fm.png Graphic file (type pn
 g)
@@ -1227,7 +1155,7 @@ Overfull \hbox (12.18396pt too wide) in paragraph at lines 202--219
  []
 
 
-<./Figures/DifferentLayers/sunny2_hist_caffe_fc7.png, id=891, 592.2125pt x 288.
+<./Figures/DifferentLayers/sunny2_hist_caffe_fc7.png, id=883, 592.2125pt x 288.
 07625pt>
 File: ./Figures/DifferentLayers/sunny2_hist_caffe_fc7.png Graphic file (type pn
 g)
@@ -1236,7 +1164,7 @@ Package pdftex.def Info: ./Figures/DifferentLayers/sunny2_hist_caffe_fc7.png us
 ed on input line 228.
 (pdftex.def)             Requested size: 166.98668pt x 81.22783pt.
 
-<./Figures/DifferentLayers/sunny2_hist_spp_fc7.png, id=892, 592.2125pt x 288.07
+<./Figures/DifferentLayers/sunny2_hist_spp_fc7.png, id=884, 592.2125pt x 288.07
 625pt>
 File: ./Figures/DifferentLayers/sunny2_hist_spp_fc7.png Graphic file (type png)
 
@@ -1244,87 +1172,88 @@ File: ./Figures/DifferentLayers/sunny2_hist_spp_fc7.png Graphic file (type png)
 Package pdftex.def Info: ./Figures/DifferentLayers/sunny2_hist_spp_fc7.png used
  on input line 229.
 (pdftex.def)             Requested size: 166.98668pt x 81.22783pt.
- [34 <./Figures/DifferentLayers/cloudy1.png (PNG copy)> <./Figures/DifferentLay
-ers/cloudy1_conv1_fm.png> <./Figures/DifferentLayers/cloudy1_conv2_fm.png> <./F
-igures/DifferentLayers/cloudy1_conv3_fm.png> <./Figures/DifferentLayers/cloudy1
-_conv4_fm.png> <./Figures/DifferentLayers/cloudy1_conv5_fm.png>]
-<./Figures/err_sunny1.jpg, id=910, 256.96pt x 256.96pt>
+
+<./Figures/err_sunny1.jpg, id=886, 256.96pt x 256.96pt>
 File: ./Figures/err_sunny1.jpg Graphic file (type jpg)
 
 <use ./Figures/err_sunny1.jpg>
 Package pdftex.def Info: ./Figures/err_sunny1.jpg used on input line 247.
 (pdftex.def)             Requested size: 125.24318pt x 125.24495pt.
 
-<./Figures/err_sunny2.jpg, id=911, 256.96pt x 256.96pt>
+<./Figures/err_sunny2.jpg, id=887, 256.96pt x 256.96pt>
 File: ./Figures/err_sunny2.jpg Graphic file (type jpg)
 
 <use ./Figures/err_sunny2.jpg>
 Package pdftex.def Info: ./Figures/err_sunny2.jpg used on input line 253.
 (pdftex.def)             Requested size: 125.24318pt x 125.24495pt.
 
-<./Figures/err_sunny3.jpg, id=912, 256.96pt x 256.96pt>
+<./Figures/err_sunny3.jpg, id=888, 256.96pt x 256.96pt>
 File: ./Figures/err_sunny3.jpg Graphic file (type jpg)
 
 <use ./Figures/err_sunny3.jpg>
 Package pdftex.def Info: ./Figures/err_sunny3.jpg used on input line 259.
 (pdftex.def)             Requested size: 125.24318pt x 125.24495pt.
 
-<./Figures/err_cloudy1.jpg, id=913, 256.96pt x 256.96pt>
+<./Figures/err_cloudy1.jpg, id=889, 256.96pt x 256.96pt>
 File: ./Figures/err_cloudy1.jpg Graphic file (type jpg)
 
 <use ./Figures/err_cloudy1.jpg>
 Package pdftex.def Info: ./Figures/err_cloudy1.jpg used on input line 265.
 (pdftex.def)             Requested size: 125.24318pt x 125.24495pt.
 
-<./Figures/err_cloudy2.jpg, id=914, 256.96pt x 256.96pt>
+<./Figures/err_cloudy2.jpg, id=890, 256.96pt x 256.96pt>
 File: ./Figures/err_cloudy2.jpg Graphic file (type jpg)
 
 <use ./Figures/err_cloudy2.jpg>
 Package pdftex.def Info: ./Figures/err_cloudy2.jpg used on input line 271.
 (pdftex.def)             Requested size: 125.24318pt x 125.24495pt.
 
-<./Figures/err_cloudy3.jpg, id=915, 256.96pt x 256.96pt>
+<./Figures/err_cloudy3.jpg, id=891, 256.96pt x 256.96pt>
 File: ./Figures/err_cloudy3.jpg Graphic file (type jpg)
 
 <use ./Figures/err_cloudy3.jpg>
 Package pdftex.def Info: ./Figures/err_cloudy3.jpg used on input line 277.
 (pdftex.def)             Requested size: 125.24318pt x 125.24495pt.
- [35 <./Figures/DifferentLayers/sunny2.png> <./Figures/DifferentLayers/sunny2_c
-onv1_fm.png> <./Figures/DifferentLayers/sunny2_conv2_fm.png> <./Figures/Differe
-ntLayers/sunny2_conv3_fm.png> <./Figures/DifferentLayers/sunny2_conv4_fm.png> <
-./Figures/DifferentLayers/sunny2_conv5_fm.png> <./Figures/DifferentLayers/sunny
-2_caffe_conv1_fm.png> <./Figures/DifferentLayers/sunny2_caffe_conv2_fm.png> <./
-Figures/DifferentLayers/sunny2_caffe_conv3_fm.png> <./Figures/DifferentLayers/s
-unny2_caffe_conv4_fm.png> <./Figures/DifferentLayers/sunny2_caffe_conv5_fm.png>
-] [36 <./Figures/DifferentLayers/sunny2_hist_caffe_fc7.png> <./Figures/Differen
-tLayers/sunny2_hist_spp_fc7.png> <./Figures/err_sunny1.jpg> <./Figures/err_sunn
-y2.jpg> <./Figures/err_sunny3.jpg> <./Figures/err_cloudy1.jpg> <./Figures/err_c
-loudy2.jpg> <./Figures/err_cloudy3.jpg>])
-[37] [38
+ [36 <./Figures/DifferentLayers/cloudy1.png (PNG copy)> <./Figures/DifferentLay
+ers/cloudy1_conv1_fm.png> <./Figures/DifferentLayers/cloudy1_conv2_fm.png> <./F
+igures/DifferentLayers/cloudy1_conv3_fm.png> <./Figures/DifferentLayers/cloudy1
+_conv4_fm.png> <./Figures/DifferentLayers/cloudy1_conv5_fm.png>] [37 <./Figures
+/DifferentLayers/sunny2.png> <./Figures/DifferentLayers/sunny2_conv1_fm.png> <.
+/Figures/DifferentLayers/sunny2_conv2_fm.png> <./Figures/DifferentLayers/sunny2
+_conv3_fm.png> <./Figures/DifferentLayers/sunny2_conv4_fm.png> <./Figures/Diffe
+rentLayers/sunny2_conv5_fm.png> <./Figures/DifferentLayers/sunny2_caffe_conv1_f
+m.png> <./Figures/DifferentLayers/sunny2_caffe_conv2_fm.png> <./Figures/Differe
+ntLayers/sunny2_caffe_conv3_fm.png> <./Figures/DifferentLayers/sunny2_caffe_con
+v4_fm.png> <./Figures/DifferentLayers/sunny2_caffe_conv5_fm.png>]) [38 <./Figur
+es/DifferentLayers/sunny2_hist_caffe_fc7.png> <./Figures/DifferentLayers/sunny2
+_hist_spp_fc7.png> <./Figures/err_sunny1.jpg> <./Figures/err_sunny2.jpg> <./Fig
+ures/err_sunny3.jpg> <./Figures/err_cloudy1.jpg> <./Figures/err_cloudy2.jpg> <.
+/Figures/err_cloudy3.jpg>] [39] [40
 
 
-] (./Chapters/Chapter5.tex
+]
+(./Chapters/Chapter5.tex
 Chapter 5.
 ------------------------------------------------------------------------------
  5 Introduction
 ------------------------------------------------------------------------------
-<./Figures/beach.jpg, id=958, 285.065pt x 177.66376pt>
+<./Figures/beach.jpg, id=950, 285.065pt x 177.66376pt>
 File: ./Figures/beach.jpg Graphic file (type jpg)
 
 <use ./Figures/beach.jpg>
 Package pdftex.def Info: ./Figures/beach.jpg used on input line 14.
 (pdftex.def)             Requested size: 333.97972pt x 208.15039pt.
- [39
+ [41
 
- <./Figures/beach.jpg>] [40])
-(./Chapters/Chapter6.tex [41]
+ <./Figures/beach.jpg>] [42]) [43]
+(./Chapters/Chapter6.tex [44]
 Chapter 6.
 ------------------------------------------------------------------------------
  6 Background
 ------------------------------------------------------------------------------
-[42
+[45
 
-] [43] [44] [45] [46] [47]) (./Chapters/Chapter7.tex [48]
+] [46] [47] [48] [49] [50] [51]) (./Chapters/Chapter7.tex [52]
 Chapter 7.
 ------------------------------------------------------------------------------
  7 Methodology
@@ -1335,7 +1264,7 @@ File: ./Figures/color_wheel.jpg Graphic file (type jpg)
 <use ./Figures/color_wheel.jpg>
 Package pdftex.def Info: ./Figures/color_wheel.jpg used on input line 13.
 (pdftex.def)             Requested size: 206.08194pt x 200.15947pt.
- [49
+ [53
 
  <./Figures/color_wheel.jpg>]
 <./Figures/RGBhist/0.png, id=1050, 32.12pt x 32.12pt>
@@ -1449,158 +1378,133 @@ File: ./Figures/RGBhist/3b.png Graphic file (type png)
 <use ./Figures/RGBhist/3b.png>
 Package pdftex.def Info: ./Figures/RGBhist/3b.png used on input line 47.
 (pdftex.def)             Requested size: 104.36826pt x 78.2732pt.
-
+ [54]
 Overfull \hbox (14.60358pt too wide) in paragraph at lines 61--62
 \OT1/cmr/m/n/10.95 train-ing dataset is com-posed of $\OML/cmm/m/it/10.95 m$ \O
 T1/cmr/m/n/10.95 multi-label sam-ples, such as $[]$,
  []
 
-[50] <./Figures/MultiLabelNet.jpeg, id=1074, 294.26862pt x 240.9pt>
+[55 <./Figures/RGBhist/0.png (PNG copy)> <./Figures/RGBhist/0r.png (PNG copy)> 
+<./Figures/RGBhist/0g.png (PNG copy)> <./Figures/RGBhist/0b.png (PNG copy)> <./
+Figures/RGBhist/1.png (PNG copy)> <./Figures/RGBhist/1r.png (PNG copy)> <./Figu
+res/RGBhist/1g.png (PNG copy)> <./Figures/RGBhist/1b.png (PNG copy)> <./Figures
+/RGBhist/2.png (PNG copy)> <./Figures/RGBhist/2r.png (PNG copy)> <./Figures/RGB
+hist/2g.png (PNG copy)> <./Figures/RGBhist/2b.png (PNG copy)> <./Figures/RGBhis
+t/3.png (PNG copy)> <./Figures/RGBhist/3r.png (PNG copy)> <./Figures/RGBhist/3g
+.png (PNG copy)> <./Figures/RGBhist/3b.png (PNG copy)>]
+<./Figures/MultiLabelNet.jpeg, id=1096, 294.26862pt x 240.9pt>
 File: ./Figures/MultiLabelNet.jpeg Graphic file (type jpg)
 
 <use ./Figures/MultiLabelNet.jpeg>
 Package pdftex.def Info: ./Figures/MultiLabelNet.jpeg used on input line 66.
 (pdftex.def)             Requested size: 333.97972pt x 273.42316pt.
- [51 <./Figures/RGBhist/0.png (PNG copy)> <./Figures/RGBhist/0r.png (PNG copy)>
- <./Figures/RGBhist/0g.png (PNG copy)> <./Figures/RGBhist/0b.png (PNG copy)> <.
-/Figures/RGBhist/1.png (PNG copy)> <./Figures/RGBhist/1r.png (PNG copy)> <./Fig
-ures/RGBhist/1g.png (PNG copy)> <./Figures/RGBhist/1b.png (PNG copy)> <./Figure
-s/RGBhist/2.png (PNG copy)> <./Figures/RGBhist/2r.png (PNG copy)> <./Figures/RG
-Bhist/2g.png (PNG copy)> <./Figures/RGBhist/2b.png (PNG copy)> <./Figures/RGBhi
-st/3.png (PNG copy)> <./Figures/RGBhist/3r.png (PNG copy)> <./Figures/RGBhist/3
-g.png (PNG copy)> <./Figures/RGBhist/3b.png (PNG copy)>] [52 <./Figures/MultiLa
-belNet.jpeg>] [53] [54] [55] [56] [57])
-(./Chapters/Chapter8.tex [58]
+ [56 <./Figures/MultiLabelNet.jpeg>] [57]
+[58] [59] [60] [61] [62]) (./Chapters/Chapter8.tex [63]
 Chapter 8.
 ------------------------------------------------------------------------------
  8 Experiment
 ------------------------------------------------------------------------------
-<./Figures/multilabel-topology.png, id=1181, 473.77pt x 647.41875pt>
+<./Figures/multilabel-topology.png, id=1186, 473.77pt x 647.41875pt>
 File: ./Figures/multilabel-topology.png Graphic file (type png)
 
 <use ./Figures/multilabel-topology.png>
 Package pdftex.def Info: ./Figures/multilabel-topology.png used on input line 1
 8.
 (pdftex.def)             Requested size: 333.97972pt x 456.40063pt.
- [59
+ [64
 
-] [60 <./Figures/multilabel-topology.png>] <./Figures/MLtestneurons.png, id=120
-2, 578.6418pt x 434.1018pt>
+] [65 <./Figures/multilabel-topology.png>] <./Figures/MLtestneurons.png, id=120
+5, 578.6418pt x 434.1018pt>
 File: ./Figures/MLtestneurons.png Graphic file (type png)
 
 <use ./Figures/MLtestneurons.png>
 Package pdftex.def Info: ./Figures/MLtestneurons.png used on input line 72.
 (pdftex.def)             Requested size: 333.97972pt x 250.56044pt.
-
-<./Figures/MLLearningRates.png, id=1203, 578.6418pt x 434.1018pt>
+ [66]
+<./Figures/MLLearningRates.png, id=1215, 578.6418pt x 434.1018pt>
 File: ./Figures/MLLearningRates.png Graphic file (type png)
 
 <use ./Figures/MLLearningRates.png>
 Package pdftex.def Info: ./Figures/MLLearningRates.png used on input line 79.
 (pdftex.def)             Requested size: 333.97972pt x 250.56044pt.
 
-<./Figures/ROCMultilabel.png, id=1207, 589.0005pt x 444.4605pt>
+<./Figures/ROCMultilabel.png, id=1219, 589.0005pt x 444.4605pt>
 File: ./Figures/ROCMultilabel.png Graphic file (type png)
 
 <use ./Figures/ROCMultilabel.png>
 Package pdftex.def Info: ./Figures/ROCMultilabel.png used on input line 87.
 (pdftex.def)             Requested size: 333.97972pt x 252.02942pt.
- [61]
-<./Figures/ROCMultilabelExt.png, id=1217, 589.0005pt x 444.4605pt>
+ [67 <./Figures/MLtestneurons.png (PNG copy)>] <./Figures/ROCMultilabelExt.png,
+ id=1225, 589.0005pt x 444.4605pt>
 File: ./Figures/ROCMultilabelExt.png Graphic file (type png)
 
 <use ./Figures/ROCMultilabelExt.png>
 Package pdftex.def Info: ./Figures/ROCMultilabelExt.png used on input line 93.
 (pdftex.def)             Requested size: 333.97972pt x 252.02942pt.
- [62 <./Figures/MLtestneurons.png (PNG copy)>]) (./Appendices/AppendixA.tex [63
- <./Figures/MLLearningRates.png (PNG copy)>] [64 <./Figures/ROCMultilabel.png> 
-<./Figures/ROCMultilabelExt.png>]
+ [68 <./Figures/MLLearningRates.png (PNG copy)> <./Figures/ROCMultilabel.png>])
+ (./Appendices/AppendixA.tex [69 <./Figures/ROCMultilabelExt.png>]
 Appendix A.
 ------------------------------------------------------------------------------
  A Appendix Title Here
 ------------------------------------------------------------------------------
-) [65
+) [70
 
 ]
 ------------------------------------------------------------------------------
  Bibliography
 ------------------------------------------------------------------------------
-(./Thesis.bbl [66
+(./Thesis.bbl [71
 
 
-] [67] [68])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 214.
- [69]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 214.
+] [72] [73])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 226.
+ [74]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 226.
  (./Thesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 214.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 214.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 226.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 226.
+Package rerunfilecheck Info: File `Thesis.out' has not changed.
+(rerunfilecheck)             Checksum: 2F9200C4B3F5DB7118C87504DB386648;12564.
 
 
-Package rerunfilecheck Warning: File `Thesis.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-Package rerunfilecheck Info: Checksums for `Thesis.out':
-(rerunfilecheck)             Before: 1705EBEB79DB4AD98188C3943A8C5129;12701
-(rerunfilecheck)             After:  F7A010C710D456705DBC59281372FAD7;12701.
-
-LaTeX Warning: There were multiply-defined labels.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 214.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 226.
  ) 
 Here is how much of TeX's memory you used:
- 14136 strings out of 493117
- 207260 string characters out of 6138984
- 275506 words of memory out of 5000000
- 16899 multiletter control sequences out of 15000+600000
- 16377 words of font info for 61 fonts, out of 8000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 49i,15n,45p,1211b,505s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{table.caption.264} has been referenced but does n
-ot exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{figure.caption.268} has been referenced but does no
-t exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{dummy.271} has been referenced but does not exist, 
-replaced by a fixed one
-
-pdfTeX warning (dest): name{appendix.270} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.269} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.263} has been referenced but does not exist
-, replaced by a fixed one
-
-<c:/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texli
-ve/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2014/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><c:/texlive/2014/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2014/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2014/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmmi6.pfb><c:/texlive/2014/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmmi7.pfb><c:/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8
-.pfb><c:/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/t
-exlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/201
-4/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2014/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2014/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2014/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmr8.pfb><c:/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmr9.pfb><c:/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb
-><c:/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texl
-ive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2014/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2014/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/texlive/2014/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2014/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmtt10.pfb><c:/texlive/2014/texmf-dist/fonts/type1/public/amsfonts
-/symbols/msam7.pfb><c:/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/symb
-ols/msbm10.pfb>
-Output written on Thesis.pdf (83 pages, 5871689 bytes).
+ 14143 strings out of 494985
+ 207978 string characters out of 6180357
+ 272739 words of memory out of 5000000
+ 16667 multiletter control sequences out of 15000+600000
+ 16025 words of font info for 60 fonts, out of 8000000 for 9000
+ 36 hyphenation exceptions out of 8191
+ 49i,15n,45p,1211b,497s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pf
+b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/s
+ymbols/msam7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/sym
+bols/msbm10.pfb>
+Output written on Thesis.pdf (86 pages, 5803154 bytes).
 PDF statistics:
- 1427 PDF objects out of 1440 (max. 8388607)
- 1189 compressed objects within 12 object streams
- 397 named destinations out of 1000 (max. 500000)
- 1000 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1421 PDF objects out of 1440 (max. 8388607)
+ 1181 compressed objects within 12 object streams
+ 391 named destinations out of 1000 (max. 500000)
+ 992 words of extra memory for PDF output out of 10000 (max. 10000000)
 

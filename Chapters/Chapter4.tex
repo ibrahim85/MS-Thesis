@@ -21,7 +21,7 @@ The model \ref{fig:ImageNetArch} is trained with a descent optimisation method, 
 The learning rates are set equally for all layers. They are initialised at 0.01 and decrease with the stepdown policy which means that they would drop by a factor of 10 after each 100000 iteration. In total, the learning rate drops 3 times and the accuracy keeps stable after 370K iterations. 
 
 The training is regularised via techniques, dropout and weight decay. The dropout regularisation is implemented at the two fully-connected layers and the dropout ratio is set to 0.5. The neurons, which are dropped out, output zero and do not participate in the backpropagation process. Therefore, the neural network samples different architectures each time. It, significantly, decreases complex co-adaptations of neurons because a neuron does not depend on the existence of all other neurons. The weight decay, $\epsilon$, is set to 0.0005 which means the new weight is shrunk according to 
-\begin{equation}\label{eq:ffEq}
+\begin{equation}\label{eq:WeightDecay}
 w^{new} = w^{old}(1 - \epsilon)
 \end{equation}
 after each weight update.
@@ -151,37 +151,37 @@ In Figure \ref{fig:sunny_finetuneprocess}, a sunny image is fed into CNN and the
     \subfigure[raw image]{
 		\begin{minipage}{0.3\textwidth}
 		   		\includegraphics[width=1\textwidth]{sunny2}
-		   		\label{fig:sunny}
+		   		\label{fig:sunny_ft}
 		\end{minipage}
     	} 
     \subfigure[conv1 output]{
 		\begin{minipage}{0.3\textwidth}
 		   		\includegraphics[width=1\textwidth]{sunny2_conv1_fm}
-		   		\label{fig:sunny_conv1}
+		   		\label{fig:sunny_ft_conv1}
 		\end{minipage}
     	} 
     \subfigure[conv2 output]{
 		\begin{minipage}{0.3\textwidth}
 		   		\includegraphics[width=1\textwidth]{sunny2_conv2_fm}
-		   		\label{fig:sunny_conv2}
+		   		\label{fig:sunny_ft_conv2}
 		\end{minipage}
     	} 
     \subfigure[conv3 output]{
 		\begin{minipage}{0.3\textwidth}
 		   		\includegraphics[width=1\textwidth]{sunny2_conv3_fm}
-		   		\label{fig:sunny_conv3}
+		   		\label{fig:sunny_ft_conv3}
 		\end{minipage}
     	} 
     \subfigure[conv4 output]{
 		\begin{minipage}{0.3\textwidth}
 		   		\includegraphics[width=1\textwidth]{sunny2_conv4_fm}
-		   		\label{fig:sunny_conv4}
+		   		\label{fig:sunny_ft_conv4}
 		\end{minipage}
     	} 
     \subfigure[conv5 output]{
 		\begin{minipage}{0.3\textwidth}
 		   		\includegraphics[width=1\textwidth]{sunny2_conv5_fm}
-		   		\label{fig:sunny_conv5}
+		   		\label{fig:sunny_ft_conv5}
 		\end{minipage}
     	} 
 
