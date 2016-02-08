@@ -1,13 +1,13 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {3.1}{\ignorespaces Architecture of the model\relax }}{29}{table.caption.111}
+\contentsline {table}{\numberline {3.1}{\ignorespaces Architecture of the model\relax }}{30}{table.caption.111}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {4.1}{\ignorespaces The first test is extracting features from the pre-trained CNN model and training a SVM classifer. The second test is similar with the first except for extracting features from the CNN model with a SPP layer. The third test is fine-tuning the model with AlexNet architecture. The fourth test is fine-tuning the CNN model with a SPP layer\relax }}{33}{table.caption.119}
+\contentsline {table}{\numberline {4.1}{\ignorespaces The first test is extracting features from the pre-trained CNN model and training a SVM classifer. The second test is similar with the first except for extracting features from the CNN model with a SPP layer. The third test is fine-tuning the model with AlexNet architecture. The fourth test is fine-tuning the CNN model with a SPP layer\relax }}{34}{table.caption.119}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {5.1}{\ignorespaces Multilabel $Y_{1},...,Y_{L} \in 2^L$\relax }}{42}{table.caption.154}
+\contentsline {table}{\numberline {5.1}{\ignorespaces Multilabel $Y_{1},...,Y_{L} \in 2^L$\relax }}{43}{table.caption.154}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {8.1}{\ignorespaces Test results for different number of hidden neurons.\relax }}{67}{table.caption.260}
+\contentsline {table}{\numberline {8.1}{\ignorespaces Test results for different number of hidden neurons.\relax }}{68}{table.caption.260}
 \addvspace {10\p@ }
