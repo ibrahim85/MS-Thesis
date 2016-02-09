@@ -16,7 +16,7 @@ The neural network is built from scratch up. First, we need to determine how man
 \begin{figure}[!htb]
 \centering
 \includegraphics[width=0.8\textwidth]{multilabel-topology.png}
-\caption{\label{fig:MLtopology}The network topology}
+\caption{\label{fig:MLtopology}Network Topology}
 \end{figure}
 Between two layers, we put a ReLU layer to apply the non-saturating activation function $f(x) = max(0,x)$ which helps the decision function increase the non-linear properties.
 
@@ -77,9 +77,9 @@ Neuron number              & Sensitivity & Specificity & Harmonic Mean & Preciss
 \begin{figure}[htb]
 \centering
 \includegraphics[width=0.8\textwidth]{MLLearningRates}
-\caption{\label{fig:MLLearningRates}The learning speed for 200 neurons in the hidden layer. Blue circle for Sensitivity. Black plus for Specificity. Cyan star for Harmonic Mean. Red dot for Precission. Green x for  F1 Score.}
+\caption{\label{fig:MLLearningRates}The learning speed for 200 neurons in the hidden layer. Blue circle for Sensitivity. Black plus for Specificity. Cyan star for Harmonic Mean. Red dot for Precission. Green x for F1 Score.}
 \end{figure}
-In figure\ref{fig:MLLearningRates}, it shows that the learning speed is quick. After reaching high accuracy, the accuracy keeps stable. 
+In figure \ref{fig:MLLearningRates}, it shows that the learning speed is quick. After reaching high accuracy, the accuracy keeps stable. 
 
 In figures \ref{fig:MLROCCurve} \ref{fig:MLROCCurveExt}, the ROC curve of test results shows that the average accuracy is high. In detail, the micro-accuracy for label $0$(red) is the highest, followed by accuracies for label $1$(green) and label $2$(blue). 
 \begin{figure}[htb]

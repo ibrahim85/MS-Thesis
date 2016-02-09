@@ -20,7 +20,7 @@ Artificial neurons were introduced as information processing devices more than f
 \begin{figure}[!htb]
 \centering
 \includegraphics[width=0.8\textwidth]{Figure2-1.png}
-\caption{\label{fig:perceptron}Diagram of a perceptron.}
+\caption{\label{fig:perceptron}Diagram of a perceptron \citep{NeuronFigure1}.}
 \end{figure}
 
 Each output is updated according to the equation:
@@ -111,7 +111,7 @@ where $f()$ is the logistic function. Supposing that an input data $1$ maps to a
 \begin{figure}[!htb]
 \centering
 \includegraphics[width=0.4\textwidth]{1LayerErrorSurface.png}
-\caption{\label{fig:1LayerErrorSurface}The error surface for a single layer neural network. Source: Internet}
+\caption{\label{fig:1LayerErrorSurface}The error surface for a single layer neural network\citep{ErrorFigure1}.}
 \end{figure}
 
 The single layer neural network has a decision boundary which is linear. However, it is clear this is a very limited class of decision boundary. It can be illustrated by two types of dataset.
@@ -120,7 +120,7 @@ The single layer neural network has a decision boundary which is linear. However
 \centering     %%% not \center
 \subfigure{\label{fig:a}\includegraphics[width=0.4\textwidth]{SingleLayerSimpleData}}
 \subfigure{\label{fig:b}\includegraphics[width=0.4\textwidth]{SingleLayerCircleData}}
-\caption{Two types of dataset. The left one can be separated by a single layer neural network. The right one cannot be separated by a single neural network.}
+\caption{Two types of dataset. The left one can be separated by a single layer neural network. The right one cannot be separated by a single neural network. Generated from\citep{GenerateNN}.}
 \end{figure}
 
 \section{Multi-Layer Networks}
@@ -132,7 +132,7 @@ In the thesis, we limit multi-layer neural networks in the subset of feedforward
 \begin{figure}[!htb]
 \centering
 \includegraphics[width=0.8\textwidth]{Figure2-2.png}
-\caption{\label{fig:ffnet}Diagram of a feedforward neural networks.}
+\caption{\label{fig:ffnet}Diagram of a feedforward neural network\citep{zainal2013oil}.}
 \end{figure}
 
 In the example, the middle column perceptrons act as hidden neurons. The network has $n$ inputs, $4$ hidden neurons and $m$ output neurons. The network diagram represents the function in the form
@@ -161,14 +161,14 @@ where $f()$ is the sigmoid function. With varying $w_{1}$ and $w_{2}$, the error
 \begin{figure}[!htb]
 \centering
 \includegraphics[width=0.4\textwidth]{2LayerErrorSurface.png}
-\caption{\label{fig:2LayerErrorSurface}The error surface for a multi-layer neural network. Source: Internet}
+\caption{\label{fig:2LayerErrorSurface}The error surface for a multi-layer neural network\citep{ErrorFigure1}.}
 \end{figure}
 And the samples which cannot be separated by the single-layer neural network can be done by a multi-layer neural network.
 \graphicspath{ {./Figures/} }
 \begin{figure}[!htb]
 \centering
 \includegraphics[width=0.4\textwidth]{MultiLayerCircleData.png}
-\caption{\label{fig:MultiLayerErrorSurface}A multi-layer neural network can separate a complicated dataset. Source: Internet}
+\caption{\label{fig:MultiLayerErrorSurface}A multi-layer neural network can separate a complicated dataset. Generated from\citep{GenerateNN}.}
 \end{figure}
 
 \section{Stochastic Gradient Descent(SGD)}
@@ -227,7 +227,7 @@ Overfitting is a common phenomenon that a model has high performance on the trai
 \begin{figure}[!htb]
 \centering
 \includegraphics[width=0.8\textwidth]{overfitting.png}
-\caption{\label{fig:OverfittingExample}Overfitting example, the left one has a decent generalization performance and the right one is overfitting.}
+\caption{\label{fig:OverfittingExample}Overfitting example, the left one has a decent generalization performance and the right one is overfitting\citep{OverfittingFigure}.}
 \end{figure}
 From the example in figure \ref{fig:OverfittingExample}, it is clear that a model, whose complexity is neither too small nor too large, has the best generalization performance. 
 
@@ -357,7 +357,7 @@ CNN architecture has neurons arranged in 3 dimensions, say width, height and dep
 \centering
 \includegraphics[width=0.4\textwidth]{neural_net2.jpeg}
 \includegraphics[width=0.4\textwidth]{cnn.jpeg}
-\caption{\label{fig:compareCNNandFC}The left is a fully connect regular neural network. The right is a CNN in 3 dimensions.}
+\caption{\label{fig:compareCNNandFC}The left is a fully connect regular neural network. The right is a CNN in 3 dimensions\citep{CNNDiagram}.}
 \end{figure}
 
 \subsection{Layers in CNN}
@@ -379,7 +379,7 @@ Local connectivity is the key properties of the CNN is. Regular neural networks 
   \begin{center}
     \includegraphics[width=0.48\textwidth]{depthcol.jpeg}
   \end{center}
-  \caption{Diagram for depth in convolutional layer}
+  \caption{Diagram for depth in a convolutional layer\citep{CNNDiagram}.}
 \end{wrapfigure}
 To control the output volume arrangement, three parameters are introduced. They are depth, stride and zero-padding. In convolutional layer, depth controls the number of neurons which connect the same subregion of the input volume. All the neurons learn the different features from the input volume. For example, the neurons along the depth in the convolutional layer after the input data layer can activate existence of various edges, colour, etc.. Stride is another parameter which controls the spatial position of the nearby depth column of neurons. The smaller the stride is, the more overlapping receptive fields are shared by the nearby columns. Last, zero-padding on border makes output volume to keep the same dimension with the input volume.
 
@@ -398,7 +398,7 @@ The spatial pyramid matching\citep{lazebnik2006beyond} is used to classify high-
 \begin{figure}[!htb]
 \centering
 \includegraphics[width=0.8\textwidth]{spm.jpg}
-\caption{\label{fig:SpatialPyramidMatching}Diagram of the Spatial Pyramid Matching.}
+\caption{\label{fig:SpatialPyramidMatching}Diagram of the Spatial Pyramid Matching\citep{lazebnik2006beyond}.}
 \end{figure}
 
 Let two sets of vectors $X$ and $Y$ be in a $d$-dimensional feature space. The SPM is used to find the approximate correspondence between them. In brief, the SPM places a chain of grids over the feature space and takes the sum of number of matches occuring at each level of resolution. The points falling into the same grid are matched and the match points in finer resolutions have higher weights. Specifically, a chain of grids at resolutions $0,\dotso,L$, have $2^0,\dotso,2^L$ cells respectively. $H_{X}^l$ and $H_{Y}^l$ are the histograms of $X$ and $Y$ at the $l$ resolution, so that the number of points in the $i$th cell from $X$ and $Y$ can be represented as $H_{X}^l(i)$ and $H_{Y}^l(i)$. The histogram intersection function denotes the number of matches at level $l$
@@ -426,7 +426,7 @@ The transfer learning has three benefits. One is saving time of preprocessing da
 \begin{figure}[!htb]
 \centering
 \includegraphics[width=0.8\textwidth]{MLvsTL.png}
-\caption{\label{fig:TransferLearning}The left is traditional machine learning method. The right is transfer learning.}
+\caption{\label{fig:TransferLearning}The left is traditional machine learning method. The right is transfer learning\citep{TransferlearningDiagram}.}
 \end{figure}
 
 A domain can be represented

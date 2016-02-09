@@ -1,9 +1,39 @@
-\begin{thebibliography}{36}
+\begin{thebibliography}{45}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Neu(2014)]{NeuronFigure1}
+Machine learning: Introduction to the artificial neural network.
+\newblock
+  \url{http://www.durofy.com/machine-learning-introduction-to-the-artificial-neural-network/},
+  2014.
+\newblock Accessed: 2015-12-30.
+
+\bibitem[Err(2014)]{ErrorFigure1}
+A gentle introduction to artificial neural networks.
+\newblock \url{https://theclevermachine.wordpress.com/tag/regression/}, 2014.
+\newblock Accessed: 2016-1-10.
+
+\bibitem[Gen(2014)]{GenerateNN}
+Convnetjs demo: toy 2d classification with 2-layer neural network.
+\newblock
+  \url{http://cs.stanford.edu/people/karpathy/convnetjs/demo/classify2d.html},
+  2014.
+\newblock Accessed: 2016-1-10.
+
+\bibitem[Zainal-Mokhtar and Mohamad-Saleh(2013)]{zainal2013oil}
+Khursiah Zainal-Mokhtar and Junita Mohamad-Saleh.
+\newblock An oil fraction neural sensor developed using electrical capacitance
+  tomography sensor data.
+\newblock \emph{Sensors}, 13\penalty0 (9):\penalty0 11385--11406, 2013.
+
+\bibitem[Ove(2013)]{OverfittingFigure}
+Big data and hadoop- drivers of future.
+\newblock \url{https://affineanalytics.wordpress.com/}, 2013.
+\newblock Accessed: 2016-1-15.
 
 \bibitem[Srivastava et~al.(2014)Srivastava, Hinton, Krizhevsky, Sutskever, and
   Salakhutdinov]{srivastava2014dropout}
@@ -12,6 +42,55 @@ Nitish Srivastava, Geoffrey Hinton, Alex Krizhevsky, Ilya Sutskever, and Ruslan
 \newblock Dropout: A simple way to prevent neural networks from overfitting.
 \newblock \emph{The Journal of Machine Learning Research}, 15\penalty0
   (1):\penalty0 1929--1958, 2014.
+
+\bibitem[CNN(2015)]{CNNDiagram}
+Cs231n convolutional neural networks for visual recognition.
+\newblock \url{http://cs231n.github.io/convolutional-networks/}, 2015.
+\newblock Accessed: 2015-11-15.
+
+\bibitem[Lazebnik et~al.(2006)Lazebnik, Schmid, and Ponce]{lazebnik2006beyond}
+Svetlana Lazebnik, Cordelia Schmid, and Jean Ponce.
+\newblock Beyond bags of features: Spatial pyramid matching for recognizing
+  natural scene categories.
+\newblock \emph{IEEE Conference on Computer Vision and Pattern Recognition
+  (CVPR)}, 2006.
+
+\bibitem[Tra(2012)]{TransferlearningDiagram}
+A survey on transfer learning.
+\newblock
+  \url{http://www.slideshare.net/azuring/a-survey-on-transfer-learning}, 2012.
+\newblock Accessed: 2015-11-5.
+
+\bibitem[Deng et~al.(2009)Deng, Dong, Socher, Li, Li, and
+  Fei-Fei]{deng2009imagenet}
+Jia Deng, Wei Dong, Richard Socher, Li-Jia Li, Kai Li, and Li~Fei-Fei.
+\newblock Imagenet: A large-scale hierarchical image database.
+\newblock In \emph{Computer Vision and Pattern Recognition, 2009. CVPR 2009.
+  IEEE Conference on}, pages 248--255. IEEE, 2009.
+
+\bibitem[Lu et~al.(2014)Lu, Lin, Jia, and Tang]{lutwo}
+Cewu Lu, Di~Lin, Jiaya Jia, and Chi-Keung Tang.
+\newblock Two-class weather classification.
+\newblock \emph{IEEE Conference on Computer Vision and Pattern Recognition
+  (CVPR)}, 2014.
+
+\bibitem[He et~al.(2014)He, Zhang, Ren, and Sun]{he2014spatial}
+Kaiming He, Xiangyu Zhang, Shaoqing Ren, and Jian Sun.
+\newblock Spatial pyramid pooling in deep convolutional networks for visual
+  recognition.
+\newblock \emph{The 13th European Conference on Computer Vision (ECCV)}, 2014.
+
+\bibitem[Krizhevsky et~al.(2012)Krizhevsky, Sutskever, and
+  Hinton]{krizhevsky2012imagenet}
+Alex Krizhevsky, Ilya Sutskever, and Geoffrey~E Hinton.
+\newblock Imagenet classification with deep convolutional neural networks.
+\newblock In \emph{Advances in neural information processing systems}, pages
+  1097--1105, 2012.
+
+\bibitem[Col(2016)]{ColourWheel}
+Epilog laser systems.
+\newblock \url{http://www.yourhomeok.com/color-wheel-schemes}, 2016.
+\newblock Accessed: 2015-11-5.
 
 \bibitem[Bishop(1995)]{bishop1995neural}
 Christopher~M. Bishop.
@@ -65,18 +144,6 @@ Matthew~R Boutell, Jiebo Luo, Xipeng Shen, and Christopher~M Brown.
 \newblock \emph{Pattern recognition}, 37\penalty0 (9):\penalty0 1757--1771,
   2004.
 
-\bibitem[Lu et~al.(2014)Lu, Lin, Jia, and Tang]{lutwo}
-Cewu Lu, Di~Lin, Jiaya Jia, and Chi-Keung Tang.
-\newblock Two-class weather classification.
-\newblock \emph{IEEE Conference on Computer Vision and Pattern Recognition
-  (CVPR)}, 2014.
-
-\bibitem[He et~al.(2014)He, Zhang, Ren, and Sun]{he2014spatial}
-Kaiming He, Xiangyu Zhang, Shaoqing Ren, and Jian Sun.
-\newblock Spatial pyramid pooling in deep convolutional networks for visual
-  recognition.
-\newblock \emph{The 13th European Conference on Computer Vision (ECCV)}, 2014.
-
 \bibitem[Yan et~al.(2009)Yan, Luo, and Zheng]{yan2009weather}
 Xunshi Yan, Yupin Luo, and Xiaoming Zheng.
 \newblock Weather recognition based on images captured by vision system in
@@ -103,20 +170,6 @@ Yann LeCun, L{\'e}on Bottou, Yoshua Bengio, and Patrick Haffner.
 \newblock Gradient-based learning applied to document recognition.
 \newblock \emph{Proceedings of the IEEE}, 86\penalty0 (11):\penalty0
   2278--2324, 1998.
-
-\bibitem[Krizhevsky et~al.(2012)Krizhevsky, Sutskever, and
-  Hinton]{krizhevsky2012imagenet}
-Alex Krizhevsky, Ilya Sutskever, and Geoffrey~E Hinton.
-\newblock Imagenet classification with deep convolutional neural networks.
-\newblock In \emph{Advances in neural information processing systems}, pages
-  1097--1105, 2012.
-
-\bibitem[Lazebnik et~al.(2006)Lazebnik, Schmid, and Ponce]{lazebnik2006beyond}
-Svetlana Lazebnik, Cordelia Schmid, and Jean Ponce.
-\newblock Beyond bags of features: Spatial pyramid matching for recognizing
-  natural scene categories.
-\newblock \emph{IEEE Conference on Computer Vision and Pattern Recognition
-  (CVPR)}, 2006.
 
 \bibitem[Pan and Yang(2010)]{pan2010survey}
 Sinno~Jialin Pan and Qiang Yang.

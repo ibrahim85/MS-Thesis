@@ -193,7 +193,7 @@
     \vskip 60\p@
     \begin{center}
       \setlength{\parskip}{0pt}
-      {\large\textbf{\UNIVNAME}\par}
+      {\Large\textbf{\UNIVNAME}\par}
       \vfill
       {\huge \bf \@title \par}
       \vfill
@@ -201,7 +201,7 @@
       \smallskip
       {\LARGE \authornames \par}
       \vfill
-      {\large A thesis submitted in partial fulfillment for the \par}
+      {\large A thesis submitted in fulfillment for the \par}
       {\large degree of Master \par}
       \bigskip
       \bigskip

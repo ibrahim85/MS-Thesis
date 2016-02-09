@@ -1,24 +1,24 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Diagram of a perceptron.\relax }}{5}{figure.caption.20}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Diagram of a perceptron \citep {NeuronFigure1}.\relax }}{5}{figure.caption.20}
 \contentsline {figure}{\numberline {2.2}{\ignorespaces Threshold function\relax }}{6}{figure.caption.23}
 \contentsline {figure}{\numberline {2.3}{\ignorespaces Linear function\relax }}{6}{figure.caption.25}
 \contentsline {figure}{\numberline {2.4}{\ignorespaces Sigmoid function\relax }}{6}{figure.caption.27}
 \contentsline {figure}{\numberline {2.5}{\ignorespaces Tanh function\relax }}{7}{figure.caption.29}
-\contentsline {figure}{\numberline {2.6}{\ignorespaces The error surface for a single layer neural network. Source: Internet\relax }}{8}{figure.caption.34}
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Two types of dataset. The left one can be separated by a single layer neural network. The right one cannot be separated by a single neural network.\relax }}{9}{figure.caption.35}
-\contentsline {figure}{\numberline {2.8}{\ignorespaces Diagram of a feedforward neural networks.\relax }}{9}{figure.caption.39}
-\contentsline {figure}{\numberline {2.9}{\ignorespaces The error surface for a multi-layer neural network. Source: Internet\relax }}{11}{figure.caption.44}
-\contentsline {figure}{\numberline {2.10}{\ignorespaces A multi-layer neural network can separate a complicated dataset. Source: Internet\relax }}{11}{figure.caption.45}
-\contentsline {figure}{\numberline {2.11}{\ignorespaces Overfitting example, the left one has a decent generalization performance and the right one is overfitting.\relax }}{14}{figure.caption.56}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces The error surface for a single layer neural network\citep {ErrorFigure1}.\relax }}{8}{figure.caption.34}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Two types of dataset. The left one can be separated by a single layer neural network. The right one cannot be separated by a single neural network. Generated from\citep {GenerateNN}.\relax }}{9}{figure.caption.35}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Diagram of a feedforward neural network\citep {zainal2013oil}.\relax }}{9}{figure.caption.39}
+\contentsline {figure}{\numberline {2.9}{\ignorespaces The error surface for a multi-layer neural network\citep {ErrorFigure1}.\relax }}{11}{figure.caption.44}
+\contentsline {figure}{\numberline {2.10}{\ignorespaces A multi-layer neural network can separate a complicated dataset. Generated from\citep {GenerateNN}.\relax }}{11}{figure.caption.45}
+\contentsline {figure}{\numberline {2.11}{\ignorespaces Overfitting example, the left one has a decent generalization performance and the right one is overfitting\citep {OverfittingFigure}.\relax }}{14}{figure.caption.56}
 \contentsline {figure}{\numberline {2.12}{\ignorespaces Illustration of dropout \citep {srivastava2014dropout}.\relax }}{16}{figure.caption.63}
-\contentsline {figure}{\numberline {2.13}{\ignorespaces The left is a fully connect regular neural network. The right is a CNN in 3 dimensions.\relax }}{20}{figure.caption.78}
-\contentsline {figure}{\numberline {2.14}{\ignorespaces Diagram for depth in convolutional layer\relax }}{21}{figure.caption.84}
-\contentsline {figure}{\numberline {2.15}{\ignorespaces Diagram of the Spatial Pyramid Matching.\relax }}{22}{figure.caption.86}
-\contentsline {figure}{\numberline {2.16}{\ignorespaces The left is traditional machine learning method. The right is transfer learning.\relax }}{24}{figure.caption.91}
+\contentsline {figure}{\numberline {2.13}{\ignorespaces The left is a fully connect regular neural network. The right is a CNN in 3 dimensions\citep {CNNDiagram}.\relax }}{20}{figure.caption.78}
+\contentsline {figure}{\numberline {2.14}{\ignorespaces Diagram for depth in a convolutional layer\citep {CNNDiagram}.\relax }}{21}{figure.caption.84}
+\contentsline {figure}{\numberline {2.15}{\ignorespaces Diagram of the Spatial Pyramid Matching\citep {lazebnik2006beyond}.\relax }}{22}{figure.caption.86}
+\contentsline {figure}{\numberline {2.16}{\ignorespaces The left is traditional machine learning method. The right is transfer learning\citep {TransferlearningDiagram}.\relax }}{24}{figure.caption.91}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces 2 Figures from the ImageNet\relax }}{26}{figure.caption.97}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces 2 Figures from the Weather Dataset\relax }}{27}{figure.caption.98}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces 2 Figures from the ImageNet\citep {deng2009imagenet}.\relax }}{26}{figure.caption.97}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces 2 Figures from the Weather Dataset\citep {lutwo}.\relax }}{27}{figure.caption.98}
 \contentsline {figure}{\numberline {3.3}{\ignorespaces A set of cropped patches from original image\relax }}{28}{figure.caption.100}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {original image}}}{28}{figure.caption.100}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {cropped from left up}}}{28}{figure.caption.100}
@@ -48,7 +48,7 @@
 \contentsline {subfigure}{\numberline {(f)}{\ignorespaces {conv5 output}}}{37}{figure.caption.131}
 \contentsline {figure}{\numberline {4.6}{\ignorespaces Visiualisation of feature maps from the CNN model and the SPP model. The upper images are from the CNN model and the lower images are from the fine-tuned model.\relax }}{38}{figure.caption.139}
 \contentsline {figure}{\numberline {4.7}{\ignorespaces Histogram distribution of vectors from FC7. The left is from CNN model and the right is from the SPP model.\relax }}{38}{figure.caption.140}
-\contentsline {figure}{\numberline {4.8}{\ignorespaces Misclassified images\relax }}{39}{figure.caption.142}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Misclassified images\citep {lutwo}.\relax }}{39}{figure.caption.142}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {sunny}}}{39}{figure.caption.142}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {sunny}}}{39}{figure.caption.142}
 \contentsline {subfigure}{\numberline {(c)}{\ignorespaces {sunny}}}{39}{figure.caption.142}
@@ -59,15 +59,15 @@
 \contentsline {figure}{\numberline {5.1}{\ignorespaces Example Image\relax }}{41}{figure.caption.153}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {7.1}{\ignorespaces Colour Wheel Diagram\relax }}{53}{figure.caption.191}
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Colour Wheel Diagram\citep {ColourWheel}\relax }}{53}{figure.caption.191}
 \contentsline {figure}{\numberline {7.2}{\ignorespaces Multilabel samples and the RGB colour histograms. Three labels mean red, green and blue sequentially. \relax }}{55}{figure.caption.194}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Label:1 -1 1}}}{55}{figure.caption.194}
 \contentsline {subfigure}{\numberline {(e)}{\ignorespaces {Label:1 1 -1}}}{55}{figure.caption.194}
 \contentsline {subfigure}{\numberline {(i)}{\ignorespaces {Label:-1 1 -1}}}{55}{figure.caption.194}
 \contentsline {subfigure}{\numberline {(m)}{\ignorespaces {Label:-1 -1 1}}}{55}{figure.caption.194}
-\contentsline {figure}{\numberline {7.3}{\ignorespaces Network Topology For Multi-lable classification\relax }}{56}{figure.caption.213}
+\contentsline {figure}{\numberline {7.3}{\ignorespaces Network Topology For Multi-lable Classification\relax }}{56}{figure.caption.213}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {8.1}{\ignorespaces The network topology\relax }}{65}{figure.caption.249}
+\contentsline {figure}{\numberline {8.1}{\ignorespaces Network Topology\relax }}{65}{figure.caption.249}
 \contentsline {figure}{\numberline {8.2}{\ignorespaces The test results for different number of hidden neurons. Blue circle for Sensitivity. Black plus for Specificity. Cyan star for Harmonic Mean. Red dot for Precission. Green x for F1 Score.\relax }}{67}{figure.caption.261}
 \contentsline {figure}{\numberline {8.3}{\ignorespaces The learning speed for 200 neurons in the hidden layer. Blue circle for Sensitivity. Black plus for Specificity. Cyan star for Harmonic Mean. Red dot for Precission. Green x for F1 Score.\relax }}{68}{figure.caption.262}
 \contentsline {figure}{\numberline {8.4}{\ignorespaces The ROC curve for 200 hidden neurons\relax }}{68}{figure.caption.263}
