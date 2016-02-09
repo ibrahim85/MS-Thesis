@@ -21,56 +21,55 @@
 \contentsline {section}{\numberline {2.6}Overfitting and Regularization}{14}{section.55}
 \contentsline {subsection}{\numberline {2.6.1}Weight Decay}{15}{subsection.58}
 \contentsline {subsection}{\numberline {2.6.2}Dropout}{16}{subsection.62}
-\contentsline {section}{\numberline {2.7}Softmax classifier}{17}{section.64}
+\contentsline {section}{\numberline {2.7}Softmax Classifier}{17}{section.64}
 \contentsline {subsection}{\numberline {2.7.1}Practical issues}{18}{subsection.69}
 \contentsline {subsection}{\numberline {2.7.2}Error function}{19}{subsection.71}
-\contentsline {section}{\numberline {2.8}Convolutional Neural Networks}{19}{section.77}
+\contentsline {section}{\numberline {2.8}Convolutional Neural Networks(CNN)}{20}{section.77}
 \contentsline {subsection}{\numberline {2.8.1}Layers in CNN}{20}{subsection.79}
-\contentsline {section}{\numberline {2.9}Spatial Pyramid Matching}{22}{section.85}
+\contentsline {section}{\numberline {2.9}Spatial Pyramid Matching(SPM)}{22}{section.85}
 \contentsline {section}{\numberline {2.10}Transfer Learning}{23}{section.90}
 \contentsline {chapter}{\numberline {3}Methodology}{26}{chapter.95}
 \contentsline {section}{\numberline {3.1}Dataset}{26}{section.96}
 \contentsline {section}{\numberline {3.2}Data Argument}{27}{section.99}
-\contentsline {section}{\numberline {3.3}Spatial Pyramid Pooling}{27}{section.107}
+\contentsline {section}{\numberline {3.3}Spatial Pyramid Pooling(SPP)}{27}{section.107}
 \contentsline {section}{\numberline {3.4}Convolutional Neural Networks Architecture}{28}{section.109}
 \contentsline {chapter}{\numberline {4}Experiment}{31}{chapter.112}
 \contentsline {section}{\numberline {4.1}Training Neural Network}{31}{section.113}
 \contentsline {section}{\numberline {4.2}Fine-tuning Model}{32}{section.116}
 \contentsline {section}{\numberline {4.3}Companion Experiments}{33}{section.117}
-\contentsline {section}{\numberline {4.4}Experimental Results}{34}{section.118}
+\contentsline {section}{\numberline {4.4}Experimental Results}{33}{section.118}
 \contentsline {section}{\numberline {4.5}Architecture Analysis}{35}{section.123}
 \contentsline {section}{\numberline {4.6}Effects of SPP}{37}{section.138}
 \contentsline {section}{\numberline {4.7}Error Results}{38}{section.141}
-\contentsline {section}{\numberline {4.8}Conclusion and Future Work}{39}{section.149}
-\contentsline {part}{II\hspace {1em}Multilabel Learning}{41}{part.150}
-\contentsline {chapter}{\numberline {5}Introduction}{42}{chapter.151}
-\contentsline {section}{\numberline {5.1}Overview}{42}{section.152}
-\contentsline {section}{\numberline {5.2}Multi-Label Learning}{43}{section.155}
-\contentsline {chapter}{\numberline {6}Background}{46}{chapter.156}
-\contentsline {section}{\numberline {6.1}Evaluation Metrics}{46}{section.157}
-\contentsline {subsection}{\numberline {6.1.1}Example-based Metrics}{47}{subsection.160}
-\contentsline {subsection}{\numberline {6.1.2}Label-based Metrics}{48}{subsection.167}
-\contentsline {section}{\numberline {6.2}Learning Algorithms}{49}{section.174}
-\contentsline {subsection}{\numberline {6.2.1}Problem Transformation Methods}{49}{subsection.175}
-\contentsline {subsubsection}{\numberline {6.2.1.1}Binary Relevance (BR)}{49}{subsubsection.176}
-\contentsline {subsubsection}{\numberline {6.2.1.2}Classifier Chains (CC)}{50}{subsubsection.178}
-\contentsline {subsection}{\numberline {6.2.2}Algorithm Adaptation Methods}{51}{subsection.180}
-\contentsline {subsubsection}{\numberline {6.2.2.1}Multi-label k-Nearest Neighbour(ML-kNN)}{51}{subsubsection.181}
-\contentsline {subsubsection}{\numberline {6.2.2.2}Collective Multi-label Classifier(CML)}{52}{subsubsection.185}
-\contentsline {chapter}{\numberline {7}Methodology}{54}{chapter.189}
-\contentsline {section}{\numberline {7.1}Artificial Dataset}{54}{section.190}
-\contentsline {subsection}{\numberline {7.1.1}Generating images}{55}{subsection.192}
-\contentsline {section}{\numberline {7.2}Artificial Neural Network}{55}{section.211}
-\contentsline {subsection}{\numberline {7.2.1}Network Architecture}{56}{subsection.212}
-\contentsline {subsection}{\numberline {7.2.2}Error Function}{59}{subsection.217}
-\contentsline {subsection}{\numberline {7.2.3}Cross Entropy}{60}{subsection.223}
-\contentsline {subsection}{\numberline {7.2.4}Training and Testing}{62}{subsection.231}
-\contentsline {chapter}{\numberline {8}Experiment}{65}{chapter.246}
-\contentsline {section}{\numberline {8.1}Dataset}{65}{section.247}
-\contentsline {section}{\numberline {8.2}Details of network}{65}{section.248}
-\contentsline {section}{\numberline {8.3}Results}{68}{section.259}
-\contentsline {section}{\numberline {8.4}Conclusion and Future Work}{70}{section.265}
+\contentsline {section}{\numberline {4.8}Conclusion and Future Work}{38}{section.149}
+\contentsline {part}{II\hspace {1em}Multilabel Learning}{40}{part.150}
+\contentsline {chapter}{\numberline {5}Introduction}{41}{chapter.151}
+\contentsline {section}{\numberline {5.1}Overview}{41}{section.152}
+\contentsline {section}{\numberline {5.2}Multi-Label Learning}{42}{section.155}
+\contentsline {chapter}{\numberline {6}Background}{45}{chapter.156}
+\contentsline {section}{\numberline {6.1}Evaluation Metrics}{45}{section.157}
+\contentsline {subsection}{\numberline {6.1.1}Example-based Metrics}{46}{subsection.160}
+\contentsline {subsection}{\numberline {6.1.2}Label-based Metrics}{47}{subsection.167}
+\contentsline {section}{\numberline {6.2}Learning Algorithms}{48}{section.174}
+\contentsline {subsection}{\numberline {6.2.1}Problem Transformation Methods}{48}{subsection.175}
+\contentsline {subsubsection}{\numberline {6.2.1.1}Binary Relevance (BR)}{48}{subsubsection.176}
+\contentsline {subsubsection}{\numberline {6.2.1.2}Classifier Chains (CC)}{49}{subsubsection.178}
+\contentsline {subsection}{\numberline {6.2.2}Algorithm Adaptation Methods}{50}{subsection.180}
+\contentsline {subsubsection}{\numberline {6.2.2.1}Multi-label k-Nearest Neighbour(ML-kNN)}{50}{subsubsection.181}
+\contentsline {subsubsection}{\numberline {6.2.2.2}Collective Multi-label Classifier(CML)}{51}{subsubsection.185}
+\contentsline {chapter}{\numberline {7}Methodology}{53}{chapter.189}
+\contentsline {section}{\numberline {7.1}Artificial Dataset}{53}{section.190}
+\contentsline {subsection}{\numberline {7.1.1}Generating Images}{54}{subsection.192}
+\contentsline {section}{\numberline {7.2}Artificial Neural Network(ANN)}{54}{section.211}
+\contentsline {subsection}{\numberline {7.2.1}Network Architecture}{55}{subsection.212}
+\contentsline {subsection}{\numberline {7.2.2}Error Function}{57}{subsection.217}
+\contentsline {subsection}{\numberline {7.2.3}Cross Entropy}{59}{subsection.223}
+\contentsline {subsection}{\numberline {7.2.4}Training and Testing}{61}{subsection.231}
+\contentsline {chapter}{\numberline {8}Experiment}{64}{chapter.246}
+\contentsline {section}{\numberline {8.1}Dataset}{64}{section.247}
+\contentsline {section}{\numberline {8.2}Details of Network}{64}{section.248}
+\contentsline {section}{\numberline {8.3}Results}{67}{section.259}
+\contentsline {section}{\numberline {8.4}Conclusion and Future Work}{69}{section.265}
 \vspace {2em}
-\contentsline {chapter}{\numberline {A}Appendix Title Here}{71}{appendix.266}
 \vspace {2em}
-\contentsline {chapter}{Bibliography}{72}{dummy.267}
+\contentsline {chapter}{Bibliography}{70}{dummy.266}

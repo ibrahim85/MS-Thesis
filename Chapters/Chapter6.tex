@@ -4,15 +4,15 @@
 \label{Chapter6}
 \lhead{Chapter 6. \emph{Background}}
 
-Compared to general classification, multi-label classification has different evaluation metrics and learning algorithms.
+Compared to a general classification, multi-label classification has different evaluation metrics and learning algorithms.
 
 \section{Evaluation Metrics}
 
-In supervised learning, different metrics, like accuracy and area under the ROC curve, are used to evaluate the generalization performance of model. In the multi-label learning, evaluating performance is more complicated  than single-label problems because of increasing number of labels simultaneously. Therefore, two main types of evaluation methods are implemented in multi-label learning, say example-based metrics\citep{ghamrawi2005collective} and label-metrics\citep{tsoumakas2007random}.
+In supervised learning, different metrics, like accuracy and area under the ROC curve, are used to evaluate the generalisation performance of a model. In the multi-label learning, evaluating performance is more complicated  than single-label classification problems because of increasing number of labels simultaneously. Therefore, two main types of evaluation methods are implemented in multi-label learning, say example-based metrics\citep{ghamrawi2005collective} and label-metrics\citep{tsoumakas2007random}.
 
-The two types of metrics evaluate outputs of classifiers from different perspectives. Given that $S = {(x_{i}, Y_{i})}$ is a test sample and $h(\cdot)$ is the learned multi-label classifier. The concept of example-based metrics is achieve all class labels of each test example, and then compute the mean value of test sets to evaluate generalization performance. Compared with considering all class labels simultaneously, label-based metrics evaluate performance by treating each class label separately and computing macro/micro-averaged value of all class labels.
+The two types of metrics evaluate outputs of classifiers from different perspectives. Given that $S = {(x_{i}, Y_{i})}$ is a test sample and $h(\cdot)$ is the learned multi-label classifier. The concept of example-based metrics is achieve all class labels of each test sample, and then compute the mean value of test sets to evaluate generalisation performance. Compared with considering all class labels simultaneously, label-based metrics evaluate performance by treating each class label separately and computing macro/micro-averaged value of all class labels.
 
-In a supervised classification problem, there are a ground truth output and a predicted output for a test example. So the results of each test example can be be assigned to one of the four categories:
+In a supervised classification problem, there are a ground truth output and a predicted output for a test sample. So the results of each test sample can be assigned to one of the four categories:
 \begin{itemize}
 \item True Positive (TP) - label is positive and prediction is also positive
 \item True Negative (TN) - label is negative and prediction is also negative
@@ -46,12 +46,12 @@ I_{A}(x) =
 \frac{1}{N} \sum_{i=0}^{N-1} I_{\{L_i\}}(P_i)
 \end{equation}
 
-\textbf{Precision} is defined as
+\textbf{Precision} is defined:
 \begin{equation}\label{eq:Precision}
 \frac{1}{N} \sum_{i=0}^{N-1} \frac{\left|L_i \cap P_i\right|}{\left|P_i\right|}
 \end{equation}
 
-\textbf{Recall} is defined as
+\textbf{Recall} is defined:
 \begin{equation}\label{eq:Recall}
 \frac{1}{N} \sum_{i=0}^{N-1} \frac{\left|L_i \cap P_i\right|}{\left|L_i\right|}
 \end{equation}
@@ -109,21 +109,21 @@ F1(\ell) = 2
         \left|P_i - L_i\right|}
 \end{equation}
 
-For the label-based metrics, the larger the metrics value means the higher generalization performance.
+For the label-based metrics, the larger the metrics value means the higher generalisation performance.
 
-With the previous metrics, there are diverse methods to evaluate model generalization performance. In most multi-label training, learning algorithms optimise one of the metrics. To make evaluation fair and precise, learning algorithms should be tested on different metrics to evaluate performance.
+With the previous metrics, there are diverse methods to evaluate model generalization performance. In most multi-label classification, learning algorithms optimise one of the metrics. To make evaluation fair and precise, learning algorithms should be tested on different metrics to evaluate performance.
 
-Most metrics are non-convex and discrete, most algorithms turn to optimise alternative multi-label metrics. Recently, some researcher study the consistency of multi-label learning\citep{gao2013consistency}. 
+Most metrics are non-convex and discrete, and most algorithms turn to optimise alternative multi-label metrics. Recently, some researcher study the consistency of multi-label learning\citep{gao2013consistency}. 
 
 \section{Learning Algorithms}
 
-Algorithms play a key role in the literature on machine learning, and there is no exception in multi-label learning. The capability of representation is important to evaluate the performance of a algorithm. Moreover, some relating criterion can be used to measure performance. First, broad spectrum should be considered. A algorithm should cover a range of algorithmic design strategies with unique characteristics. Second, it is reasonable to evaluate the impact which the algorithm poses on the multi-label learning settings. Last, computational complexity is a critical factor to evaluate if a algorithm is practical.
+Algorithms play a key role in the literature on machine learning, and there is no exception in multi-label learning. The capability of representation is important to evaluate the performance of an algorithm. Moreover, some relating criterions can be used to measure performance. First, the broad spectrum should be considered. An algorithm should cover a range of algorithmic design strategies with unique characteristics. Second, it is reasonable to evaluate the impact which the algorithm poses on the multi-label learning settings. Last, computational complexity is a critical factor to evaluate if an algorithm is practical.
 
 \subsection{Problem Transformation Methods}
 
 \subsubsection{Binary Relevance (BR)}
 
-The Binary Relevance method is an elementary algorithm which decomposes a multi-label learning problem into a set of independent binary classification problems, and each problem harmonises one label in the set $L = {y_{1}, y_{2},...,y_{q}}$. The approach initially transforms multi-label dataset into $q$ binary datasets $D_{y_{i}} (i = 1,2,...,q)$, where each $D_{Y_{I}}$ includes all samples of the multi-label dataset and has a single binary label to instruct if the dataset has or has no attribute to the relevant label. For example, if a sample has a positive value means that the sample owns the correlation label, otherwise, it does not own it. After transforming the dataset, a set of $q$ binary classifiers, say $H_{i}(E) (i = 1,2,...,q)$, has been built up using the respective training dataset $D_{y_{i}}$. 
+The Binary Relevance method is an elementary algorithm which decomposes a multi-label learning problem into a set of independent binary classification problems, and each problem harmonises one label in the set $L = {y_{1}, y_{2},...,y_{q}}$. The approach initially transforms the multi-label dataset into $q$ binary datasets $D_{y_{i}} (i = 1,2,...,q)$, where each $D_{Y_{I}}$ includes all samples of the multi-label dataset and has a single binary label to instruct if the dataset has or has no attribute to the relevant label. For example, if a sample has a positive value means that the sample owns the correlation label, otherwise, it does not own it. After transforming the dataset, a set of $q$ binary classifiers, say $H_{i}(E) (i = 1,2,...,q)$, have been built up using the respective training dataset $D_{y_{i}}$. 
 
 \begin{equation}\label{eq:BinaryRelevance}
 H = \{C_{y_{i}}(x, y_{i}) \to y'_{i} \in \{0,1\}| y \in L, i = 1,2,...,q\}
@@ -131,15 +131,15 @@ H = \{C_{y_{i}}(x, y_{i}) \to y'_{i} \in \{0,1\}| y \in L, i = 1,2,...,q\}
 
 To classify a test sample, the BR method outputs the collection of labels which are predicted with positive value by the independent binary classifiers.
 
-The BR combines computational efficiency and simple implementation. With a constant number of samples, the algorithm scales with size $q$ of label set $L$. Supposing that each classifier has complexity $f(|X|,|D|)$, The BR has complexity $O(q \times f(|X|,|D|))$. With a limit number of $q$, the BR learns a model quickly and has an excellent performance.
+The BR method combines computational efficiency and simple implementation. With a constant number of samples, the algorithm scales with size $q$ of label set $L$. Supposing that each classifier has complexity $f(|X|,|D|)$, The method has complexity $O(q \times f(|X|,|D|))$. With a limit number of $q$, the method learns a model quickly and has an reasonable performance.
 
-One of the disadvantages is the limitation to label relationship information. Unless all labels are independent, the BR losses the correlations among labels.
+One of the disadvantages is the limitation to label relationship information. Unless all labels are independent, the method losses the correlations among labels.
 
 \subsubsection{Classifier Chains (CC)}
 
-To achieve a better performance, the CC method has been introduced in the literature on multi-label classification\citep{read2011classifier}. The method transforms multi-label learning problems into a chain of binary classifiers based on label dependence.
+To achieve a better performance, the CC method has been introduced in multi-label classification\citep{read2011classifier}. The method transforms multi-label learning problems into a chain of binary classifiers based on label dependence.
 
-For a set of $q$ labels $L$, the CC model learns $q$ classifiers as Binary Relevance does. In addition, it links all classifiers in feature space. Given that there are a set of samples $D(x,y_{i}) (i = 1,2,...,q)$ where $y_{i}$ is a subset of labels $L$ and $x$ is the domain of dataset. The original dataset is transformed into a set of $q$ datasets in which the $j$th example is based on the previous dataset.
+For a set of $q$ labels $L$, the CC method learns $q$ classifiers as BR does. In addition, it links all classifiers in feature space. Given that there are a set of samples $D(x,y_{i}) (i = 1,2,...,q)$ where $y_{i}$ is a subset of labels $L$ and $x$ is the domain of dataset. The original dataset is transformed into a set of $q$ datasets in which the $j$th example is based on the previous dataset.
 
 \begin{equation}\label{eq:ClassifierChains}
 H = \{C_{y_{i}}(x, y_{1},y_{2},...,y_{i-1}) \to y'_{i} \in \{0,1\}| y \in L, i = 1,2,...,q\}
@@ -147,13 +147,13 @@ H = \{C_{y_{i}}(x, y_{1},y_{2},...,y_{i-1}) \to y'_{i} \in \{0,1\}| y \in L, i =
 
 Thus it forms a chain of binary classifiers $C_{1},C_{2},...,C_{q}$. Each classifier $C_{i}$ learns and predicts the binary association of label $y_{i}$ based on the dataset $x$ and all prior binary relevance predictions $y_{j}, j = 1,2,...,i-1$. The learning process starts from $C_{1}$ and follows the chain sequentially . Therefore, $C_{1}$ determines $p(y_{1}|x)$, and sequential classifiers, say $C_{2},...,C_{q}$, determine $p(y_{i}|x_{i},y_{1},...,y_{i-1})$.
 
-The CC method propagates label information through classifiers, and back classifiers take account of previous predictions. This method can retrieve lost information among labels partly. At the same time, the method keep advantages of BR, say computation efficiency and memory efficiency. The computational complexity of the CC is close to the BR in terms of the number of labels and complexity of elemental classifiers $C_{i}$. As previous statement, the computational complexity of the BR is $O(q \times f(|X|,|D|))$ where $f(|X|,|D|))$ represents the elemental classifier. With extra computation introduced by previous labels, the computational complexity of the CC is $O(q \times f(|X|+q,|D|))$, while the computation will be unaffordable in case of $q \gg |X|$.
+The CC method propagates label information through classifiers, and latter classifiers take account of previous predictions. This method can retrieve lost information among labels partly. At the same time, the method keep advantages of BR, say computation efficiency and memory efficiency. The computational complexity of the method is close to the BR in terms of the number of labels and complexity of elemental classifiers $C_{i}$. As previous statement, the computational complexity of the BR is $O(q \times f(|X|,|D|))$ where $f(|X|,|D|))$ represents the elemental classifier. With extra computation introduced by previous labels, the computational complexity of the CC is $O(q \times f(|X|+q,|D|))$, while the computation will be unaffordable in case of $q \gg |X|$.
 
 \subsection{Algorithm Adaptation Methods}
 
 \subsubsection{Multi-label k-Nearest Neighbour(ML-kNN)}
 
-The algorithm adapts k-nearest Neighbour techniques to propose multi-label data and utilize maximum a posteriori (MAP) to make prediction through reasoning embodied labelling information among neighbours \citep{zhang2007ml}.
+The algorithm adapts k-nearest Neighbour techniques to propose multi-label data and utilise the MAP to make prediction through reasoning embodied labelling information among neighbours \citep{zhang2007ml}.
 
 Given dataset $X$ and its label set $Y$, $y$ represents output vector for $x$ where $i$-th element $y(i)$ is positive if $i \in Y$, otherwise it is negative. Suppose that $N(x)$ is the set of neighbours of $x$ in the training dataset, we can compute a membership counting vector which represents the number of neighbours of $x$ owning the $l$-th label.
 
@@ -161,19 +161,19 @@ Given dataset $X$ and its label set $Y$, $y$ represents output vector for $x$ wh
 C_{x}(i) = \sum_{a \in N(x)} y_{a}(i), i \in Y
 \end{equation}
 
-To test a new sample $t$, the algorithm sorts out its category in the training dataset by kNN $N(t)$. Let $H_{1}^l$ denote that $t$ has the label $l$ and $H_{0}^l$ denote that $t$ do not have the label $l$. If $j$ samples have the label $l$, say $E_{j}^l (j \in {0,1,...,k})$, the category vector $y_{t}$ is determined by the MAP principle:
+To test a new sample $t$, the algorithm sorts out its category in the training dataset by kNN $N(t)$. Let $H_{1}^l$ denotes that $t$ has the label $l$ and $H_{0}^l$ denotes that $t$ do not have the label $l$. If $j$ samples have the label $l$, say $E_{j}^l (j \in {0,1,...,k})$, the category vector $y_{t}$ is determined by the MAP principle:
 
 \begin{equation}\label{eq:CategoryVec}
 y_{t}(l) = \operatorname*{arg\,max}_{b \in \{0,1\}} P(H_{b}^l|E_{C_{t}(i) }^l) l \in Y
 \end{equation}
 
-With the Bayesian rule, \ref{eq:CategoryVecBay} can be represented as
+With the Bayesian rule, \ref{eq:CategoryVec} can be represented as
 
 \begin{equation}\label{eq:CategoryVecBay}
 y_{t}(l) = \operatorname*{arg\,max}_{b \in \{0,1\}} P(H_{b}^l)P(E_{C_{t}(i) }^l|H_{b}^l) l \in Y
 \end{equation}
 
-As stated in the equation\ref{eq:CategoryVecBay}, the output of a test sample $t$ is $y_{t}(l)$. It can be computed through prior probability $P(H_{b}^l) l \in Y, b \in \{0,1\}$ and the posterior probability $P(E_{j}^l|H_{b}^l) (j \in \{0,1,...,k\})$.
+As stated in equation \ref{eq:CategoryVecBay}, the output of a test sample $t$ is $y_{t}(l)$. It can be computed through prior probability $P(H_{b}^l) l \in Y, b \in \{0,1\}$ and the posterior probability $P(E_{j}^l|H_{b}^l) (j \in \{0,1,...,k\})$.
 
 \subsubsection{Collective Multi-label Classifier(CML)}
 
@@ -187,7 +187,7 @@ The entropy of $(x,y)$ is represented as $H_{p}(x,y)$ and gives the distribution
 F_{k} = \frac{1}{m}\sum_{(x,y) \in D}f_{k}(x,y)
 \end{equation}
 
-According to normalization constraint on $p(\cdot,\cdot)$, the optimal solution can be represented:
+According to the normalization constraint on $p(\cdot,\cdot)$, the optimal solution can be represented:
 
 \begin{equation}\label{eq:CMLOptimal}
 p(y|x) = \frac{1}{Z(x)}exp(\sum_{k \in K}\lambda_{k} \cdot f_{k}(x,y))
@@ -199,4 +199,4 @@ Yielding to Gaussian distribution, parameters can be found in a convex log-poste
 y_{x} = \operatorname*{arg\,max}_{y} p(y|x)
 \end{equation}
 
-It is notable that the exact inference is only suitable for small label space via arg max, because it needs to reduce the search space of arg max significantly via pruning strategies. The CML is a second-order approach which considers correlations between every label pair constrains in $k_{2}$. 
+It is notable that the exact inference is only suitable for small label space via arg max, because it needs to reduce the search space of arg max significantly via the pruning strategy. The CML is a second-order approach.
