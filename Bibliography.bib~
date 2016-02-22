@@ -594,3 +594,13 @@ pages={951-958},
   organization={IEEE}
 }
 
+@incollection{robbins1985convergence,
+  title={A convergence theorem for non negative almost supermartingales and some applications},
+  author={Robbins, Herbert and Siegmund, David},
+  booktitle={Herbert Robbins Selected Papers},
+  pages={111--135},
+  year={1985},
+  publisher={Springer}
+}
+
+

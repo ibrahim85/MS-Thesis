@@ -6,16 +6,16 @@
 
 \section{Related Work}
 
-There has been much research done on the weather classification. Most works use method - extracting features plus classifiers~\citep{bishop1995neural,roser2008classification,serrano2002computationally,gokalp2007scene}.
-Some works use low-level features, like colour~\citep{szummer1998indoor}, texture~\citep{shotton2009textonboost,vailaya2002automatic}. Some works use filters or segmentation~\citep{boutell2004learning,shotton2009textonboost} to extract high-level features, such as sky, shadow~\citep{lutwo}. Some works use statistical measurement methods~\citep{he2014spatial,roser2008classification} to analyse low-level feature distribution.
+There has been much research done on the task of weather classification. Most works follow the procedure of extracting features and performing classification ~\citep{bishop1995neural,roser2008classification,serrano2002computationally,gokalp2007scene}.
+Some works use low-level features, like colour~\citep{szummer1998indoor}, texture~\citep{shotton2009textonboost,vailaya2002automatic}. Some works use filters or segmentation~\citep{boutell2004learning,shotton2009textonboost} to extract high-level features, such as sky, shadow~\citep{lutwo}. Some works use statistical measurement methods~\citep{he2014spatial,roser2008classification} to analyse low-level feature distributions.
 
-Generally, the traditional methods follow three basic steps\citep{roser2008classification,yan2009weather}. First, some Regions of Interest (ROIs), for example, sky and shadow,  are extracted from a weather image. Then, histogram descriptors are used to represent the difference between them. Finally, a classifier, e.g., the SVM, is built up based on the extracted features. 
+Generally, the traditional methods follow three basic steps\citep{roser2008classification,yan2009weather}. First, some Regions of Interest (ROIs), for example, sky and shadow,  are extracted from a weather image. Then, histogram descriptors are used to represent the difference between them. Finally, a classifier, e.g., SVM, is built based on the extracted features. 
 
-Most previous jobs are based on the discriminative model. They extract humanly recognisable features to classify images. This type of shadow learning depends mainly on quality of features and human's prior knowledge. An image without prior features or poor features is hard to be classified. Furthermore, the methods require a lot of work on data pre-processing and are not flexible. And the approaches depend on structural information to categorise an image into one of the classes. Structural information is concluded from illumination invariant features, like SIFT. However, previous jobs have limitation on classifying diverse images. It is hard to list total factors which determinate the weather conditions.
+Most previous works are based on the discriminative model. They extract human recognisable features to classify images. This type of shadow learning depends mainly on the quality of features and human's prior knowledge. An image without prior features or poor features is hard to be classified. Furthermore, the methods require a lot of work on data pre-processing and are not flexible. The approaches depend on structural information to categorise an image into one of the classes. Structural information is concluded from illumination invariant features, like SIFT. However, previous works have limitation on classifying diverse images. It is hard to list all the factors which determinate the weather conditions.
 
 \section{Single-Layer ANNs}
 
-Artificial neurons were introduced as information processing devices more than fifty years ago\citep{mcculloch1943logical}. Following the early work, perceptrons were deployed in layers to do pattern recognition jobs. A lot of resources were invested in the research capability of learning perceptrons theoretically and experimentally. As shown in Figure 2.1, a perceptron computes a weighted summation of its $n$ inputs and then thresholds the result to give a binary output $y$. We can treat n input as an vector with $n$ elements, and represent the vector as either class A(for output +1) or class B(for output -1).
+Artificial neurons were introduced as information processing devices more than fifty years ago\citep{mcculloch1943logical}. Following the early work, perceptrons were deployed in layers to do pattern recognition tasks. A lot of resources were invested in the research capability of learning perceptrons theoretically and experimentally. As shown in Figure 2.1, a perceptron computes a weighted summation of its $n$ inputs and then thresholds the result to give a binary output $y$. We can treat $n$ input as an vector with $n$ elements, and represent the vector as either class A(for output +1) or class B(for output -1).
 \graphicspath{ {./Figures/} }
 \begin{figure}[!htb]
 \centering
@@ -27,9 +27,9 @@ Each output is updated according to the equation:
 \begin{equation}\label{eq:BasicEq}
 y_{i} = f(h_{i}) = f\left(\sum_{j}w_{ij}x_{j}\right)
 \end{equation}
-where $x_{j}$ is the $j$th input, $y_{i}$ is the $i$th output, and $h_{i}$ is the net input into node $i$, The weight $w_{ij}$ connects the $j$th input and the $i$th output, and  The threshold function $f(h)$ is the activation function and usually makes up the form
+where $x_{j}$ is the $j$th input, $y_{i}$ is the $i$th output, and $h_{i}$ is the net input into node. The weight $w_{ij}$ connects the $j$th input and the $i$th output, and the threshold function $f(h)$ is the activation function and usually makes up the form
 \begin{equation}\label{eq:FullEq}
-f(h) = sign(h) = 
+f(x) = sign(x) = 
   \begin{cases}
     -1       & \quad h < 0 \\
     1  & \quad h \geq 0\\
@@ -39,7 +39,7 @@ and it is plotted out in figure \ref{fig:ThresholdFunc}
 \graphicspath{ {./Figures/} }
 \begin{figure}[!htb]
 \centering
-\includegraphics[width=0.4\textwidth]{bipolar-threshold.jpg}
+\includegraphics[width=0.4\textwidth]{ThresholdFunc.jpeg}
 \caption{\label{fig:ThresholdFunc}Threshold function}
 \end{figure}
 
@@ -47,37 +47,37 @@ Besides the threshold function, there are several deterministic action functions
 \begin{itemize}
   \item Linear function 
 \begin{equation}\label{eq:LinearFunc}
-f(h) = h
+f(x) = x
 \end{equation}
 
 \graphicspath{ {./Figures/} }
 \begin{figure}[!htb]
 \centering
-\includegraphics[width=0.4\textwidth]{Linear_function.png}
+\includegraphics[width=0.4\textwidth]{Linear_function.jpeg}
 \caption{\label{fig:LinearFunc}Linear function}
 \end{figure}
   
   \item Sigmoid function
 \begin{equation}\label{eq:SigmoidFunc}
-f(h) = \frac{1}{1+e^{-h}}
+f(x) = \frac{1}{1+e^{-x}}
 \end{equation}
 
 \graphicspath{ {./Figures/} }
 \begin{figure}[!htb]
 \centering
-\includegraphics[width=0.4\textwidth]{Logistic-curve.png}
+\includegraphics[width=0.4\textwidth]{Logistic-curve.jpeg}
 \caption{\label{fig:SigmoidFunc}Sigmoid function}
 \end{figure}
 
   \item Tanh function
 \begin{equation}\label{eq:TanhFunc}
-f(h) = tanh(h)
+f(x) = \frac{e^{x}-e^{-x}}{e^{x}+e^{-x}}
 \end{equation}
 
 \graphicspath{ {./Figures/} }
 \begin{figure}[!htb]
 \centering
-\includegraphics[width=0.4\textwidth]{tanh.png}
+\includegraphics[width=0.4\textwidth]{tanh.jpeg}
 \caption{\label{fig:TanhFunc}Tanh function}
 \end{figure}
 %  \item The third etc \ldots
@@ -102,7 +102,7 @@ y = f(\sum_{i=0}^{n}w_{i}x_{i}) = 1  & \quad x \in Class A\\
 y = f(\sum_{i=0}^{n}w_{i}x_{i}) = 0  & \quad x \in Class B
 \end{align*}
 
-The single layer neural network classifier is simple to implement, while it can only support a linear decision boundary. We can build a pretty simple neural network to acquire intuition behind mathematical theory. The network has no bias and one neuron which means it has one weight, say $w_{1}$. And we implement a logistic sigmoid activation function on the multiply of input data and weight $w_{1}$. Therefore, the network can map the input data $a_0$ onto an output $a_{out}$ based on the function
+The single layer neural network classifier is simple to implement, while it can only support a linear decision boundary. We can build a simple neural network to acquire intuition behind the mathematical theory. The network has no bias and one neuron which means it has one weight, say $w_{1}$. We implement a logistic sigmoid activation function on the multiply of input data and weight $w_{1}$. Therefore, the network can map the input data $a_0$ onto an output $a_{out}$ based on the function
 \begin{equation}\label{eq:1LayerExample}
 a_{out} = f(a_{0}w_{1})
 \end{equation}
@@ -114,13 +114,13 @@ where $f()$ is the logistic function. Supposing that an input data $1$ maps to a
 \caption{\label{fig:1LayerErrorSurface}The error surface for a single layer neural network\citep{ErrorFigure1}.}
 \end{figure}
 
-The single layer neural network has a decision boundary which is linear. However, it is clear this is a very limited class of decision boundary. It can be illustrated by two types of dataset.
+The single layer neural network has a decision boundary which is linear. However, it is clear this is a very limited class of decision boundary. It can be illustrated by two types of datasets in figure \ref{fig:1Layer2datasets} .
 \graphicspath{ {./Figures/} }
 \begin{figure}[!htb]
 \centering     %%% not \center
 \subfigure{\label{fig:a}\includegraphics[width=0.4\textwidth]{SingleLayerSimpleData}}
 \subfigure{\label{fig:b}\includegraphics[width=0.4\textwidth]{SingleLayerCircleData}}
-\caption{Two types of dataset. The left one can be separated by a single layer neural network. The right one cannot be separated by a single neural network. Generated from\citep{GenerateNN}.}
+\caption{\label{fig:1Layer2datasets}Two types of dataset. The left one can be separated by a single layer neural network. The right one cannot be separated by a single neural network. Generated from\citep{GenerateNN}.}
 \end{figure}
 
 \section{Multi-Layer Networks}
@@ -171,7 +171,7 @@ And the samples which cannot be separated by the single-layer neural network can
 \caption{\label{fig:MultiLayerErrorSurface}A multi-layer neural network can separate a complicated dataset. Generated from\citep{GenerateNN}.}
 \end{figure}
 
-\section{Stochastic Gradient Descent(SGD)}
+\section{Stochastic Gradient Descent (SGD)}
 
 Because the weight space in neural networks is continuous, training can reach the optimal weights value through optimization algorithms, which means minimising loss value of function
 \begin{equation}\label{eq:LossMin}
@@ -183,13 +183,13 @@ The SGD is a subtype of gradient descent. It only considers a single training po
 \begin{equation}\label{eq:SGDUpdate}
 w = w - \eta  \Delta L(w) = w - \eta \sum_{i=1}^{n} \Delta L_{i}(w)
 \end{equation}
-where $\eta$ is the learning rate and $L_{i}(w)$ is the value of the loss function at the $i^{th}$ sample. Although the SGD does not guarantee convergence, it is fast and effective in practice.
+where $\eta$ is the learning rate and $L_{i}(w)$ is the value of the loss function at the $i^{th}$ sample. The Robbins-Siegmund theorem \citep{robbins1985convergence} provides the approaches to almost surely convergence to a global minimum under relatively mild assumptions, moreover, it is fast and effective in practice.
 
 \section{Backpropagation}
 
 Multi-layer neural networks can represent mapping from the input data to the output classes. How to learn a suitable mapping method from the training dataset? And there is no explicit mapping between the outputs and the hidden neurons. This will be resolved by a popular learning algorithm, backpropagation.
 
-Because networks have differentiable activation functions, the activation of the output neurons can be propagated to the hidden neurons with regard to weights and bias. If we have an error function, we can evaluate derivatives of the error and update the weights to minimise the error function via some optimization methods.
+Because networks have differentiable activation functions, the activation of the output neurons can be propagated to the hidden neurons with respect to weights and bias. If we have an error function, we can evaluate derivatives of the error and update the weights to minimise the error function via some optimization methods.
 
 Backpropagation can be applied to find the derivatives of an error function related to the weights and bias in the network via two stages. First, the derivatives of the error functions, for instance sum-of-squares and Jacobian, with respect to the weights must be evaluated. Second, a variety of optimisation schemes can be implemented to compute the adjustment of weights based on derivatives. After passing data through the network, we can get the output result. It updates weight changes based on the grandient descent. Suppose the network has $i$ inputs, $h$ hidden neurons and $k$ outputs. The update equation can be represented: 
 \begin{equation}\label{eq:UpdateWeights}
@@ -346,7 +346,7 @@ It is not easy to solve equation \ref{eq:LogRegLossFunc}. Usually an optimisatio
 \end{equation}
 We can take partial derivative of $L(W)$ with respect to the $j$th element of $W^{(k)}$.
 
-\section{Convolutional Neural Networks(CNN)}
+\section{Convolutional Neural Networks (CNN)}
 
 Convolutional Neural Networks\citep{lecun1998gradient} are widely applied in image understanding and achieve top rank in an image classification competetion\citep{krizhevsky2012imagenet}. Compared to regular neural networks, CNN architecture assumes that the inputs are images and pixels are related in region. Regular neural networks fully connect layers and the method causes expensive computation.
 
@@ -372,7 +372,7 @@ Following layer by layer, CNN transforms an image from a set of pixel values to 
 
 \textbf{Convolutional Layer} is the key component of CNN and its output can be represented as neurons shaped in 3D volume. A set of learning filters make up the convoultional layer's parameters. Although the size of filter is flexible, it is usually small. During the feedforward process, each filter slides across the input volume and produces a $2$-dimensional feature map. In each slide, the input and the filter have a dot product computation. If there are some specific feature at some spatial position, they can be learnt by filters.
 
-Local connectivity is the key properties of the CNN is. Regular neural networks use fully connecting layers. That is unaffordable for images, even with high capability hardware. Instead, each neuron connects a local region of the input only. There are two main benefits from local connectivity. One is reducing parameters significantly and controlling overfitting. The other one is from a key image property. Pixels are strongly correlated with nearby pixels. This can be regarded as a local receptive field which can retrieve information from subregions of the image.
+Local connectivity is the key properties of the CNN. Regular neural networks use fully connecting layers. That is unaffordable for images, even with high capability hardware. Instead, each neuron connects a local region of the input only. There are two main benefits from local connectivity. One is reducing parameters significantly and controlling overfitting. The other one is from a key image property. Pixels are strongly correlated with nearby pixels. This can be regarded as a local receptive field which can retrieve information from subregions of the image.
 
 \graphicspath{ {./Figures/} }
 \begin{wrapfigure}{r}{0.5\textwidth}
@@ -391,7 +391,7 @@ A scheme, named parameter sharing, is implemented in convolutional layer to limi
 
 \textbf{Fully Connected Layer} takes feature maps, which have high level representation, from previous layers. Its difference with convolutional layer is that it connects to all neurons in previous layer instead of a receptive field only.
 
-\section{Spatial Pyramid Matching(SPM)}
+\section{Spatial Pyramid Matching (SPM)}
 
 The spatial pyramid matching\citep{lazebnik2006beyond} is used to classify high-level semantic attributes, based on low-level features. The method subdivides an image in several different levels of resolution and counts features falling in each spatial bin. It extends bags of features and derives spatial information from the image.
 \graphicspath{ {./Figures/} }

@@ -4,7 +4,7 @@
 \label{Chapter6}
 \lhead{Chapter 6. \emph{Background}}
 
-Compared to a general classification, multi-label classification has different evaluation metrics and learning algorithms.
+Compared to general classification, multi-label classification has different evaluation metrics and learning algorithms.
 
 \section{Evaluation Metrics}
 
@@ -151,7 +151,7 @@ The CC method propagates label information through classifiers, and latter class
 
 \subsection{Algorithm Adaptation Methods}
 
-\subsubsection{Multi-label k-Nearest Neighbour(ML-kNN)}
+\subsubsection{Multi-label k-Nearest Neighbour (ML-kNN)}
 
 The algorithm adapts k-nearest Neighbour techniques to propose multi-label data and utilise the MAP to make prediction through reasoning embodied labelling information among neighbours \citep{zhang2007ml}.
 
@@ -175,7 +175,7 @@ y_{t}(l) = \operatorname*{arg\,max}_{b \in \{0,1\}} P(H_{b}^l)P(E_{C_{t}(i) }^l|
 
 As stated in equation \ref{eq:CategoryVecBay}, the output of a test sample $t$ is $y_{t}(l)$. It can be computed through prior probability $P(H_{b}^l) l \in Y, b \in \{0,1\}$ and the posterior probability $P(E_{j}^l|H_{b}^l) (j \in \{0,1,...,k\})$.
 
-\subsubsection{Collective Multi-label Classifier(CML)}
+\subsubsection{Collective Multi-label Classifier (CML)}
 
 Supposed that labels are highly interdependent in some scenarios, the CML explores multi-label conditional random field (CRF) classification models which learn  parameters for each pair of labels directly\citep{ghamrawi2005collective}.
 
