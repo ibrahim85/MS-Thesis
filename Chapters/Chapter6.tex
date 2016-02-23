@@ -8,11 +8,11 @@ Compared to general classification, multi-label classification has different eva
 
 \section{Evaluation Metrics}
 
-In supervised learning, different metrics, like accuracy and area under the ROC curve, are used to evaluate the generalisation performance of a model. In the multi-label learning, evaluating performance is more complicated  than single-label classification problems because of increasing number of labels simultaneously. Therefore, two main types of evaluation methods are implemented in multi-label learning, say example-based metrics \citep{ghamrawi2005collective} and label-metrics \citep{tsoumakas2007random}.
+In supervised learning, different metrics, such as accuracy and area under the ROC curve, are used to evaluate the generalisation performance of a model. In the multi-label learning, evaluating performance is more complicated  than single-label classification problems because of increasing number of labels simultaneously. Therefore, two main types of evaluation methods are implemented in multi-label learning, say example-based metrics \citep{ghamrawi2005collective} and label-metrics \citep{tsoumakas2007random}.
 
 The two types of metrics evaluate outputs of classifiers from different perspectives. Given that $S = {(x_{i}, Y_{i})}$ is a test sample and $h(\cdot)$ is the learned multi-label classifier. The concept of example-based metrics is achieve all class labels of each test sample, and then compute the mean value of test sets to evaluate generalisation performance. Compared with considering all class labels simultaneously, label-based metrics evaluate performance by treating each class label separately and computing macro/micro-averaged value of all class labels.
 
-In a supervised classification problem, there are a ground truth output and a predicted output for a test sample. So the results of each test sample can be assigned to one of the four categories:
+A supervised classification problem consists a ground truth output and a predicted output for a test sample. So the results of each test sample can be assigned to one of the four categories:
 \begin{itemize}
 \item True Positive (TP) - label is positive and prediction is also positive
 \item True Negative (TN) - label is negative and prediction is also negative
@@ -46,17 +46,17 @@ I_{A}(x) =
 \frac{1}{N} \sum_{i=0}^{N-1} I_{\{L_i\}}(P_i)
 \end{equation}
 
-\textbf{Precision} is defined:
+\textbf{Precision} is defined as:
 \begin{equation}\label{eq:Precision}
 \frac{1}{N} \sum_{i=0}^{N-1} \frac{\left|L_i \cap P_i\right|}{\left|P_i\right|}
 \end{equation}
 
-\textbf{Recall} is defined:
+\textbf{Recall} is defined as:
 \begin{equation}\label{eq:Recall}
 \frac{1}{N} \sum_{i=0}^{N-1} \frac{\left|L_i \cap P_i\right|}{\left|L_i\right|}
 \end{equation}
 
-\textbf{Accuracy} is defined as
+\textbf{Accuracy} is defined as:
 \begin{equation}\label{eq:Accuracy}
 \frac{1}{N} \sum_{i=0}^{N - 1} \frac{\left|L_i \cap P_i \right|}
         {\left|L_i\right| + \left|P_i\right| - \left|L_i \cap P_i \right|}
@@ -69,14 +69,14 @@ I_{A}(x) =
 
 \subsection{Label-based Metrics}
 
-\textbf{Macro Precision} (precision averaged across all labels) is defined as
+\textbf{Macro Precision} (precision averaged across all labels) is defined as:
 \begin{equation}\label{eq:MacroPrecision}
 PPV(\ell)=\frac{TP}{TP + FP}=
           \frac{\sum_{i=0}^{N-1} I_{P_i}(\ell) \cdot I_{L_i}(\ell)}
           {\sum_{i=0}^{N-1} I_{P_i}(\ell)}
 \end{equation}
 
-\textbf{Macro Recall} (recall averaged across all labels) is defined as
+\textbf{Macro Recall} (recall averaged across all labels) is defined as:
 \begin{equation}\label{eq:MacroRecall}
 TPR(\ell)=\frac{TP}{P}=
           \frac{\sum_{i=0}^{N-1} I_{P_i}(\ell) \cdot I_{L_i}(\ell)}
@@ -90,13 +90,13 @@ F1(\ell) = 2
                             {PPV(\ell) + TPR(\ell)}\right)
 \end{equation}
 
-\textbf{Micro Precision} (precision averaged over all example/label pairs) is defined as
+\textbf{Micro Precision} (precision averaged over all example/label pairs) is defined as:
 \begin{equation}\label{eq:MicroPrecision}
 \frac{TP}{TP + FP}=\frac{\sum_{i=0}^{N-1} \left|P_i \cap L_i\right|}
           {\sum_{i=0}^{N-1} \left|P_i \cap L_i\right| + \sum_{i=0}^{N-1} \left|P_i - L_i\right|}
 \end{equation}
 
-\textbf{Micro Recall} (recall averaged over all the example/label pairs) is defined as
+\textbf{Micro Recall} (recall averaged over all the example/label pairs) is defined as:
 \begin{equation}\label{eq:MicroRecall}
 \frac{TP}{TP + FN}=\frac{\sum_{i=0}^{N-1} \left|P_i \cap L_i\right|}
         {\sum_{i=0}^{N-1} \left|P_i \cap L_i\right| + \sum_{i=0}^{N-1} \left|L_i - P_i\right|}
@@ -111,9 +111,9 @@ F1(\ell) = 2
 
 For the label-based metrics, the larger the metrics value means the higher generalisation performance.
 
-With the previous metrics, there are diverse methods to evaluate model generalization performance. In most multi-label classification, learning algorithms optimise one of the metrics. To make evaluation fair and precise, learning algorithms should be tested on different metrics to evaluate performance.
+With the previous metrics, there are diverse methods to evaluate model generalisation performance. In most multi-label classification, learning algorithms optimise one of the metrics. To make evaluation fair and precise, learning algorithms should be tested on different metrics to evaluate performance.
 
-Most metrics are non-convex and discrete, and most algorithms turn to optimise alternative multi-label metrics. Recently, some researcher study the consistency of multi-label learning \citep{gao2013consistency}. 
+Most metrics are non-convex and discrete, and most algorithms turn to optimise alternative multi-label metrics. Recently, some researchers have been studying the consistency of multi-label learning \citep{gao2013consistency}. 
 
 \section{Learning Algorithms}
 
@@ -147,7 +147,7 @@ H = \{C_{y_{i}}(x, y_{1},y_{2},...,y_{i-1}) \to y'_{i} \in \{0,1\}| y \in L, i =
 
 Thus it forms a chain of binary classifiers $C_{1},C_{2},...,C_{q}$. Each classifier $C_{i}$ learns and predicts the binary association of label $y_{i}$ based on the dataset $x$ and all prior binary relevance predictions $y_{j}, j = 1,2,...,i-1$. The learning process starts from $C_{1}$ and follows the chain sequentially . Therefore, $C_{1}$ determines $p(y_{1}|x)$, and sequential classifiers, say $C_{2},...,C_{q}$, determine $p(y_{i}|x_{i},y_{1},...,y_{i-1})$.
 
-The CC method propagates label information through classifiers, and latter classifiers take account of previous predictions. This method can retrieve lost information among labels partly. At the same time, the method keep advantages of BR, say computation efficiency and memory efficiency. The computational complexity of the method is close to the BR in terms of the number of labels and complexity of elemental classifiers $C_{i}$. As previous statement, the computational complexity of the BR is $O(q \times f(|X|,|D|))$ where $f(|X|,|D|))$ represents the elemental classifier. With extra computation introduced by previous labels, the computational complexity of the CC is $O(q \times f(|X|+q,|D|))$, while the computation will be unaffordable in case of $q \gg |X|$.
+The CC method propagates label information through classifiers, and latter classifiers take account of previous predictions. This method can retrieve lost information among labels partly. At the same time, the method maintains advantages of BR, such as computation efficiency and memory efficiency. The computational complexity of the method is close to the BR in terms of the number of labels and complexity of elemental classifiers $C_{i}$. As previous statement, the computational complexity of the BR is $O(q \times f(|X|,|D|))$ where $f(|X|,|D|))$ represents the elemental classifier. With extra computation introduced by previous labels, the computational complexity of the CC is $O(q \times f(|X|+q,|D|))$, while the computation will be unaffordable in case of $q \gg |X|$.
 
 \subsection{Algorithm Adaptation Methods}
 
@@ -155,7 +155,7 @@ The CC method propagates label information through classifiers, and latter class
 
 The algorithm adapts k-nearest Neighbour techniques to propose multi-label data and utilise the MAP to make prediction through reasoning embodied labelling information among neighbours \citep{zhang2007ml}.
 
-Given dataset $X$ and its label set $Y$, $y$ represents output vector for $x$ where $i$-th element $y(i)$ is positive if $i \in Y$, otherwise it is negative. Suppose that $N(x)$ is the set of neighbours of $x$ in the training dataset, we can compute a membership counting vector which represents the number of neighbours of $x$ owning the $l$-th label.
+Given dataset $X$ and its label set $Y$, $y$ represents output vector for $x$ where $i$-th element $y(i)$ is positive if $i \in Y$, otherwise it is negative. Given that $N(x)$ is the set of neighbours of $x$ in the training dataset, we can compute a membership counting vector which represents the number of neighbours of $x$ owning the $l$-th label.
 
 \begin{equation}\label{eq:KNNCounting}
 C_{x}(i) = \sum_{a \in N(x)} y_{a}(i), i \in Y
@@ -177,7 +177,7 @@ As stated in equation \ref{eq:CategoryVecBay}, the output of a test sample $t$ i
 
 \subsubsection{Collective Multi-label Classifier (CML)}
 
-Supposed that labels are highly interdependent in some scenarios, the CML explores multi-label conditional random field (CRF) classification models which learn  parameters for each pair of labels directly \citep{ghamrawi2005collective}.
+Given that labels are highly interdependent in some scenarios, the CML explores multi-label conditional random field (CRF) classification models which learn  parameters for each pair of labels directly \citep{ghamrawi2005collective}.
 
 In dataset $(x,Y)$, each sample has a corresponding random variables representation $(x,y)$, in which $y = (y_{1},y_{2},...,y_{q})  y_{i} \in \{-1,1\}$ is a binary label vector. If the sample contains $j$-th label, the $j$-th element of $y$ is $1$, otherwise $-1$. Then the aim is to learn the joint probability distribution $p(x,y)$.
 
@@ -187,7 +187,7 @@ The entropy of $(x,y)$ is represented as $H_{p}(x,y)$ and gives the distribution
 F_{k} = \frac{1}{m}\sum_{(x,y) \in D}f_{k}(x,y)
 \end{equation}
 
-According to the normalization constraint on $p(\cdot,\cdot)$, the optimal solution can be represented:
+According to the normalisation constraint on $p(\cdot,\cdot)$, the optimal solution can be represented:
 
 \begin{equation}\label{eq:CMLOptimal}
 p(y|x) = \frac{1}{Z(x)}exp(\sum_{k \in K}\lambda_{k} \cdot f_{k}(x,y))

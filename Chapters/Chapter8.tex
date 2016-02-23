@@ -12,7 +12,7 @@ We generate $1000$ raw RGB images with size $16 \times 16$. $40$ images are rese
 
 \section{Details of Network}
 
-The neural network is built from scratch up. First, we need to determine how many layers needed for the network. In \cite{lippmann1987introduction}, Lippmann has proved that two hidden layers are able to create classification regions of arbitrary desired shape. However, Kolmogorov \citep{kolmogorov1963representation} showed that the superposition of continuous one-dimensional function can represent a continuous function with several variables. Then we set up a neural network with one fully connecting hidden layer between the input and output layer.
+The neural network is built from scratch up. First, we need to determine how many layers needed for the network. In \cite{lippmann1987introduction}, Lippmann has proved that two hidden layers are able to create classification regions of arbitrary desired shape. However, Kolmogorov \citep{kolmogorov1963representation} showed that the superposition of continuous one-dimensional function can represent a continuous function with several variables. Then we set up a neural network with one fully connected hidden layer between the input and output layer.
 \begin{figure}[!htb]
 \centering
 \includegraphics[width=0.8\textwidth]{multilabel-topology.png}
@@ -29,7 +29,7 @@ Following that, it needs to determine how many neurons needed in the hidden laye
   \item type of activation function
   \item regularisation
 \end{enumerate}
-It is hard to determine the best number of hidden neurons without evaluating several trained models and comparing the generalisation error rates among the models. Lacking hidden neurons will lead a high training error rate and poor generalisation performance because of underfitting and high bias. On the other hand, exceeding neurons will achieve a high training error rate and poor generalization performance because of overfitting and high variance. One of crucial considerations is to evaluate the hidden neuron effects on the bias/variance trade-off.
+It is hard to determine the best number of hidden neurons without evaluating several trained models and comparing the generalisation error rates among the models. Lacking hidden neurons will lead a high training error rate and poor generalisation performance because of underfitting and high bias. On the other hand, exceeding neurons will achieve a high training error rate and poor generalisation performance because of overfitting and high variance. One of crucial considerations is to evaluate the hidden neuron effects on the bias/variance trade-off.
 
 There are many rules of thumb to determine the number of hidden neurons \citep{heaton2008introduction}
 \begin{enumerate}
@@ -39,7 +39,7 @@ There are many rules of thumb to determine the number of hidden neurons \citep{h
 \end{enumerate}
 It is time-consuming to find the optimal number of hidden neurons. We will start from a number of neurons which is small and increase the number gradually by evaluating the performance of the network.
 
-The different layers are fully connecting because we want to map each patch to the labels of the image. The information of each colour distributes in different positions of the image. The values of the weights and bias are initialised randomly. For weights, the $xavier$ algorithm is applied to determine the scale of initialisation depending on the number of input and output neurons. The bias is simply initialised as a constant $0$. The batch size is $40$ means that there are $40$ images fed into the neural network each time.
+The different layers are fully connected because we want to map each patch to the labels of the image. The information of each colour distributes in different positions of the image. The values of the weights and bias are initialised randomly. For weights, the $xavier$ algorithm is applied to determine the scale of initialisation depending on the number of input and output neurons. The bias is simply initialised as a constant $0$. The batch size is $40$ means that there are $40$ images fed into the neural network each time.
 
 In the training process, the base learning rate is $0.0001$. The learning rate of weights is equal to base learning rate, while the learning rate of bias is two times of the base learning rate. The parameter momentum is $0.9$ to smooth the weight updating across iterations so that the learning process will be fast. The parameter of weight decay is $0.0005$.
 
@@ -96,9 +96,9 @@ In figures \ref{fig:MLROCCurve} \ref{fig:MLROCCurveExt}, the ROC curve of test r
 
 \section{Conclusion and Future Work}
 
-We have presented an approach to classifying multi-label images. With the increasing label numbers, the correlation between data and labels is complex. A Neural network can map data and labels efficiently. The updated loss function evaluates the model efficiently and leads optimisation quickly. 
+We have presented an effective approach to classifying multi-label images. With increasing label numbers, the correlation between data and labels is complex. A neural network maps data and labels efficiently and accurately. The updated loss function evaluates the model efficiently and quickly leads to optimisation.
 
-The experiment shows that the neural network is able to do complex multi-label classification perfectly. In the experiment, classifying the artificially images shows the high generalisation performance. It needs to update the network architecture for practical datasets in the future.
+The experiment shows that the neural network is able to do complex multi-label classification perfectly. In the experiment, classifying the artificial images achieves the high generalisation performance. It needs to update the network architecture for practical datasets in the future.
 
 
 

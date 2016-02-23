@@ -52,9 +52,9 @@ The dataset contains $1000$ images in total. $960$ images are training samples a
 
 \section{Artificial Neural Networks (ANNs)}
 
-The Artificial Neural Network is an approach to learning a nonlinear function which can be used to map a sample to multi labels. The neurons in the first layer take a raw image while the neurons in the last layer produce outputs. Between the first and last layer, the middle layers are called hidden layers because they do not connect to external world directly. A 3 layer neural network can represent any bounded degree polynomial under certain conditions \citep{barron1993universal}. The weights of neural network are learned by algorithms deployed over training dataset. One of successful learning algorithms is the Backpropagation algorithm which updates weights by propagating errors caused by comparing prediction for each sample with actual target values.
+The Artificial Neural Network is an approach to learning a nonlinear function which can be used to map a sample to multi labels. The neurons in the first layer take a raw image while the neurons in the last layer produce outputs. Between the first and last layer, the middle layers are called hidden layers because they do not connect to external world directly. A 3 layer neural network can represent any bounded degree polynomial under certain conditions \citep{barron1993universal}. The weights of neural network are learned by algorithms deployed over training dataset. One of the successful learning algorithms is the Backpropagation algorithm which updates weights by propagating errors caused by comparing prediction for each sample with actual target values.
 
-Two factors will be modified to adapt a neural network to do multi-label classification. One is to design a new error function which fits the characteristics of multi-label samples instead of single-label ones. The other one is to find a moderate metric according to the new designed error function.
+Two factors will be modified to adapt a neural network to perform multi-label classification. One factor is to design a new error function which fits the characteristics of multi-label samples instead of single-label ones. The other is to select a moderate metric according to the new designed error function.
 
 \subsection{Network Architecture}
 
@@ -67,7 +67,7 @@ Define $\mathcal{X} = \mathbb{R}^{d}$ as the sample space and $\mathcal{Y} = {1,
 \caption{\label{fig:MultiLabelNet}Network Topology For Multi-lable Classification}
 \end{figure}
 
-The network has $d$ input neurons which correspond to a $d$-dimensional feature vector, while the last $Q$ neurons represent a combination of output labels. There is a hidden layer in figure \ref{fig:MultiLabelNet} which owns $n$ hidden neurons. The input layer is fully connecting with the hidden layer and the same connecting method is deployed between the hidden layer and the output layer. So there are $d \times n$ weights $(W_{ih}, 1 \leq i \leq d, 1 \leq h \leq n)$ between the first two layers, and $n \times q$ weights $(W_{ho}, 1 \leq h \leq n , 1 \leq o \leq q)$ between the latter two layers. The bias parameters are represented as $I_{0}$ and  $H_{0}$.
+The network has $d$ input neurons which correspond to a $d$-dimensional feature vector, while the last $Q$ neurons represent a combination of output labels. There is a hidden layer in figure \ref{fig:MultiLabelNet} which owns $n$ hidden neurons. The input layer is fully connected with the hidden layer and the same connecting method is deployed between the hidden layer and the output layer. There are $d \times n$ weights $(W_{ih}, 1 \leq i \leq d, 1 \leq h \leq n)$ between the first two layers, and $n \times q$ weights $(W_{ho}, 1 \leq h \leq n , 1 \leq o \leq q)$ between the latter two layers. The bias parameters are represented as $I_{0}$ and  $H_{0}$.
 
 Because the task of multi-label learning is to predict labels of test samples, it needs to evaluate the global error of the model as:
 \begin{equation}\label{eq:MultiLableError}
@@ -85,13 +85,13 @@ E = \sum_{i=1}^m E_{i} = \sum_{i=1}^m \frac{1}{|Y_{i}||\hat{Y}_{i}|} \sum_{(k,l)
 \end{equation}
 In the error function \ref{eq:MultiLableGlobalError}, the $i$-th errors on the $i$-th sample $(x_{i},Y_{i})$ are accumulated. $\hat{Y}_{i}$ is complementary set of $Y_{i}$ in $\mathcal{Y}$ and $|\cdot|$ computes the cardinality of a set. Specifically, the item, $c_{k}^i-c_{l}^i$, represents the difference between the output labels of the model on the label which belongs to sample $x_{i}$ and the label which does not belong to the same sample. The error function \ref{eq:MultiLableGlobalError} shows that bigger difference leads to better performance. Additionally, the negation of the difference is put into the exponential function to sharply penalize the $i$-th term if $c_{k}^i$ is much smaller than $c_{l}^i$. The sum of $i$-th error term accumulates difference between outputs of any pair of labels which are the one belonging to the sample and the other one not belonging to it. The sum is normalized by the numbers of all pairs, $|Y_{i}||\hat{Y}_{i}|$. And then, the correlations between pair labels are computed. In other words, labels in $Y_{i}$ should get larger output value than labels in $\hat{Y}_{i}$.
 
-As previous statement, the error function \ref{eq:MultiLableGlobalError} calculates the difference between output labels. The task of learning is minimising the error function \ref{eq:MultiLableGlobalError} via enlarging output values of labels belonging to the training samples and diminishing the output values of the labels not belonging to it. If the training dataset can cover the distribution of the whole sample space, the model can learn it through minimising error function by feeding training samples.
+As in the previous statement, the error function \ref{eq:MultiLableGlobalError} calculates the difference between output labels. The task of learning is minimising the error function \ref{eq:MultiLableGlobalError} via enlarging output values of labels belonging to the training samples and diminishing the output values of the labels not belonging to it. If the training dataset can cover the distribution of the whole sample space, the model can learn it through minimising error function by feeding training samples.
 
 \subsection{Error Function}
 
 The basic goal of regression problems is to figure out the conditional distribution of the output labels with the input samples. It is common to use a sum-of-squares error function.
 
-The basic goal of classification problems is to figure out the posterior probabilities of class types with the input samples. Except for the sum-of-squares error function, there are some more approximate error functions which can be considered.
+The basic aim of classification problems is to figure out the posterior probabilities of class types with the input samples. Except for the sum-of-squares error function, there are some more approximate error functions which can be considered.
 
 The central goal in training a neural network is to model the hidden generator of the samples instead of memorising the training samples. Therefore, the best prediction of an input sample can be found if the network can present a new value for the sample. Because the general and complete characterisation of the dataset is the probability density $p(x,t)$, it is available to decompose a joint probability density into the product of the conditional density of the labels, the input data and the density of the data,
 \begin{equation}\label{eq:JointProbDensity}
@@ -106,11 +106,11 @@ Most error functions can be obtained from the idea of maximum likelihood. For tr
 \begin{equation}\label{eq:LikelihoodLoss}
 L = \coprod_{\substack{n}}  p(t^n|x^n)p(x^n)
 \end{equation}
-where each sample is picked out randomly from the same  distribution and their probabilities can be multiplied. The error function can be represented by minimizing the negative logarithm of the likelihood since the negative logarithm is a monotonic function.
+where each sample is chosen randomly from the same  distribution and their probabilities can be multiplied. The error function can be represented by minimizing the negative logarithm of the likelihood since the negative logarithm is a monotonic function.
 \begin{equation}\label{eq:LikelihoodErrorFunc}
 E = -ln L = -\sum_{\substack{n}} ln p(t^n|x^n) - \sum_{\substack{n}}lnp(x^n)
 \end{equation}
-where $E$ is notated as an error function. The task of learning is to model the conditional probability density $p(t|x)$. And the second term is independent with the parameters in neural networks.  We can simplify equation \ref{eq:LikelihoodErrorFunc} to
+where $E$ is notated as an error function. The task of learning is to model the conditional probability density $p(t|x)$. The second term is also independent with the parameters in neural networks.  We can simplify the equation \ref{eq:LikelihoodErrorFunc} to
 \begin{equation}\label{eq:SimLikelihoodErrorFunc}
 E = -ln L = -\sum_{\substack{n}} ln p(t^n|x^n) + C
 \end{equation}
@@ -158,7 +158,7 @@ Because the defination of the sigmoid function is $f(x) =1/(1+e^{-x})$ and the d
 \end{equation}
 The equation \ref{eq:SimDerCrossEntropyCostFunc} shows that the rate of learning weights is controlled by $f(x) - y$. The larger the error is, the faster the neuron learns. In particular, the property avoids the learning slowdown because the derivative item $f'(x)$ gets canceled out in the quadratic cost.
 
-In the similar way, the bias can be computed by the partial derivative.
+In similar way, the bias can be computed by the partial derivative.
 \begin{equation}\label{eq:BiasCrossEntropyCostFunc}
 \frac{\partial C}{\partial b} = \frac{1}{n} \sum_x (f(x)-y)
 \end{equation}

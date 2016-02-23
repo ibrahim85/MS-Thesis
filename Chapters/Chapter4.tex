@@ -8,19 +8,19 @@ The experiment environment includes hardware, which is i7 CPU, 8G RAM and a GeFo
 
 \section{Training Neural Networks}
 
-We trained model with the 1000-category ImageNet2012 dataset. We use the network architecture of the model~\cite{ZeilerF13} which achieved an excellent accuracy in the 2013 ImageNet Competition. We implemented SPP with CUDA C language and deployed it before the first fully connecting layer.
+We trained the model with the 1000-category ImageNet2012 dataset. We used the network architecture of the model~\cite{ZeilerF13} which achieved an excellent accuracy in the 2013 ImageNet Competition. We implemented SPP with CUDA C language and deployed it before the first fully connected layer.
 
-In the experiment, a subset of the ImageNet dataset, which contains 1.2 million labelled high-resolution images depicting 1000 object categories and 50,000 validation images, is used as training dataset. Most images of the dataset are multi-scale and some are grey. To feed them into the network conveniently, it is better to convert them with a constant dimensionality. The images are resized to $256\times256$. And for grey images, they are combined triple times to simulate RGB images. The model is trained on raw RGB values of pixels. The activation function is the ReLU, which ensures fast training of the neural network.
+In the experiment, a subset of the ImageNet dataset, which contains 1.2 million labelled high-resolution images depicting 1000 object categories and 50,000 validation images, is used as training dataset. Most images are multi-scale and some are grey. To feed them into the network conveniently, it is considered better to convert them to the same dimensions. The images are resized to $256\times256$. Grey images are combined triple times to simulate RGB images. The model is trained on raw RGB values of pixels. The activation function is the ReLU, which guarantees fast training of the neural network.
 
 \begin{equation}\label{eq:ReLU}
 f(x) = max(0, x)
 \end{equation}
 
-The model \ref{fig:ImageNetArch} is trained with a descent optimisation method, SGD. The batch size is 128, and the momentum is 0.9.  In each layer, the weights are initialised with a Gaussian distribution which has  a $0$ mean, and $0.01$ standard deviation. The neuron bias, in the $Conv_{2}$, $Conv_{4}$, $Conv_{5}$ and fully connecting layers, are initialized with value 1, while other bias is initialised with value 0.
+The model \ref{fig:ImageNetArch} is trained with a descent optimisation method, SGD. The batch size is 128, and the momentum is 0.9.  In each layer, the weights are initialised with a Gaussian distribution which has the mean of $0$, and the standard deviation of $0.01$. The neuron bias, in the $Conv_{2}$, $Conv_{4}$, $Conv_{5}$ and fully connected layers, is initialized with value 1, while the other bias is initialised with value 0.
 
 The learning rates are set equally for all layers. They are initialised at 0.01 and decrease with the stepdown policy which means that they would drop by a factor of 10 after each 100,000 iteration. In total, the learning rate drops 3 times and the accuracy keeps stable after 370,000 iterations. 
 
-The training is regularised via techniques, dropout and weight decay. The dropout regularisation is implemented at the two fully connecting layers and the dropout ratio is 0.5. The neurons, which are dropped out, output zero and do not participate in the backpropagation process. Therefore, the neural network samples different architectures each time. It, significantly, decreases complex co-adaptations of neurons because a neuron does not depend on the existence of all other neurons. The weight decay, $\epsilon$, is set to 0.0005 which means the new weights are shrunk according to 
+The training is regularised via the techniques, including dropout and weight decay. The dropout regularisation is implemented at the two fully connected layers and the dropout ratio is 0.5. The neurons, which are dropped out, output zero and do not participate in the backpropagation process. Therefore, the neural network samples different architectures each time. This significantly decreases complex co-adaptations of neurons because they do not depend on the existence of other neurons. The weight decay, $\epsilon$, is set to 0.0005 which means the new weights are shrunk according to 
 \begin{equation}\label{eq:WeightDecay}
 w^{new} = w^{old}(1 - \epsilon)
 \end{equation}
@@ -28,27 +28,27 @@ after each update.
 
 \section{Fine-tuning Model}
 
-There are two challenges. First, the CNN model is trained to classify objects in images. However, the current task is to classify weather scenes. This can be solved by changing the output of the model from $1000$ to $2$. Second, the CNN architecture contains more than 60 million parameters which are too many for the weather classification dataset.The target dataset has only 10000 images in total. It is insufficient and the model is easy to overfit. It can be solved by training on the pre-trained CNN model. Because the learned model is close to optimism, it needs tiny adjustment only.
+There are two challenges to training on the original model. First, the original CNN model is trained to classify $1000$ categories in images. However, the current task is to classify the two weather scenes. This can be solved by reducing the outputs of the model from $1000$ to $2$. Second, the CNN architecture contains more than 60 million parameters which are too many for the weather classification dataset. The target dataset has only 10000 images in total. The number of images is insufficient and the model is feasible to overfit. It can be solved by training a new model based on the existing CNN model. Because the learned model is close to optimism, it needs a tiny adjustment only and avoids overfitting.
 
-The fine-tune transfers weights of each layers from the previous model to the new model except for the last fully connected layer. The last layer is taken over by a new layer which contains the same amount of neurons equally to the class number. The weights in the replaced layer are initialized with random values. One advantage of fine-tune is keeping minimum risk of overfitting. The other one is that weights reach optimal values quickly.
+The fine-tune transfers weights of each layer from the previous model to the new model except for the last fully connected layer. The last layer is taken over by a new layer which contains the same amount of neurons equally to the class number. The weights in the replaced layer are initialized with random values. One advantage of fine-tune is keeping minimum risk of overfitting. The other is that weights reach optimal values quickly.
 
-In the task, we want to classify sunny and cloudy images. The last layer of the network, $FC8$, is taken place by a new layer with two neurons according to two types of weather conditions. The weights of the pre-trained model are used to initialise the weights in the new neural network. 
+In the task, we want to classify sunny and cloudy images. The last layer of the network, $FC8$, is taken place by a new layer with two neurons according to the two types of weather conditions. The weights of the pre-trained model are used to initialise the weights in the new model. 
 
-$1000$ images are kept out to evaluate the model. One iteration is a process of feeding a batch of images into the network. There are $10,000$ iterations in the training process totally, which means that total training image number is $128\times10000$. One epoch is that the total training images are fed into the network once. Dividing the size of training images $9000$, the number of epochs is $142$. The initial base learning rate is $0.001$ and the rate is divided by $10$ every $10$ epochs. Because the weights in $FC8$ are randomly initialised which means they are not close to final optimization value, the learning rate of $FC8$ is $10$ times of the base learning rate in order to converge quickly.
+$1000$ images are kept out to evaluate the model. One iteration is a process of feeding a batch of images into the network. There are $10,000$ iterations in the training process totally, then the total training image number is $128\times10000$. One epoch is that the total training images are fed into the network once. Dividing the size of training images $9000$, the number of epochs is $142$. The initial base learning rate is $0.001$ and the rate is divided by $10$ every $10$ epochs. Because the weights in $FC8$ are randomly initialised and they are not close to final optimization value, the learning rate of $FC8$ is $10$ times of the base learning rate in order to converge quickly.
 
 \section{Companion Experiments}
 
-To compare the performance of fine-tuned model, we did extra experiments with extracting feature methods. We used a pre-trained model with the AlexNet architecture and extracted features from the layer $FC7$. We trained a SVM classifier based on the features and classified the test samples.
+In order to compare the performance of the fine-tuned model, we did extra tests by extracting feature methods. We used a pre-trained model with the AlexNet architecture and extracted features from the layer $FC7$. We trained a SVM classifier based on the features and classified the test samples by it.
 
 \section{Experimental Results}
 
-The results in table\ref{ExpRes} show that the models, trained by the neural networks, have better performance than the extracting features method. 
+The results in table\ref{ExpRes} illustrates that the models, trained by the neural networks, have better performance than the extracting features method. 
 
 \begin{table}[h]
 \begin{center}
     \begin{tabular}{| c | c | c | c | c |}
     \hline
-    Methods & CNN+SVM & CNN+SPP+SVM & Finetune on CNN & Finetune on CNN + SPP  \\ \hline
+    Methods & CNN+SVM & SPP+SVM & Finetune on CNN & Finetune on SPP  \\ \hline
     Accuracy & $84.8\%$ & $82.1\%$ & $93.1\%$ & $93.98\%$ \\ \hline
     \end{tabular}
     \caption{The first test is extracting features from the pre-trained CNN model and training a SVM classifer. The second test is similar with the first except for extracting features from the CNN model with a SPP layer. The third test is fine-tuning the model with AlexNet architecture. The fourth test is fine-tuning the CNN model with a SPP layer}
@@ -65,19 +65,19 @@ The fine-tuning process is very quick and the accuracy rate is over $90\%$. Afte
     \label{fig:finetuneprocess}%
 \end{figure}
 
-The learning process may have overfitting which definitely will damage model generalization capability. From figure \ref{fig:finetuneprocess}, we find that there is no overfitting in the fine-tuning process. Meanwhile, the accuracy increases sharply and keeps stable.
+The learning process may overfit and it will definitely damage model generalisation capability. From figure \ref{fig:finetuneprocess}, we find that there is no overfitting in the fine-tuning process. Meanwhile, the accuracy increases sharply and maintains stable.
 
-To have a more detailed information of fine-tuning process, we investigate the training loss values. We plot the curve of first 200 iterations and loss value.
+In order to have a more detailed information of fine-tuning process, we investigate the training loss values. We plot the curve of first 200 iterations and loss values.
 
 \begin{figure}[!htb]
     \centering
 	\includegraphics[width=0.4\textwidth]{finetuneCNNProcess.png}
 	\includegraphics[width=0.4\textwidth]{finetuneSPPProcess.png}
-    \caption{Finetune Process}%
+    \caption{Training Loss}%
     \label{fig:FTvsSC}%
 \end{figure}
 
-From the figure \ref{fig:FTvsSC}, we can find that the fine-tuning procedure produces a smoother loss function curve and ceases at a higher accuracy rate. In the left figure, the loss value of the fine-tuning procedure is higher than the value of the no fine-tuning process at the beginning. It then shrinks sharply and keeps lower than the value of the no fine-tuning process. In the right figure, we can find that starting loss values are both less than those in the left figure. And the loss value of the fine-tuning process is less than the value in the no fine-tune process. We can conclude that generally the fine-tuning is an effective approach to reduce loss value and the fine-tuning on the model with the SPP layer can achieve better results than the original CNN model.
+From the figure \ref{fig:FTvsSC}, it is clear that the fine-tuning procedure produces a smoother loss function curve and ceases at a higher accuracy rate. In the left figure, the loss value of the fine-tuning procedure is higher than the value of the no fine-tuning process at the beginning. Then it shrinks sharply and maintains lower than the value of the no fine-tuning process. In the right figure, we can find that starting loss values are both less than those in the left figure. And the loss value of the fine-tuning process is less than the value in the no fine-tune process. We can conclude that generally the fine-tuning is an effective approach to reduce loss value and the fine-tuning on the model with the SPP layer can achieve better results than the original CNN model does.
 
 \begin{figure}[!htb]
     \centering
@@ -88,11 +88,11 @@ From the figure \ref{fig:FTvsSC}, we can find that the fine-tuning procedure pro
 
 \section{Architecture Analysis}
 
-The convolutional neural networks have achieved excellent performance in object classification field, although a full understanding of the mechanism is ambiguous. In order to have some intuition about the CNN, we will do some analysis on the network.
+The convolutional neural networks have achieved excellent performance in the object classification field, although a full understanding of the mechanism is ambiguous. In order to have some intuition about the CNN, we will do some analysis on the network.
 
-The outputs of each layers have been treated as visual descriptors \citep{razavian2014cnn}, and the vectors can present some information from the outputs of previous layers. The front layers encode low-level features, and the rear layers are able to capture high-level information. In other words, the image is retrieved heuristically when it passes the convolutional layers.
+The outputs of each layer have been treated as visual descriptors \citep{razavian2014cnn}, and the vectors could present some information from the outputs of previous layers. The front layers encode low-level features, and the rear layers are able to capture high-level information. In other words, the image is retrieved heuristically when it passes the convolutional layers.
 
-Fully connecting layers can be represented as a $d$-dimensional vector. The layer takes all outputs of the previous layer  whose feature maps are multidimensional, and flats the feature maps into a $d$-dimensional vector. The outputs of the second fully connecting layer are feed into a classifier. Two types of classifiers can be used, which are the SVM and the softmax.
+Fully connected layers can be represented as a $d$-dimensional vector. The layer takes all outputs of the previous layer  whose feature maps are multidimensional, and flats the feature maps into a $d$-dimensional vector. The outputs of the second fully connected layer are feed into a classifier. Two types of classifiers can be used, which are SVM and softmax.
 
 If a cloudy image is fed into the CNN, Figure \ref{fig:cloudy_finetuneprocess} shows the feature maps of convolutional layers. Because the filter size is too many, only parts of the filters are plotted in images b-d.
 
@@ -192,7 +192,7 @@ The outputs of the $CONV1$ and $CONV2$ are still partly recognisable by people. 
 
 \section{Effects of SPP}
 
-Because the outputs of the SPP cannot be represented as visual descriptors, the feature maps of the convolutional layers are compared. The outputs of the $CONV1$ and $CONV2$ show that more features are recognisable in the SPP model. It is probably that the SPP model has stronger representation capability than the CNN model.
+Because the outputs of the SPP cannot be represented as visual descriptors, only the feature maps of the convolutional layers are compared. The outputs of the $CONV1$ and $CONV2$ show that more features are recognisable in the SPP model. It is probably that the SPP model has stronger representation capability than the CNN model does.
  
 \begin{figure*}[!htb]
 \begin{center}
@@ -233,7 +233,7 @@ From the feature maps and histogram distributions, it is clear that the SPP mode
 
 \section{Error Results}
 
-The images \ref{fig:Misclassification} are misclassified. They are hard to judge sunny or cloudy, even for people.
+The images \ref{fig:Misclassification} are misclassified. They are difficult to judge sunny or cloudy, even for people.
 \graphicspath{ {./Figures/} }
 \begin{figure}[htb]
     \centering
@@ -279,6 +279,6 @@ The images \ref{fig:Misclassification} are misclassified. They are hard to judge
 
 \section{Conclusion and Future Work}
 
-In this project, we present an approach to do weather classification through the convolutional neural network and transfer learning. The result shows the strong capacity of the convolutional neural network and the convenience of the transfer learning. Compared with the traditional method, which uses extracting features and training a classifier based on the features, the CNN does not depend on specific feature detectors and achieve high accuracy. 
+In this experiment, we present an effective approach to perform weather classification through the convolutional neural network and transfer learning. The result illustrates the strong capacity of the convolutional neural network and the convenience of the transfer learning. Compared with the traditional methods, including extracting features and training a classifier based on the features, the CNN does not depend on specific feature detectors and achieves high accuracy. 
 
 In the future work, the full understanding of the CNN mechanism is a demanding work. And the work can be extended to multi-class weather classification and implemented in industry widely.
