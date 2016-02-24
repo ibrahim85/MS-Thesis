@@ -4,11 +4,11 @@
 \label{Chapter4}
 \lhead{Chapter 4. \emph{Experiment}}
 
-The experiment environment includes hardware, which is i7 CPU, 8G RAM and a GeForce GTX 770, and software, which is Ubuntu Linux 14.04 and Caffe \citep{jia2014caffe}, a deep learning software framework. We train the model in Caffe with implemented SPP layers.
+The experiment environment includes hardware, which is i7 CPU, 8G RAM and a GeForce GTX 770, and software, which is Ubuntu Linux 14.04 and Caffe \citep{jia2014caffe}, a deep learning software framework. We trained a model by Caffe.
 
 \section{Training Neural Networks}
 
-We trained the model with the 1000-category ImageNet2012 dataset. We used the network architecture of the model~\cite{ZeilerF13} which achieved an excellent accuracy in the 2013 ImageNet Competition. We implemented SPP with CUDA C language and deployed it before the first fully connected layer.
+We trained the model with the 1000-category ImageNet2012 dataset. We used the network architecture ~\cite{ZeilerF13} which achieved an excellent accuracy in 2013 ImageNet Competition. We implemented SPP with CUDA C language and deployed it before the first fully connected layer.
 
 In the experiment, a subset of the ImageNet dataset, which contains 1.2 million labelled high-resolution images depicting 1000 object categories and 50,000 validation images, is used as training dataset. Most images are multi-scale and some are grey. To feed them into the network conveniently, it is considered better to convert them to the same dimensions. The images are resized to $256\times256$. Grey images are combined triple times to simulate RGB images. The model is trained on raw RGB values of pixels. The activation function is the ReLU, which guarantees fast training of the neural network.
 
@@ -28,17 +28,15 @@ after each update.
 
 \section{Fine-tuning Model}
 
-There are two challenges to training on the original model. First, the original CNN model is trained to classify $1000$ categories in images. However, the current task is to classify the two weather scenes. This can be solved by reducing the outputs of the model from $1000$ to $2$. Second, the CNN architecture contains more than 60 million parameters which are too many for the weather classification dataset. The target dataset has only 10000 images in total. The number of images is insufficient and the model is feasible to overfit. It can be solved by training a new model based on the existing CNN model. Because the learned model is close to optimism, it needs a tiny adjustment only and avoids overfitting.
+There are two challenges to training on the original model. Firstly, the original CNN model is trained to classify images of $1000$ categories. However, the current task is to classify the two weather scenes. This can be solved by reducing the outputs of the model from $1000$ to $2$. Secondly, the CNN architecture contains about 60 million parameters which are too many for the weather classification dataset. The target dataset has only 10000 images in total. The number of images is insufficient and the model is feasible to overfit. It can be solved by training a new model based on the existing CNN model. Because the learned model is close to optimism, only a tiny adjustment is needed.
 
-The fine-tune transfers weights of each layer from the previous model to the new model except for the last fully connected layer. The last layer is taken over by a new layer which contains the same amount of neurons equally to the class number. The weights in the replaced layer are initialized with random values. One advantage of fine-tune is keeping minimum risk of overfitting. The other is that weights reach optimal values quickly.
+The fine-tune transfers the weights of each layer from the previous model to the new model except for the last fully connected layer. The last layer is taken over by a new layer which contains the same amount of neurons equally to the class number. The weights in the replaced layer are initialized with random values. One advantage of fine-tune is to minimise risk of overfitting. The other is that weights reach optimal values quickly.
 
-In the task, we want to classify sunny and cloudy images. The last layer of the network, $FC8$, is taken place by a new layer with two neurons according to the two types of weather conditions. The weights of the pre-trained model are used to initialise the weights in the new model. 
-
-$1000$ images are kept out to evaluate the model. One iteration is a process of feeding a batch of images into the network. There are $10000$ iterations in the training process totally. Then the total training image number is $128\times10000$. One epoch is that the total training images are fed into the network once. Dividing the size of training images by $9000$, the number of epochs is $142$. The initial base learning rate is $0.001$ and the rate is divided by $10$ every $10$ epochs. Because the weights in $FC8$ are randomly initialised and they are not close to final optimization value, the learning rate of $FC8$ is $10$ times of the base learning rate in order to converge quickly.
+$9000$ images are used for training and $1000$ images are reserved to test the model. The batch size is $128$. There are $10000$ iterations in the training process totally. Then the total training image number is $128\times9000$. One epoch is that the total training images are fed into the network once. The training epochs are $142$. The initial base learning rate is $0.001$ and the rate is divided by $10$ every $10$ epochs. Because the weights in $FC8$ are randomly initialised and they are not close to final optimization value, the learning rate for $FC8$ is $10$ times of the base learning rate to converge quickly.
 
 \section{Companion Experiments}
 
-In order to compare the performance of the fine-tuned model, we did extra tests by extracting feature methods. We used a pre-trained model with the AlexNet architecture and extracted features from the layer $FC7$. We trained a SVM classifier based on the features and classified the test samples by it.
+In order to compare performance of the fine-tuned model, we did extra tests with extracting feature methods. We used a pre-trained model with the AlexNet architecture and extracted features from the layer $FC7$. We trained a SVM classifier based on the features and classified the test samples by it.
 
 \section{Experimental Results}
 
@@ -56,7 +54,7 @@ The results in table \ref{ExpRes} illustrates that the models, trained by the ne
 \end{center}
 \end{table}
 
-The fine-tuning process is very quick and the accuracy rate is over $90\%$. After 12 epoch, the accuracy rate exceeds $90\%$. 
+The fine-tuning process converge quick. After about 30 epochs, the accuracy rate exceeds $90\%$. 
 \graphicspath{ {./Figures/} }
 \begin{figure}[!htb]
     \centering
@@ -65,7 +63,7 @@ The fine-tuning process is very quick and the accuracy rate is over $90\%$. Afte
     \label{fig:finetuneprocess}%
 \end{figure}
 
-The learning process may overfit and it will definitely damage model generalisation capability. From figure \ref{fig:finetuneprocess}, we find that there is no overfitting in the fine-tuning process. Meanwhile, the accuracy increases sharply and keeps it steady.
+The learning process may overfit and it will definitely damage model generalisation capability. From figure \ref{fig:finetuneprocess}, we find that there is no overfitting in the fine-tuning process.
 
 In order to have a more detailed information of fine-tuning process, we investigate the training loss values. We plot the curve and the loss values during the first 200 iterations.
 
@@ -77,7 +75,7 @@ In order to have a more detailed information of fine-tuning process, we investig
     \label{fig:FTvsSC}%
 \end{figure}
 
-From the figure \ref{fig:FTvsSC}, it is clear that the fine-tuning procedure produces a smoother loss function curve and ceases at a higher accuracy rate. In the left figure, the loss value of the fine-tuning procedure is higher than the value of the no fine-tuning process at the beginning. Then it shrinks sharply and maintains lower than the value of the no fine-tuning process. In the right figure, we can find that starting loss values are both less than those in the left figure. And the loss value of the fine-tuning process is less than the value in the no fine-tune process. In general, fine-tune is an effective approach to reduce loss value. The model with SPP layer help achieve high performance.
+From figure \ref{fig:FTvsSC}, it is clear that the fine-tuning procedure produces a smoother loss curve and ceases at a higher accuracy rate. In the left figure, the loss value of the fine-tuning procedure is higher than the value of the no fine-tuning process at the beginning. Then it shrinks sharply and maintains lower than the value of the non fine-tuning process. In the right figure, we can find that initial loss values are less than those in the left figure. And the loss value of the fine-tuning process is less than the value in the non fine-tune process. In short, fine-tune is an effective approach to train a new model. The model with SPP layers achieves high performance.
 
 \begin{figure}[!htb]
     \centering
@@ -88,13 +86,13 @@ From the figure \ref{fig:FTvsSC}, it is clear that the fine-tuning procedure pro
 
 \section{Architecture Analysis}
 
-The convolutional neural networks have achieved excellent performance in the object classification field, although a full understanding of the mechanism is ambiguous. In order to have some intuition about the CNN, we will analyse the network outputs.
+CNN has achieved excellent accuracy in the object classification field, although a full understanding of the mechanism is ambiguous. In order to have some intuition about CNN, we will analyse the network outputs.
 
-The outputs of each layer have been treated as visual descriptors \citep{razavian2014cnn}, and the vectors present some information from the outputs of previous layers. The front layers encode low-level features, and the rear layers are able to capture high-level information. In other words, the image is retrieved heuristically when it passes the convolutional layers.
+The outputs of each layer have been treated as visual descriptors \citep{razavian2014cnn}, and the vectors present some information from the outputs of previous layers. The front layers encode low-level features, and the rear layers are able to capture high-level information. In other words, an image is retrieved heuristically when it passes the convolutional layers.
 
-Fully connected layers can be represented as a $d$-dimensional vector. The layer takes multidimensional outputs from the previous layer and flats the feature maps into a $d$-dimensional vector. The outputs of the second fully connected layer are feed into a classifier. Two types of classifiers can be deployed after the layer $FC7$, including SVM.
+Fully connected layers can be represented as a $d$-dimensional vector. The layer takes multidimensional outputs from the previous layer and flats the feature maps into a $d$-dimensional vector. The outputs of the second fully connected layer are feed into a classifier.
 
-If a cloudy image is fed into the CNN, Figure \ref{fig:cloudy_finetuneprocess} shows the feature maps of convolutional layers. Because the filter size is too many, only parts of the filters are plotted in b-d.
+When a cloudy image is fed into the CNN, figure \ref{fig:cloudy_finetuneprocess} shows the feature maps of convolutional layers. Because the filter size is too many, only parts of the filters are plotted in b-d.
 
 \graphicspath{ {./Figures/DifferentLayers/} }
 
@@ -188,11 +186,11 @@ In figure \ref{fig:sunny_finetuneprocess}, a sunny image is fed into CNN and the
     \label{fig:sunny_finetuneprocess}%
 \end{figure}
 
-The outputs of the $CONV1$ and $CONV2$ are still partly recognisable by people. The outputs of the $CONV3$ and $CONV4$ are quite unrecognisable from a people view. From the outputs of $CONV5$ for the sunny image, the position of sun light is highlighted by several filters. However, the according filters show no signs about the cloudy image.
+The outputs of $CONV1$ and $CONV2$ are still partly recognisable by people. The outputs of the $CONV3$ and $CONV4$ are unrecognisable. From the outputs of $CONV5$ for the sunny image, the position of sun light is highlighted by several filters. However, the according filters show no signs about the cloudy image.
 
-\section{Effects of SPP}
+\section{Effects of SPP Layer}
 
-The outputs of the SPP cannot be represented as visual descriptors, then only the feature maps of the convolutional layers are compared in the models. The outputs of the $CONV1$ and $CONV2$ show that more features are recognisable in the SPP model. It illustrates that the SPP model has stronger representation capability than the CNN model does.
+The outputs of SPP layers cannot be represented as visual descriptors, then only the feature maps of the convolutional layers are compared in the models. The outputs of $CONV1$ and $CONV2$ show that more features are recognisable in the SPP model. It illustrates that the SPP model has stronger representation capability than the CNN model does.
  
 \begin{figure*}[!htb]
 \begin{center}
@@ -233,7 +231,7 @@ From the feature maps and histogram distributions, it is clear that the SPP mode
 
 \section{Error Results}
 
-The images \ref{fig:Misclassification} are misclassified by both the CNN model and the SPP Model. They are difficult to judge sunny or cloudy, even for people.
+The images in figure \ref{fig:Misclassification} are misclassified by the CNN model and the SPP Model. They are difficult to judge sunny or cloudy, even for people.
 \graphicspath{ {./Figures/} }
 \begin{figure}[htb]
     \centering
@@ -279,6 +277,6 @@ The images \ref{fig:Misclassification} are misclassified by both the CNN model a
 
 \section{Conclusion and Future Work}
 
-In this experiment, we present an effective approach to perform weather classification through the convolutional neural network and transfer learning. The result illustrates the strong capacity of the convolutional neural network and the convenience of the transfer learning. Compared with the traditional methods, including extracting features and training a classifier based on the features, the CNN does not depend on specific feature detectors and achieves high accuracy. 
+In this experiment, we present an effective approach to perform weather classification through CNN and transfer learning. The result illustrates the strong capacity of CNN and the convenience of transfer learning. Compared with the traditional methods, which extracts features and trains a classifier based on the features, the CNN method does not depend on specific feature detectors and achieves high accuracy. 
 
-In the future work, the full understanding of the CNN mechanism is a demanding work. And the work can be extended to multi-class weather classification and implemented in industry widely.
+In the future, the full understanding of the CNN mechanism is a demanding work. And the work can be extended to multi-class weather classification and implemented in industry widely.

@@ -38,10 +38,10 @@
 \contentsline {section}{\numberline {4.2}Fine-tuning Model}{31}{section.116}
 \contentsline {section}{\numberline {4.3}Companion Experiments}{32}{section.117}
 \contentsline {section}{\numberline {4.4}Experimental Results}{32}{section.118}
-\contentsline {section}{\numberline {4.5}Architecture Analysis}{35}{section.123}
-\contentsline {section}{\numberline {4.6}Effects of SPP}{36}{section.138}
+\contentsline {section}{\numberline {4.5}Architecture Analysis}{34}{section.123}
+\contentsline {section}{\numberline {4.6}Effects of SPP Layer}{36}{section.138}
 \contentsline {section}{\numberline {4.7}Error Results}{37}{section.141}
-\contentsline {section}{\numberline {4.8}Conclusion and Future Work}{38}{section.149}
+\contentsline {section}{\numberline {4.8}Conclusion and Future Work}{37}{section.149}
 \contentsline {part}{II\hspace {1em}Multilabel Learning}{39}{part.150}
 \contentsline {chapter}{\numberline {5}Introduction}{40}{chapter.151}
 \contentsline {section}{\numberline {5.1}Overview}{40}{section.152}

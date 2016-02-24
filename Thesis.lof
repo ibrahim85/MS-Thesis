@@ -30,7 +30,7 @@
 \contentsline {figure}{\numberline {3.5}{\ignorespaces Architecture of the AlexNet \citep {krizhevsky2012imagenet}\relax }}{28}{figure.caption.110}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Learning Process\relax }}{33}{figure.caption.120}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Training Loss\relax }}{34}{figure.caption.121}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Training Loss\relax }}{33}{figure.caption.121}
 \contentsline {figure}{\numberline {4.3}{\ignorespaces ROC Curve\relax }}{34}{figure.caption.122}
 \contentsline {figure}{\numberline {4.4}{\ignorespaces A cloudy image and the feature maps from convolutional layers\relax }}{35}{figure.caption.124}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {raw image}}}{35}{figure.caption.124}
