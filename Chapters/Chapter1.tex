@@ -13,15 +13,15 @@ Weather classification is one of the most important pattern recognition tasks wh
 
 In this thesis, we describe an approach to this problem of weather classification based upon the major big trend in machine learning, and more precisely, deep learning. It differs from the feature detectors method, which extracts features manually, and then trains a model to perform classification.
 
-Compared to shadow learning which includes decision trees, SVM and naive bayes, deep learning passes input data through several non-linearity functions to generate features and does classification based on those features. It generates a mapping and finds the optimal solution.
+Compared to shadow learning which includes decision trees, SVM and naive bayes, deep learning passes input data through several non-linearity functions to generate features and performs classification based on those features. It generates a mapping and finds the optimal solution.
 
 \section{Statistical Pattern Recognisation}
 
-In the statistical approach, a pattern is represented in terms of $d$-dimensional feature vectors and each element of the vector describes some subjects of the example. In brief, three components are essential for statistical pattern recognization. The first one is a representation of the model. The second one is an objective function used to evaluate the accuracy of the model. The third one is an optimisation method for learning a model with minimum errors.
+In the statistical approach, a pattern is represented in terms of $d$-dimensional feature vectors and each element of the vector describes some subjects of the example. In brief, three components are essential for statistical pattern recognisation. The first one is a representation of the model. The second one is an error function used to evaluate the performance of the model. The third one is an optimisation method for learning a model.
 
 \section{Artificial Neural Networks (ANNs)}
 
-Artificial neural networks were proposed in the mid-20th century. The term is inspired by the structure of neural networks in the brain. It is one of the most successful statistical learning models used to approximate functions. Learning with ANNs yields an effective learning paradigm and has achieved cutting-edge performance in object classification. 
+Artificial neural networks were proposed in the mid-20th century. The term is inspired by the structure of neural networks in the human brain. It is one of the most successful statistical learning models used to approximate functions. Learning with ANNs yields an effective learning paradigm and has achieved cutting-edge performance in object classification. 
 
 The single-layer ANNs  have shown great success for a simple model. For increasingly complex models and applications, multi-layer ANNs have exhibited the power of features learning. With hardware being developing at the same time, the demand for more efficient optimising and model evaluation methods has increased promptly. 
 
@@ -31,6 +31,6 @@ Recent development in ANNs has greatly advanced the performance of state-of-the-
 
 Weather classification is an important task in daily life. In this thesis, we are focused on two classes of weather conditions, sunny and cloudy. 
 
-There are some obstacles in front of weather classification. First, because the number of inputting pixels is high, for example a $500 \times 500$ RPG image means $750,000$ pixels, computation is expensive. Second, some simple middle level image characters are difficult to be recognised by machines, such as light, shading, sun shine. It is still not easy to detect these characters with high accuracy.  Third, there are no decisive features, for example brightness and lightness, to classify scenes. For example, sun shine can be both found in sunny and cloudy weather. Last but not least, outdoor images have various backgrounds.
+There are some obstacles in front of weather classification. Firstly, because the number of inputting pixels is high, for example a $500 \times 500$ RPG image including $750,000$ pixels, computation is expensive. Secondly, some simple middle level image characters are difficult to be recognised by machines, such as light, shading, sun shine. It is still not easy to detect these characters with high accuracy. Thirdly, there are no decisive features, such as brightness and lightness, to classify scenes. And sun shine can be both found in sunny and cloudy weather. Last but not least, outdoor images have various backgrounds.
 
 
