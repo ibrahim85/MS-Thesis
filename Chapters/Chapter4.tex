@@ -34,7 +34,7 @@ The fine-tune transfers weights of each layer from the previous model to the new
 
 In the task, we want to classify sunny and cloudy images. The last layer of the network, $FC8$, is taken place by a new layer with two neurons according to the two types of weather conditions. The weights of the pre-trained model are used to initialise the weights in the new model. 
 
-$1000$ images are kept out to evaluate the model. One iteration is a process of feeding a batch of images into the network. There are $10,000$ iterations in the training process totally, then the total training image number is $128\times10000$. One epoch is that the total training images are fed into the network once. Dividing the size of training images $9000$, the number of epochs is $142$. The initial base learning rate is $0.001$ and the rate is divided by $10$ every $10$ epochs. Because the weights in $FC8$ are randomly initialised and they are not close to final optimization value, the learning rate of $FC8$ is $10$ times of the base learning rate in order to converge quickly.
+$1000$ images are kept out to evaluate the model. One iteration is a process of feeding a batch of images into the network. There are $10000$ iterations in the training process totally. Then the total training image number is $128\times10000$. One epoch is that the total training images are fed into the network once. Dividing the size of training images by $9000$, the number of epochs is $142$. The initial base learning rate is $0.001$ and the rate is divided by $10$ every $10$ epochs. Because the weights in $FC8$ are randomly initialised and they are not close to final optimization value, the learning rate of $FC8$ is $10$ times of the base learning rate in order to converge quickly.
 
 \section{Companion Experiments}
 
@@ -42,7 +42,7 @@ In order to compare the performance of the fine-tuned model, we did extra tests 
 
 \section{Experimental Results}
 
-The results in table\ref{ExpRes} illustrates that the models, trained by the neural networks, have better performance than the extracting features method. 
+The results in table \ref{ExpRes} illustrates that the models, trained by the neural networks, have better performance than the extracting features method. 
 
 \begin{table}[h]
 \begin{center}
@@ -65,9 +65,9 @@ The fine-tuning process is very quick and the accuracy rate is over $90\%$. Afte
     \label{fig:finetuneprocess}%
 \end{figure}
 
-The learning process may overfit and it will definitely damage model generalisation capability. From figure \ref{fig:finetuneprocess}, we find that there is no overfitting in the fine-tuning process. Meanwhile, the accuracy increases sharply and maintains stable.
+The learning process may overfit and it will definitely damage model generalisation capability. From figure \ref{fig:finetuneprocess}, we find that there is no overfitting in the fine-tuning process. Meanwhile, the accuracy increases sharply and keeps it steady.
 
-In order to have a more detailed information of fine-tuning process, we investigate the training loss values. We plot the curve of first 200 iterations and loss values.
+In order to have a more detailed information of fine-tuning process, we investigate the training loss values. We plot the curve and the loss values during the first 200 iterations.
 
 \begin{figure}[!htb]
     \centering
@@ -77,7 +77,7 @@ In order to have a more detailed information of fine-tuning process, we investig
     \label{fig:FTvsSC}%
 \end{figure}
 
-From the figure \ref{fig:FTvsSC}, it is clear that the fine-tuning procedure produces a smoother loss function curve and ceases at a higher accuracy rate. In the left figure, the loss value of the fine-tuning procedure is higher than the value of the no fine-tuning process at the beginning. Then it shrinks sharply and maintains lower than the value of the no fine-tuning process. In the right figure, we can find that starting loss values are both less than those in the left figure. And the loss value of the fine-tuning process is less than the value in the no fine-tune process. We can conclude that generally the fine-tuning is an effective approach to reduce loss value and the fine-tuning on the model with the SPP layer can achieve better results than the original CNN model does.
+From the figure \ref{fig:FTvsSC}, it is clear that the fine-tuning procedure produces a smoother loss function curve and ceases at a higher accuracy rate. In the left figure, the loss value of the fine-tuning procedure is higher than the value of the no fine-tuning process at the beginning. Then it shrinks sharply and maintains lower than the value of the no fine-tuning process. In the right figure, we can find that starting loss values are both less than those in the left figure. And the loss value of the fine-tuning process is less than the value in the no fine-tune process. In general, fine-tune is an effective approach to reduce loss value. The model with SPP layer help achieve high performance.
 
 \begin{figure}[!htb]
     \centering
@@ -88,13 +88,13 @@ From the figure \ref{fig:FTvsSC}, it is clear that the fine-tuning procedure pro
 
 \section{Architecture Analysis}
 
-The convolutional neural networks have achieved excellent performance in the object classification field, although a full understanding of the mechanism is ambiguous. In order to have some intuition about the CNN, we will do some analysis on the network.
+The convolutional neural networks have achieved excellent performance in the object classification field, although a full understanding of the mechanism is ambiguous. In order to have some intuition about the CNN, we will analyse the network outputs.
 
-The outputs of each layer have been treated as visual descriptors \citep{razavian2014cnn}, and the vectors could present some information from the outputs of previous layers. The front layers encode low-level features, and the rear layers are able to capture high-level information. In other words, the image is retrieved heuristically when it passes the convolutional layers.
+The outputs of each layer have been treated as visual descriptors \citep{razavian2014cnn}, and the vectors present some information from the outputs of previous layers. The front layers encode low-level features, and the rear layers are able to capture high-level information. In other words, the image is retrieved heuristically when it passes the convolutional layers.
 
-Fully connected layers can be represented as a $d$-dimensional vector. The layer takes all outputs of the previous layer  whose feature maps are multidimensional, and flats the feature maps into a $d$-dimensional vector. The outputs of the second fully connected layer are feed into a classifier. Two types of classifiers can be used, which are SVM and softmax.
+Fully connected layers can be represented as a $d$-dimensional vector. The layer takes multidimensional outputs from the previous layer and flats the feature maps into a $d$-dimensional vector. The outputs of the second fully connected layer are feed into a classifier. Two types of classifiers can be deployed after the layer $FC7$, including SVM.
 
-If a cloudy image is fed into the CNN, Figure \ref{fig:cloudy_finetuneprocess} shows the feature maps of convolutional layers. Because the filter size is too many, only parts of the filters are plotted in images b-d.
+If a cloudy image is fed into the CNN, Figure \ref{fig:cloudy_finetuneprocess} shows the feature maps of convolutional layers. Because the filter size is too many, only parts of the filters are plotted in b-d.
 
 \graphicspath{ {./Figures/DifferentLayers/} }
 
@@ -192,7 +192,7 @@ The outputs of the $CONV1$ and $CONV2$ are still partly recognisable by people. 
 
 \section{Effects of SPP}
 
-Because the outputs of the SPP cannot be represented as visual descriptors, only the feature maps of the convolutional layers are compared. The outputs of the $CONV1$ and $CONV2$ show that more features are recognisable in the SPP model. It is probably that the SPP model has stronger representation capability than the CNN model does.
+The outputs of the SPP cannot be represented as visual descriptors, then only the feature maps of the convolutional layers are compared in the models. The outputs of the $CONV1$ and $CONV2$ show that more features are recognisable in the SPP model. It illustrates that the SPP model has stronger representation capability than the CNN model does.
  
 \begin{figure*}[!htb]
 \begin{center}
@@ -220,7 +220,7 @@ Image & Conv1 & Conv2 & Conv3 & Conv4 & Conv5  \\ \hline
 	\label{fig:diff_featuremap}%
 \end{figure*}
 
-In figure \ref{fig:fc7_hist_output}, the outputs of the layer $FC7$ are displayed by the histogram method. Comparing histogram difference, the generated features of the SPP model is more divisible than those of the CNN model.
+In figure \ref{fig:fc7_hist_output}, the histograms of the outputs from the layer $FC7$ are displayed. Comparing histogram difference, the generated features of the SPP model is more divisible than those of the CNN model.
 \begin{figure}[htb]
     \centering
 	\includegraphics[width=0.4\textwidth]{sunny2_hist_caffe_fc7.png}
@@ -233,7 +233,7 @@ From the feature maps and histogram distributions, it is clear that the SPP mode
 
 \section{Error Results}
 
-The images \ref{fig:Misclassification} are misclassified. They are difficult to judge sunny or cloudy, even for people.
+The images \ref{fig:Misclassification} are misclassified by both the CNN model and the SPP Model. They are difficult to judge sunny or cloudy, even for people.
 \graphicspath{ {./Figures/} }
 \begin{figure}[htb]
     \centering

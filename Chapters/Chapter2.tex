@@ -125,9 +125,9 @@ The single layer neural network has a decision boundary which is linear. However
 
 \section{Multi-Layer Networks}
 
-Single layer networks have some important limitation in terms of representing range of functions. We are seeking to learn the nonlinearity as the linear discriminant. To improve the representation capability, we can stack layers network. This is the approach of multi-layer neural networks. multi-layer neural networks implement linear discriminants via mapping the input data to a nonlinear space. They can use fairly simple algorithms to learn the form of the nonlinearity from the training data.
+Single-Layer networks have limitation of representing complex functions. We are seeking to learn the nonlinearity from samples. To improve the representation capability, we can stack layers network. This is the approach of multi-layer neural networks. multi-layer neural networks implement linear discriminants via mapping the input data to a nonlinear space. They can use fairly simple algorithms to learn the form of the nonlinearity from the training data.
 
-In the thesis, we limit multi-layer neural networks in the subset of feedforward networks. Feedforward neural networks can provide a general mechanism for representing nonlinear functional mapping between a set of input data and a set of labels. The figure \ref{fig:ffnet} is a feedforward neural network having two layers of adaptive weights.
+In the thesis, we limit multi-layer neural networks in the subset of feedforward neural networks. Feedforward neural networks can provide a general mechanism for representing nonlinear functional mapping between a set of input data and a set of labels. The figure \ref{fig:ffnet} is a feedforward neural network having two layers of adaptive weights.
 
 \begin{figure}[!htb]
 \centering
@@ -141,18 +141,18 @@ y_{m} = \hat{f}\Big(\sum_{j=0}^{m}w_{j4}^{(2)}f\big(\sum_{i=0}^{n}w_{4i}^{(1)}x_
 \end{equation}
 In equation \ref{eq:ffEq}, the outer activation function could be different with the inner one.
 
-There are some choices for activation functions, the sigmoid and the tanh functions are related and continuous activation functions. The logistic function, also named the sigmoid function, can be represented as 
+There are some choices for activation functions, the sigmoid and the tanh functions are related and continuous activation functions. The logistic function, also named the sigmoid function, can be represented as: 
 \begin{equation}\label{eq:sigmoid}
 f(x) = \frac{1}{1+e^{-x}}
 \end{equation}
-Its outputs lie in the range $(0,1)$. We can do a linear transformation $\hat{x}=x/2$ on the input data and a linear transformation $\hat{y}=2y-1$ on the output. Then we can get an equivalent activation function tanh which can be represented:
+Its outputs lie in the range $(0,1)$. We can do a linear transformation $\hat{x}=x/2$ on the input data and a linear transformation $\hat{y}=2y-1$ on the output. Then we can get an equivalent activation function tanh which can be represented as:
 \begin{equation}\label{eq:tanh}
 f(x) = tanh(x) = \frac{e^{x}-e^{-x}}{e^{x}+e^{-x}}
 \end{equation}
 
-The three layers neural network is capable of approximating any function with enough hidden neurons, which means the network with two layers of weights and the sigmoid function can provide a high degree of accuracy in classification problems. 
+The three layers neural network is capable of approximating any function with enough hidden neurons, which means the network with two layers of weights and the sigmoid function can provide an arbitrary accuracy to classification problems in theory. 
 
-Again, we can use a simple example to illustrate the power of the multi-layer neural network. In this example, we have one input, one hidden neuron and one output. There is no bias in the input layer and hidden layer. There are two weights existing in the network, say $(w_{1}, w_{2})$, and the output can be calculated via
+We can use a simple example to illustrate the power of the multi-layer neural network. In this example, we have one input, one hidden neuron and one output. There is no bias in the input layer and hidden layer. There are two weights existing in the network, say $(w_{1}, w_{2})$, and the output can be calculated via
 \begin{equation}\label{eq:2LayerExample}
 a_{out} = f(f(a_{0}w_{1})w_{2})
 \end{equation}
@@ -163,7 +163,7 @@ where $f()$ is the sigmoid function. With varying $w_{1}$ and $w_{2}$, the error
 \includegraphics[width=0.4\textwidth]{2LayerErrorSurface.png}
 \caption{\label{fig:2LayerErrorSurface}The error surface for a multi-layer neural network \citep{ErrorFigure1}.}
 \end{figure}
-And the samples which cannot be separated by the single-layer neural network can be done by a multi-layer neural network.
+And the samples, which cannot be separated by a single-layer neural network, can be separated by a multi-layer neural network.
 \graphicspath{ {./Figures/} }
 \begin{figure}[!htb]
 \centering
@@ -173,11 +173,11 @@ And the samples which cannot be separated by the single-layer neural network can
 
 \section{Stochastic Gradient Descent (SGD)}
 
-Because the weight space in neural networks is continuous, training can reach the optimal weights value through optimization algorithms, which means minimising loss value of function
+Because the weight space in neural networks is continuous, optimal weights values can be learned through optimization algorithms, which minimises loss value of function
 \begin{equation}\label{eq:LossMin}
 L(f_{w}) = \sum L(y, f_{w}(x))
 \end{equation}
-Gradient descent is a first-order optimisation algorithm which starts from a random point, and then finds a nearby minimum point. It can converge on a minimum possible loss.
+Gradient descent is a first-order optimisation algorithm which starts from a random point, and finds a nearby minimum point. It can converge on a minimum possible loss.
 
 The SGD is a subtype of gradient descent. It only considers a single training point and moves to a nearby point based on
 \begin{equation}\label{eq:SGDUpdate}
@@ -191,7 +191,7 @@ Multi-layer neural networks can represent mapping from the input data to the out
 
 Because networks have differentiable activation functions, the activation of the output neurons can be propagated to the hidden neurons with respect to weights and bias. If we have an error function, we can evaluate derivatives of the error and update the weights to minimise the error function via some optimization methods.
 
-Backpropagation can be applied to find the derivatives of an error function related to the weights and bias in the network via two stages. First, the derivatives of the error functions, for instance sum-of-squares and Jacobian, with respect to the weights must be evaluated. Second, a variety of optimisation schemes can be implemented to compute the adjustment of weights based on derivatives. After passing data through the network, we can get the output result. It updates weight changes based on the grandient descent. Suppose the network has $i$ inputs, $h$ hidden neurons and $k$ outputs. The update equation can be represented: 
+Backpropagation can be applied to find the derivatives of an error function related to the weights and bias in the network via two stages. First, the derivatives of the error functions, for instance sum-of-squares and Jacobian, must be evaluated with respect to the weights. Second, a variety of optimisation schemes can be implemented to compute the adjustment of weights based on derivatives. After passing data through the network, we can get the output result. It updates weight changes based on the grandient descent. Given that the network has $i$ inputs, $h$ hidden neurons and $k$ outputs. The update equation can be represented as 
 \begin{equation}\label{eq:UpdateWeights}
 w(j+1) = w(j) + \Delta w(j)
 \end{equation}
@@ -212,7 +212,7 @@ For the hidden layer weights
 \end{equation}
 where $$\delta_{j} = \frac{\partial E}{\partial a_{j}} = \displaystyle\sum_{k} \delta_{k}w_{jk}y_{j}(1 - y_{j})$$
 
-The $\delta_{j}$ of a hidden neuron is based on the $\delta_{k}$ of the output neurons to which it links. To minimise the error function $E$ with the gradient descent, it needs the backwards propagation of errors.
+The $\delta_{j}$ of a hidden neuron is based on the $\delta_{k}$ of the output neurons to which it links. To minimise the error function $E$ by the gradient descent, it needs the backwards propagation of errors.
 
 \subsection{Training protocols}
 

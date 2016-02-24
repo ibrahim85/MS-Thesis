@@ -15,8 +15,8 @@
 \contentsline {section}{\numberline {2.1}Related Work}{4}{section.18}
 \contentsline {section}{\numberline {2.2}Single-Layer ANNs}{5}{section.19}
 \contentsline {section}{\numberline {2.3}Multi-Layer Networks}{8}{section.38}
-\contentsline {section}{\numberline {2.4}Stochastic Gradient Descent (SGD)}{10}{section.46}
-\contentsline {section}{\numberline {2.5}Backpropagation}{11}{section.49}
+\contentsline {section}{\numberline {2.4}Stochastic Gradient Descent (SGD)}{11}{section.46}
+\contentsline {section}{\numberline {2.5}Backpropagation}{12}{section.49}
 \contentsline {subsection}{\numberline {2.5.1}Training protocols}{13}{subsection.54}
 \contentsline {section}{\numberline {2.6}Overfitting and Regularization}{13}{section.55}
 \contentsline {subsection}{\numberline {2.6.1}Weight Decay}{15}{subsection.58}
@@ -25,8 +25,8 @@
 \contentsline {subsection}{\numberline {2.7.1}Practical issues}{18}{subsection.69}
 \contentsline {subsection}{\numberline {2.7.2}Error function}{18}{subsection.71}
 \contentsline {section}{\numberline {2.8}Convolutional Neural Networks (CNN)}{19}{section.77}
-\contentsline {subsection}{\numberline {2.8.1}Layers in CNN}{19}{subsection.79}
-\contentsline {section}{\numberline {2.9}Spatial Pyramid Matching (SPM)}{21}{section.85}
+\contentsline {subsection}{\numberline {2.8.1}Layers in CNN}{20}{subsection.79}
+\contentsline {section}{\numberline {2.9}Spatial Pyramid Matching (SPM)}{22}{section.85}
 \contentsline {section}{\numberline {2.10}Transfer Learning}{23}{section.90}
 \contentsline {chapter}{\numberline {3}Methodology}{25}{chapter.95}
 \contentsline {section}{\numberline {3.1}Dataset}{25}{section.96}
@@ -39,9 +39,9 @@
 \contentsline {section}{\numberline {4.3}Companion Experiments}{32}{section.117}
 \contentsline {section}{\numberline {4.4}Experimental Results}{32}{section.118}
 \contentsline {section}{\numberline {4.5}Architecture Analysis}{35}{section.123}
-\contentsline {section}{\numberline {4.6}Effects of SPP}{35}{section.138}
-\contentsline {section}{\numberline {4.7}Error Results}{36}{section.141}
-\contentsline {section}{\numberline {4.8}Conclusion and Future Work}{36}{section.149}
+\contentsline {section}{\numberline {4.6}Effects of SPP}{36}{section.138}
+\contentsline {section}{\numberline {4.7}Error Results}{37}{section.141}
+\contentsline {section}{\numberline {4.8}Conclusion and Future Work}{38}{section.149}
 \contentsline {part}{II\hspace {1em}Multilabel Learning}{39}{part.150}
 \contentsline {chapter}{\numberline {5}Introduction}{40}{chapter.151}
 \contentsline {section}{\numberline {5.1}Overview}{40}{section.152}
