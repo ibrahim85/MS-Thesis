@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/W32TeX) (preloaded format=pdflatex 2015.3.12)  24 FEB 2016 23:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/W32TeX) (preloaded format=pdflatex 2015.3.12)  25 FEB 2016 00:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -919,9 +919,12 @@ Package pdftex.def Info: ./Figures/AlexNet.png used on input line 102.
 (pdftex.def)             Requested size: 333.97972pt x 106.72351pt.
  [27 <./Figures/crop.png> <./Figures/cropleftup.png (PNG copy)> <./Figures/crop
 leftdown.png (PNG copy)> <./Figures/croprightup.png (PNG copy)> <./Figures/crop
-rightdown.png (PNG copy)> <./Figures/cropcen.png (PNG copy)>] [28 <./Figures/sp
-pnet.jpg> <./Figures/AlexNet.png (PNG copy)>])
-(./Chapters/Chapter4.tex [29]
+rightdown.png (PNG copy)> <./Figures/cropcen.png (PNG copy)>]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+) (./Chapters/Chapter4.tex [28 <./Figures/sppnet.jpg> <./Figures/AlexNet.png (P
+NG copy)>] [29]
 Chapter 4.
 ------------------------------------------------------------------------------
  4 Experiment
@@ -1482,7 +1485,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 244.
 Here is how much of TeX's memory you used:
  14167 strings out of 493117
  208185 string characters out of 6138984
- 275154 words of memory out of 5000000
+ 274154 words of memory out of 5000000
  16937 multiletter control sequences out of 15000+600000
  14477 words of font info for 55 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1508,7 +1511,7 @@ t/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2014/texmf-dist/fonts/t
 ype1/public/amsfonts/cm/cmtt10.pfb><c:/texlive/2014/texmf-dist/fonts/type1/publ
 ic/amsfonts/symbols/msam7.pfb><c:/texlive/2014/texmf-dist/fonts/type1/public/am
 sfonts/symbols/msbm10.pfb>
-Output written on Thesis.pdf (85 pages, 5931486 bytes).
+Output written on Thesis.pdf (85 pages, 5931163 bytes).
 PDF statistics:
  1490 PDF objects out of 1728 (max. 8388607)
  1236 compressed objects within 13 object streams
