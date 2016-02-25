@@ -6,7 +6,7 @@
 
 \section{Artificial Dataset}
 
-The dataset, named a colour detector, is generated artificially. Each image has three labels to represent colours, $red$, $green$ and $blue$. If an image is a red hue only, it has a label for $red$ while the label values of $green$ and $blue$ are negative. The representation of colour combination follows colour wheels. If an image has a hue close to $purple$, it has positive labels for $red$ and $blue$, and negative label for $green$, and so on.
+A dataset is generated artificially. Each image has three labels to represent colours, $red$, $green$ and $blue$. The representation of colour combination follows colour wheels. If an image is a red hue only, it has a label for $red$ while the label values of $green$ and $blue$ are negative. If an image has a hue close to $purple$, it has positive labels for $red$ and $blue$, and negative label for $green$, and so on.
 \graphicspath{ {./Figures/} }
 \begin{figure}[!htb]
 \centering
@@ -22,9 +22,9 @@ The RGB and HSV coordinate systems represent a geometric shape in colour space. 
 
 The dataset consists of images with size $16\times16$, therefore each image has $256$ pixels. To generate an image, I generate a random floating point number $h$ in the range $[0.0, 1.0)$ and use it as value for a hue via formulation
 \begin{equation}\label{eq:FormulationHue}
-H = h + r * 0.4 - 0.2 (r \in [0.0,1.0))
+H = h + r * 0.4 - 0.2 \quad (r \in [0.0,1.0))
 \end{equation}
-where $r$ is another random floating point number. 2 random floating point numbers are generated for Saturation(S) and Value(V) values. The HSV values are converted to the RGB values and timed $255$ for each pixel. Following that, an image with $256$ pixels is generated. Because a RGB image is converted to a HSV image, the label values are based on the previous value $h$.
+where $r$ is another random float number. 2 random float numbers are generated for Saturation(S) and Value(V) values. The HSV values are converted to the RGB values and timed $255$ for each pixel. Following that, an image with $256$ pixels is generated. Because a RGB image is converted to a HSV image, the label values are based on the previous value $h$.
 
 \graphicspath{ {./Figures/RGBhist/} }
 \begin{figure}[!htb]
@@ -52,13 +52,13 @@ The dataset contains $1000$ images in total. $960$ images are training samples a
 
 \section{Artificial Neural Networks (ANNs)}
 
-The Artificial Neural Network is an approach to learning a nonlinear function which can be used to map a sample to multi labels. The neurons in the first layer take a raw image while the neurons in the last layer produce outputs. Between the first and last layer, the middle layers are called hidden layers because they do not connect to external world directly. A 3 layer neural network can represent any bounded degree polynomial under certain conditions \citep{barron1993universal}. The weights of neural network are learned by algorithms deployed over training dataset. One of the successful learning algorithms is the Backpropagation algorithm which updates weights by propagating errors caused by comparing prediction for each sample with actual target values.
+ANNs is an approach to learning a non-linear function which can map a sample to several labels. The neurons in the first layer take a raw image, while the neurons in the last layer produce outputs. Between the first and last layer, the middle layers are called hidden layers because they do not connect to the external world directly. A 3 layer neural networks can represent any bounded degree polynomial under certain conditions \citep{barron1993universal}. The weights of neural network are learned by algorithms deployed over training dataset. One of the successful learning algorithms is the Backpropagation algorithm which updates weights by propagating error values computed by comparing prediction for each sample.
 
-Two factors will be modified to adapt a neural network to perform multi-label classification. One factor is to design a new error function which fits the characteristics of multi-label samples instead of single-label ones. The other is to select a moderate metric according to the new designed error function.
+Two factors will be modified to adapt a neural network to perform multi-label classification. One factor is to design a new error function which fits the characteristics of multi-label samples instead of single-label ones. The other is to select a moderate metric according to the new error function.
 
 \subsection{Network Architecture}
 
-Define $\mathcal{X} = \mathbb{R}^{d}$ as the sample space and $\mathcal{Y} = {1,2,...,Q}$ as the set of output labels. The training dataset is composed of $m$ multi-label samples, such as ${(x_{1}, Y_{1}),(x_{2}, Y_{2}),...,(x_{m}, Y_{m})}$, while each sample $x_{i} \in \mathcal{X}$ is represented as a $d$-dimensional feature vector and a set of $q$ labels associate with the feature vector. A neural network, showed in figure \ref{fig:MultiLabelNet}, can be built up to learn a model .
+Define $\mathcal{X} = \mathbb{R}^{d}$ as the sample space and $\mathcal{Y} = {1,2,...,Q}$ as the set of output labels. The training dataset is composed of $m$ multi-label samples, ${(x_{1}, Y_{1}),(x_{2}, Y_{2}),...,(x_{m}, Y_{m})}$, while each sample $x_{i} \in \mathcal{X}$ is represented as a $d$-dimension feature vector and a set of $q$ labels associate with the feature vector. A neural network, in figure \ref{fig:MultiLabelNet}, can be built up to learn a model .
 
 \graphicspath{ {./Figures/} }
 \begin{figure}[!htb]
@@ -67,7 +67,7 @@ Define $\mathcal{X} = \mathbb{R}^{d}$ as the sample space and $\mathcal{Y} = {1,
 \caption{\label{fig:MultiLabelNet}Network Topology For Multi-lable Classification}
 \end{figure}
 
-The network has $d$ input neurons which correspond to a $d$-dimensional feature vector, while the last $Q$ neurons represent a combination of output labels. There is a hidden layer in figure \ref{fig:MultiLabelNet} which owns $n$ hidden neurons. The input layer is fully connected with the hidden layer and the same connecting method is deployed between the hidden layer and the output layer. There are $d \times n$ weights $(W_{ih}, 1 \leq i \leq d, 1 \leq h \leq n)$ between the first two layers, and $n \times q$ weights $(W_{ho}, 1 \leq h \leq n , 1 \leq o \leq q)$ between the latter two layers. The bias parameters are represented as $I_{0}$ and  $H_{0}$.
+The network has $d$ input neurons which correspond to a $d$-dimension feature vector, while the last $Q$ neurons represent a combination of output labels. There is a hidden layer in figure \ref{fig:MultiLabelNet} which owns $n$ hidden neurons. The input layer is fully connected with the hidden layer and the same connecting method is deployed between the hidden layer and the output layer. There are $d \times n$ weights $(W_{ih}, 1 \leq i \leq d, 1 \leq h \leq n)$ between the first two layers, and $n \times q$ weights $(W_{ho}, 1 \leq h \leq n , 1 \leq o \leq q)$ between the latter two layers. The bias parameters are represented as $I_{0}$ and  $H_{0}$.
 
 Because the task of multi-label learning is to predict labels of test samples, it needs to evaluate the global error of the model as:
 \begin{equation}\label{eq:MultiLableError}
@@ -77,13 +77,13 @@ $E_{i}$ is the error on the sample $x_{i}$ which can be defined as:
 \begin{equation}\label{eq:MultiLableSamError}
 E_{i} = \sum_{j=1}^Q (c_{j}^i - d_{j}^i)^2
 \end{equation}
-where $c_{j}^i = c_{j}(x_{i})$ is the predicted $j$-th label by the model on sample $x_{i}$, and $d_{j}^i$ is the actual $j$-th label of sample $x_{i}$. The actual label has value of either $+1 (j \in \mathcal{Y_{i}})$ or $-1 (j \notin \mathcal{Y_{i}})$.
+where $c_{j}^i = c_{j}(x_{i})$ is the predicted $j$-th label on sample $x_{i}$, and $d_{j}^i$ is the actual $j$-th label of sample $x_{i}$. The actual label has value of either $+1 (j \in \mathcal{Y_{i}})$ or $-1 (j \notin \mathcal{Y_{i}})$.
 
 Various learning algorithms can be used to learn a model based on the training dataset. The backpropagation algorithm is used to learn from errors. However, the algorithm could be improper in multi-label learning because the error function \ref{eq:MultiLableSamError} neglects the correlations among labels of a sample. In original BP algorithm, the error function \ref{eq:MultiLableSamError} limits on individual label discrimination, whether a specific label $j \in \mathcal{Y}$ belongs to the sample $x_{i}$ or not. It should take into consideration that labels in $Y_{i}$ are more important than those outside of $Y_{i}$. A new global error function is defined as:
 \begin{equation}\label{eq:MultiLableGlobalError}
 E = \sum_{i=1}^m E_{i} = \sum_{i=1}^m \frac{1}{|Y_{i}||\hat{Y}_{i}|} \sum_{(k,l) \in Y_{i} \times \hat{Y_{i}}} exp(-(c_{k}^i-c_{l}^i))
 \end{equation}
-In the error function \ref{eq:MultiLableGlobalError}, the $i$-th errors on the $i$-th sample $(x_{i},Y_{i})$ are accumulated. $\hat{Y}_{i}$ is complementary set of $Y_{i}$ in $\mathcal{Y}$ and $|\cdot|$ computes the cardinality of a set. Specifically, the item, $c_{k}^i-c_{l}^i$, represents the difference between the output labels of the model on the label which belongs to sample $x_{i}$ and the label which does not belong to the same sample. The error function \ref{eq:MultiLableGlobalError} shows that bigger difference leads to better performance. Additionally, the negation of the difference is put into the exponential function to sharply penalize the $i$-th term if $c_{k}^i$ is much smaller than $c_{l}^i$. The sum of $i$-th error term accumulates difference between outputs of any pair of labels which are the one belonging to the sample and the other one not belonging to it. The sum is normalized by the numbers of all pairs, $|Y_{i}||\hat{Y}_{i}|$. And then, the correlations between pair labels are computed. In other words, labels in $Y_{i}$ should get larger output value than labels in $\hat{Y}_{i}$.
+In the error function \ref{eq:MultiLableGlobalError}, the $i$-th errors on the $i$-th sample $(x_{i},Y_{i})$ are accumulated. $\hat{Y}_{i}$ is complementary set of $Y_{i}$ in $\mathcal{Y}$ and $|\cdot|$ computes the cardinality of a set. Specifically, the item, $c_{k}^i-c_{l}^i$, represents the difference between the predicted labels and the actual labels. The error function \ref{eq:MultiLableGlobalError} shows that bigger difference leads to better performance. Additionally, the negation of the difference is put into the exponential function to sharply penalise the $i$-th term if $c_{k}^i$ is much smaller than $c_{l}^i$. The sum of $i$-th error term accumulates difference between outputs of any pair of labels which are the one belonging to the sample and the other one not belonging to it. The sum is normalised by the numbers of all pairs, $|Y_{i}||\hat{Y}_{i}|$. And then, the correlations between pair labels are computed. In other words, labels in $Y_{i}$ should get larger output values than labels in $\hat{Y}_{i}$.
 
 As in the previous statement, the error function \ref{eq:MultiLableGlobalError} calculates the difference between output labels. The task of learning is minimising the error function \ref{eq:MultiLableGlobalError} via enlarging output values of labels belonging to the training samples and diminishing the output values of the labels not belonging to it. If the training dataset can cover the distribution of the whole sample space, the model can learn it through minimising error function by feeding training samples.
 
@@ -93,7 +93,7 @@ The basic goal of regression problems is to figure out the conditional distribut
 
 The basic aim of classification problems is to figure out the posterior probabilities of class types with the input samples. Except for the sum-of-squares error function, there are some more approximate error functions which can be considered.
 
-The central goal in training a neural network is to model the hidden generator of the samples instead of memorising the training samples. Therefore, the best prediction of an input sample can be found if the network can present a new value for the sample. Because the general and complete characterisation of the dataset is the probability density $p(x,t)$, it is available to decompose a joint probability density into the product of the conditional density of the labels, the input data and the density of the data,
+The central goal is to model the hidden generator of the samples instead of memorising the training samples. Therefore, the best prediction of an input sample can be found if the network can present a new value for the sample. Because the general and complete characterisation of the dataset is the probability density $p(x,t)$, it is available to decompose a joint probability density into the product of the conditional density of the labels, the input data and the density of the data,
 \begin{equation}\label{eq:JointProbDensity}
 p(x,t) = p(t|x)p(x)
 \end{equation}
@@ -106,7 +106,7 @@ Most error functions can be obtained from the idea of maximum likelihood. For tr
 \begin{equation}\label{eq:LikelihoodLoss}
 L = \coprod_{\substack{n}}  p(t^n|x^n)p(x^n)
 \end{equation}
-where each sample is chosen randomly from the same  distribution and their probabilities can be multiplied. The error function can be represented by minimizing the negative logarithm of the likelihood since the negative logarithm is a monotonic function.
+where each sample is chosen randomly from the same  distribution and their probabilities can be multiplied. The error function can be represented by minimising the negative logarithm of the likelihood since the negative logarithm is a monotonic function.
 \begin{equation}\label{eq:LikelihoodErrorFunc}
 E = -ln L = -\sum_{\substack{n}} ln p(t^n|x^n) - \sum_{\substack{n}}lnp(x^n)
 \end{equation}
@@ -118,7 +118,7 @@ It is worth noting that error functions are dependent on different assumptions o
 
 \subsection{Cross Entropy}
 
-The Mean Square Error is a common risk metric comparable to the predicted value of the squared error loss. It is easy to implement and its value is non-negative. However, it has the disadvantage of heavily weighting outliers \citep{bermejo2001oriented}.
+MSE is a common risk metric comparable to the predicted value of the squared error loss. It is easy to implement and its value is non-negative. However, it has the disadvantage of heavily weighting outliers \citep{bermejo2001oriented}.
 
 Given that there are two discrete distributions $p(x)$ and $q(x)$ over the same variable $x$. The relative entropy, relating to the cross entropy, is a measurement of the distance between samples:
 \begin{equation}\label{eq:RelativeEngtropy}
@@ -136,11 +136,11 @@ Then the cross entropy loss function is
 \begin{equation}\label{eq:TwoClassCrossEntropyCostFunc}
 C = -\frac{1}{n} \sum_x \left[y \ln a + (1-y ) \ln (1-a) \right]
 \end{equation}
-where $n$ is the number of training samples, $a$ is the prediction result and $y$ is actual result.
+where $n$ is the number of training samples, $a$ is the predicted label and $y$ is the actual label.
 
-The cross entropy can act as a loss function because of two properties. First, $C$ is non-negative, because the items of logarithms are in the range $[0,1]$. Second, if the prediction output is close to the actual value for all training samples, the loss value, $C$, will be close to $0$. Given that $y = 0$ and the prediction value $a \approx 0$, the first item in equation \ref{eq:TwoClassCrossEntropyCostFunc} is $0$ while the second one is $-\ln(1-a) \approx 0$. The similar situation occurs for conditions, $y = 1$ and $a \approx 1$. Therefore, the value of loss function will be small, if the prediction value is close to the actual value.
+The cross entropy acts as an error function because of two properties. First, $C$ is non-negative, because the items of logarithms are in the range $[0,1]$. Second, if the prediction output is close to the actual value for all training samples, the loss value, $C$, will be close to $0$. Given that $y = 0$ and the prediction value $a \approx 0$, the first item in equation \ref{eq:TwoClassCrossEntropyCostFunc} is $0$ and the second is $-\ln(1-a) \approx 0$. The similar situation occurs for conditions, $y = 1$ and $a \approx 1$. Therefore, the value of loss function will be small, if the prediction value is close to the actual value.
 
-In total, the cross entropy tends to $0$, when the neuron acts better at predicting the output $y$ for total training inputs $x$. The two properties are basic to a loss function. Although the quadratic loss function satisfy the properties, the cross entropy has the advantage on avoiding the issue of learning curve slowing down. To illustrate the advantage, the partial derivative of the cross entropy loss function can be done with respect to the weights. Applying the chain rule twice on equation \ref{eq:TwoClassCrossEntropyCostFunc}
+In total, the cross entropy tends to $0$, when the neuron acts better at predicting the output $y$ for total training inputs $x$. The two properties are basic to a loss function. Although the quadratic loss function satisfies the properties, the cross entropy has the advantage on avoiding the issue of learning curve slowing down. To illustrate the advantage, the partial derivative of the cross entropy loss function can be done with respect to the weights. Applying the chain rule twice on equation \ref{eq:TwoClassCrossEntropyCostFunc}
 \begin{eqnarray}\label{eq:DerCrossEntropyCostFunc}
   \frac{\partial C}{\partial w_j} & = & -\frac{1}{n} \sum_x \left(
     \frac{y }{f(x)} -\frac{(1-y)}{1-f(x)} \right)
@@ -152,11 +152,11 @@ where the second one can be represented as
 \begin{equation}\label{eq:SecondDerCrossEntropyCostFunc}
   \frac{\partial C}{\partial w_j} = \frac{1}{n}  \sum_x \frac{f'(x) x_j}{f(x) (1-f(x))} (f(x)-y)
 \end{equation}
-Because the defination of the sigmoid function is $f(x) =1/(1+e^{-x})$ and the derivative of sigmoid function is $f'(x) =f(x)(1-f(x))$. Then the items $f'(x)$ and $f(x) =1/(1+e^{-x})$ cancel in the equation and it becomes
+Because the defination of sigmoid function is $f(x) =1/(1+e^{-x})$ and the derivative of sigmoid function is $f'(x) =f(x)(1-f(x))$. Then the items $f'(x)$ and $f(x) =1/(1+e^{-x})$ are cancelled in the equation and the equation becomes
 \begin{equation}\label{eq:SimDerCrossEntropyCostFunc}
  \frac{\partial C}{\partial w_j} =  \frac{1}{n} \sum_x x_j(f(x)-y)
 \end{equation}
-The equation \ref{eq:SimDerCrossEntropyCostFunc} shows that the rate of learning weights is controlled by $f(x) - y$. The larger the error is, the faster the neuron learns. In particular, the property avoids the learning slowdown because the derivative item $f'(x)$ gets canceled out in the quadratic cost.
+The equation \ref{eq:SimDerCrossEntropyCostFunc} shows that the rate of learning weights is controlled by $f(x) - y$. The larger the error is, the faster the neuron learns. In particular, the property avoids the learning slowdown because the derivative item $f'(x)$ gets cancelled out in the quadratic cost.
 
 In similar way, the bias can be computed by the partial derivative.
 \begin{equation}\label{eq:BiasCrossEntropyCostFunc}
@@ -168,17 +168,17 @@ In similar way, the bias can be computed by the partial derivative.
 
 Following the training process, gradient descent is used to minimise the global error function with backpropagation. 
 
-To train a sample $(x_{i}, Y_{i})$, in which $x_{i}$ is the input data and $Y_{i}$ is the associated labels, the predicted output labels computed by the neural network for is
+To train a sample $(x_{i}, Y_{i})$, in which $x_{i}$ is the input data and $Y_{i}$ is the associate labels, the predicted output labels computed by the neural network for is
 \begin{equation}\label{eq:MultiLabelActivation}
 c_{k} = f(netc_{k} + \theta_{k})
 \end{equation}
-where $\theta_{k}$ is the bias neurons of $k$ layer, $f()$ is the activation function for the output neurons which is the $tanh$ function \ref{eq:tanh} in this project. $netc_{k}$ is the input data of the layer:
+where $\theta_{k}$ is the bias neurons of $k$ layer, $f()$ is the activation function for the output neurons which is the $tanh$ function \ref{eq:tanh} in the task. $netc_{k}$ is the input data of the layer:
 \begin{equation}\label{eq:MultiLabel}
 netc_{k} = \sum_{s=1}^M b_{s}w_{sk}
 \end{equation}
 where $w_{sk}$ is the weights for the layer $s$ and layer $k$, $b_{s}$ is the input vector, and $M$ is the number of neurons in the hidden layer.
 
-As the $tanh$ function is differentiable, the general error of the $k$-th output neuron can be defined:
+As $tanh$ function is differentiable, the general error of the $k$-th output neuron can be defined as:
 \begin{equation}\label{eq:MultiLableErrorDif}
 d_{k} = -\frac{\partial E}{\partial netc_{k}}
 \end{equation}
@@ -186,7 +186,7 @@ combining with equation \ref{eq:MultiLabelActivation}, we can get
 \begin{equation}\label{eq:MultiLableChainRule}
 d_{k} = -\frac{\partial E_{i}}{\partial c_{j}} \frac{\partial c_{j}}{\partial netc_{k}} = - \frac{\partial E_{i}}{\partial c_{j}} f'(netc_{k} + \theta_{k})
 \end{equation}
-With considering global error function \ref{eq:MultiLableGlobalError}
+Considering global error function \ref{eq:MultiLableGlobalError}
 \begin{equation}\label{eq:MultiLablePartialC}
 \frac{\partial E_{i}}{\partial c_{j}}= 
 \begin{cases}
@@ -194,7 +194,7 @@ With considering global error function \ref{eq:MultiLableGlobalError}
     \frac{1}{|Y_{i}||\hat{Y}_{i}|} \sum_{k \in Y_{i}} exp(-(c_{k} - c_{j}))       & \quad \text{if } j \in \hat{Y}_{i}\\
   \end{cases}
 \end{equation}
-with derivation of the $tanh$ function, and substituting it with equations \ref{eq:MultiLableChainRule} and \ref{eq:MultiLablePartialC} we can get
+with derivation of $tanh$ function, and substituting it with equations \ref{eq:MultiLableChainRule} and \ref{eq:MultiLablePartialC} we can get
 \begin{equation}\label{eq:MultiLableGenErr}
 d_{k}= 
 \begin{cases}
@@ -202,7 +202,7 @@ d_{k}=
     \big(\frac{1}{|Y_{i}||\hat{Y}_{i}|} \sum_{k \in Y_{i}} exp(-(c_{k} - c_{j}))\big)(1+c_{j})(1-c_{j})       & \quad \text{if } j \in \hat{Y}_{i}\\
   \end{cases}
 \end{equation}
-According to the previous method, we can define the general error of the $s$-th hidden neuron:
+According to the previous method, we define the general error of the $s$-th hidden neuron:
 \begin{equation}\label{eq:MultiLableGenErrS}
 e_{s} = - \frac{\partial E_{i}}{\partial netb_{s}}
 \end{equation}
@@ -214,11 +214,11 @@ For $d_{j} = - \frac{\partial E_{i}}{\partial netc_{j}}$ and $netc_{j} = \sum_{s
 \begin{equation}\label{eq:MultiLableGenErrEs}
 e_{s} = \big( \sum_{j=1}^Q d_{j} \times \frac{\partial (\sum_{s=1}^M b_{s}w_{sj})}{\partial b_{s}}\big) f'(netb_{s} + \lambda_{s}) = \big( \sum_{j=1}^Q d_{j}w_{sj}\big) f'(netb_{s} + \lambda_{s})
 \end{equation}
-As $f()$ is the $tanh$ function, we get
+As $f()$ is $tanh$ function, we get
 \begin{equation}\label{eq:MultiLableGenErrEsFin}
 e_{s} = \big( \sum_{j=1}^Q d_{j}w_{sj}\big) (1+b_{s})(1-b_{s})
 \end{equation}
-The SGD is used to approximate function.
+The SGD is used to approximate the function.
 \begin{equation}\label{eq:MultiLableUpdateWeights}
 \Delta w_{sj} = -\alpha \frac{\partial E_{i}}{\partial w_{sj}} = \alpha \frac{\partial E_{i}}{\partial netc_{j}} \frac{\partial netc_{j}}{\partial w_{sj}} = \alpha d_{j}b_{s}
 \end{equation}
@@ -229,15 +229,15 @@ while the bias is updated according to
 \begin{equation}\label{eq:MultiLableUpdateBias}
 \Delta \theta_{j} = \alpha d_{j} \text{ } \Delta \lambda_{s} = \alpha e_{s}
 \end{equation}
-In previous equations, $\alpha$ is the learning rate with its value in the range of $[0.0 \text{ } 1.0]$.
+In previous equations, $\alpha$ is the learning rate whose value is in the range of $[0.0 \text{ } 1.0]$.
 
-In the training process, a learning algorithm has been set up with backpropagation. Moreover, training samples are fed into the neural network. After all training samples $(x, Y)$ fed into network, weights and bias are updated through equations \ref{eq:MultiLableUpdateWeights} and \ref{eq:MultiLableUpdateBias}. The training samples are fed into the network iteratively while global error value decreases. Finally, the error value converges to a minimum value.
+In the training process, a learning algorithm has been set up with backpropagation. Moreover, training samples are fed into the neural network. After all training samples $(x, Y)$ fed into the network, weights and bias are updated through equations \ref{eq:MultiLableUpdateWeights} and \ref{eq:MultiLableUpdateBias}. The training samples are fed into the network iteratively while global error value decreases. Finally, the error value converges to a minimum value.
 
-In the testing process, the network predicts a sample which has a set of actual labels $c_{j} (j = 1,2,...,Q)$ by ranking the labels. Because the output value of each label is in range $[-1.0,1.0]$, a threshold function $t(x)$ is used to determine associated label set for the sample $x$. A large margin ranking system \citep{elisseeff2001kernel} is adopted to generalise the sets. $t(x)$ is a linear function, $t(x) = w^T\cdot c(x) + b$, where $c(x) = (c_{1}(x), c_{2}(x),...,c_{Q}(x))$ is a $Q$-dimensional vector which represents $j$ output labels of the sample. For every training sample $(x_{i}, Y_{i}) (1 \leq i \leq m)$, the relation between $c(x_{i})$ and target value $t(x_{i})$ is:
+In the testing process, the network predicts a sample which has a set of actual labels $c_{j} (j = 1,2,...,Q)$. Because the output value of each label is in range $[-1.0,1.0]$, a threshold function $t(x)$ is used to determine the associate label set for the sample $x$. A large margin ranking system \citep{elisseeff2001kernel} is adopted to generalise the sets. $t(x)$ is a linear function, $t(x) = w^T\cdot c(x) + b$, where $c(x) = (c_{1}(x), c_{2}(x),...,c_{Q}(x))$ is a $Q$-dimension vector which represents $j$ output labels of the sample. For every training sample $(x_{i}, Y_{i}) (1 \leq i \leq m)$, the relation between $c(x_{i})$ and target value $t(x_{i})$ is:
 \begin{equation}\label{eq:MultiLableThreshFunc}
 t(x_{i}) =  \operatorname{arg\,max}_t (|\{k|k \in Y_{i}, c_{k}^i \leq t\}| + |\{l|l \in \hat{Y}_{i}, c_{l}^i \geq t\}|) 
 \end{equation}
-If there are several minimum values and optimal values are in a division, the middle value of the division is chosen. The task of learning the parameters of threshold function is to solve the matrix equation $\Phi \cdot w' = t$. The matrix $\Phi$ has dimensions $m \times (Q + 1)$ in which $i$-th vector is $(c_{1}^i, c_{2}^2,...,c_{Q}^i,1)$, and $w'$ is $(Q+1)$ dimensional vector $(w,b)$ and $t$ is the $m$ dimensional vector $(t(x_{1}), t(x_{2}),...,t(x_{m}))$. Linear least squares is used to find the solution of the equation. Given a sample $x$, the network predicts output label vector $c(x)$ and the threshold value for $x$ is gotten by solving equation $t(x) = w^T \cdot c(x) + b$.
+If there are several minimum values and optimal values are in a division, the middle value of the division is chosen. The task of learning the parameters of threshold function is to solve the matrix equation $\Phi \cdot w' = t$. The matrix $\Phi$ has dimensions $m \times (Q + 1)$ in which $i$-th vector is $(c_{1}^i, c_{2}^2,...,c_{Q}^i,1)$, and $w'$ is a $(Q+1)$ dimensional vector $(w,b)$ and $t$ is the $m$-dimension vector $(t(x_{1}), t(x_{2}),...,t(x_{m}))$. Linear least squares is used to find the solution of the equation. Given a sample $x$, the network predicts the output label vector $c(x)$ and the threshold value for $x$ is gotten by solving equation $t(x) = w^T \cdot c(x) + b$.
 
 The computational complexity of evaluating derivatives of the error function is linear with the neuron numbers. Three main components are composed of computation, feedforward process, backpropagation process and updating weights process. In the feed-forward process, to compute $b_{i}$ and $c_{j}$, the computation cost is mainly on evaluating the sums and activation function. In the backpropagation process, the computational complexity of $d_{k}$ and $e_{s}$ is $O(Q)$. In the updating weights process, the overall computational complexity is $O(W)$ where $W$ is the total number of weights . 
 
