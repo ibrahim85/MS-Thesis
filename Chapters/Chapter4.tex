@@ -63,7 +63,7 @@ The fine-tuning process converge quick. After about 30 epochs, the accuracy rate
     \label{fig:finetuneprocess}%
 \end{figure}
 
-The learning process may overfit and it will definitely damage model generalisation capability. From figure \ref{fig:finetuneprocess}, we find that there is no overfitting in the fine-tuning process.
+The learning process may overfit and it will definitely damage model generalisation capability. From Figure \ref{fig:finetuneprocess}, we find that there is no overfitting in the fine-tuning process.
 
 In order to have a more detailed information of fine-tuning process, we investigate the training loss values. We plot the curve and the loss values during the first 200 iterations.
 
@@ -75,7 +75,7 @@ In order to have a more detailed information of fine-tuning process, we investig
     \label{fig:FTvsSC}%
 \end{figure}
 
-From figure \ref{fig:FTvsSC}, it is clear that the fine-tuning procedure produces a smoother loss curve and ceases at a higher accuracy rate. In the left figure, the loss value of the fine-tuning procedure is higher than the value of the no fine-tuning process at the beginning. Then it shrinks sharply and maintains lower than the value of the non fine-tuning process. In the right figure, we can find that initial loss values are less than those in the left figure. And the loss value of the fine-tuning process is less than the value in the non fine-tune process. In short, fine-tune is an effective approach to train a new model. The model with SPP layers achieves high performance.
+From Figure \ref{fig:FTvsSC}, it is clear that the fine-tuning procedure produces a smoother loss curve and ceases at a higher accuracy rate. In the left figure, the loss value of the fine-tuning procedure is higher than the value of the no fine-tuning process at the beginning. Then it shrinks sharply and maintains lower than the value of the non fine-tuning process. In the right figure, we can find that initial loss values are less than those in the left figure. And the loss value of the fine-tuning process is less than the value in the non fine-tune process. In short, fine-tune is an effective approach to train a new model. The model with SPP layers achieves high performance.
 
 \begin{figure}[!htb]
     \centering
@@ -92,7 +92,7 @@ The outputs of each layer have been treated as visual descriptors \citep{razavia
 
 Fully connected layers can be represented as a $d$-dimensional vector. The layer takes multidimensional outputs from the previous layer and flats the feature maps into a $d$-dimensional vector. The outputs of the second fully connected layer are feed into a classifier.
 
-When a cloudy image is fed into the CNN, figure \ref{fig:cloudy_finetuneprocess} shows the feature maps of convolutional layers. Because the filter size is too many, only parts of the filters are plotted in b-d.
+When a cloudy image is fed into the CNN, Figure \ref{fig:cloudy_finetuneprocess} shows the feature maps of convolutional layers. Because the filter size is too many, only parts of the filters are plotted in b-d.
 
 \graphicspath{ {./Figures/DifferentLayers/} }
 
@@ -140,7 +140,7 @@ When a cloudy image is fed into the CNN, figure \ref{fig:cloudy_finetuneprocess}
     \label{fig:cloudy_finetuneprocess}%
 \end{figure}
 
-In figure \ref{fig:sunny_finetuneprocess}, a sunny image is fed into CNN and the according outputs are plotted.
+In Figure \ref{fig:sunny_finetuneprocess}, a sunny image is fed into CNN and the according outputs are plotted.
 
 \begin{figure}[!htb]
     \centering
@@ -218,7 +218,7 @@ Image & Conv1 & Conv2 & Conv3 & Conv4 & Conv5  \\ \hline
 	\label{fig:diff_featuremap}%
 \end{figure*}
 
-In figure \ref{fig:fc7_hist_output}, the histograms of the outputs from the layer $FC7$ are displayed. Comparing histogram difference, the generated features of the SPP model is more divisible than those of the CNN model.
+In Figure \ref{fig:fc7_hist_output}, the histograms of the outputs from the layer $FC7$ are displayed. Comparing histogram difference, the generated features of the SPP model is more divisible than those of the CNN model.
 \begin{figure}[htb]
     \centering
 	\includegraphics[width=0.4\textwidth]{sunny2_hist_caffe_fc7.png}
@@ -231,7 +231,7 @@ From the feature maps and histogram distributions, it is clear that the SPP mode
 
 \section{Error Results}
 
-The images in figure \ref{fig:Misclassification} are misclassified by the CNN model and the SPP Model. They are difficult to judge sunny or cloudy, even for people.
+The images in Figure \ref{fig:Misclassification} are misclassified by the CNN model and the SPP Model. They are difficult to judge sunny or cloudy, even for people.
 \graphicspath{ {./Figures/} }
 \begin{figure}[htb]
     \centering

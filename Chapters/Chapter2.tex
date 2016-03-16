@@ -15,7 +15,7 @@ Most previous works are based on the discriminative model. They extract human re
 
 \section{Single-Layer ANNs}
 
-Artificial neurons were introduced as information processing devices more than fifty years ago \citep{mcculloch1943logical}. Following the early work, perceptrons were deployed in layers to perform pattern recognition tasks. A lot of resources were invested in the research capability of learning perceptrons theoretically and experimentally. As shown in figure \ref{fig:perceptron}, a perceptron computes a weighted summation of its $n$ inputs and then thresholds the result to give a binary output $y$. We can treat $n$ input data as an vector with $n$ elements, and represent the vector as either class A (for output +1) or class B (for output -1).
+Artificial neurons were introduced as information processing devices more than fifty years ago \citep{mcculloch1943logical}. Following the early work, perceptrons were deployed in layers to perform pattern recognition tasks. A lot of resources were invested in the research capability of learning perceptrons theoretically and experimentally. As shown in Figure \ref{fig:perceptron}, a perceptron computes a weighted summation of its $n$ inputs and then thresholds the result to give a binary output $y$. We can treat $n$ input data as an vector with $n$ elements, and represent the vector as either class A (for output +1) or class B (for output -1).
 \graphicspath{ {./Figures/} }
 \begin{figure}[!htb]
 \centering
@@ -35,7 +35,7 @@ f(x) = sign(x) =
     1  & \quad h \geq 0\\
   \end{cases}
 \end{equation}
-and it is plotted out in figure \ref{fig:ThresholdFunc}
+and it is plotted out in Figure \ref{fig:ThresholdFunc}
 \graphicspath{ {./Figures/} }
 \begin{figure}[!htb]
 \centering
@@ -106,7 +106,7 @@ The single-layer neural network is simple to implement, while it can only suppor
 \begin{equation}\label{eq:1LayerExample}
 a_{out} = f(a_{0}w_{1})
 \end{equation}
-where $f()$ is the logistic function. Given that an input data $1$ maps to an output data $1$, we can compute the value of the error function for each possible value of $w_{1}$. Feeding value of $w_{1}$ in range $(-10,10)$, we can plot the error surface in figure \ref{fig:1LayerErrorSurface}.
+where $f()$ is the logistic function. Given that an input data $1$ maps to an output data $1$, we can compute the value of the error function for each possible value of $w_{1}$. Feeding value of $w_{1}$ in range $(-10,10)$, we can plot the error surface in Figure \ref{fig:1LayerErrorSurface}.
 \graphicspath{ {./Figures/} }
 \begin{figure}[!htb]
 \centering
@@ -114,7 +114,7 @@ where $f()$ is the logistic function. Given that an input data $1$ maps to an ou
 \caption{\label{fig:1LayerErrorSurface}The error surface for a single layer neural network \citep{ErrorFigure1}.}
 \end{figure}
 
-The single-layer neural network has a decision boundary which is linear. However, the boundary is limited. The limitation can be illustrated by two types of datasets in figure \ref{fig:1Layer2datasets} .
+The single-layer neural network has a decision boundary which is linear. However, the boundary is limited. The limitation can be illustrated by two types of datasets in Figure \ref{fig:1Layer2datasets} .
 \graphicspath{ {./Figures/} }
 \begin{figure}[!htb]
 \centering     %%% not \center
@@ -125,7 +125,7 @@ The single-layer neural network has a decision boundary which is linear. However
 
 \section{Multi-Layer Networks}
 
-Single-Layer networks have limitation of representing complex functions. We are seeking to learn the nonlinearity from samples. To improve the representation capability, we can stack layers network. This is the approach of multi-layer neural networks. multi-layer neural networks implement linear discriminants via mapping the input data to a nonlinear space. They can use fairly simple algorithms to learn the form of the nonlinearity from training data.
+Single-Layer networks have limitation of representing complex functions. We are seeking to learn the nonlinearity from samples. To improve the representation capability, we can stack network layers. This is the approach of multi-layer neural networks. multi-layer neural networks implement linear discriminants via mapping the input data to a nonlinear space. They can use fairly simple algorithms to learn the form of the nonlinearity from training data.
 
 In the thesis, we limit multi-layer neural networks in the subset of feedforward neural networks. Feedforward neural networks can provide a general mechanism for representing nonlinear functional mapping between a set of input data and a set of output labels. Figure \ref{fig:ffnet} is a feedforward neural network having two layers of adaptive weights.
 
@@ -135,7 +135,7 @@ In the thesis, we limit multi-layer neural networks in the subset of feedforward
 \caption{\label{fig:ffnet}Diagram of a feedforward neural network \citep{zainal2013oil}.}
 \end{figure}
 
-In the example, the middle column perceptrons act as hidden neurons. The network has $n$ inputs, $4$ hidden neurons and $m$ output neurons. The network diagram represents the function in the form
+In this example, the middle column perceptrons act as hidden neurons. The network has $n$ inputs, $4$ hidden neurons and $m$ output neurons. The network diagram represents the function in the form
 \begin{equation}\label{eq:ffEq}
 y_{m} = \hat{f}\Big(\sum_{j=0}^{m}w_{j4}^{(2)}f\big(\sum_{i=0}^{n}w_{4i}^{(1)}x_{i}\big)\Big)
 \end{equation}
@@ -156,7 +156,7 @@ We can use a simple example to illustrate the power of the multi-layer neural ne
 \begin{equation}\label{eq:2LayerExample}
 a_{out} = f(f(a_{0}w_{1})w_{2})
 \end{equation}
-where $f()$ is the sigmoid function. With varying $w_{1}$ and $w_{2}$, the error surface can be represented in figure \ref{fig:2LayerErrorSurface}.
+where $f()$ is the sigmoid function. With varying $w_{1}$ and $w_{2}$, the error surface can be represented in Figure \ref{fig:2LayerErrorSurface}.
 \graphicspath{ {./Figures/} }
 \begin{figure}[!htb]
 \centering
@@ -179,7 +179,7 @@ L(f_{w}) = \sum L(y, f_{w}(x))
 \end{equation}
 Gradient descent is a first-order optimisation algorithm which starts from a random point, and finds a nearby minimum point. It can converge to a minimum value.
 
-The SGD is a subtype of gradient descent. It only considers a single training point and moves to a nearby point based on
+The SGD is a type of gradient descent. It only considers a subset of samples for computing the gradient and moves to a nearby point based on
 \begin{equation}\label{eq:SGDUpdate}
 w = w - \eta  \Delta L(w) = w - \eta \sum_{i=1}^{n} \Delta L_{i}(w)
 \end{equation}
@@ -218,18 +218,18 @@ The $\delta_{j}$ of a hidden neuron is based on the $\delta_{k}$ of the output l
 
 In supervised learning, training dataset consists of data with labels. We can use the neural networks to find the output of the training data and learn optimal weights. There are mainly three types of training protocols, stochastic, batch and online training. In stochastic training, we randomly choose samples from the training dataset and update weights every time. In batch training, we use some samples and pass them through the network, then update weights based on the error value. In online training, each sample of the training dataset is used once and weights are updated each time. We usually define one time of passing all training dataset through neural networks as one epoch.
 
-It is worth noting batch learning. In large scale applications, the training dataset can consist over millions of samples. It is time consuming to compute the error function over all training dataset in order to update weights once. It is a practical approach to compute the gradient over a batch of training dataset. Does it have harmful effects on generalisation? It depends on the correlations among the training dataset. Consider there are more than one million images in the ImageNet dataset which is made up of only 1000 categories. If the images in a batch are selected evenly from each category, the gradient from the batch is a reasonable approximation of that of the full training dataset. Therefore, batch learning leads to faster convergence by evaluating the batch gradients to update weights frequently.
+It is worth mentionaing batch learning. In large scale applications, the training dataset can contain over millions of samples. It is time-consuming to compute the error function over all training data points in order to update weights once. It is a practical approach to compute the gradient over a batch of training data. Does it have harmful effects on generalisation? It depends on the correlations among the training dataset. Consider that there are more than one million images in the ImageNet dataset which is made up of only 1000 categories. If the images in a batch are selected evenly from each category, the gradient from the batch is a reasonable approximation of the full training dataset. Therefore, batch learning leads to faster convergence by evaluating the batch gradients to update weights frequently.
 
 \section{Overfitting and Regularization}
 
-Overfitting is a common phenomenon that a model has high performance on the training dataset, but the model performs poorly on the testing dataset in classification tasks. Thus, a classification problem with two classes and two input variables, (left figure in \ref{fig:OverfittingExample}), shows decent decision boundaries. With increasing complexity of the model, the decision boundaries become more complex and fit the training dataset extremely well.
+Overfitting is a common phenomenon that a model has high performance on the training dataset, but the model performs poorly on the testing data. Thus, a classification problem with two classes and two input variables, (left Figure in \ref{fig:OverfittingExample}), shows decent decision boundaries. With increasing complexity of the model, the decision boundaries become more complex and fit the training dataset extremely well.
 \graphicspath{ {./Figures/} }
 \begin{figure}[!htb]
 \centering
 \includegraphics[width=0.8\textwidth]{overfitting.png}
 \caption{\label{fig:OverfittingExample}Overfitting example, the left one has a decent generalisation performance and the right one is overfitting \citep{OverfittingFigure}.}
 \end{figure}
-From the example in figure \ref{fig:OverfittingExample}, it is clear that a model, whose complexity is neither too small nor too large, has the best generalisation performance. 
+From the example in Figure \ref{fig:OverfittingExample}, it is clear that a model, whose complexity is neither too small nor too large, has the best generalisation performance. 
 
 In order to find the optimal complexity of the neural network, there are mainly two approaches. One is to change the adaptive parameters, like neuron numbers in hidden layers. This is named structural stabilisation. It can be approached from two directions. We can start from a small network and increase layer numbers or neuron numbers in the training process and arrive at an effective neural network architecture. The other one is to start from a large network and prune out layers or neurons in the training process to achieve the optimal network. Another fundamental basic method to control the complexity of a model is regularisation which includes adding a penalty term in the error function. The degree of regularisation can be adjusted by scaling the term via a multiplicative parameter.
 
@@ -259,7 +259,7 @@ and the exponential function reduces weights to zero quickly. Weight decay is al
 
 \subsection{Dropout}
 
-Neural networks with deep layers and a large amount of neurons is a powerful learning machine. However, the more parameters the network has, the easier it is overfitting. Recently, dropout \citep{srivastava2014dropout} is a simple and extremely effective regularisation technique which complements the other methods. At training process, random neurons are selected with some probability $p$ to update their associated weights, and the others are inactive. In other words, only a reduced network is trained.
+Neural networks with deep layers and a large amount of neurons is a powerful learning machine. However, the more parameters the network has, the easier it is overfitting. Recently, dropout \citep{srivastava2014dropout} is a simple and extremely effective regularisation technique which complements the other methods. At the training process, random neurons are selected with a probability $p$ to update their associated weights, and the others are inactive. In other words, only a reduced network is trained.
 \graphicspath{ {./Figures/} }
 \begin{figure}[!htb]
 \centering
@@ -280,9 +280,9 @@ f_j(z) = \frac{e^{z_j}}{\sum_k e^{z_k}}
 \end{equation}
 Equation \ref{eq:SoftmaxActivation} implies that the output values are all positive and the sum of all values $\sum_k a_k$ is $1$.
 
-The softmax classifier can be used to handle a multiclass classification. For a training dataset $(x_{1}, y_{1}), \ldots, (x_{m}, y_{m}), y_{i} \in \{1, 2, \ldots, K\} $ of $m$ labelled samples, the label $y$ have $K$ different values.
+The softmax classifier can be used to handle multiclass classification. For a training dataset $(x_{1}, y_{1}), \ldots, (x_{m}, y_{m}), y_{i} \in \{1, 2, \ldots, K\} $ of $m$ labelled samples, the label $y$s have $K$ different values.
 
-To an unseen sample $x$, we will use a hypothesis to estimate the probability $P(y=k | x)$ for each value $k = 1, \ldots, K$. For example, we want to compute the probability of the class label on each of $K$ different possible values. The neural network will then output a $K$ dimensional vector which represents $K$ estimated probabilities. 
+Given an unseen sample $x$, we will use a hypothesis to estimate the probability $P(y=k | x)$ for each value $k = 1, \ldots, K$. For example, we want to compute the probability of the class label on each of $K$ different possible values. The neural network will then output a $K$ dimensional vector which represents $K$ estimated probabilities. 
 %\begin{equation}\label{eq:SoftmaxPostPro}
 \begin{align}
 h_{W}(x) =
@@ -361,7 +361,7 @@ CNN architecture has neurons arranged in 3 dimensions, width, height and depth. 
 \end{figure}
 
 \subsection{Layers in CNN}
-CNN have four main types of layers, including convolutional layers, Relu layers, pooling layers and fully connected layers. Every layer transforms the input to the output via a differentiable function. 
+CNN has four main types of layers, including convolutional layers, Relu layers, pooling layers and fully connected layers. Every layer transforms the input to the output via a differentiable function. 
 \begin{enumerate}
   \item Convolutional Layer
   \item ReLU Layer
@@ -418,7 +418,7 @@ We perform SPM in a $2$-dimensional image space and apply standard vector quanti
 
 \section{Transfer Learning}
 
-In the literature on machine learning, transfer learning \citep{pan2010survey} focuses on storing knowledge from one domain and applying it to a related problem. In other words, the relevant knowledge, learned from previous tasks, can be applied to new tasks. The closer a new job relates to previous knowledge, the more easily it can be solved. In contrast, other machine learning methods solve problems independently. 
+In the literature on machine learning, transfer learning \citep{pan2010survey} focuses on storing knowledge from one domain and applying it to a related problem. In other words, the relevant knowledge, learned from previous tasks, can be applied to new tasks. The closer a new task relates to previous knowledge, the more easily it can be solved. In contrast, other machine learning methods solve problems independently. 
 
 Transfer learning has three benefits. The first one is to save time on preprocessing data. Collecting and processing raw data are time consuming and expensive in each task. It can reduce volume of required data significantly, because of existing knowledge extracted from previous learning tasks. The second one is to reduce time on training a model from scratch up. Usually, training a model from scratch up is time consuming. The last one is to avoid the risk of overfitting. With insufficient training data, a complicated model is easy to overfitting. Transfer learning method can control overfitting because of existing knowledge.
 
@@ -440,4 +440,4 @@ In transfer learning, there are two main challenges:
   \item Which part of previous knowledge is useful to the new task?
   \item How to represent the existing knowledge in the new model?
 \end{enumerate}
-The first challenge arise, when we evaluate the relation between the previous knowledge and the current task. The correlated knowledge for the task can improve the performance of a model. Meanwhile, the unrelated and negative correlated knowledge are useless, even harmful. After evaluating the useful knowledge, new learning algorithms should be developed to transfer the knowledge. This leads to the second challenge. Because knowledge have different representations, translation process must keep accuracy and minimise loss of knowledge. 
+The first challenge arises, when we evaluate the relation between the previous knowledge and the current task. The correlated knowledge for the task can improve the performance of a model. Meanwhile, the unrelated and negative correlated knowledge are useless, even harmful. After evaluating the useful knowledge, new learning algorithms should be developed to transfer the knowledge. This leads to the second challenge. Because knowledge have different representations, translation process must keep accuracy and minimise loss of knowledge. 

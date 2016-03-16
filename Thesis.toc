@@ -10,7 +10,7 @@
 \contentsline {section}{\numberline {1.1}Overview}{1}{section.13}
 \contentsline {section}{\numberline {1.2}Statistical Pattern Recognisation}{2}{section.14}
 \contentsline {section}{\numberline {1.3}Artificial Neural Networks (ANNs)}{2}{section.15}
-\contentsline {section}{\numberline {1.4}Weather Classification}{2}{section.16}
+\contentsline {section}{\numberline {1.4}Weather Classification}{3}{section.16}
 \contentsline {chapter}{\numberline {2}Background}{4}{chapter.17}
 \contentsline {section}{\numberline {2.1}Related Work}{4}{section.18}
 \contentsline {section}{\numberline {2.2}Single-Layer ANNs}{5}{section.19}
@@ -29,7 +29,7 @@
 \contentsline {section}{\numberline {2.9}Spatial Pyramid Matching (SPM)}{21}{section.85}
 \contentsline {section}{\numberline {2.10}Transfer Learning}{23}{section.90}
 \contentsline {chapter}{\numberline {3}Methodology}{25}{chapter.95}
-\contentsline {section}{\numberline {3.1}Dataset}{25}{section.96}
+\contentsline {section}{\numberline {3.1}Datasets}{25}{section.96}
 \contentsline {section}{\numberline {3.2}Data Argumentation}{26}{section.99}
 \contentsline {section}{\numberline {3.3}Spatial Pyramid Pooling (SPP)}{26}{section.107}
 \contentsline {section}{\numberline {3.4}Convolutional Neural Networks Architecture}{27}{section.109}

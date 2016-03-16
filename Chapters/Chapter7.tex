@@ -58,7 +58,7 @@ Two factors will be modified to adapt a neural network to perform multi-label cl
 
 \subsection{Network Architecture}
 
-Define $\mathcal{X} = \mathbb{R}^{d}$ as the sample space and $\mathcal{Y} = {1,2,...,Q}$ as the set of output labels. The training dataset is composed of $m$ multi-label samples, ${(x_{1}, Y_{1}),(x_{2}, Y_{2}),...,(x_{m}, Y_{m})}$, while each sample $x_{i} \in \mathcal{X}$ is represented as a $d$-dimension feature vector and a set of $q$ labels associate with the feature vector. A neural network, in figure \ref{fig:MultiLabelNet}, can be built up to learn a model .
+Define $\mathcal{X} = \mathbb{R}^{d}$ as the sample space and $\mathcal{Y} = {1,2,...,Q}$ as the set of output labels. The training dataset is composed of $m$ multi-label samples, ${(x_{1}, Y_{1}),(x_{2}, Y_{2}),...,(x_{m}, Y_{m})}$, while each sample $x_{i} \in \mathcal{X}$ is represented as a $d$-dimension feature vector and a set of $q$ labels associate with the feature vector. A neural network, in Figure \ref{fig:MultiLabelNet}, can be built up to learn a model .
 
 \graphicspath{ {./Figures/} }
 \begin{figure}[!htb]
@@ -67,7 +67,7 @@ Define $\mathcal{X} = \mathbb{R}^{d}$ as the sample space and $\mathcal{Y} = {1,
 \caption{\label{fig:MultiLabelNet}Network Topology For Multi-lable Classification}
 \end{figure}
 
-The network has $d$ input neurons which correspond to a $d$-dimension feature vector, while the last $Q$ neurons represent a combination of output labels. There is a hidden layer in figure \ref{fig:MultiLabelNet} which owns $n$ hidden neurons. The input layer is fully connected with the hidden layer and the same connecting method is deployed between the hidden layer and the output layer. There are $d \times n$ weights $(W_{ih}, 1 \leq i \leq d, 1 \leq h \leq n)$ between the first two layers, and $n \times q$ weights $(W_{ho}, 1 \leq h \leq n , 1 \leq o \leq q)$ between the latter two layers. The bias parameters are represented as $I_{0}$ and  $H_{0}$.
+The network has $d$ input neurons which correspond to a $d$-dimension feature vector, while the last $Q$ neurons represent a combination of output labels. There is a hidden layer in Figure \ref{fig:MultiLabelNet} which owns $n$ hidden neurons. The input layer is fully connected with the hidden layer and the same connecting method is deployed between the hidden layer and the output layer. There are $d \times n$ weights $(W_{ih}, 1 \leq i \leq d, 1 \leq h \leq n)$ between the first two layers, and $n \times q$ weights $(W_{ho}, 1 \leq h \leq n , 1 \leq o \leq q)$ between the latter two layers. The bias parameters are represented as $I_{0}$ and  $H_{0}$.
 
 Because the task of multi-label learning is to predict labels of test samples, it needs to evaluate the global error of the model as:
 \begin{equation}\label{eq:MultiLableError}
