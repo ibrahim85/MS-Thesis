@@ -7,15 +7,15 @@
 \section{Related Work}
 
 There has been much research done on the task of weather classification. Most works follow the procedure of extracting features and then performing classification \citep{bishop1995neural,roser2008classification,serrano2002computationally,gokalp2007scene}.
-Some works use low-level features, like colour \citep{szummer1998indoor}, texture \citep{shotton2009textonboost,vailaya2002automatic}. Some works use filters or segmentation \citep{boutell2004learning,shotton2009textonboost} to extract high-level features, such as sky, shadow \citep{lutwo}. Some works use statistical measurement methods \citep{he2014spatial,roser2008classification} to analyse low-level feature distributions.
+Some works use low-level features, such as colour \citep{szummer1998indoor}, texture \citep{shotton2009textonboost,vailaya2002automatic}. Some works use filters or segmentation \citep{boutell2004learning,shotton2009textonboost} to extract high-level features, such as sky, shadow \citep{lutwo}. Some works use statistical measurement methods \citep{he2014spatial,roser2008classification} to analyse low-level feature distributions.
 
 Generally, the traditional methods follow three basic steps \citep{roser2008classification,yan2009weather}. First, some Regions of Interest (ROIs), such as sky and shadow,  are extracted from a weather image. Then, histogram descriptors are used to represent the difference between them. Finally, a classifier is trained based on the extracted features. 
 
-Most previous works are based on the discriminative model. They extract human recognisable features to classify images. This type of shadow learning depends mainly on the quality of features and human's prior knowledge. An image without prior features or with poor features is difficult to be classified. Furthermore, the methods require a lot of work on data pre-processing and are not flexible. The approaches depend on structural information to categorise an image into one of the classes. Structural information is concluded from illumination invariant features, like SIFT. However, previous works have limitation on classifying diverse images. It is difficult to list all the factors which determinate the weather conditions.
+Most previous works are based on the discriminative model. They extract human recognisable features to classify images. This type of shallow learning depends mainly on the quality of features and human's prior knowledge. An image without prior features or with poor features is difficult to be classified. Furthermore, the methods require a lot of work on data pre-processing and are not flexible. The approaches depend on structural information to categorise an image into one of the classes. Structural information is concluded from illumination invariant features, such as SIFT. However, previous works have limitation on classifying diverse images. It is difficult to list all the factors which determinate the weather conditions.
 
 \section{Single-Layer ANNs}
 
-Artificial neurons were introduced as information processing devices more than fifty years ago \citep{mcculloch1943logical}. Following the early work, perceptrons were deployed in layers to perform pattern recognition tasks. A lot of resources were invested in the research capability of learning perceptrons theoretically and experimentally. As shown in Figure \ref{fig:perceptron}, a perceptron computes a weighted summation of its $n$ inputs and then thresholds the result to give a binary output $y$. We can treat $n$ input data as an vector with $n$ elements, and represent the vector as either class A (for output +1) or class B (for output -1).
+Artificial neurons were introduced as information processing devices more than fifty years ago \citep{mcculloch1943logical}. Following the early work, perceptrons were deployed in layers to perform pattern recognition tasks. A lot of resources were invested in the research capability of learning perceptrons theoretically and experimentally. As shown in Figure \ref{fig:perceptron}, a perceptron computes a weighted summation of its $n$ inputs and then thresholds the result to give a binary output $y$. We can treat $n$ input data as a vector with $n$ elements, and represent the vector as either class A (for output +1) or class B (for output -1).
 \graphicspath{ {./Figures/} }
 \begin{figure}[!htb]
 \centering
@@ -23,7 +23,7 @@ Artificial neurons were introduced as information processing devices more than f
 \caption{\label{fig:perceptron}Diagram of a perceptron \citep{NeuronFigure1}.}
 \end{figure}
 
-Each output is updated according to the equation:
+Each output is computed according to the equation:
 \begin{equation}\label{eq:BasicEq}
 y_{i} = f(h_{i}) = f\left(\sum_{j}w_{ij}x_{j}\right)
 \end{equation}
@@ -83,12 +83,12 @@ f(x) = \frac{e^{x}-e^{-x}}{e^{x}+e^{-x}}
 %  \item The third etc \ldots
 \end{itemize}
 
-We can also represent equation \ref{eq:FullEq} in vector notation, as in 
+We can also represent Equation \ref{eq:FullEq} in vector notation, as in 
 \begin{equation}\label{eq:UsedEq}
 y = f(h) = f(w \cdot x)
 \end{equation}
 where $w$ and $x$ can be regarded as $n\times1$ dimensional column vectors, and $n$ is the dimension number of the input data.
-The term $w \cdot x$ in equation \ref{eq:UsedEq} constructs a $(n-1)$-dimension hyperplane which passes the origin. The hyperplane can be shifted by adding a parameter to equation \ref{eq:BasicEq}, for example
+The term $w \cdot x$ in Equation \ref{eq:UsedEq} constructs a $(n-1)$-dimension hyperplane which passes the origin. The hyperplane can be shifted by adding a parameter to Equation \ref{eq:BasicEq}, for example
 \begin{equation}\label{eq:WithBias}
 y = f(h) = f(w \cdot x + b)
 \end{equation}
@@ -102,11 +102,11 @@ y = f(\sum_{i=0}^{n}w_{i}x_{i}) = 1  & \quad x \in Class A\\
 y = f(\sum_{i=0}^{n}w_{i}x_{i}) = 0  & \quad x \in Class B
 \end{align*}
 
-The single-layer neural network is simple to implement, while it can only support a linear decision boundary. We can build a simple neural network to acquire intuition behind the mathematical theory. The network has no bias and one neuron which means it has one weight, $w_{1}$. We implement a logistic sigmoid activation function on the dot product of input data and weight $w_{1}$. Therefore, the network can map the input data $a_0$ onto an output $a_{out}$ based on the function
+The single-layer neural network is simple to implement, while it can only support a linear decision boundary. We can build a simple neural network to acquire intuition behind the mathematical theory. The network has no bias and one neuron which means it has one weight, $w_{1}$. We implement a logistic sigmoid activation function on the dot product of input data and the weight $w_{1}$. Therefore, the network can map the input data $a_0$ onto an output $a_{out}$ based on the function
 \begin{equation}\label{eq:1LayerExample}
 a_{out} = f(a_{0}w_{1})
 \end{equation}
-where $f()$ is the logistic function. Given that an input data $1$ maps to an output data $1$, we can compute the value of the error function for each possible value of $w_{1}$. Feeding value of $w_{1}$ in range $(-10,10)$, we can plot the error surface in Figure \ref{fig:1LayerErrorSurface}.
+where $f()$ is the logistic function. Given that an input data maps to an output label, we can compute the value of the error function for each possible value of $w_{1}$. Feeding value of $w_{1}$ in range $(-10,10)$, we can plot the error surface in Figure \ref{fig:1LayerErrorSurface}.
 \graphicspath{ {./Figures/} }
 \begin{figure}[!htb]
 \centering
@@ -125,7 +125,7 @@ The single-layer neural network has a decision boundary which is linear. However
 
 \section{Multi-Layer Networks}
 
-Single-Layer networks have limitation of representing complex functions. We are seeking to learn the nonlinearity from samples. To improve the representation capability, we can stack network layers. This is the approach of multi-layer neural networks. multi-layer neural networks implement linear discriminants via mapping the input data to a nonlinear space. They can use fairly simple algorithms to learn the form of the nonlinearity from training data.
+Single-Layer networks have limitation of representing complex functions. We are seeking to learn the nonlinearity from samples. To improve the representation capability, we can stack network layers. This is the approach of multi-layer neural networks. Multi-layer neural networks implement linear discriminants through mapping the input data to a nonlinear space. They can use fairly simple algorithms to learn the form of the nonlinearity from training data.
 
 In the thesis, we limit multi-layer neural networks in the subset of feedforward neural networks. Feedforward neural networks can provide a general mechanism for representing nonlinear functional mapping between a set of input data and a set of output labels. Figure \ref{fig:ffnet} is a feedforward neural network having two layers of adaptive weights.
 
@@ -139,7 +139,7 @@ In this example, the middle column perceptrons act as hidden neurons. The networ
 \begin{equation}\label{eq:ffEq}
 y_{m} = \hat{f}\Big(\sum_{j=0}^{m}w_{j4}^{(2)}f\big(\sum_{i=0}^{n}w_{4i}^{(1)}x_{i}\big)\Big)
 \end{equation}
-In equation \ref{eq:ffEq}, the outer activation function could be different with the inner one.
+In Equation \ref{eq:ffEq}, the outer activation function could be different with the inner one.
 
 There are some activation functions, including sigmoid and tanh functions. The sigmoid function, also named the logistic function, can be represented as: 
 \begin{equation}\label{eq:sigmoid}
@@ -150,9 +150,9 @@ Its outputs lie in the range $(0,1)$. We can do a linear transformation $\hat{x}
 f(x) = tanh(x) = \frac{e^{x}-e^{-x}}{e^{x}+e^{-x}}
 \end{equation}
 
-With enough hidden neurons, a three-layer neural network is capable of approximating any function. In other words, the network performs an arbitrary accuracy to classification problems in theory. 
+With enough hidden neurons, a three-layer neural network is capable of approximating any function. In theory, the network performs an arbitrary accuracy to classification problems.
 
-We can use a simple example to illustrate the power of the multi-layer neural network. In this example, we have one input, one hidden neuron and one output. There is no bias in the input layer and hidden layer. There are two weights existing in the network, $(w_{1}, w_{2})$, and the output can be calculated via
+We can use a simple example to illustrate the power of multi-layer neural networks. In this example, we have one input, one hidden neuron and one output. There is no bias in the input layer and the hidden layer. There are two weights existing in the network, $(w_{1}, w_{2})$, and the output can be calculated through
 \begin{equation}\label{eq:2LayerExample}
 a_{out} = f(f(a_{0}w_{1})w_{2})
 \end{equation}
@@ -183,19 +183,19 @@ The SGD is a type of gradient descent. It only considers a subset of samples for
 \begin{equation}\label{eq:SGDUpdate}
 w = w - \eta  \Delta L(w) = w - \eta \sum_{i=1}^{n} \Delta L_{i}(w)
 \end{equation}
-where $\eta$ is the learning rate and $L_{i}(w)$ is the value of the error function at the $i$th sample. The Robbins-Siegmund theorem \citep{robbins1985convergence} provides the approaches to almost surely convergence to a global minimum under relatively mild assumptions, moreover, it is fast and effective in most circumstances.
+where $\eta$ is the learning rate and $L_{i}(w)$ is the value of the error function at the $i$th sample. The Robbins-Siegmund theorem \citep{robbins1985convergence} provides the approaches to almost surely convergence to a global minimum under relatively mild assumptions. Moreover, it is fast and effective in most circumstances.
 
 \section{Backpropagation}
 
-Multi-layer neural networks can represent mapping from the input data to the output classes. One challenge is to learn a suitable mapping method from the training dataset. This will be resolved by a popular learning algorithm, backpropagation.
+Multi-layer neural networks can represent mapping from the input data to the output classes. One challenge is to learn a suitable mapping method from the training data. This will be resolved by a popular learning algorithm, backpropagation.
 
-Because activation functions are differentiable, the activation of output neurons can be propagated to the hidden neurons with respect to weights and bias. If we have an error function, we can evaluate derivatives of the error and update the weights to minimise the error function via some optimisation methods.
+Because activation functions are differentiable, the activation of output neurons can be propagated to the hidden neurons with respect to weights and bias. If we have an error function, we can evaluate derivatives of the error and update the weights to minimise the error function through some optimisation methods.
 
-Backpropagation can be applied to find the derivatives of an error function related to the weights and bias in the network via two stages. First, the derivatives of the error functions, for instance sum-of-squares and Jacobian, must be evaluated with respect to the weights. Second, a variety of optimisation schemes can be implemented to compute the adjustment of weights based on the derivatives. After passing data through the network, we can get the predicted classes. It updates weight changes based on the grandient descent. Given that the network has $i$ inputs, $h$ hidden neurons and $k$ outputs. The update equation can be represented as:
+Backpropagation can be applied to find the derivatives of an error function related to the weights and bias in the network through two stages. First, the derivatives of the error functions, for instance sum-of-squares and Jacobian, must be evaluated with respect to the weights. Second, a variety of optimisation schemes can be implemented to compute the adjustment of weights based on the derivatives. After passing data through the network, we can get the predicted classes. It updates weight changes based on the grandient descent. Given that the network has $i$ inputs, $h$ hidden neurons and $k$ outputs. The update equation can be represented as:
 \begin{equation}\label{eq:UpdateWeights}
 w(j+1) = w(j) + \Delta w(j)
 \end{equation}
-where $\Delta w(j)$ defined as:
+where $\Delta w(j)$ is defined as:
 \begin{equation}\label{eq:DeltaWeights}
 \Delta w(j) = -\eta \frac{\partial E}{\partial w}
 \end{equation}
@@ -216,13 +216,13 @@ The $\delta_{j}$ of a hidden neuron is based on the $\delta_{k}$ of the output l
 
 \subsection{Training protocols}
 
-In supervised learning, training dataset consists of data with labels. We can use the neural networks to find the output of the training data and learn optimal weights. There are mainly three types of training protocols, stochastic, batch and online training. In stochastic training, we randomly choose samples from the training dataset and update weights every time. In batch training, we use some samples and pass them through the network, then update weights based on the error value. In online training, each sample of the training dataset is used once and weights are updated each time. We usually define one time of passing all training dataset through neural networks as one epoch.
+In supervised learning, training data consists of data with labels. We can use the neural networks to find the output of the training data and learn optimal weights. There are mainly three types of training protocols, stochastic, batch and online training. In stochastic training, we randomly choose samples from the training data and update weights every time. In batch training, all samples are passed through the network, and weights are updated after one epoch. In online training, each sample of the training data is used once and weights are updated each time. We usually define one time of passing all training data through neural networks as one epoch.
 
-It is worth mentionaing batch learning. In large scale applications, the training dataset can contain over millions of samples. It is time-consuming to compute the error function over all training data points in order to update weights once. It is a practical approach to compute the gradient over a batch of training data. Does it have harmful effects on generalisation? It depends on the correlations among the training dataset. Consider that there are more than one million images in the ImageNet dataset which is made up of only 1000 categories. If the images in a batch are selected evenly from each category, the gradient from the batch is a reasonable approximation of the full training dataset. Therefore, batch learning leads to faster convergence by evaluating the batch gradients to update weights frequently.
+It is worth mentionaing batch learning. In large scale applications, the training data can contain over millions of samples. It is time-consuming to compute the error function over all training data points in order to update weights once. It is a practical approach to compute the gradient over a batch of training data. Does it have harmful effects on generalisation? It depends on the correlations among the training data. Consider that there are more than one million images in the ImageNet dataset which is made up of only 1000 categories. If the images in a batch are selected evenly from each category, the gradient from the batch is a reasonable approximation of the full training data. Therefore, batch learning leads to faster convergence by evaluating the batch gradients to update weights frequently.
 
 \section{Overfitting and Regularization}
 
-Overfitting is a common phenomenon that a model has high performance on the training dataset, but the model performs poorly on the testing data. Thus, a classification problem with two classes and two input variables, (left Figure in \ref{fig:OverfittingExample}), shows decent decision boundaries. With increasing complexity of the model, the decision boundaries become more complex and fit the training dataset extremely well.
+Overfitting is a common phenomenon that a model has high performance on the training data, but the model performs poorly on the testing data. Thus, a classification problem with two classes and two input variables, (left Figure in \ref{fig:OverfittingExample}), shows decent decision boundaries. With increasing complexity of the model, the decision boundaries become more complex and fit the training data extremely well.
 \graphicspath{ {./Figures/} }
 \begin{figure}[!htb]
 \centering
@@ -231,15 +231,15 @@ Overfitting is a common phenomenon that a model has high performance on the trai
 \end{figure}
 From the example in Figure \ref{fig:OverfittingExample}, it is clear that a model, whose complexity is neither too small nor too large, has the best generalisation performance. 
 
-In order to find the optimal complexity of the neural network, there are mainly two approaches. One is to change the adaptive parameters, like neuron numbers in hidden layers. This is named structural stabilisation. It can be approached from two directions. We can start from a small network and increase layer numbers or neuron numbers in the training process and arrive at an effective neural network architecture. The other one is to start from a large network and prune out layers or neurons in the training process to achieve the optimal network. Another fundamental basic method to control the complexity of a model is regularisation which includes adding a penalty term in the error function. The degree of regularisation can be adjusted by scaling the term via a multiplicative parameter.
+In order to find the optimal complexity of the neural network, there are mainly two approaches. One is to change the adaptive parameters, such as neuron numbers in hidden layers. This is named structural stabilisation. It can be approached from two directions. We can start from a small network and increase layer numbers or neuron numbers in the training process and arrive at an effective neural network architecture. The other one is to start from a large network and prune out layers or neurons in the training process to achieve the optimal neural network architecture. Another fundamental basic method to control the complexity of a model is regularisation which includes adding a penalty term in the error function. The degree of regularisation can be adjusted by scaling the term through a multiplicative parameter.
 
 Regularisation helps to smooth the decision boundary surface by introducing a penalty term $\Omega$ to the error function
 \begin{equation}\label{eq:Regularization}
 \hat{E} = E + \lambda\Omega
 \end{equation}
-where $E$ is the standard error function, then $\lambda$ adjusts the extent of the penalty $\Omega$ effect on the solution. The task of learning is to minimise the total error function $\hat{E}$. It needs to compute the derivatives of $\Omega$ with respect to the weights efficiently. A model, which has high accuracy in the training dataset, has a small value for $E$. At the same time, the smooth error surface of neural networks gives a small value on $\Omega$.
+where $E$ is the actual error value, then $\lambda$ adjusts the extent of the penalty $\Omega$ effect on the solution. The task of learning is to minimise the total error value $\hat{E}$. It needs to compute the derivatives of $\Omega$ with respect to the weights efficiently. A model, which has high accuracy in the training data, has a small value for $E$. At the same time, the smooth error surface of neural networks gives a small value on $\Omega$.
 
-A number of regularisers have been performed in applications, like weight decay, early stopping, training with noise, weight sharing etc..
+A number of regularisers have been performed in applications, such as weight decay, early stopping, training with noise, and weight sharing etc..
 
 \subsection{Weight Decay}
 
@@ -247,7 +247,7 @@ In order to smooth the decision boundary surface, weight values should be small.
 \begin{equation}\label{eq:WeightDcay}
 \Omega = \frac{1}{2} \sum_i w_{i}^2
 \end{equation}
-where the sum includes all weights and bias. Weight decay of this form leads to major improvement in empirical generalisation \citep{hinton1987learning}. Intuitively, in equation \ref{eq:WeightDcay}, the smaller the weights are, the better the regulariser is. Usually, the derivatives of the total error function with respect to the weight are used to train the neural network. The network is trained by gradient descent in the continuous time limit. The weights will evolve with time $t$
+where the sum includes all weights and bias. Weight decay of this form leads to major improvement in empirical generalisation \citep{hinton1987learning}. Intuitively, in Equation \ref{eq:WeightDcay}, the smaller the weights are, the better the regulariser is. Usually, the derivatives of the total error function with respect to the weight are used to train neural networks. The network is trained by gradient descent in the continuous time limit. The weights will evolve with time $t$
 \begin{equation}\label{eq:WeightDecayTime}
 \frac{w}{t} = -\eta\nabla E = -\eta\lambda w
 \end{equation}
@@ -266,7 +266,7 @@ Neural networks with deep layers and a large amount of neurons is a powerful lea
 \includegraphics[width=0.8\textwidth]{dropout.jpeg}
 \caption{\label{fig:Dropout}Illustration of dropout \citep{srivastava2014dropout}.}
 \end{figure}
-At the testing process, there is no dropout applied and all neurons are active. The dropout method is replaced by performing a scaling of layer outputs by the same probability $p$. This method can maintain the outputs of neurons to be the same in both training and testing process. For example, if a neuron has $p$ probability to be dropped out in the training process, the neuron should give an output $l$ without dropout in the testing stage. Then we should apply $(p\ast l + (1 - p)\ast 0)$ on the output, because the output has $(1-p)$ probability to be $0$.
+At the testing process, there is no dropout applied and all neurons are active. The dropout method is replaced by performing a scaling of layer outputs by the same probability $p$. This method can maintain the outputs of neurons to be the same in both training and testing process. For example, if a neuron has $p$ probability to be dropped out in the training process, the neuron should give an output $l$ without dropout in the testing process. Then we should apply $(p\ast l + (1 - p)\ast 0)$ on the output, because the output has $(1-p)$ probability to be $0$.
 
 \section{Softmax Classifier}
 
@@ -278,9 +278,9 @@ A softmax layer begins the same way as the normal layer which forms the weighted
 \begin{equation}\label{eq:SoftmaxActivation}
 f_j(z) = \frac{e^{z_j}}{\sum_k e^{z_k}}
 \end{equation}
-Equation \ref{eq:SoftmaxActivation} implies that the output values are all positive and the sum of all values $\sum_k a_k$ is $1$.
+Equation \ref{eq:SoftmaxActivation} implies that the output values are all positive and the sum of all values $\sum_k e^{z_k}$ is $1$.
 
-The softmax classifier can be used to handle multiclass classification. For a training dataset $(x_{1}, y_{1}), \ldots, (x_{m}, y_{m}), y_{i} \in \{1, 2, \ldots, K\} $ of $m$ labelled samples, the label $y$s have $K$ different values.
+The softmax classifier can be used to handle multiclass classification. For a training data $(x_{1}, y_{1}), \ldots, (x_{m}, y_{m}), y_{i} \in \{1, 2, \ldots, K\} $ of $m$ labelled samples, the label $y$s have $K$ different values.
 
 Given an unseen sample $x$, we will use a hypothesis to estimate the probability $P(y=k | x)$ for each value $k = 1, \ldots, K$. For example, we want to compute the probability of the class label on each of $K$ different possible values. The neural network will then output a $K$ dimensional vector which represents $K$ estimated probabilities. 
 %\begin{equation}\label{eq:SoftmaxPostPro}
@@ -310,7 +310,7 @@ H(p,q) = - \sum_x p(x) \log q(x)
 \end{equation}
 Hence, the task of the softmax classifier is to minimise the cross entropy between the actual distribution and the predicted distribution. 
 
-In other words, the softmax classifier can be interpreted in probability view. Given a sample $(x_i, y_i)$ and parameters $W$, we can compute the normalised probability:
+In summary, the softmax classifier can be interpreted in probability view. Given a sample $(x_i, y_i)$ and parameters $W$, we can compute the normalised probability:
 \begin{equation}\label{eq:ProbInter}
 P(y_i \mid x_i; W) = \frac{e^{f_{y_i}}}{\sum_j e^{f_j} }
 \end{equation}
@@ -318,7 +318,7 @@ where $f_{y_i}$ is the score predicted by the model with weights $W$. Therefore 
 
 \subsection{Practical issues}
 
-From a numerical view, the exponential computation is easy to overflow. Thus, the output of the softmax function is not numerically stable through computing $e^{f_{y_i}}$ and $\sum_j e^{f_{y_j}}$ directly. The implementation requires a normalisation trick. It is mathematically equivalent to multiplying a constant $C$ with both the top and bottom of the fraction.
+From a numerical view, the exponential computation is apt to overflow. Thus, the output of the softmax function is not numerically stable through computing $e^{f_{y_i}}$ and $\sum_j e^{f_{y_j}}$ directly. The implementation requires a normalisation trick. It is mathematically equivalent to multiplying a constant $C$ with both the top and bottom of the fraction.
 \begin{equation}\label{eq:SoftmaxTricks}
 \frac{e^{f_{y_i}}}{\sum_j e^{f_j}}
 = \frac{Ce^{f_{y_i}}}{C\sum_j e^{f_j}}
@@ -340,7 +340,7 @@ Similar to the logistic regression error function, the softmax error function su
 \begin{equation}\label{eq:PostProbDis}
 P(y^{(i)} = k | x^{(i)} ; W) = \frac{\exp(W^{(k)\top} x^{(i)})}{\sum_{j=1}^K \exp(W^{(j)\top} x^{(i)}) }
 \end{equation}
-It is difficult to solve equation \ref{eq:LogRegLossFunc}. Usually an optimisation algorithm can approximate optimal values. Taking derivative with respect to weights, we can compute the entire gradient 
+It is difficult to solve Equation \ref{eq:LogRegLossFunc}. Usually an optimisation algorithm can approximate optimal values. Taking derivative with respect to weights, we can compute the entire gradient 
 \begin{equation}\label{eq:PartDer}
 \nabla_{W^{(k)}} L(W) = - \sum_{i=1}^{m}{ \left[ x^{(i)} \left( 1\{ y^{(i)} = k\}  - P(y^{(i)} = k | x^{(i)}; W) \right) \right]  }
 \end{equation}
@@ -348,7 +348,7 @@ We can take partial derivative of $L(W)$ with respect to the $j$th element of $W
 
 \section{Convolutional Neural Networks (CNN)}
 
-Convolutional Neural Networks \citep{lecun1998gradient} are widely applied in image understanding and achieve top rank in an image classification competetion \citep{krizhevsky2012imagenet}. Compared to regular neural networks, CNN architecture assumes that the inputs are images and pixels are related in the local region.
+Convolutional Neural Networks \citep{lecun1998gradient} are widely applied in image understanding and achieve top rank in the image classification competetion \citep{krizhevsky2012imagenet}. Compared to regular neural networks, CNN architecture assumes that the inputs are images and pixels are related in the local region.
 
 CNN architecture has neurons arranged in 3 dimensions, width, height and depth. For example, there is an image which has dimensions $32\times 32\times 3$. The neurons in a layer will connect to a customised region of the previous layer. Moreover, the final output layer has dimensions $1\times 1\times d$, where $d$ is the number of classes. The dimensions are reduced from $3072$ to $d$. The output is a single vector of class scores.
 
@@ -361,7 +361,7 @@ CNN architecture has neurons arranged in 3 dimensions, width, height and depth. 
 \end{figure}
 
 \subsection{Layers in CNN}
-CNN has four main types of layers, including convolutional layers, Relu layers, pooling layers and fully connected layers. Every layer transforms the input to the output via a differentiable function. 
+CNN has four main types of layers, including convolutional layers, Relu layers, pooling layers and fully connected layers. Every layer transforms the input to the output through a differentiable function. 
 \begin{enumerate}
   \item Convolutional Layer
   \item ReLU Layer
@@ -385,7 +385,7 @@ To control the output volume arrangement, three parameters are introduced. They 
 
 A scheme, named parameter sharing, is implemented in convolutional layers to limit the number of parameters. The scheme supposes that a filter, which is helpful to compute at some spatial positions, should be helpful to compute another position.
 
-\textbf{ReLU Layer} is the abbreviation of Rectified Linear Units. The neurons in the layer operate the non-saturating activation function $f(x) = max(0,x)$ over the result of dot product in convolutional layers. The layer increases non-linearity to network without losing the receptive fields of convolutional layers.
+\textbf{ReLU Layer} is the abbreviation of Rectified Linear Units. The neurons in the layer operate the non-saturating activation function $f(x) = max(0,x)$ over the result of dot product in convolutional layers. The layer increases non-linearity to the network without losing the receptive fields of convolutional layers.
 
 \textbf{Pooling Layer} is a mechanism of downsampling. It is usually appended after convolutional layers to progressively decrease the spatial size of feature maps. It decreases network parameters. At the same time, it makes the neurons in the layer to be relatively insensitive to small shifts of images.
 
@@ -393,7 +393,7 @@ A scheme, named parameter sharing, is implemented in convolutional layers to lim
 
 \section{Spatial Pyramid Matching (SPM)}
 
-Spatial pyramid matching \citep{lazebnik2006beyond} is used to classify high-level semantic attributes, based on low-level features. The method subdivides an image in several different levels of resolution and counts features falling in each spatial bin. It extends bags of features method and derives spatial information from images.
+Spatial pyramid matching \citep{lazebnik2006beyond} is used to classify high-level semantic attributes, based on low-level features. The method subdivides an image in several different levels of resolution and counts the features falling in each spatial bin. It extends bags of features method and derives spatial information from images.
 \graphicspath{ {./Figures/} }
 \begin{figure}[!htb]
 \centering
@@ -420,7 +420,7 @@ We perform SPM in a $2$-dimensional image space and apply standard vector quanti
 
 In the literature on machine learning, transfer learning \citep{pan2010survey} focuses on storing knowledge from one domain and applying it to a related problem. In other words, the relevant knowledge, learned from previous tasks, can be applied to new tasks. The closer a new task relates to previous knowledge, the more easily it can be solved. In contrast, other machine learning methods solve problems independently. 
 
-Transfer learning has three benefits. The first one is to save time on preprocessing data. Collecting and processing raw data are time consuming and expensive in each task. It can reduce volume of required data significantly, because of existing knowledge extracted from previous learning tasks. The second one is to reduce time on training a model from scratch up. Usually, training a model from scratch up is time consuming. The last one is to avoid the risk of overfitting. With insufficient training data, a complicated model is easy to overfitting. Transfer learning method can control overfitting because of existing knowledge.
+Transfer learning has three benefits. The first one is to save time on preprocessing data. Collecting and processing raw data are time consuming and expensive in each task. It can reduce volume of required data significantly, because of existing knowledge extracted from previous learning tasks. The second one is to reduce time on training a model from scratch. Usually, training a model from scratch up is time consuming. The last one is to avoid the risk of overfitting. With insufficient training data, a complicated model is apt to overfitting. Transfer learning can control overfitting.
 
 \graphicspath{ {./Figures/} }
 \begin{figure}[!htb]
