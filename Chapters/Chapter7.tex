@@ -6,7 +6,7 @@
 
 \section{Artificial Dataset}
 
-A dataset is generated artificially. Each image has three labels to represent colours, $red$, $green$ and $blue$. The representation of colour combination follows colour wheels. If an image is a red hue only, it has a label for $red$ while the label values of $green$ and $blue$ are negative. If an image has a hue close to $purple$, it has positive labels for $red$ and $blue$, and negative label for $green$, and so on.
+The dataset is generated artificially. Each image has three labels to represent colours, $red$, $green$ and $blue$. The representation of colour combination follows colour wheels. If an image is a red hue only, it has a label for $red$ while the label values of $green$ and $blue$ are negative. If an image has a hue close to $purple$, it has positive labels for $red$ and $blue$, and negative label for $green$.
 \graphicspath{ {./Figures/} }
 \begin{figure}[!htb]
 \centering
@@ -20,7 +20,7 @@ For each sample $x_{i}$, it owns 3 labels ${y_{0},y_{1},y_{2}},  y_{j} \in \{-1,
 
 The RGB and HSV coordinate systems represent a geometric shape in colour space. The distance among colours contains little meaning. However, corresponding distance makes some intuitive sense and enable conversion possible between RGB and HSV coordinates.
 
-The dataset consists of images with size $16\times16$, therefore each image has $256$ pixels. To generate an image, I generate a random floating point number $h$ in the range $[0.0, 1.0)$ and use it as value for a hue via formulation
+The dataset consists of images with size $16\times16$, therefore each image has $256$ pixels. To generate an image, I generate a random floating point number $h$ in the range $[0.0, 1.0)$ and use it as the value for a hue via formulation
 \begin{equation}\label{eq:FormulationHue}
 H = h + r * 0.4 - 0.2 \quad (r \in [0.0,1.0))
 \end{equation}
@@ -52,13 +52,13 @@ The dataset contains $1000$ images in total. $960$ images are training samples a
 
 \section{Artificial Neural Networks (ANNs)}
 
-ANNs is an approach to learning a non-linear function which can map a sample to several labels. The neurons in the first layer take a raw image, while the neurons in the last layer produce outputs. Between the first and last layer, the middle layers are called hidden layers because they do not connect to the external world directly. A 3 layer neural networks can represent any bounded degree polynomial under certain conditions \citep{barron1993universal}. The weights of neural network are learned by algorithms deployed over training dataset. One of the successful learning algorithms is the Backpropagation algorithm which updates weights by propagating error values computed by comparing prediction for each sample.
+ANNs is to learn a non-linear function which maps a sample to several labels. The neurons in the first layer take a raw image, while the neurons in the last layer produce outputs. Between the first and last layer, the middle layer is called hidden layer because it does not connect to the external world directly. A 3 layer neural networks can represent any bounded degree polynomial under certain conditions \citep{barron1993universal}. The weights of neural network are learned by algorithms deployed over the training data. One of the successful learning algorithms is backpropagation algorithm which updates weights by propagating error values computed by comparing prediction for each sample.
 
-Two factors will be modified to adapt a neural network to perform multi-label classification. One factor is to design a new error function which fits the characteristics of multi-label samples instead of single-label ones. The other is to select a moderate metric according to the new error function.
+Two factors will be modified to adapt a neural network to perform multi-label classification. One factor is to design a new error function which fits the characteristics of multi-label samples instead of single-label ones. The other one is to select a moderate metric according to the new error function.
 
 \subsection{Network Architecture}
 
-Define $\mathcal{X} = \mathbb{R}^{d}$ as the sample space and $\mathcal{Y} = {1,2,...,Q}$ as the set of output labels. The training dataset is composed of $m$ multi-label samples, ${(x_{1}, Y_{1}),(x_{2}, Y_{2}),...,(x_{m}, Y_{m})}$, while each sample $x_{i} \in \mathcal{X}$ is represented as a $d$-dimension feature vector and a set of $q$ labels associate with the feature vector. A neural network, in Figure \ref{fig:MultiLabelNet}, can be built up to learn a model .
+Define $\mathcal{X} = \mathbb{R}^{d}$ as the sample space and $\mathcal{Y} = {1,2,...,Q}$ as the set of output labels. The training data is composed of $m$ multi-label samples, ${(x_{1}, Y_{1}),(x_{2}, Y_{2}),...,(x_{m}, Y_{m})}$, while each sample $x_{i} \in \mathcal{X}$ is represented as a $d$-dimension feature vector and a set of $q$ labels associated with the feature vector. A neural network, in Figure \ref{fig:MultiLabelNet}, can be built up to learn a model .
 
 \graphicspath{ {./Figures/} }
 \begin{figure}[!htb]
@@ -83,9 +83,9 @@ Various learning algorithms can be used to learn a model based on the training d
 \begin{equation}\label{eq:MultiLableGlobalError}
 E = \sum_{i=1}^m E_{i} = \sum_{i=1}^m \frac{1}{|Y_{i}||\hat{Y}_{i}|} \sum_{(k,l) \in Y_{i} \times \hat{Y_{i}}} exp(-(c_{k}^i-c_{l}^i))
 \end{equation}
-In the error function \ref{eq:MultiLableGlobalError}, the $i$-th errors on the $i$-th sample $(x_{i},Y_{i})$ are accumulated. $\hat{Y}_{i}$ is complementary set of $Y_{i}$ in $\mathcal{Y}$ and $|\cdot|$ computes the cardinality of a set. Specifically, the item, $c_{k}^i-c_{l}^i$, represents the difference between the predicted labels and the actual labels. The error function \ref{eq:MultiLableGlobalError} shows that bigger difference leads to better performance. Additionally, the negation of the difference is put into the exponential function to sharply penalise the $i$-th term if $c_{k}^i$ is much smaller than $c_{l}^i$. The sum of $i$-th error term accumulates difference between outputs of any pair of labels which are the one belonging to the sample and the other one not belonging to it. The sum is normalised by the numbers of all pairs, $|Y_{i}||\hat{Y}_{i}|$. And then, the correlations between pair labels are computed. In other words, labels in $Y_{i}$ should get larger output values than labels in $\hat{Y}_{i}$.
+In the error function \ref{eq:MultiLableGlobalError}, the $i$-th errors on the $i$-th sample $(x_{i},Y_{i})$ are accumulated. $\hat{Y}_{i}$ is complementary set of $Y_{i}$ in $\mathcal{Y}$ and $|\cdot|$ computes the cardinality of a set. Specifically, the item, $c_{k}^i-c_{l}^i$, represents the difference between the predicted labels and the actual labels. The error function shows that bigger difference leads to better performance. Additionally, the negation of the difference is put into the exponential function to sharply penalise the $i$-th term if $c_{k}^i$ is much smaller than $c_{l}^i$. The sum of $i$-th error term accumulates difference between outputs of any pair of labels which are the one belonging to the sample and the other one not belonging to it. The sum is normalised by the numbers of all pairs, $|Y_{i}||\hat{Y}_{i}|$. And then, the correlations between pair labels are computed. In brief, labels in $Y_{i}$ should get larger output values than labels in $\hat{Y}_{i}$.
 
-As in the previous statement, the error function \ref{eq:MultiLableGlobalError} calculates the difference between output labels. The task of learning is minimising the error function \ref{eq:MultiLableGlobalError} via enlarging output values of labels belonging to the training samples and diminishing the output values of the labels not belonging to it. If the training dataset can cover the distribution of the whole sample space, the model can learn it through minimising error function by feeding training samples.
+In the previous statements, the error function calculates the difference between output labels. The task of learning is minimising the error function via enlarging output values of labels belonging to the training samples and diminishing the output values of the labels not belonging to it. If the training data can cover the distribution of the whole sample space, the model can learn it through minimising error function by feeding training samples.
 
 \subsection{Error Function}
 
@@ -102,7 +102,7 @@ where $p(t|x)$ represents the probability density of $t$ if $x$ is a distinct la
 p(x) = \int p(t,x)dt
 \end{equation}
 
-Most error functions can be obtained from the idea of maximum likelihood. For training dataset, 
+Most error functions can be obtained from the idea of maximum likelihood. For the training data, 
 \begin{equation}\label{eq:LikelihoodLoss}
 L = \coprod_{\substack{n}}  p(t^n|x^n)p(x^n)
 \end{equation}
@@ -114,7 +114,7 @@ where $E$ is notated as an error function. The task of learning is to model the 
 \begin{equation}\label{eq:SimLikelihoodErrorFunc}
 E = -ln L = -\sum_{\substack{n}} ln p(t^n|x^n) + C
 \end{equation}
-It is worth noting that error functions are dependent on different assumptions of the forms of the conditional distribution $p(t|x)$. In this classification task, $t$ represents labels which act as class members or the prediction of the probabilities of class members.
+It is worth mentioning that error functions are dependent on different assumptions of the forms of the conditional distribution $p(t|x)$. In this classification task, $t$ represents labels which act as class members or the prediction of the probabilities of class members.
 
 \subsection{Cross Entropy}
 
@@ -168,7 +168,7 @@ In similar way, the bias can be computed by the partial derivative.
 
 Following the training process, gradient descent is used to minimise the global error function with backpropagation. 
 
-To train a sample $(x_{i}, Y_{i})$, in which $x_{i}$ is the input data and $Y_{i}$ is the associate labels, the predicted output labels computed by the neural network for is
+To train a sample $(x_{i}, Y_{i})$, in which $x_{i}$ is the input data and $Y_{i}$ is the associate labels, the predicted output labels computed by the neural network is
 \begin{equation}\label{eq:MultiLabelActivation}
 c_{k} = f(netc_{k} + \theta_{k})
 \end{equation}
