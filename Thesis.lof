@@ -11,7 +11,7 @@
 \contentsline {figure}{\numberline {2.9}{\ignorespaces The error surface for a multi-layer neural network \citep {ErrorFigure1}.\relax }}{10}{figure.caption.44}
 \contentsline {figure}{\numberline {2.10}{\ignorespaces A multi-layer neural network can separate a complicated dataset. Generated from \citep {GenerateNN}.\relax }}{11}{figure.caption.45}
 \contentsline {figure}{\numberline {2.11}{\ignorespaces Overfitting example, the left one has a decent generalisation performance and the right one is overfitting \citep {OverfittingFigure}.\relax }}{14}{figure.caption.56}
-\contentsline {figure}{\numberline {2.12}{\ignorespaces Illustration of dropout \citep {srivastava2014dropout}.\relax }}{16}{figure.caption.63}
+\contentsline {figure}{\numberline {2.12}{\ignorespaces Illustration of dropout \citep {srivastava2014dropout}.\relax }}{15}{figure.caption.63}
 \contentsline {figure}{\numberline {2.13}{\ignorespaces The left is a fully connect regular neural network. The right is a CNN in 3 dimensions \citep {CNNDiagram}.\relax }}{19}{figure.caption.78}
 \contentsline {figure}{\numberline {2.14}{\ignorespaces Diagram for depth in a convolutional layer \citep {CNNDiagram}.\relax }}{20}{figure.caption.84}
 \contentsline {figure}{\numberline {2.15}{\ignorespaces Diagram of the Spatial Pyramid Matching \citep {lazebnik2006beyond}.\relax }}{22}{figure.caption.86}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/W32TeX) (preloaded format=pdflatex 2015.3.12)  18 MAR 2016 23:46
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/W32TeX) (preloaded format=pdflatex 2015.3.12)  19 MAR 2016 23:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -754,7 +754,7 @@ File: ./Figures/Figure2-2.png Graphic file (type png)
 Package pdftex.def Info: ./Figures/Figure2-2.png used on input line 134.
 (pdftex.def)             Requested size: 333.97972pt x 220.02406pt.
  [9 <./Figures/Figure2-2.png>]
-<./Figures/2LayerErrorSurface.png, id=671, 298.11375pt x 326.72063pt>
+<./Figures/2LayerErrorSurface.png, id=672, 298.11375pt x 326.72063pt>
 File: ./Figures/2LayerErrorSurface.png Graphic file (type png)
 
 <use ./Figures/2LayerErrorSurface.png>
@@ -762,7 +762,7 @@ Package pdftex.def Info: ./Figures/2LayerErrorSurface.png used on input line 16
 3.
 (pdftex.def)             Requested size: 166.98668pt x 183.01215pt.
 
-<./Figures/MultiLayerCircleData.png, id=674, 401.5pt x 401.5pt>
+<./Figures/MultiLayerCircleData.png, id=675, 401.5pt x 401.5pt>
 File: ./Figures/MultiLayerCircleData.png Graphic file (type png)
 
 <use ./Figures/MultiLayerCircleData.png>
@@ -778,13 +778,13 @@ File: ./Figures/overfitting.png Graphic file (type png)
 Package pdftex.def Info: ./Figures/overfitting.png used on input line 229.
 (pdftex.def)             Requested size: 333.97972pt x 152.94983pt.
  [13] [14 <./Figures/overfitting.png>]
-<./Figures/dropout.jpeg, id=718, 616.3025pt x 329.23pt>
+<./Figures/dropout.jpeg, id=719, 616.3025pt x 329.23pt>
 File: ./Figures/dropout.jpeg Graphic file (type jpg)
 
 <use ./Figures/dropout.jpeg>
 Package pdftex.def Info: ./Figures/dropout.jpeg used on input line 266.
 (pdftex.def)             Requested size: 333.97972pt x 178.41452pt.
- [15] [16 <./Figures/dropout.jpeg>] [17] [18]
+ [15 <./Figures/dropout.jpeg>] [16] [17] [18]
 <./Figures/neural_net2.jpeg, id=755, 793.96625pt x 389.455pt>
 File: ./Figures/neural_net2.jpeg Graphic file (type jpg)
 
@@ -799,7 +799,7 @@ File: ./Figures/cnn.jpeg Graphic file (type jpg)
 Package pdftex.def Info: ./Figures/cnn.jpeg used on input line 359.
 (pdftex.def)             Requested size: 166.98668pt x 59.28079pt.
  [19 <./Figures/neural_net2.jpeg> <./Figures/cnn.jpeg>] <./Figures/depthcol.jpe
-g, id=769, 465.74pt x 327.2225pt>
+g, id=770, 465.74pt x 327.2225pt>
 File: ./Figures/depthcol.jpeg Graphic file (type jpg)
 
 <use ./Figures/depthcol.jpeg>
@@ -1472,6 +1472,10 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 244.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 244.
 Package rerunfilecheck Info: File `Thesis.out' has not changed.
 (rerunfilecheck)             Checksum: FEABB43E3A326C57BA441EB228846EF1;12708.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 244.
  ) 
 Here is how much of TeX's memory you used:
@@ -1503,7 +1507,7 @@ t/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2014/texmf-dist/fonts/t
 ype1/public/amsfonts/cm/cmtt10.pfb><c:/texlive/2014/texmf-dist/fonts/type1/publ
 ic/amsfonts/symbols/msam7.pfb><c:/texlive/2014/texmf-dist/fonts/type1/public/am
 sfonts/symbols/msbm10.pfb>
-Output written on Thesis.pdf (85 pages, 5866005 bytes).
+Output written on Thesis.pdf (85 pages, 5865964 bytes).
 PDF statistics:
  1487 PDF objects out of 1728 (max. 8388607)
  1233 compressed objects within 13 object streams

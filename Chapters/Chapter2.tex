@@ -114,7 +114,7 @@ where $f()$ is the logistic function. Given that an input data maps to an output
 \caption{\label{fig:1LayerErrorSurface}The error surface for a single layer neural network \citep{ErrorFigure1}.}
 \end{figure}
 
-The single-layer neural network has a decision boundary which is linear. However, the boundary is limited. The limitation can be illustrated by two types of datasets in Figure \ref{fig:1Layer2datasets} .
+The single-layer neural network has a linear decision boundary. However, the boundary is limited. The limitation can be illustrated by two types of datasets in Figure \ref{fig:1Layer2datasets} .
 \graphicspath{ {./Figures/} }
 \begin{figure}[!htb]
 \centering     %%% not \center
@@ -183,7 +183,7 @@ The SGD is a type of gradient descent. It only considers a subset of samples for
 \begin{equation}\label{eq:SGDUpdate}
 w = w - \eta  \Delta L(w) = w - \eta \sum_{i=1}^{n} \Delta L_{i}(w)
 \end{equation}
-where $\eta$ is the learning rate and $L_{i}(w)$ is the value of the error function at the $i$th sample. The Robbins-Siegmund theorem \citep{robbins1985convergence} provides the approaches to almost surely convergence to a global minimum under relatively mild assumptions. Moreover, it is fast and effective in most circumstances.
+where $\eta$ is the learning rate and $L_{i}(w)$ is the value of the error function at the $i$th sample. The Robbins-Siegmund theorem \citep{robbins1985convergence} provides the approaches to almost surely convergence to a global minimum under relatively mild assumptions. Moreover, SGD is fast and effective in most circumstances.
 
 \section{Backpropagation}
 
@@ -191,7 +191,7 @@ Multi-layer neural networks can represent mapping from the input data to the out
 
 Because activation functions are differentiable, the activation of output neurons can be propagated to the hidden neurons with respect to weights and bias. If we have an error function, we can evaluate derivatives of the error and update the weights to minimise the error function through some optimisation methods.
 
-Backpropagation can be applied to find the derivatives of an error function related to the weights and bias in the network through two stages. First, the derivatives of the error functions, for instance sum-of-squares and Jacobian, must be evaluated with respect to the weights. Second, a variety of optimisation schemes can be implemented to compute the adjustment of weights based on the derivatives. After passing data through the network, we can get the predicted classes. It updates weight changes based on the grandient descent. Given that the network has $i$ inputs, $h$ hidden neurons and $k$ outputs. The update equation can be represented as:
+Backpropagation can be applied to find the derivatives of an error function related to the weights and bias in the network through two stages. First, the derivatives of the error functions, for instance sum-of-squares and Jacobian, must be evaluated with respect to the weights. Second, a variety of optimisation schemes can be implemented to compute the adjustment of weights based on the derivatives. After passing data through the network, we can get the predicted classes. It updates weights based on the grandient descent. Given that the network has $i$ inputs, $h$ hidden neurons and $k$ outputs. The update equation can be represented as:
 \begin{equation}\label{eq:UpdateWeights}
 w(j+1) = w(j) + \Delta w(j)
 \end{equation}
@@ -200,13 +200,13 @@ where $\Delta w(j)$ is defined as:
 \Delta w(j) = -\eta \frac{\partial E}{\partial w}
 \end{equation}
 
-The weights, locating in the hidden layer connecting to the output layer, are updated by
+The weights, connecting the hidden layer and the output layer, are updated by
 \begin{equation}\label{eq:h2oBP}
 \Delta w(jk) = -\eta \frac{\partial E}{\partial w_{jk}} = -\eta \delta_{k}y_{j}
 \end{equation}
 where $$\delta_{k} = \frac{\partial E}{\partial a_{k}} = (y_{k} - t_{k})y_{k}(1 - y_{k})$$
 
-The weights in the other hidden layer are updated by
+The weights in the other hidden layers are updated by
 \begin{equation}\label{eq:hiddenBP}
 \Delta w(ij) = -\eta \frac{\partial E}{\partial w_{ij}} = -\eta \delta_{j}y_{i}
 \end{equation}
@@ -216,7 +216,7 @@ The $\delta_{j}$ of a hidden neuron is based on the $\delta_{k}$ of the output l
 
 \subsection{Training protocols}
 
-In supervised learning, training data consists of data with labels. We can use the neural networks to find the output of the training data and learn optimal weights. There are mainly three types of training protocols, stochastic, batch and online training. In stochastic training, we randomly choose samples from the training data and update weights every time. In batch training, all samples are passed through the network, and weights are updated after one epoch. In online training, each sample of the training data is used once and weights are updated each time. We usually define one time of passing all training data through neural networks as one epoch.
+In supervised learning, training samples consist of data with labels. We can use the neural networks to find the output of the training data and learn optimal weights. There are mainly three types of training protocols, stochastic, batch and online training. In stochastic training, we randomly choose samples from the training data and update weights every time. In batch training, all samples are passed through the network, and weights are updated after one epoch. In online training, each sample of the training data is used once and weights are updated each time. We usually define one time of passing all training data through neural networks as one epoch.
 
 It is worth mentionaing batch learning. In large scale applications, the training data can contain over millions of samples. It is time-consuming to compute the error function over all training data points in order to update weights once. It is a practical approach to compute the gradient over a batch of training data. Does it have harmful effects on generalisation? It depends on the correlations among the training data. Consider that there are more than one million images in the ImageNet dataset which is made up of only 1000 categories. If the images in a batch are selected evenly from each category, the gradient from the batch is a reasonable approximation of the full training data. Therefore, batch learning leads to faster convergence by evaluating the batch gradients to update weights frequently.
 
@@ -231,7 +231,7 @@ Overfitting is a common phenomenon that a model has high performance on the trai
 \end{figure}
 From the example in Figure \ref{fig:OverfittingExample}, it is clear that a model, whose complexity is neither too small nor too large, has the best generalisation performance. 
 
-In order to find the optimal complexity of the neural network, there are mainly two approaches. One is to change the adaptive parameters, such as neuron numbers in hidden layers. This is named structural stabilisation. It can be approached from two directions. We can start from a small network and increase layer numbers or neuron numbers in the training process and arrive at an effective neural network architecture. The other one is to start from a large network and prune out layers or neurons in the training process to achieve the optimal neural network architecture. Another fundamental basic method to control the complexity of a model is regularisation which includes adding a penalty term in the error function. The degree of regularisation can be adjusted by scaling the term through a multiplicative parameter.
+In order to find the optimal complexity of the neural network, there are mainly two approaches. One is to change the adaptive parameters, such as neuron numbers in hidden layers. This is named structural stabilisation. It can be approached from two directions. We can start from a small network and increase layer numbers or neuron numbers in the training process and arrive at an effective neural network architecture. The other one is to start from a large network and prune out layers or neurons in the training process to achieve the optimal neural network architecture. Another method is regularisation which includes adding a penalty term in the error function. The degree of regularisation can be adjusted by scaling the term through a multiplicative parameter.
 
 Regularisation helps to smooth the decision boundary surface by introducing a penalty term $\Omega$ to the error function
 \begin{equation}\label{eq:Regularization}
@@ -280,7 +280,7 @@ f_j(z) = \frac{e^{z_j}}{\sum_k e^{z_k}}
 \end{equation}
 Equation \ref{eq:SoftmaxActivation} implies that the output values are all positive and the sum of all values $\sum_k e^{z_k}$ is $1$.
 
-The softmax classifier can be used to handle multiclass classification. For a training data $(x_{1}, y_{1}), \ldots, (x_{m}, y_{m}), y_{i} \in \{1, 2, \ldots, K\} $ of $m$ labelled samples, the label $y$s have $K$ different values.
+The softmax classifier can be used to handle multiclass classification. For the training data $(x_{1}, y_{1}), \ldots, (x_{m}, y_{m}), y_{i} \in \{1, 2, \ldots, K\} $ of $m$ labelled samples, the label $y$s have $K$ different values.
 
 Given an unseen sample $x$, we will use a hypothesis to estimate the probability $P(y=k | x)$ for each value $k = 1, \ldots, K$. For example, we want to compute the probability of the class label on each of $K$ different possible values. The neural network will then output a $K$ dimensional vector which represents $K$ estimated probabilities. 
 %\begin{equation}\label{eq:SoftmaxPostPro}
@@ -314,7 +314,7 @@ In summary, the softmax classifier can be interpreted in probability view. Given
 \begin{equation}\label{eq:ProbInter}
 P(y_i \mid x_i; W) = \frac{e^{f_{y_i}}}{\sum_j e^{f_j} }
 \end{equation}
-where $f_{y_i}$ is the score predicted by the model with weights $W$. Therefore the normalised probabilities are computed by exponentiating the values and divided by the sum of all values. We can minimise the negative log likelihood of the ground truth labels by performing Max Likelihood Estimation(MLE). Aside from MLE, Maximum a Posteriori(MAP) can evaluate the performance of a model.
+where $f_{y_i}$ is the score predicted by the model with weights $W$. Therefore the normalised probabilities are computed by exponentiating the values and divided by the sum of all values. We can minimise the negative log likelihood of the ground truth labels by performing Max Likelihood Estimation(MLE). Aside from MLE, Maximum a Posteriori(MAP) can evaluate the performance of a model as well.
 
 \subsection{Practical issues}
 
@@ -350,7 +350,7 @@ We can take partial derivative of $L(W)$ with respect to the $j$th element of $W
 
 Convolutional Neural Networks \citep{lecun1998gradient} are widely applied in image understanding and achieve top rank in the image classification competetion \citep{krizhevsky2012imagenet}. Compared to regular neural networks, CNN architecture assumes that the inputs are images and pixels are related in the local region.
 
-CNN architecture has neurons arranged in 3 dimensions, width, height and depth. For example, there is an image which has dimensions $32\times 32\times 3$. The neurons in a layer will connect to a customised region of the previous layer. Moreover, the final output layer has dimensions $1\times 1\times d$, where $d$ is the number of classes. The dimensions are reduced from $3072$ to $d$. The output is a single vector of class scores.
+CNN architecture has neurons arranged in 3 dimensions, width, height and depth. For example, there is an image which has dimensions $32\times 32\times 3$. The neurons in a layer will connect to a customised region of the previous layer. Moreover, the final output layer has dimensions $1\times 1\times d$, where $d$ is the number of classes. The dimensions are reduced from $3,072$ to $d$. The output is a single vector of class scores.
 
 \graphicspath{ {./Figures/} }
 \begin{figure}[!htb]
@@ -401,7 +401,7 @@ Spatial pyramid matching \citep{lazebnik2006beyond} is used to classify high-lev
 \caption{\label{fig:SpatialPyramidMatching}Diagram of the Spatial Pyramid Matching \citep{lazebnik2006beyond}.}
 \end{figure}
 
-Let two sets of vectors $X$ and $Y$ be in a $d$-dimensional feature space. SPM could find the approximate correspondence between them. In brief, SPM places a chain of grids over the feature space and counts sum of matches occurring at each level of resolution. The points falling into the same grid are matched and the match points in finer resolutions have higher weights. Specifically, a chain of grids at resolutions $0,\dotso,L$, have $2^0,\dotso,2^L$ cells respectively. $H_{X}^l$ and $H_{Y}^l$ are the histograms of $X$ and $Y$ at the $l$ resolution, thus the number of points in the $i$th cell from $X$ and $Y$ can be represented as $H_{X}^l(i)$ and $H_{Y}^l(i)$. The histogram intersection function denotes the number of matches at level $l$
+Let two sets of vectors $X$ and $Y$ be in a $d$-dimensional feature space. SPM could find the approximate correspondence between them. In summary, SPM places a chain of grids over the feature space and counts sum of matches occurring at each level of resolution. The points falling into the same grid are matched and the match points in finer resolutions have higher weights. Specifically, a chain of grids at resolutions $0,\dotso,L$, have $2^0,\dotso,2^L$ cells respectively. $H_{X}^l$ and $H_{Y}^l$ are the histograms of $X$ and $Y$ at the $l$ resolution, thus the number of points in the $i$-th cell from $X$ and $Y$ can be represented as $H_{X}^l(i)$ and $H_{Y}^l(i)$. The histogram intersection function denotes the number of matches at level $l$
 \begin{equation}\label{eq:HistInterFunc}
 I(H_{X}^l, H_{Y}^l) = \sum_{i=1}^D min(H_{X}^l(i), H_{Y}^l(i))
 \end{equation}
@@ -420,7 +420,7 @@ We perform SPM in a $2$-dimensional image space and apply standard vector quanti
 
 In the literature on machine learning, transfer learning \citep{pan2010survey} focuses on storing knowledge from one domain and applying it to a related problem. In other words, the relevant knowledge, learned from previous tasks, can be applied to new tasks. The closer a new task relates to previous knowledge, the more easily it can be solved. In contrast, other machine learning methods solve problems independently. 
 
-Transfer learning has three benefits. The first one is to save time on preprocessing data. Collecting and processing raw data are time consuming and expensive in each task. It can reduce volume of required data significantly, because of existing knowledge extracted from previous learning tasks. The second one is to reduce time on training a model from scratch. Usually, training a model from scratch up is time consuming. The last one is to avoid the risk of overfitting. With insufficient training data, a complicated model is apt to overfitting. Transfer learning can control overfitting.
+Transfer learning has three benefits. The first one is to save time on preprocessing data. Collecting and processing raw data are time consuming and expensive in each task. It can reduce volume of required data significantly, because of existing knowledge extracted from previous learning tasks. The second one is to reduce time on training a model from scratch. Usually, training a model from scratch is time consuming. The last one is to avoid the risk of overfitting. With insufficient training data, a complicated model is apt to overfitting. Transfer learning can control overfitting.
 
 \graphicspath{ {./Figures/} }
 \begin{figure}[!htb]

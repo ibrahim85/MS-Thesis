@@ -15,14 +15,14 @@
 \contentsline {section}{\numberline {2.1}Related Work}{4}{section.18}
 \contentsline {section}{\numberline {2.2}Single-Layer ANNs}{5}{section.19}
 \contentsline {section}{\numberline {2.3}Multi-Layer Networks}{8}{section.38}
-\contentsline {section}{\numberline {2.4}Stochastic Gradient Descent (SGD)}{11}{section.46}
+\contentsline {section}{\numberline {2.4}Stochastic Gradient Descent (SGD)}{10}{section.46}
 \contentsline {section}{\numberline {2.5}Backpropagation}{11}{section.49}
-\contentsline {subsection}{\numberline {2.5.1}Training protocols}{13}{subsection.54}
+\contentsline {subsection}{\numberline {2.5.1}Training protocols}{12}{subsection.54}
 \contentsline {section}{\numberline {2.6}Overfitting and Regularization}{13}{section.55}
-\contentsline {subsection}{\numberline {2.6.1}Weight Decay}{15}{subsection.58}
+\contentsline {subsection}{\numberline {2.6.1}Weight Decay}{14}{subsection.58}
 \contentsline {subsection}{\numberline {2.6.2}Dropout}{15}{subsection.62}
 \contentsline {section}{\numberline {2.7}Softmax Classifier}{16}{section.64}
-\contentsline {subsection}{\numberline {2.7.1}Practical issues}{18}{subsection.69}
+\contentsline {subsection}{\numberline {2.7.1}Practical issues}{17}{subsection.69}
 \contentsline {subsection}{\numberline {2.7.2}Error function}{18}{subsection.71}
 \contentsline {section}{\numberline {2.8}Convolutional Neural Networks (CNN)}{19}{section.77}
 \contentsline {subsection}{\numberline {2.8.1}Layers in CNN}{19}{subsection.79}
