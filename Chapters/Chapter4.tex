@@ -24,11 +24,11 @@ The training is regularised via the techniques, including dropout and weight dec
 \begin{equation}\label{eq:WeightDecay}
 w^{new} = w^{old}(1 - \epsilon)
 \end{equation}
-after each update.
+after each updating.
 
 \section{Fine-tuning Model}
 
-There are two challenges to training on the original model. Firstly, the original CNN model is trained to classify images of $1,000$ categories. However, the current task is to classify two weather scenes. This can be solved by reducing the outputs of the model from $1,000$ to $2$. Secondly, the CNN architecture contains about $60$ million parameters which are too many for the weather classification dataset. The target dataset has only $10,000$ images in total. The number of images is insufficient and the model is feasible to overfit. It can be solved by training a new model based on the pre-trained CNN model. Because the pre-trained model is close to optimism, only a tiny adjustment is needed.
+There are two challenges to training on the original model. Firstly, the original CNN model is trained to classify images of $1,000$ categories. However, the current task is to classify two weather scenes. This can be solved by reducing the outputs of the last fully connected layer from $1,000$ to $2$. Secondly, the CNN architecture contains about $60$ million parameters which are too many for the weather classification dataset. The target dataset has only $10,000$ images in total. The number of images is insufficient and the model is feasible to overfit. It can be solved by training a new model based on the pre-trained CNN model. Because the pre-trained model is close to optimism, it only needs a tiny adjustment.
 
 The fine-tune transfers the weights of each layer from the pre-trained model to the new model except for the last fully connected layer. The last layer is taken over by a new layer which contains the same amount of neurons equally to the class number. The weights in the replaced layer are initialised with random values. One advantage of fine-tune is to minimise risk of overfitting. The other one is that weights reach optimal values quickly.
 
@@ -75,7 +75,7 @@ In order to have a more detailed information of the fine-tuning process, we inve
     \label{fig:FTvsSC}%
 \end{figure}
 
-From Figure \ref{fig:FTvsSC}, it is clear that the fine-tuning process produces a smoother loss curve and ceases at a higher accuracy rate. In the left figure, the loss value of the fine-tuning procedure is higher than the value of the non fine-tuning process at the beginning. Then it shrinks sharply and maintains lower than the value of the non fine-tuning process. In the right figure, we can find that the initial loss value is less than that in the left figure. And the loss value of the fine-tuning process is less than the value in the non fine-tuning process. In short, fine-tuning is an effective approach to training a new model. The model with SPP layers achieved high performance.
+From Figure \ref{fig:FTvsSC}, it is clear that the fine-tuning process produces a smoother loss curve and ceases at a higher accuracy rate. In the left figure, the loss value of the fine-tuning procedure is higher than the value of the non fine-tuning process at the beginning. Then it shrinks sharply and maintains lower than the value of the non fine-tuning process. In the right figure, we can find that the initial loss value is less than that in the left figure. And the loss value of the fine-tuning process is less than the value in the non fine-tuning process. In summery, fine-tuning is an effective approach to training a new model. The model with SPP layers achieved high performance.
 
 \begin{figure}[!htb]
     \centering
@@ -88,9 +88,9 @@ From Figure \ref{fig:FTvsSC}, it is clear that the fine-tuning process produces 
 
 CNN has achieved excellent accuracy in object classification, although a full understanding of the mechanism is ambiguous. In order to have some intuition about CNN, we will analyse the network outputs.
 
-The outputs of each layer have been treated as visual descriptors \citep{razavian2014cnn}, and the vectors present some information from the outputs of previous layers. The front layers encode low-level features, and the rear layers are able to capture high-level features. In summary, an image is retrieved heuristically when it passes the convolutional layers.
+The outputs of each convolutional layer have been treated as visual descriptors \citep{razavian2014cnn}, and the vectors present some information from the outputs of previous layers. The front layers encode low-level features, and the rear layers are able to capture high-level features. In summary, an image is retrieved heuristically when it passes the convolutional layers.
 
-Fully connected layers can be represented as a $d$-dimensional vector. The layer takes multidimensional outputs from the previous layer and flats the feature maps into a $d$-dimensional vector. The outputs of the second fully connected layer are feed into a classifier.
+Fully connected layers can be represented as a $d$-dimensional vector. The layer takes multidimensional outputs from the previous layer and flats the feature maps into a $d$-dimensional vector. The outputs of the second fully connected layer are fed into a classifier.
 
 When a cloudy image is fed into the CNN, Figure \ref{fig:cloudy_finetuneprocess} shows the feature maps of convolutional layers. Because the filter size is too many, only parts of the filters are plotted in b-f.
 
