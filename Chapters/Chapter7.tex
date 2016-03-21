@@ -48,7 +48,7 @@ where $r$ is another random float number. 2 random float numbers are generated f
 \caption{Multilabel samples and the RGB colour histograms. Three labels mean red, green and blue sequentially. }
 \end{figure}
 
-The dataset contains $1000$ images in total. $960$ images are training samples and $40$ are test samples. 
+The dataset contains $1000$ images in total. $960$ images are training data and $40$ are test data. 
 
 \section{Artificial Neural Networks (ANNs)}
 
@@ -118,7 +118,7 @@ It is worth mentioning that error functions are dependent on different assumptio
 
 \subsection{Cross Entropy}
 
-MSE is a common risk metric comparable to the predicted value of the squared error loss. It is easy to implement and its value is non-negative. However, it has the disadvantage of heavily weighting outliers \citep{bermejo2001oriented}.
+The MSE is a common risk metric comparable to the predicted value of the squared error loss. It is easy to implement and its value is non-negative. However, it has the disadvantage of heavily weighting outliers \citep{bermejo2001oriented}.
 
 Given that there are two discrete distributions $p(x)$ and $q(x)$ over the same variable $x$. The relative entropy, relating to the cross entropy, is a measurement of the distance between samples:
 \begin{equation}\label{eq:RelativeEngtropy}
@@ -140,7 +140,7 @@ where $n$ is the number of training samples, $a$ is the predicted label and $y$ 
 
 The cross entropy acts as an error function because of two properties. First, $C$ is non-negative, because the items of logarithms are in the range $[0,1]$. Second, if the prediction output is close to the actual value for all training samples, the loss value, $C$, will be close to $0$. Given that $y = 0$ and the prediction value $a \approx 0$, the first item in equation \ref{eq:TwoClassCrossEntropyCostFunc} is $0$ and the second is $-\ln(1-a) \approx 0$. The similar situation occurs for conditions, $y = 1$ and $a \approx 1$. Therefore, the value of loss function will be small, if the prediction value is close to the actual value.
 
-In total, the cross entropy tends to $0$, when the neuron acts better at predicting the output $y$ for total training inputs $x$. The two properties are basic to a loss function. Although the quadratic loss function satisfies the properties, the cross entropy has the advantage on avoiding the issue of learning curve slowing down. To illustrate the advantage, the partial derivative of the cross entropy loss function can be done with respect to the weights. Applying the chain rule twice on equation \ref{eq:TwoClassCrossEntropyCostFunc}
+In summary, the cross entropy tends to $0$, when the neuron acts better at predicting the output $y$ for total training inputs $x$. The two properties are basic to a loss function. Although the quadratic loss function satisfies the properties, the cross entropy has the advantage on avoiding the issue of learning curve slowing down. To illustrate the advantage, the partial derivative of the cross entropy loss function can be done with respect to the weights. Applying the chain rule twice on equation \ref{eq:TwoClassCrossEntropyCostFunc}
 \begin{eqnarray}\label{eq:DerCrossEntropyCostFunc}
   \frac{\partial C}{\partial w_j} & = & -\frac{1}{n} \sum_x \left(
     \frac{y }{f(x)} -\frac{(1-y)}{1-f(x)} \right)
@@ -168,7 +168,7 @@ In similar way, the bias can be computed by the partial derivative.
 
 Following the training process, gradient descent is used to minimise the global error function with backpropagation. 
 
-To train a sample $(x_{i}, Y_{i})$, in which $x_{i}$ is the input data and $Y_{i}$ is the associate labels, the predicted output labels computed by the neural network is
+To train a sample $(X_{i}, Y_{i})$, in which $X_{i}$ is the input data and $Y_{i}$ is the associate labels, the predicted output labels computed by the neural network is
 \begin{equation}\label{eq:MultiLabelActivation}
 c_{k} = f(netc_{k} + \theta_{k})
 \end{equation}
@@ -231,13 +231,13 @@ while the bias is updated according to
 \end{equation}
 In previous equations, $\alpha$ is the learning rate whose value is in the range of $[0.0 \text{ } 1.0]$.
 
-In the training process, a learning algorithm has been set up with backpropagation. Moreover, training samples are fed into the neural network. After all training samples $(x, Y)$ fed into the network, weights and bias are updated through equations \ref{eq:MultiLableUpdateWeights} and \ref{eq:MultiLableUpdateBias}. The training samples are fed into the network iteratively while global error value decreases. Finally, the error value converges to a minimum value.
+In the training process, a learning algorithm has been set up with backpropagation. Moreover, training samples are fed into the neural network. After all training samples $(X, Y)$ fed into the network, weights and bias are updated through equations \ref{eq:MultiLableUpdateWeights} and \ref{eq:MultiLableUpdateBias}. The training samples are fed into the network iteratively while global error value decreases. Finally, the error value converges to a minimum value.
 
-In the testing process, the network predicts a sample which has a set of actual labels $c_{j} (j = 1,2,...,Q)$. Because the output value of each label is in range $[-1.0,1.0]$, a threshold function $t(x)$ is used to determine the associate label set for the sample $x$. A large margin ranking system \citep{elisseeff2001kernel} is adopted to generalise the sets. $t(x)$ is a linear function, $t(x) = w^T\cdot c(x) + b$, where $c(x) = (c_{1}(x), c_{2}(x),...,c_{Q}(x))$ is a $Q$-dimension vector which represents $j$ output labels of the sample. For every training sample $(x_{i}, Y_{i}) (1 \leq i \leq m)$, the relation between $c(x_{i})$ and target value $t(x_{i})$ is:
+In the testing process, the network predicts a sample which has a set of actual labels $c_{j} (j = 1,2,...,Q)$. Because the output value of each label is in range $[-1.0,1.0]$, a threshold function $t(x)$ is used to determine the associate label set for the sample $x$. A large margin ranking system \citep{elisseeff2001kernel} is adopted to generalise the sets. $t(x)$ is a linear function, $t(x) = w^T\cdot c(x) + b$, where $c(x) = (c_{1}(x), c_{2}(x),...,c_{Q}(x))$ is a $Q$-dimensional vector which represents $j$ output labels of the sample. For every training sample $(X_{i}, Y_{i}) (1 \leq i \leq m)$, the relation between $c(x_{i})$ and target value $t(x_{i})$ is:
 \begin{equation}\label{eq:MultiLableThreshFunc}
 t(x_{i}) =  \operatorname{arg\,max}_t (|\{k|k \in Y_{i}, c_{k}^i \leq t\}| + |\{l|l \in \hat{Y}_{i}, c_{l}^i \geq t\}|) 
 \end{equation}
-If there are several minimum values and optimal values are in a division, the middle value of the division is chosen. The task of learning the parameters of threshold function is to solve the matrix equation $\Phi \cdot w' = t$. The matrix $\Phi$ has dimensions $m \times (Q + 1)$ in which $i$-th vector is $(c_{1}^i, c_{2}^2,...,c_{Q}^i,1)$, and $w'$ is a $(Q+1)$ dimensional vector $(w,b)$ and $t$ is the $m$-dimension vector $(t(x_{1}), t(x_{2}),...,t(x_{m}))$. Linear least squares is used to find the solution of the equation. Given a sample $x$, the network predicts the output label vector $c(x)$ and the threshold value for $x$ is gotten by solving equation $t(x) = w^T \cdot c(x) + b$.
+If there are several minimum values and optimal values are in a division, the middle value of the division is chosen. The task of learning the parameters of threshold function is to solve the matrix equation $\Phi \cdot w' = t$. The matrix $\Phi$ has dimensions $m \times (Q + 1)$ in which $i$-th vector is $(c_{1}^i, c_{2}^2,...,c_{Q}^i,1)$, and $w'$ is a $(Q+1)$ dimensional vector $(w,b)$ and $t$ is the $m$-dimensional vector $(t(x_{1}), t(x_{2}),...,t(x_{m}))$. Linear least squares is used to find the solution of the equation. Given a sample $x$, the network predicts the output label vector $c(x)$ and the threshold value for $x$ is gotten by solving equation $t(x) = w^T \cdot c(x) + b$.
 
 The computational complexity of evaluating derivatives of the error function is linear with the neuron numbers. Three main components are composed of computation, feedforward process, backpropagation process and updating weights process. In the feed-forward process, to compute $b_{i}$ and $c_{j}$, the computation cost is mainly on evaluating the sums and activation function. In the backpropagation process, the computational complexity of $d_{k}$ and $e_{s}$ is $O(Q)$. In the updating weights process, the overall computational complexity is $O(W)$ where $W$ is the total number of weights . 
 
