@@ -10,7 +10,7 @@ The experiment environment includes hardware, which is i7 CPU, 8G RAM and a GeFo
 
 We trained the model with the 1000-category ImageNet2012 dataset. We used the network architecture ~\cite{ZeilerF13} which achieved an excellent accuracy in the 2013 ImageNet Competition. We implemented SPP with CUDA C language and deployed it before the first fully connected layer.
 
-In the experiment, a subset of the ImageNet dataset, which contains 1.2 million labelled high-resolution images depicting 1,000 object categories and 50,000 validation images, was used as training dataset. Most images are multi-scale and some are grey. To feed them into the network conveniently, the images were converted to the same dimensions , $256\times256$. Grey images were combined triple times to simulate RGB images. The model was trained on raw RGB values of pixels. The activation function is the ReLU, which guarantees fast training of the neural network.
+In the experiment, a subset of the ImageNet dataset, which contains 1.2 million labelled high-resolution images depicting 1,000 object categories and 50,000 validation images, was used as training data. Most images are multi-scale and some are grey. To feed them into the network conveniently, the images were converted to the same dimensions , $256\times256$. Grey images were combined triple times to simulate RGB images. The model was trained on raw RGB values of pixels. The activation function is the ReLU, which guarantees fast training of the neural network.
 
 \begin{equation}\label{eq:ReLU}
 f(x) = max(0, x)
