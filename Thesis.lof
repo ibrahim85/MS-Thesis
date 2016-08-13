@@ -29,8 +29,8 @@
 \contentsline {figure}{\numberline {3.4}{\ignorespaces Diagram of the SPP layer \citep {he2014spatial}\relax }}{28}{figure.caption.108}
 \contentsline {figure}{\numberline {3.5}{\ignorespaces Architecture of the AlexNet \citep {krizhevsky2012imagenet}\relax }}{28}{figure.caption.110}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Learning Process\relax }}{33}{figure.caption.120}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Training Loss\relax }}{33}{figure.caption.121}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Training Process\relax }}{33}{figure.caption.120}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Training Loss. Figures show that loss curve has a better convergence on the finetuned model.\relax }}{33}{figure.caption.121}
 \contentsline {figure}{\numberline {4.3}{\ignorespaces ROC Curve\relax }}{34}{figure.caption.122}
 \contentsline {figure}{\numberline {4.4}{\ignorespaces A cloudy image and the feature maps from convolutional layers\relax }}{35}{figure.caption.124}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {raw image}}}{35}{figure.caption.124}
@@ -46,7 +46,7 @@
 \contentsline {subfigure}{\numberline {(d)}{\ignorespaces {conv3 output}}}{36}{figure.caption.131}
 \contentsline {subfigure}{\numberline {(e)}{\ignorespaces {conv4 output}}}{36}{figure.caption.131}
 \contentsline {subfigure}{\numberline {(f)}{\ignorespaces {conv5 output}}}{36}{figure.caption.131}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Visiualisation of feature maps from the CNN model and the SPP model. The upper images are from the CNN model and the lower images are from the fine-tuned model.\relax }}{37}{figure.caption.139}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Visiualisation of feature maps from the CNN model and the SPP model. The upper images are from the CNN model and the lower images are from the fine-tuned SPP model.\relax }}{37}{figure.caption.139}
 \contentsline {figure}{\numberline {4.7}{\ignorespaces Histogram distribution of vectors from FC7. The left is from CNN model and the right is from the SPP model.\relax }}{37}{figure.caption.140}
 \contentsline {figure}{\numberline {4.8}{\ignorespaces Misclassified images \citep {lutwo}.\relax }}{38}{figure.caption.142}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {sunny}}}{38}{figure.caption.142}

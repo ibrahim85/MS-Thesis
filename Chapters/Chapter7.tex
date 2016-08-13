@@ -58,7 +58,7 @@ Two factors will be modified to adapt a neural network to perform multi-label cl
 
 \subsection{Network Architecture}
 
-Define $\mathcal{X} = \mathbb{R}^{d}$ as the sample space and $\mathcal{Y} = {1,2,...,Q}$ as the set of output labels. The training data is composed of $m$ multi-label samples, ${(x_{1}, Y_{1}),(x_{2}, Y_{2}),...,(x_{m}, Y_{m})}$, while each sample $x_{i} \in \mathcal{X}$ is represented as a $d$-dimension feature vector and a set of $q$ labels associated with the feature vector. A neural network, in Figure \ref{fig:MultiLabelNet}, can be built up to learn a model .
+Define $\mathcal{X} = \mathbb{R}^{d}$ as the sample space and $\mathcal{Y} = {1,2,...,Q}$ as the set of output labels. The training data is composed of $m$ multi-label samples, ${(x_{1}, Y_{1}),(x_{2}, Y_{2}),...,(x_{m}, Y_{m})}$, while each sample $x_{i} \in \mathcal{X}$ is represented as a $d$-dimensional feature vector and a set of $q$ labels associated with the feature vector. A neural network, in Figure \ref{fig:MultiLabelNet}, can be built up to learn a model .
 
 \graphicspath{ {./Figures/} }
 \begin{figure}[!htb]
@@ -93,13 +93,13 @@ The basic goal of regression problems is to figure out the conditional distribut
 
 The basic aim of classification problems is to figure out the posterior probabilities of class types with the input samples. Except for the sum-of-squares error function, there are some more approximate error functions which can be considered.
 
-The central goal is to model the hidden generator of the samples instead of memorising the training samples. Therefore, the best prediction of an input sample can be found if the network can present a new value for the sample. Because the general and complete characterisation of the dataset is the probability density $p(x,t)$, it is available to decompose a joint probability density into the product of the conditional density of the labels, the input data and the density of the data,
+The central goal is to model the hidden generator of the samples instead of memorising the training samples. Therefore, the best prediction of an input sample can be found if the network can present a new value for the sample. Because the general and complete characterisation of the dataset is the probability density $p(x,t)$ ($t$ is target value and $x$ is network input variable), it is available to decompose a joint probability density into the product of the conditional density of the labels, the input data and the density of the data,
 \begin{equation}\label{eq:JointProbDensity}
 p(x,t) = p(t|x)p(x)
 \end{equation}
 where $p(t|x)$ represents the probability density of $t$ if $x$ is a distinct label and $p(x)$ represents the density of $x$
 \begin{equation}\label{eq:ProbDensityX}
-p(x) = \int p(t,x)dt
+p(x) = \int p(x,t)dt
 \end{equation}
 
 Most error functions can be obtained from the idea of maximum likelihood. For the training data, 

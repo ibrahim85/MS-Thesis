@@ -218,7 +218,7 @@ The $\delta_{j}$ of a hidden neuron is based on the $\delta_{k}$ of the output l
 
 In supervised learning, training samples consist of data with labels. We can use the neural networks to find the output of the training data and learn optimal weights. There are mainly three types of training protocols, stochastic, batch and online training. In stochastic training, we randomly choose samples from the training data and update weights every time. In batch training, all samples are passed through the network, and weights are updated after one epoch. In online training, each sample of the training data is used once and weights are updated each time. We usually define one time of passing all training data through neural networks as one epoch.
 
-It is worth mentionaing batch learning. In large scale applications, the training data can contain over millions of samples. It is time-consuming to compute the error function over all training data points in order to update weights once. It is a practical approach to compute the gradient over a batch of training data. Does it have harmful effects on generalisation? It depends on the correlations among the training data. Consider that there are more than one million images in the ImageNet dataset which is made up of only 1000 categories. If the images in a batch are selected evenly from each category, the gradient from the batch is a reasonable approximation of the full training data. Therefore, batch learning leads to faster convergence by evaluating the batch gradients to update weights frequently.
+It is worth mentioning batch learning. In large scale applications, the training data can contain over millions of samples. It is time-consuming to compute the error function over all training data points in order to update weights once. It is a practical approach to compute the gradient over a batch of training data. Does it have harmful effects on generalisation? It depends on the correlations among the training data. Consider that there are more than one million images in the ImageNet dataset which is made up of only 1000 categories. If the images in a batch are selected evenly from each category, the gradient from the batch is a reasonable approximation of the full training data. Therefore, batch learning leads to faster convergence by evaluating the batch gradients to update weights frequently.
 
 \section{Overfitting and Regularization}
 
@@ -249,7 +249,7 @@ In order to smooth the decision boundary surface, weight values should be small.
 \end{equation}
 where the sum includes all weights and bias. Weight decay of this form leads to major improvement in empirical generalisation \citep{hinton1987learning}. Intuitively, in Equation \ref{eq:WeightDcay}, the smaller the weights are, the better the regulariser is. Usually, the derivatives of the total error function with respect to the weight are used to train neural networks. The network is trained by gradient descent in the continuous time limit. The weights will evolve with time $t$
 \begin{equation}\label{eq:WeightDecayTime}
-\frac{w}{t} = -\eta\nabla E = -\eta\lambda w
+\frac{\partial w}{\partial t} = -\eta\nabla E = -\eta\lambda w
 \end{equation}
 where $\eta$ is the learning rate. And the equation has solution
 \begin{equation}\label{eq:WeightDecaySolution}
@@ -334,7 +334,7 @@ L(W) = - \left[ \sum_{i=1}^{m} \sum_{k=1}^{K}  I\left\{y^{(i)} = k\right\} \log 
 where this generates the logistic regression error function
 \begin{align}\label{eq:LogRegLossFunc}
 L(W) &= - \left[ \sum_{i=1}^m   (1-y^{(i)}) \log (1-h_W(x^{(i)})) + y^{(i)} \log h_W(x^{(i)}) \right] \\
-&= - \left[ \sum_{i=1}^{m} \sum_{k=0}^{1} 1\left\{y^{(i)} = k\right\} \log P(y^{(i)} = k | x^{(i)} ; W) \right]
+&= - \left[ \sum_{i=1}^{m} \sum_{k=0}^{I} I\left\{y^{(i)} = k\right\} \log P(y^{(i)} = k | x^{(i)} ; W) \right]
 \end{align}
 Similar to the logistic regression error function, the softmax error function sums over the predicted different $K$ values of the classes. In the softmax regression, the posterior probability distribution can be represented:
 \begin{equation}\label{eq:PostProbDis}

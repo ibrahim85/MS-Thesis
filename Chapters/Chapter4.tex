@@ -34,7 +34,7 @@ The fine-tune transfers the weights of each layer from the pre-trained model to 
 
 $9,000$ images are used for training and $1,000$ images are reserved to test the model. The batch size is $128$. There are $10,000$ iterations in the training process totally. Then the total training image number is $128\times9,000$. One epoch is that the total training images are fed into the network once. The training epochs are $142$. The initial base learning rate is $0.001$ and the rate is divided by $10$ every $10$ epochs. Because the weights in $FC8$ are randomly initialised and they are not close to final optimisation value, the learning rate for $FC8$ is $10$ times of the base learning rate to converge quickly.
 
-\section{Companion Experiments}
+\section{Companion}
 
 In order to compare performance of the fine-tuned model, we did extra tests with extracting feature methods. We used a pre-trained model with the AlexNet architecture and extracted features from the layer $FC7$. We trained a SVM classifier based on the features and classified the test samples.
 
@@ -59,7 +59,7 @@ The fine-tuning process converges quick. After about 30 epochs, the accuracy rat
 \begin{figure}[!htb]
     \centering
 	\includegraphics[width=0.8\textwidth]{FinetuneAccuracy.png}
-    \caption{Learning Process}%
+    \caption{Training Process}%
     \label{fig:finetuneprocess}%
 \end{figure}
 
@@ -71,7 +71,7 @@ In order to have a more detailed information of the fine-tuning process, we inve
     \centering
 	\includegraphics[width=0.4\textwidth]{finetuneCNNProcess.png}
 	\includegraphics[width=0.4\textwidth]{finetuneSPPProcess.png}
-    \caption{Training Loss}%
+    \caption{Training Loss. Figures show that loss curve has a better convergence on the finetuned model.}%
     \label{fig:FTvsSC}%
 \end{figure}
 
@@ -88,7 +88,7 @@ From Figure \ref{fig:FTvsSC}, it is clear that the fine-tuning process produces 
 
 CNN has achieved excellent accuracy in object classification, although a full understanding of the mechanism is ambiguous. In order to have some intuition about CNN, we will analyse the network outputs.
 
-The outputs of each convolutional layer have been treated as visual descriptors \citep{razavian2014cnn}, and the vectors present some information from the outputs of previous layers. The front layers encode low-level features, and the rear layers are able to capture high-level features. In summary, an image is retrieved heuristically when it passes the convolutional layers.
+The outputs of each convolutional layer have been treated as visual descriptors \citep{razavian2014cnn}, and the vectors present some information from the outputs of previous layers. The front layers encode low-level features, and the rear layers are able to capture high-level features. In summary, information in an image is retrieved heuristically when it passes the convolutional layers.
 
 Fully connected layers can be represented as a $d$-dimensional vector. The layer takes multidimensional outputs from the previous layer and flats the feature maps into a $d$-dimensional vector. The outputs of the second fully connected layer are fed into a classifier.
 
@@ -214,7 +214,7 @@ Image & Conv1 & Conv2 & Conv3 & Conv4 & Conv5  \\ \hline
 \end{tabular}
 
 \end{center}
-	\caption{Visiualisation of feature maps from the CNN model and the SPP model. The upper images are from the CNN model and the lower images are from the fine-tuned model.}
+	\caption{Visiualisation of feature maps from the CNN model and the SPP model. The upper images are from the CNN model and the lower images are from the fine-tuned SPP model.}
 	\label{fig:diff_featuremap}%
 \end{figure*}
 
